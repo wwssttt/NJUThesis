@@ -1,0 +1,106 @@
+\begin{thebibliography}{16}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{{徐亮} 等(2007){徐亮}, {周影辉} 和~ {韦博成}}]{Xu2007}
+\bibinfo{author}{{徐亮}}, \bibinfo{author}{{周影辉}},
+  \bibinfo{author}{{韦博成}}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{基于~mm~算法的~lad~回归的影响分析}.
+\newblock \bibinfo{journal}{高校应用数学学报~A~辑} , \bibinfo{pages}{48--58}.
+%Type = Article
+\bibitem[{{王立洪} 和~ {王金德}(1999)}]{Wang1999}
+\bibinfo{author}{{王立洪}}, \bibinfo{author}{{王金德}}, \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{时间序列模型~l1-估计量的极限分布:平稳自回归模型}.
+\newblock \bibinfo{journal}{数学学报} \bibinfo{volume}{42}.
+%Type = Unpublished
+\bibitem[{王磊(1997)}]{Wang1997}
+\bibinfo{author}{王磊}, \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{{\LaTeX{}} 插图指南}.
+%Type = Unpublished
+\bibitem[{{中国~CTeX~用户小组}(2007)}]{lshort-cn}
+\bibinfo{author}{{中国~CTeX~用户小组}}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{一份不太简短的~{\LaTeXe{}}~介绍}.
+%Type = Article
+\bibitem[{Al-Osh 和~ Alzaid(1987)}]{Al-Osh1987}
+\bibinfo{author}{Al-Osh, M.A.}, \bibinfo{author}{Alzaid, A.A.},
+  \bibinfo{year}{1987}.
+\newblock \bibinfo{title}{First-order integer-valued autoregressive {(INAR(1))}
+  process}.
+\newblock \bibinfo{journal}{Journal of Time Series Analysis}
+  \bibinfo{volume}{8}, \bibinfo{pages}{261--275}.
+%Type = Misc
+\bibitem[{DoubanFM()}]{DoubanFM}
+DoubanFM, .
+\newblock \bibinfo{title}{{DoubanFM}}.
+%Type = Book
+\bibitem[{Duffie(2001)}]{Duffie2001}
+\bibinfo{author}{Duffie, D.}, \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{Dynamic Asset Pricing Theory}.
+\newblock \bibinfo{publisher}{Princeton University Press}.
+  \bibinfo{edition}{3rd} edition.
+%Type = Phdthesis
+\bibitem[{Freeland(1998)}]{Freeland1998}
+\bibinfo{author}{Freeland, R.}, \bibinfo{year}{1998}.
+\newblock \bibinfo{title}{Statistical analysis of discrete time series with
+  applications to the analysis of workers compensation claims data}.
+\newblock Ph.D. thesis. University of British Columbia, Canada.
+%Type = Misc
+\bibitem[{Lastfm()}]{Lastfm}
+Lastfm, .
+\newblock \bibinfo{title}{{Lastfm}}.
+%Type = Inbook
+\bibitem[{Michel~Goossens(1997)}]{Goossens1997}
+\bibinfo{author}{Michel~Goossens, Frank~Mittelbach, A.S.},
+  \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{The LaTeX Companion}. \bibinfo{publisher}{Addison
+  Wesley Longman, Inc.}. chapter \bibinfo{chapter}{8 Higher Mathematics}.
+\newblock pp. \bibinfo{pages}{215--258}.
+%Type = Book
+\bibitem[{Oetiker 等(2008)Oetiker, Partl, Hyna 和~ Schlegl}]{Oetiker2008}
+\bibinfo{author}{Oetiker, T.}, \bibinfo{author}{Partl, H.},
+  \bibinfo{author}{Hyna, I.}, \bibinfo{author}{Schlegl, E.},
+  \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{The Not So Short Introduction to LaTeX2ε (Or LaTeX
+  2ε in 141 minutes)}.
+\newblock \bibinfo{publisher}{ctan.org}. \bibinfo{edition}{4.26} edition.
+%Type = Misc
+\bibitem[{Pandora()}]{Pandora}
+Pandora, .
+\newblock \bibinfo{title}{{Pandora}}.
+%Type = Unpublished
+\bibitem[{Reckdahl(2006)}]{Reckdahl2006}
+\bibinfo{author}{Reckdahl, K.}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Using imported graphics in {\LaTeX{}} and
+  {pdf\LaTeX{}}}.
+%Type = Article
+\bibitem[{Rentfrow 和~ Gosling(2003)}]{rentfrow2003re}
+\bibinfo{author}{Rentfrow, P.J.}, \bibinfo{author}{Gosling, S.D.},
+  \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{The do re mi's of everyday life: the structure and
+  personality correlates of music preferences.}
+\newblock \bibinfo{journal}{Journal of personality and social psychology}
+  \bibinfo{volume}{84}, \bibinfo{pages}{1236}.
+%Type = Article
+\bibitem[{Scheibehenne 等(2010)Scheibehenne, Greifeneder 和~
+  Todd}]{scheibehenne2010can}
+\bibinfo{author}{Scheibehenne, B.}, \bibinfo{author}{Greifeneder, R.},
+  \bibinfo{author}{Todd, P.M.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Can there ever be too many options? a meta-analytic
+  review of choice overload}.
+\newblock \bibinfo{journal}{Journal of Consumer Research} \bibinfo{volume}{37},
+  \bibinfo{pages}{409--425}.
+%Type = Article
+\bibitem[{Yang 等(2003)Yang, Chen 和~ Hong}]{yang2003visualization}
+\bibinfo{author}{Yang, C.C.}, \bibinfo{author}{Chen, H.},
+  \bibinfo{author}{Hong, K.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Visualization of large category map for internet
+  browsing}.
+\newblock \bibinfo{journal}{Decision Support Systems} \bibinfo{volume}{35},
+  \bibinfo{pages}{89--102}.
+
+\end{thebibliography}
