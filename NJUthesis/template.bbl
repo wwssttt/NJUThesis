@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -26,6 +26,14 @@
 \bibinfo{author}{{中国~CTeX~用户小组}}, \bibinfo{year}{2007}.
 \newblock \bibinfo{title}{一份不太简短的~{\LaTeXe{}}~介绍}.
 %Type = Article
+\bibitem[{Adomavicius 和~ Tuzhilin(2005)}]{adomavicius2005toward}
+\bibinfo{author}{Adomavicius, G.}, \bibinfo{author}{Tuzhilin, A.},
+  \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{Toward the next generation of recommender systems: A
+  survey of the state-of-the-art and possible extensions}.
+\newblock \bibinfo{journal}{Knowledge and Data Engineering, IEEE Transactions
+  on} \bibinfo{volume}{17}, \bibinfo{pages}{734--749}.
+%Type = Article
 \bibitem[{Al-Osh 和~ Alzaid(1987)}]{Al-Osh1987}
 \bibinfo{author}{Al-Osh, M.A.}, \bibinfo{author}{Alzaid, A.A.},
   \bibinfo{year}{1987}.
@@ -36,7 +44,7 @@
 %Type = Misc
 \bibitem[{DoubanFM()}]{DoubanFM}
 DoubanFM, .
-\newblock \bibinfo{title}{{DoubanFM}}.
+\newblock \bibinfo{title}{{http://douban.fm}}.
 %Type = Book
 \bibitem[{Duffie(2001)}]{Duffie2001}
 \bibinfo{author}{Duffie, D.}, \bibinfo{year}{2001}.
@@ -52,7 +60,7 @@ DoubanFM, .
 %Type = Misc
 \bibitem[{Lastfm()}]{Lastfm}
 Lastfm, .
-\newblock \bibinfo{title}{{Lastfm}}.
+\newblock \bibinfo{title}{{http://last.fm}}.
 %Type = Inbook
 \bibitem[{Michel~Goossens(1997)}]{Goossens1997}
 \bibinfo{author}{Michel~Goossens, Frank~Mittelbach, A.S.},
@@ -71,7 +79,7 @@ Lastfm, .
 %Type = Misc
 \bibitem[{Pandora()}]{Pandora}
 Pandora, .
-\newblock \bibinfo{title}{{Pandora}}.
+\newblock \bibinfo{title}{{http://pandora.com}}.
 %Type = Unpublished
 \bibitem[{Reckdahl(2006)}]{Reckdahl2006}
 \bibinfo{author}{Reckdahl, K.}, \bibinfo{year}{2006}.
@@ -94,6 +102,18 @@ Pandora, .
   review of choice overload}.
 \newblock \bibinfo{journal}{Journal of Consumer Research} \bibinfo{volume}{37},
   \bibinfo{pages}{409--425}.
+%Type = Inproceedings
+\bibitem[{Song 等(2012)Song, Dixon 和~ Pearce}]{song2012survey}
+\bibinfo{author}{Song, Y.}, \bibinfo{author}{Dixon, S.},
+  \bibinfo{author}{Pearce, M.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{A survey of music recommendation systems and future
+  perspectives}, in: \bibinfo{booktitle}{9th international symposium on
+  computer music modelling and retrieval (CMMR 2012)}, pp.
+  \bibinfo{pages}{19--22}.
+%Type = Misc
+\bibitem[{Xiami()}]{Xiami}
+Xiami, .
+\newblock \bibinfo{title}{{http://www.xiami.com}}.
 %Type = Article
 \bibitem[{Yang 等(2003)Yang, Chen 和~ Hong}]{yang2003visualization}
 \bibinfo{author}{Yang, C.C.}, \bibinfo{author}{Chen, H.},
