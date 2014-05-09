@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{32}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -6,25 +6,6 @@
 \providecommand{\eprint}[2][]{\url{#2}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
-%Type = Article
-\bibitem[{{徐亮} 等(2007){徐亮}, {周影辉} 和~ {韦博成}}]{Xu2007}
-\bibinfo{author}{{徐亮}}, \bibinfo{author}{{周影辉}},
-  \bibinfo{author}{{韦博成}}, \bibinfo{year}{2007}.
-\newblock \bibinfo{title}{基于~mm~算法的~lad~回归的影响分析}.
-\newblock \bibinfo{journal}{高校应用数学学报~A~辑} , \bibinfo{pages}{48--58}.
-%Type = Article
-\bibitem[{{王立洪} 和~ {王金德}(1999)}]{Wang1999}
-\bibinfo{author}{{王立洪}}, \bibinfo{author}{{王金德}}, \bibinfo{year}{1999}.
-\newblock \bibinfo{title}{时间序列模型~l1-估计量的极限分布:平稳自回归模型}.
-\newblock \bibinfo{journal}{数学学报} \bibinfo{volume}{42}.
-%Type = Unpublished
-\bibitem[{王磊(1997)}]{Wang1997}
-\bibinfo{author}{王磊}, \bibinfo{year}{1997}.
-\newblock \bibinfo{title}{{\LaTeX{}} 插图指南}.
-%Type = Unpublished
-\bibitem[{{中国~CTeX~用户小组}(2007)}]{lshort-cn}
-\bibinfo{author}{{中国~CTeX~用户小组}}, \bibinfo{year}{2007}.
-\newblock \bibinfo{title}{一份不太简短的~{\LaTeXe{}}~介绍}.
 %Type = Article
 \bibitem[{Adomavicius 和~ Tuzhilin(2005)}]{adomavicius2005toward}
 \bibinfo{author}{Adomavicius, G.}, \bibinfo{author}{Tuzhilin, A.},
@@ -34,57 +15,159 @@
 \newblock \bibinfo{journal}{Knowledge and Data Engineering, IEEE Transactions
   on} \bibinfo{volume}{17}, \bibinfo{pages}{734--749}.
 %Type = Article
-\bibitem[{Al-Osh 和~ Alzaid(1987)}]{Al-Osh1987}
-\bibinfo{author}{Al-Osh, M.A.}, \bibinfo{author}{Alzaid, A.A.},
-  \bibinfo{year}{1987}.
-\newblock \bibinfo{title}{First-order integer-valued autoregressive {(INAR(1))}
-  process}.
-\newblock \bibinfo{journal}{Journal of Time Series Analysis}
-  \bibinfo{volume}{8}, \bibinfo{pages}{261--275}.
+\bibitem[{Blei 等(2003)Blei, Ng 和~ Jordan}]{blei2003latent}
+\bibinfo{author}{Blei, D.M.}, \bibinfo{author}{Ng, A.Y.},
+  \bibinfo{author}{Jordan, M.I.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Latent dirichlet allocation}.
+\newblock \bibinfo{journal}{the Journal of machine Learning research}
+  \bibinfo{volume}{3}, \bibinfo{pages}{993--1022}.
+%Type = Article
+\bibitem[{Bogdanov 等(2011)Bogdanov, Serr{\`a}, Wack, Herrera 和~
+  Serra}]{bogdanov2011unifying}
+\bibinfo{author}{Bogdanov, D.}, \bibinfo{author}{Serr{\`a}, J.},
+  \bibinfo{author}{Wack, N.}, \bibinfo{author}{Herrera, P.},
+  \bibinfo{author}{Serra, X.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Unifying low-level and high-level music similarity
+  measures}.
+\newblock \bibinfo{journal}{Multimedia, IEEE Transactions on}
+  \bibinfo{volume}{13}, \bibinfo{pages}{687--701}.
+%Type = Inproceedings
+\bibitem[{Cano 等(2005)Cano, Koppenberger 和~ Wack}]{cano2005content}
+\bibinfo{author}{Cano, P.}, \bibinfo{author}{Koppenberger, M.},
+  \bibinfo{author}{Wack, N.}, \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{Content-based music audio recommendation}, in:
+  \bibinfo{booktitle}{Proceedings of the 13th annual ACM international
+  conference on Multimedia}, \bibinfo{organization}{ACM}. pp.
+  \bibinfo{pages}{211--212}.
+%Type = Inproceedings
+\bibitem[{Chordia 等(2008)Chordia, Godfrey 和~ Rae}]{chordia2008extending}
+\bibinfo{author}{Chordia, P.}, \bibinfo{author}{Godfrey, M.},
+  \bibinfo{author}{Rae, A.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Extending content-based recommendation: The case of
+  indian classical music.}, in: \bibinfo{booktitle}{ISMIR},
+  \bibinfo{organization}{Citeseer}. pp. \bibinfo{pages}{571--576}.
 %Type = Misc
 \bibitem[{DoubanFM()}]{DoubanFM}
 DoubanFM, .
 \newblock \bibinfo{title}{{http://douban.fm}}.
-%Type = Book
-\bibitem[{Duffie(2001)}]{Duffie2001}
-\bibinfo{author}{Duffie, D.}, \bibinfo{year}{2001}.
-\newblock \bibinfo{title}{Dynamic Asset Pricing Theory}.
-\newblock \bibinfo{publisher}{Princeton University Press}.
-  \bibinfo{edition}{3rd} edition.
-%Type = Phdthesis
-\bibitem[{Freeland(1998)}]{Freeland1998}
-\bibinfo{author}{Freeland, R.}, \bibinfo{year}{1998}.
-\newblock \bibinfo{title}{Statistical analysis of discrete time series with
-  applications to the analysis of workers compensation claims data}.
-\newblock Ph.D. thesis. University of British Columbia, Canada.
+%Type = Article
+\bibitem[{Downie(2003)}]{downie2003music}
+\bibinfo{author}{Downie, J.S.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Music information retrieval}.
+\newblock \bibinfo{journal}{Annual review of information science and
+  technology} \bibinfo{volume}{37}, \bibinfo{pages}{295--340}.
+%Type = Misc
+\bibitem[{Hadoop()}]{Hadoop}
+Hadoop, .
+\newblock \bibinfo{title}{{http://hadoop.apache.org/}}.
+%Type = Inproceedings
+\bibitem[{Hariri 等(2012)Hariri, Mobasher 和~ Burke}]{hariri2012context}
+\bibinfo{author}{Hariri, N.}, \bibinfo{author}{Mobasher, B.},
+  \bibinfo{author}{Burke, R.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Context-aware music recommendation based on
+  latenttopic sequential patterns}, in: \bibinfo{booktitle}{Proceedings of the
+  sixth ACM conference on Recommender systems}, \bibinfo{organization}{ACM}.
+  pp. \bibinfo{pages}{131--138}.
+%Type = Article
+\bibitem[{Herlocker 等(2004)Herlocker, Konstan, Terveen 和~
+  Riedl}]{herlocker2004evaluating}
+\bibinfo{author}{Herlocker, J.L.}, \bibinfo{author}{Konstan, J.A.},
+  \bibinfo{author}{Terveen, L.G.}, \bibinfo{author}{Riedl, J.T.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Evaluating collaborative filtering recommender
+  systems}.
+\newblock \bibinfo{journal}{ACM Transactions on Information Systems (TOIS)}
+  \bibinfo{volume}{22}, \bibinfo{pages}{5--53}.
+%Type = Inproceedings
+\bibitem[{Hoffman 等(2010)Hoffman, Blei 和~ Bach}]{hoffman2010online}
+\bibinfo{author}{Hoffman, M.D.}, \bibinfo{author}{Blei, D.M.},
+  \bibinfo{author}{Bach, F.R.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Online learning for latent dirichlet allocation.},
+  in: \bibinfo{booktitle}{NIPS}, p.~\bibinfo{pages}{5}.
+%Type = Inproceedings
+\bibitem[{Hyung 等(2012)Hyung, Lee 和~ Lee}]{hyung2012music}
+\bibinfo{author}{Hyung, Z.}, \bibinfo{author}{Lee, M.}, \bibinfo{author}{Lee,
+  K.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Music recommendation based on text mining}, in:
+  \bibinfo{booktitle}{IMMM 2012, The Second International Conference on
+  Advances in Information Mining and Management}, pp.
+  \bibinfo{pages}{129--134}.
+%Type = Inproceedings
+\bibitem[{Kim 等(2010)Kim, Schmidt, Migneco, Morton, Richardson, Scott, Speck
+  和~ Turnbull}]{kim2010music}
+\bibinfo{author}{Kim, Y.E.}, \bibinfo{author}{Schmidt, E.M.},
+  \bibinfo{author}{Migneco, R.}, \bibinfo{author}{Morton, B.G.},
+  \bibinfo{author}{Richardson, P.}, \bibinfo{author}{Scott, J.},
+  \bibinfo{author}{Speck, J.A.}, \bibinfo{author}{Turnbull, D.},
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Music emotion recognition: A state of the art
+  review}, in: \bibinfo{booktitle}{Proc. ISMIR},
+  \bibinfo{organization}{Citeseer}. pp. \bibinfo{pages}{255--266}.
+%Type = Article
+\bibitem[{Kullback 和~ Leibler(1951)}]{kullback1951information}
+\bibinfo{author}{Kullback, S.}, \bibinfo{author}{Leibler, R.A.},
+  \bibinfo{year}{1951}.
+\newblock \bibinfo{title}{On information and sufficiency}.
+\newblock \bibinfo{journal}{The Annals of Mathematical Statistics} ,
+  \bibinfo{pages}{79--86}.
 %Type = Misc
 \bibitem[{Lastfm()}]{Lastfm}
 Lastfm, .
 \newblock \bibinfo{title}{{http://last.fm}}.
-%Type = Inbook
-\bibitem[{Michel~Goossens(1997)}]{Goossens1997}
-\bibinfo{author}{Michel~Goossens, Frank~Mittelbach, A.S.},
+%Type = Article
+\bibitem[{Linden 等(2003)Linden, Smith 和~ York}]{linden2003amazon}
+\bibinfo{author}{Linden, G.}, \bibinfo{author}{Smith, B.},
+  \bibinfo{author}{York, J.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Amazon. com recommendations: Item-to-item
+  collaborative filtering}.
+\newblock \bibinfo{journal}{Internet Computing, IEEE} \bibinfo{volume}{7},
+  \bibinfo{pages}{76--80}.
+%Type = Inproceedings
+\bibitem[{Mak 等(2010)Mak, Lee, Senapati, Yeung 和~ Lam}]{mak2010similarity}
+\bibinfo{author}{Mak, C.M.}, \bibinfo{author}{Lee, T.},
+  \bibinfo{author}{Senapati, S.}, \bibinfo{author}{Yeung, Y.T.},
+  \bibinfo{author}{Lam, W.K.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Similarity measures for chinese pop music based on
+  low-level audio signal attributes.}, in: \bibinfo{booktitle}{ISMIR}, pp.
+  \bibinfo{pages}{513--518}.
+%Type = Article
+\bibitem[{Makridakis 和~ Hibon(1997)}]{makridakis1997arma}
+\bibinfo{author}{Makridakis, S.}, \bibinfo{author}{Hibon, M.},
   \bibinfo{year}{1997}.
-\newblock \bibinfo{title}{The LaTeX Companion}. \bibinfo{publisher}{Addison
-  Wesley Longman, Inc.}. chapter \bibinfo{chapter}{8 Higher Mathematics}.
-\newblock pp. \bibinfo{pages}{215--258}.
+\newblock \bibinfo{title}{Arma models and the box--jenkins methodology}.
+\newblock \bibinfo{journal}{Journal of Forecasting} \bibinfo{volume}{16},
+  \bibinfo{pages}{147--163}.
+%Type = Inproceedings
+\bibitem[{McFee 和~ Lanckriet(2011)}]{mcfee2011natural}
+\bibinfo{author}{McFee, B.}, \bibinfo{author}{Lanckriet, G.R.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{The natural language of playlists.}, in:
+  \bibinfo{booktitle}{ISMIR}, pp. \bibinfo{pages}{537--542}.
 %Type = Book
-\bibitem[{Oetiker 等(2008)Oetiker, Partl, Hyna 和~ Schlegl}]{Oetiker2008}
-\bibinfo{author}{Oetiker, T.}, \bibinfo{author}{Partl, H.},
-  \bibinfo{author}{Hyna, I.}, \bibinfo{author}{Schlegl, E.},
-  \bibinfo{year}{2008}.
-\newblock \bibinfo{title}{The Not So Short Introduction to LaTeX2ε (Or LaTeX
-  2ε in 141 minutes)}.
-\newblock \bibinfo{publisher}{ctan.org}. \bibinfo{edition}{4.26} edition.
+\bibitem[{Oosterhoff 和~ van Zwet(2012)}]{oosterhoff2012note}
+\bibinfo{author}{Oosterhoff, J.}, \bibinfo{author}{van Zwet, W.R.},
+  \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{A note on contiguity and Hellinger distance}.
+\newblock \bibinfo{publisher}{Springer}.
 %Type = Misc
 \bibitem[{Pandora()}]{Pandora}
 Pandora, .
 \newblock \bibinfo{title}{{http://pandora.com}}.
-%Type = Unpublished
-\bibitem[{Reckdahl(2006)}]{Reckdahl2006}
-\bibinfo{author}{Reckdahl, K.}, \bibinfo{year}{2006}.
-\newblock \bibinfo{title}{Using imported graphics in {\LaTeX{}} and
-  {pdf\LaTeX{}}}.
+%Type = Inproceedings
+\bibitem[{Park 等(2011)Park, Lee 和~ Lee}]{park2011session}
+\bibinfo{author}{Park, S.E.}, \bibinfo{author}{Lee, S.}, \bibinfo{author}{Lee,
+  S.g.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Session-based collaborative filtering for predicting
+  the next song}, in: \bibinfo{booktitle}{Computers, Networks, Systems and
+  Industrial Engineering (CNSI), 2011 First ACIS/JNU International Conference
+  on}, \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{353--358}.
+%Type = Article
+\bibitem[{Powers(2011)}]{powers2011evaluation}
+\bibinfo{author}{Powers, D.M.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Evaluation: from precision, recall and f-measure to
+  roc, informedness, markedness \& correlation}.
+\newblock \bibinfo{journal}{Journal of Machine Learning Technologies}
+  \bibinfo{volume}{2}, \bibinfo{pages}{37--63}.
 %Type = Article
 \bibitem[{Rentfrow 和~ Gosling(2003)}]{rentfrow2003re}
 \bibinfo{author}{Rentfrow, P.J.}, \bibinfo{author}{Gosling, S.D.},
@@ -93,6 +176,32 @@ Pandora, .
   personality correlates of music preferences.}
 \newblock \bibinfo{journal}{Journal of personality and social psychology}
   \bibinfo{volume}{84}, \bibinfo{pages}{1236}.
+%Type = Inproceedings
+\bibitem[{Resnick 等(1994)Resnick, Iacovou, Suchak, Bergstrom 和~
+  Riedl}]{resnick1994grouplens}
+\bibinfo{author}{Resnick, P.}, \bibinfo{author}{Iacovou, N.},
+  \bibinfo{author}{Suchak, M.}, \bibinfo{author}{Bergstrom, P.},
+  \bibinfo{author}{Riedl, J.}, \bibinfo{year}{1994}.
+\newblock \bibinfo{title}{Grouplens: an open architecture for collaborative
+  filtering of netnews}, in: \bibinfo{booktitle}{Proceedings of the 1994 ACM
+  conference on Computer supported cooperative work},
+  \bibinfo{organization}{ACM}. pp. \bibinfo{pages}{175--186}.
+%Type = Article
+\bibitem[{Salton 等(1975)Salton, Wong 和~ Yang}]{salton1975vector}
+\bibinfo{author}{Salton, G.}, \bibinfo{author}{Wong, A.},
+  \bibinfo{author}{Yang, C.S.}, \bibinfo{year}{1975}.
+\newblock \bibinfo{title}{A vector space model for automatic indexing}.
+\newblock \bibinfo{journal}{Communications of the ACM} \bibinfo{volume}{18},
+  \bibinfo{pages}{613--620}.
+%Type = Inproceedings
+\bibitem[{Sarwar 等(2001)Sarwar, Karypis, Konstan 和~ Riedl}]{sarwar2001item}
+\bibinfo{author}{Sarwar, B.}, \bibinfo{author}{Karypis, G.},
+  \bibinfo{author}{Konstan, J.}, \bibinfo{author}{Riedl, J.},
+  \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{Item-based collaborative filtering recommendation
+  algorithms}, in: \bibinfo{booktitle}{Proceedings of the 10th international
+  conference on World Wide Web}, \bibinfo{organization}{ACM}. pp.
+  \bibinfo{pages}{285--295}.
 %Type = Article
 \bibitem[{Scheibehenne 等(2010)Scheibehenne, Greifeneder 和~
   Todd}]{scheibehenne2010can}
@@ -110,6 +219,10 @@ Pandora, .
   perspectives}, in: \bibinfo{booktitle}{9th international symposium on
   computer music modelling and retrieval (CMMR 2012)}, pp.
   \bibinfo{pages}{19--22}.
+%Type = Misc
+\bibitem[{Storm()}]{Storm}
+Storm, .
+\newblock \bibinfo{title}{{http://storm.incubator.apache.org/}}.
 %Type = Misc
 \bibitem[{Xiami()}]{Xiami}
 Xiami, .

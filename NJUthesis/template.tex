@@ -39,6 +39,9 @@
 \usepackage{fancyvrb}
 % 自定义列表样式
 \usepackage{enumitem}
+% 算法
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
 \begin{document}
 
@@ -99,13 +102,13 @@
 \begin{abstract}
 
     近些年来，互联网相关技术得到了快速发展，而信息过载~\cite{yang2003visualization}和选择悖论~\cite{scheibehenne2010can}的问题也愈发显著。为了提升信息的利用率，推荐系统应运而生并已广泛应用在电子商务、音乐电台、个性化阅读等领域。音乐作为一种强力的沟通和自我表达工具已经成为人们日常生活中一种非常重要的消费品,而相关研究也表明人们平时的听歌行为要远远多于读书、看电视、看电影等行为~\cite{rentfrow2003re}。为了解决人们在音乐消费过程中遇到的信息过载和选择悖论问题，一些个性化音乐推荐系统被开发了出来，比如Last.fm~\cite{Lastfm}、Pandora~\cite{Pandora}、豆瓣音乐~\cite{DoubanFM} 等。然而，大多数音乐推荐系统没有充分考虑到用户听歌行为与其所处上下文环境之间的密切关系，导致做出的推荐不符合用户的即时需求，而一些考虑用户上下文的工作对用户行为历史的分析也不够细致和全面。此外，用户的未来行为受到其长期行为、即时行为和中期行为的共同影响，但目前未见工作将这几方面的影响综合起来加以考察。因此，本文给出了一种基于多维时间序列分析的个性化音乐推荐系统以全面细致地对用户行为进行分析。本文的主要贡献和工作如下所示：
-    
+
     1. 提出了一种基于多维时间序列分析的音乐推荐方法。该方法首先使用主题模型将歌曲表示成由若干隐含主题构成的概率分布，进而将用户行为建模为多维时间序列并对该序列进行分析和预测，从而实现了对用户行为的定量分析。
-    
+
     2. 从更细的粒度对用户听歌行为进行分析和预测，认为用户的听歌行为在每个隐含主题上都对应着一个时间序列，进而通过对这些时间序列的分析全面考察每一个隐含主题的贡献和作用。
-    
+
     3. 给出了一种基于用户三期行为的综合音乐推荐方法，综合考虑了用户长期行为、中期行为以及即时行为对用户未来行为的影响和作用。
-    
+
     4. 实现了一个原型系统，验证了本文所述方法的可行性。其中，本文利用分布式实时计算框架Storm实现了所述方法的并行化，提升了系统的执行效率。
 
 \keywords{音乐推荐系统; 主题模型; 多维时间序列; 综合推荐}
@@ -118,11 +121,11 @@
     In recent years, internet-related technologies have grown rapidly. However, information overload problem and paradox of choice become much more obviously. In order to enhance the utilization of information, recommender systems appear and have been applied to many fields, such as e-commerce, music, and and reading. Being a powerful communication and self-express tool, music has been an important consumer goods in people's daily life and previous research has also indicated that participants listened to music more often than other activities, such as watching television, reading books and watching movies. To alleviating the information overload problem and paradox of choice in music field, some music recommender systems have been developed, such as Lastfm, Douban, Pandora. However, most of recent music recommender systems do not take the close relationship between user's behavior and his/her current context into consideration, leading to bad recommendations that do not match user's current requirement. Although there are some researchers have done some related works, they are not meticulous and comprehensive enough. Besides, user's future behaviors are affected by his/her long-term behaviors, immediately behaviors and middle-term behaviors at the same time and there are few work giving a composite idea on them. In order to get better recommendations, we propose a music recommender system based on multidimensional time series analysis that can analyze the user's behavior more meticulous and comprehensive. Our main contribution and work are as follows:
 
     1. A method for music recommendation based on multidimensional time series analysis was proposed. The method firstly using topic models to model a song as a probability distribution that is constituted by some latent topics and then it model the user's behavior as a multidimensional time series. By analyzing the time series, the method can forecast the user's future behavior in a quantitative way.
-    
+
     2. User's behavior was analyzed in finer granularity. With the basic idea of thinking every latent topic corresponds to a time series, we analyze every time series and forecast the future values leading to comprehensive analyzing the influence of all latent topics.
-    
+
     3. A composite music recommender method was proposed. The method takes into consideration user's long-term behavior, immediate behavior and middle-term behavior at the same time.
-    
+
     4. A prototype that is used to verify the feasibility of our recommender methods was implemented. Specially, we paralleled the method with an distributed realtime computation framework-Storm, making the system running faster.
 
 \englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series, Composite Recommendation}
@@ -147,7 +150,8 @@
 \chapter{背景介绍}
 \label{C:intro}
 
-近些年来，互联网相关技术得到快速发展，信息呈指数级增长，这造成了严重的信息过载(Information Overload)问题~\cite{yang2003visualization}。特别是随着大数据时代的来临，信息的增长速度已经远远超过人们可以理解的速度，而海量信息中更是包含着很多对人们来说无用的冗余信息以及会干扰人们抉择的错误信息。面对海量的信息和众多的选择，人们往往无所适从而陷入到选择悖论(Paradox of Choice)~\cite{scheibehenne2010can}之中，或无法做出合理的选择，或需要消耗很大的精力才能做出正确选择。为了解决信息过载问题，减轻人们在做出抉择时所承受的沉重负担，信息分类、搜索引擎和推荐系统等技术应运而生，如表1.1所示。
+近些年来，互联网相关技术得到了快速发展，信息呈指数级增长，这造成了严重的信息过载(Information Overload)问题~\cite{yang2003visualization}。特别是随着大数据时代的来临，信息的增长速度已经远远超过人们可以理解的速度，而海量信息中更是包含着很多对人们来说无用的冗余信息以及会干扰人们抉择的错误信息。面对海量的信息和众多的选择，人们往往无所适从而陷入到选择悖论(Paradox of Choice)~\cite{scheibehenne2010can}之中，或无法做出合理的选择，或需要消耗很大的精力才能做出正确选择。为了解决信息过载问题，减轻人们在做出抉择时所承受的沉重负担，信息分类、搜索引擎和推荐系统等技术应运而生，如表1.1所示。
+
 \begin{table}[!hbp]
 \caption{信息过载问题主流解决方案}
 \centering
@@ -163,733 +167,487 @@
 \hline
 \end{tabular}
 \end{table}
-信息分类技术是通过将互联网上的各种信息分门别类的组织起来以提高人们查询的效率，比如早期的Yahoo!和国内的58同城的信息分类网站。然而，信息分类技术往往依赖于人工，可扩展性差，随着互联网上信息的增加，这显然不合时宜。搜索引擎技术通过建立索引的方式将互联网上的网页组织起来，然后根据用户输入的关键字进行查询，比如Google 和百度。显然，搜索引擎相对于信息分类技术来说已经有了很大的进步，能够适应互联网的快速发展。但是，人们很多时候要么不愿意费时费力去输入关键字，要么无法准确地用关键字去描述自己的想法，比如“今天看什么电影好呢？”、“去哪儿吃饭呢？”等，此时搜索引擎就无能为力了。为了解放人们的双手以及深度挖掘人们的内在偏好和需求，推荐系统技术应运而生。
-推荐系统本质上是一种信息过滤系统，其通过对用户行为历史的分析挖掘出用户的行为偏好，进而帮助用户将海量信息中的无用信息过滤掉，进而将符合用户偏好的信息推荐给用户~\cite{adomavicius2005toward}。目前，推荐系统已经在各个领域得到了广泛的应用，比如电子商务领域的亚马逊和淘宝，在线视频领域的Netflix和优酷，在线音乐领域的Lastfm~\cite{Lastfm} 和豆瓣电台~\cite{DoubanFM}以及个性化阅读领域Flipboard和无觅阅读等。图1.1展示了电子商务领域Amazon的商品推荐系统界面和视频领域PPTV的在线视频推荐系统界面。
-音乐推荐系统是推荐系统在音乐领域的应用，其旨在将人们从海量的音乐中解脱出来，通过分析用户的收听习惯以及歌曲本身的特征来为用户推荐符合口味的歌曲~\cite{song2012survey}。音乐推荐与传统物品推荐的区别在于歌曲时长比较短、消费代价低、可重复消费以及具有强烈的情感性等特点，而人们的听歌行为往往对上下文环境往往更为敏感。比如，在不同的天气、不同的情绪以及不同的场合，人们的音乐喜好都会有所不同。因此，在做音乐推荐的时候需要充分的考虑歌曲和人们收听行为的特殊性。
-为了满足人们对音乐的需求，一些个性化的音乐推荐系统被设计和实现出来，如国外的Lastfm~\cite{Lastfm}、Pandora~\cite{Pandora}以及国内的豆瓣电台~\cite{DoubanFM}、 虾米音乐~\cite{Xiami}，图1.2展示了豆瓣电台和虾米音乐的推荐界面。这些音乐推荐系统首先建立自己的曲库，然后分析歌曲的特征和用户的听歌习惯继而为用户做出推荐。其中，Pandora~\cite{Pandora} 是当今最流行的音乐推荐系统之一，其通过Music Genome Project将400种属性分配给每一首歌曲，进而按照歌曲的相似程度为用户做出推荐。从可见的资料看，Last.fm~\cite{Lastfm}、豆瓣~\cite{DoubanFM} 主要是基于“相似的人往往具有相似的行为”的假设进行推荐。其中，虾米音乐~\cite{Xiami}还给出了推荐的同时还给出了做出推荐的原因，这在一定程度上提升了用户对推荐结果的接收程度。
-文献~\cite{rentfrow2003re}表明，人们在日常生活中的听歌行为要远远多于读书、看电影等行为，这说明音乐已经成为人们生活中不可缺少的一部分。为了提升人们在大数据时代消费音乐产品的体验，越来越多的工作开始关注推荐系统在音乐领域的应用，一些有效的音乐推荐算法也被提了出来。按照参考用户行为的长短，可以将这些算法分为基于用户长期行为的音乐推荐、基于用户即时行为的音乐推荐以及基于用户中期行为的音乐推荐三类。其中，基于用户长期行为和即时行为的音乐推荐已经得到了比较广泛地研究，而基于用户中期行为的音乐推荐由于考虑了上下文环境对用户行为的影响，目前也开始得到越来越多的关注。但是，目前关于用户中期行为的音乐推荐算法还存在对用户行为刻画不够细致、全面的问题，加之在一定程度上依赖于其他用户的行为，导致推荐的效果不够理想。
-为了提高基于中期行为的音乐推荐算法的效果，本文给出了一致基于多维时间序列分析的个性化音乐推荐方法，该方法将用户行为建模为一个多维时间序列，从而实现对用户行为细致、全面地分析。
-此外，用户的未来行为除了受中期行为的影响之外，还受其长期行为和即时行为的影响。但是，目前未见将这三种行为综合起来考虑来预测用户未来行为的工作。因此，本文在给出一种基于多维时间序列分析的音乐推荐方法的基础上，进一步给出一种基于用户三期行为的综合音乐推荐方法，从而全面地考察用户长期行为、即时行为和中期行为的贡献和作用。
-在给出基于多维时间序列分析的音乐推荐方法和基于用户三期行为的综合推荐方法之后，本文通过实验验证了所给方法能够取得比参考方法更高的推荐效果和更低的推荐误差。进一步地，本文基于上述方法实现了一个原型系统且在该系统中实现了所给方法的并行化，这验证了所给方法的可行性。
-本文结构按照如下方式进行组织：第2章介绍与本文工作相关的一些工作，包括常用的推荐算法、常用的物品相似度计算方法、推荐系统的评测指标以及文本处理、时间序列分析的相关理论等；第3章描述了本文所提的一种基于时间序列分析的个性化音乐推荐方法，包括问题的定义、方法的执行流程等；第4章描述了用户听歌行为的局部性特征和全局性特征并以此为基础给出一个基于时间序列分析的个性化音乐推荐系统框架；第5章给出了原型系统的相关实现技术；第6章对全文进行总结并给出对未来工作的展望。
 
-下面是~TODO~列表：
+信息分类技术是通过将互联网上的各种信息分门别类地组织起来来提高人们查询效率的，比如早期的Yahoo!和国内的58同城等信息分类网站。然而，信息分类技术往往依赖于人工，可扩展性差。随着互联网上信息的增加，这显然不合时宜。搜索引擎技术通过建立索引的方式将互联网上的网页组织起来，然后根据用户输入的关键字进行查询，比如Google 和百度。搜索引擎相对于信息分类技术来说已经有了很大的进步，能够适应互联网的快速发展。然而，人们很多时候要么不愿意费时费力地去输入关键字，要么无法准确地用关键字去描述自己的想法，比如“今天看什么电影好呢？”、“去哪儿吃饭呢？”等，此时搜索引擎就无能为力了。为了解放人们的双手以及深度挖掘人们的内在偏好和需求，推荐系统技术应运而生。
 
-\begin{itemize}
+推荐系统本质上是一种信息过滤系统，其通过对用户行为历史的分析挖掘出用户的行为偏好，进而帮助用户将海量信息中的无用信息过滤掉并将符合用户偏好的信息推荐给用户~\cite{adomavicius2005toward}。目前，推荐系统已经在各个领域得到了广泛的应用，比如电子商务领域的亚马逊和淘宝，在线视频领域的Netflix和优酷，在线音乐领域的Lastfm~\cite{Lastfm} 和豆瓣电台~\cite{DoubanFM}以及个性化阅读领域Flipboard和无觅阅读等。图1.1展示了电子商务领域Amazon的商品推荐系统界面和视频领域PPTV的在线视频推荐系统界面。
 
-\item （高优先级）增加本科生论文格式，当~bachelor~作为模板参数时生成本科生毕
-业论文格式。
-
-\item （低优先级）提供~UTF-8~格式，在此格式下提供对~Linux~系统的支持。
-
-\end{itemize}
-
-\section{系统要求}
-
-\texttt{NJUthesis}~宏包可以在目前大多数的~\TeX{}~系统中使用，例如~C\TeX{}、
- ~MiK\TeX{}、~te\TeX{}、~fp\TeX{}。
-
-\texttt{NJUthesis}~宏包通过~\texttt{ctex}~宏包来获得中文支持
-。~\texttt{ctex}~ 宏包提供了一个统一的中文~\LaTeX{}~文档框架，底层支持~CCT~
-和~CJK~两种中文~\LaTeX{}~系统。最新的~\texttt{ctex}~宏包可以从~
-\url{http://www.ctex.org}~网站下载。
-
-此外，~\texttt{NJUthesis}~宏包还使用了宏包~amsmath、~amsthm、~amsfonts、
- ~amssymb、~bm~、~geometry~、~enumitem~和~hyperref。目前大多数的~\TeX{}~系统
-中都包含有这些宏包。即使您系统中的宏包不全，您也可以到~CTAN~下载到这些宏包。
-
-最新的~C\TeX{}~套装（2.4.1~以上版本）中包含了以上列出的各种宏包，用户无需额
-外的设置即可使用。
-
-\section{下载与安装}
-
-NJUthesis~宏包的最新版本可以从~\url{http://njuthesis.googlecode.com/}~
-网站或者~
-\url{http://share.solrex.org/njuthesis/}~网站下载。
-
-对此宏包最简单的使用方法是直接修改~template.tex~和~template.bib~文件。如果您
-仅仅想安装宏包，可以将宏包文件放置到~\TeX{}~系统的~localtexmf/tex/latex/njuthesis~目录下，
-然后刷新~\TeX{}~系统的文件名数据库。
-
-关于安装过程的问题可以参考~C\TeX{}-FAQ~以及其他~\LaTeX{}~教材。
-
-\section{本模板打包的文件}
-
-关键文件：
-
-\begin{description}
-\item[NJUthesis.cls] 文档类文件，是~NJUthesis~宏包的主要文件，用户在文件头
-  ~\\documentclass~声明文档类为~NJUthesis~即可使用此文档类格式化文档。
-  一般不建议用户手工修改该文件。
-
-\item[NJUthesis.cfg] 配合文档类的控制文件，里面主要是一些字符串的定义。
-  用户可以编辑修改该文件。
-
-\item[template.tex] 随宏包包含的一个模板文件，该模板文件指示了该如何使用
-  宏包提供的文档类。用户可以使用该文件作为毕业论文源文件的很好的开端。
-
-\item[template.bib] 随宏包包含的模板文件相关的~BibTeX~文献数据库，当用户
-  使用~BibTeX~时可以以其为一个很好的开端；当用户使用自定义的参考文献时，
-  可以在模板文件中注释掉对其的引用并忽略该文件的存在。
-\end{description}
-
-辅助文件：
-
-\begin{description}
-\item[NJUthesis.bst] 默认的~BibTeX~样式文件，如果想修改样式，例如使用
-  ~IEEEtran.bst~作为~BibTeX~样式，只需要将~IEEEtran.bst~更名为
-  ~NJUthesis.bst~即可。
-
-\item[NJUthesis.pdf] 宏包帮助文档，其中有对宏包的说明以及对宏包源文件的
-  完全注释，适合高级用户修改文档类文件时参考。
-\end{description}
-
-\section{编译方法}
-
-下面以编译模板文件~template.tex~生成~template.pdf~为例，给出在不同情况下
-应该使用的编译命令流程。
-
-\subsection{Windows~平台下}
-
-\subsubsection{标准编译命令}
-
-如果您使用~BibTeX~管理参考文献，并且将自己的参考文件条目均添加到
-~tempalte.bib~中，编译命令应该为：
-
-\begin{Verbatim}[frame=lines]
-set ARTICLE=template
-latex %ARTICLE%.tex
-bibtex %ARTICLE%
-latex %ARTICLE%.tex
-gbk2uni %ARTICLE%
-latex %ARTICLE%.tex
-dvipdfmx %ARTICLE%.dvi
-pause
-\end{Verbatim}
-
-其中，bibtex~命令完成对参考文献的处理，gbk2uni~命令完成对~pdf~书签编码的
-处理，latex~命令生成~dvi~文件，dvipdfmx~命令生成~pdf~文件。如果您修改了
-模板文件名，例如将~template.tex~修改成~thesis-yang.tex~，那么您只需将第
-一句中的变量定义修改成~thesis-yang~即可。
-
-您可以将上面的命令保存成一个文件（并且建议这样做），例如~make.bat~，
-这样每次编译时双击该文件，
-或者在该目录的~Windows~命令行下输入~make~即可完成编译。
-
-\subsubsection{不使用~BibTeX}
-
-尽管我们强烈建议您使用~BibTeX~管理参考文献，如果您不使用~BibTeX~而是
-自己手写参考文献条目，那么您可以使用以下方式编译模板。
-
-首先在模板文件~template.tex~中注释掉引用~BibTeX~数据库的语句，即：
-
-\begin{Verbatim}[frame=lines]
-\bibliography{template}
-\end{Verbatim}
-
-\noindent 并加入手写的参考文献条目。
-
-其次使用下面命令编译模板文件：
-\begin{Verbatim}[frame=lines]
-set ARTICLE=template
-latex %ARTICLE%.tex
-latex %ARTICLE%.tex
-gbk2uni %ARTICLE%
-latex %ARTICLE%.tex
-dvipdfmx %ARTICLE%.dvi
-pause
-\end{Verbatim}
-
-\subsubsection{使用~pdflatex~命令}
-
-我们强烈不建议这样做，主要原因是本模板中文封面中的南京大学校徽和毛笔校名均
-使用的是~eps~图片，使用~pdflatex~无法对其进行正常处理。如果您希望使用
-~pdflatex~，那么您至少需要将这两张~eps~图片转成~jpg, png~或者~pdf~图片。
-
-出于对矢量图的偏好，我们目前不愿意提供与~pdflatex~兼容的图片格式，也不提供
-~pdflatex~的编译流程，因此您需要自己处理与~pdflatex~有关的兼容问题。
-
-\subsubsection{清理垃圾文件}
-
-latex~编译时会生成很多垃圾文件，下面的命令可以清理除~pdf~之外的垃圾文件，
-您可以将其保存成一个~clean.bat~的批处理文件，即可双击执行。
-
-\begin{Verbatim}[frame=lines]
-del /Q *.aux *.toc *.lon *.lor *.lof *.ilg *.idx *.ind
-del /Q *.out *.log *.exa *.nav *.snm *.bbl *.blg *.spl
-del /Q *.lot *.bak *~ *.dvi *.ps
-pause
-\end{Verbatim}
-
-如果想同时清除~pdf~文件，您可以在后面加上~*.pdf~，并保存成~dist-clean.bat~
-的批处理文件。
-
-\subsubsection{使用~cygwin~时的~Makefile}
-
-在~Windows~下使用~cygwin~时，用~Makefile~来对项目进行编译是再自然不过的想法。
-下面给出一个编译本模板可以使用的~Makefile。值得注意的是~Makefile~的缩进需要
-强制使用制表符。
-
-\begin{Verbatim}[frame=lines]
-ARTICLE=template
-ARTICLE_SRC=$(ARTICLE).tex $(ARTICLE).bib CASthesis.cfg
-IMAGES=
-
-all: article
-
-article: $(ARTICLE).pdf
-
-$(ARTICLE).pdf: $(ARTICLE_SRC) $(IMAGES)
-	latex $(ARTICLE).tex
-	bibtex $(ARTICLE)
-	latex $(ARTICLE).tex
-	gbk2uni $(ARTICLE)
-	latex $(ARTICLE).tex
-	dvipdfmx $(ARTICLE).dvi
-
-clean:
-	rm -f *.aux *.toc *.lon *.lor *.lof *.ilg *.idx *.ind
-	rm -f *.out *.log *.exa *.nav *.snm *.bbl *.blg *.spl
-	rm -f *.lot *.bak *~ *.dvi *.ps
-
-distclean: clean
-	rm -f *.pdf
-\end{Verbatim}
-
-\subsection{Linux~平台下}
-
-Void.
-
-\section{问题反馈}
-
-用户在使用中遇到问题、需要增加某种功能或者提供一个~patch，都可以到本项目的
-~Issue~列表中提出，Issue~列表的地址在：
-
+\begin{figure}[!h]
 \begin{center}
-\url{http://code.google.com/p/njuthesis/issues/list}
+\includegraphics [width=0.6\textwidth]{figures/recommender_system.eps}
+\caption{Amazon电商推荐及PPTV视频推荐}
+\label{fig_recommender_system}
 \end{center}
+\end{figure}
 
-欢迎大家反馈自己的使用情况，使我们可以不断改进宏包，但是在提问前请最好检查
-自己使用的是否为最新版本，以及列表中类似问题是否已经被提出。总之，谢谢您的
-支持！
+文献~\cite{rentfrow2003re}表明，人们在日常生活中的听歌行为要远远多于读书、看电影等行为，这说明音乐已经成为人们生活中不可缺少的一部分。音乐推荐系统正是推荐系统在音乐领域的应用，其旨在将人们从海量的音乐中解脱出来，通过分析用户的收听习惯以及歌曲本身的特征来为用户推荐符合用户需求的歌曲~\cite{song2012survey}。与传统的书籍、电影等物品相比，音乐本身以及人们消费音乐的方式具有如下一些特点：
 
-\chapter{论文撰写}
+\begin{enumerate}
+\item 歌曲往往时间比较短，而且大多是免费的，因此人们消费音乐作品的代价比较低，可以一次性收听一组歌曲。
 
-\section{文档类选项}
+\item 歌曲本身没有统一的划分标准，流派、心情、场合、年代等都可以作为歌曲的划分标准。比如，按照流派可以将歌曲分为流行、经典、摇滚等类别，按照心情可以分为欢快、伤感、忧伤等类别。
+    
+\item 即使是按照一个统一的标准对歌曲进行划分，一首歌曲往往并不是确定地属于某一个类别，而是以不同的程度分属于多个类别。比如，按照流派进行划分，张雨生的经典歌曲“大海”既属于经典也属于流行。
+    
+\item 用户在同一个平台下收听歌曲时往往是按照次序一首接着一首收听的，这说明用户对音乐的消费与次序有很强的关联。最后，用户在不同的上下文环境下对音乐作品的喜好也有所不同。比如，用户在睡觉前可能倾向于收听舒缓的歌曲而在运动时倾向于收听快节奏歌曲。
+\end{enumerate}
 
-NJUthesis~文档类提供有以下一些选项：
+为了满足人们对音乐的个性化需求，一些音乐推荐系统被设计和实现出来，如国外的Lastfm~\cite{Lastfm}、Pandora~\cite{Pandora}以及国内的豆瓣电台~\cite{DoubanFM}、 虾米音乐~\cite{Xiami}，图1.2展示了豆瓣电台和虾米音乐的推荐界面。这些音乐推荐系统首先建立自己的曲库，然后分析歌曲的特征和用户的听歌习惯继而为用户做出推荐。其中，Pandora~\cite{Pandora} 是当今最流行的音乐推荐系统之一，其通过Music Genome Project将400种属性分配给每一首歌曲，进而按照歌曲的相似程度为用户做出推荐。从可见的资料看，Last.fm~\cite{Lastfm}、豆瓣~\cite{DoubanFM} 主要是根据“相似的人往往具有相似的行为”这样的假设为用户做出推荐。虾米音乐~\cite{Xiami} 还给出了推荐的同时还给出了做出推荐的原因，这在一定程度上提升了用户对推荐结果的接收程度。
 
-\begin{description}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics [width=0.6\textwidth]{figures/douban_xiami.eps}
+\caption{豆瓣及虾米音乐电台示意图}
+\label{fig_douban_xiami}
+\end{center}
+\end{figure}
 
-\item[phd/master] 当选择~phd~时，生成南大博士论文，包含国家图书馆格式的封面，
-但不包括书脊，书脊需要单独制作；选择~master~时，生成南大硕士论文。
+在学术界，学者们也给出了一些有效的音乐推荐算法也被提了出来。按照它们参考用户行为序列长度的长短，我们将这些算法分为全面考察用户所有收听行为的基于用户长期行为的音乐推荐~\cite{resnick1994grouplens}~\cite{chordia2008extending}、仅考察用户当前收听行为的基于用户即时行为的音乐推荐~\cite{downie2003music}~\cite{hyung2012music} 以及考察用户在当前会话期内行为的基于用户中期行为的音乐推荐~\cite{hariri2012context}~\cite{mcfee2011natural}三类。其中，基于用户中期行为的音乐推荐由于考虑了上下文环境对用户行为的影响，因此得到了越来越多的关注。然而，以~\cite{hariri2012context}~\cite{mcfee2011natural} 为代表的基于用户中期行为的音乐推荐算法还存在如下问题：
 
-\item[oneside/twoside] 当选择~oneside~时，生成单面打印格式论文；当选择
-~twoside~时，生成双面打印格式论文。双面打印格式会将封面、摘要起始页、
-章起始页全部放在奇数页上。
+\begin{enumerate}
+\item 只能够定性地分析出目标歌曲可能隶属的类别，但无法定量地给出属于该类别的程度，对用户行为的描述不够细致。
 
-\item[dvipdfm/dvips/pdflatex] 兼容的编译命令选项，最好使用默认的~dvipdfm。
-如果您对默认的命令有意见，那么我们认为您充分了解这几个命令的不同，那么您
-足以自己修改图片格式和决定编译流程，所以使用其它选项时请不要完全使用本文
-中的帮助。
+\item 只考虑了若干显著类别的影响，忽视了其他类别对用户行为的贡献和作用，对用户行为的描述不够全面。
 
-\end{description}
+\item 在一定程度上依赖于其他用户的行为，但很多时候其他用户的行为很难获取，导致对当前用户行为的预测效果比较差。
+\end{enumerate}
 
-\section{封面和摘要页的字符串}
+为了提高基于中期行为的音乐推荐算法的效果，本文首先给出了一致基于多维时间序列分析的个性化音乐推荐方法，该方法将用户行为建模为一个多维时间序列，从而实现对用户行为细致、全面地分析。
 
-\texttt{NJUthesis}~宏包的设置都保存在~\texttt{NJUthesis.cfg}~文件中。用户可
-以在~\texttt{.tex}~中通过宏包提供的命令修改设置。对于常用的设置修改，如培养
-单位名称、专业名称等，可以直接在~\texttt{NJUthesis.cfg}~文件中进行。各培养单
-位可以修改后提供本单位统一的~\texttt{NJUthesis.cfg}~文件供本单位用户使用。
+然而，用户的未来行为除了受到用户中期行为的影响之外，还受到用户长期行为和即时行为的作用，但是目前未见工作将这三方面的影响和作用综合起来进行考虑。因此，本文进一步给出了一种基于用户三期行为的综合音乐推荐方法，全面地考察用户长期行为、即时行为和中期行为的贡献和作用。在给出基于多维时间序列分析的音乐推荐方法和基于用户三期行为的综合推荐方法之后，本文通过实验验证了所给方法能够取得比参考方法更高的预测命中率以及更低的推荐误差。最后，本文基于上述方法实现了一个原型系统并且在该系统中实现了本文方法的并行化，验证了所给方法的可行性。
 
-\section{内容撰写}
+本文结构按照如下方式进行组织：第2章介绍与本文工作相关的一些工作，包括常用的音乐推荐算法、常用的物品相似度计算方法、推荐系统的评测指标以及文本处理、时间序列分析的相关理论等；第3章描述了本文所提的一种基于多维时间序列分析的个性化音乐推荐方法，包括问题的定义、方法的执行流程等；第4章描述了本文在基于多维时间序列分析的音乐推荐方法的基础上进一步给出的基于用户三期行为的综合推荐方法；第5章给出了本文所实现的原型系统及相关实现技术；第6章对全文进行总结并给出对未来工作的展望。
 
-请阅读文献《\href{http://mirror.ctan.org/info/lshort/english/lshort.pdf}{The Not So Short Introduction to \LaTeXe{}}》
-~\cite{Oetiker2008}，或者其有点儿老的中文翻译版《\href{http://mirror.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf}{一份不太简短的~\LaTeXe{}~介绍}》\cite{lshort-cn}。
+\chapter{相关工作}
+\label{C:relatedwork}
 
-\section{插图}
+本章我们将介绍与本文工作相关的一些工作，首先我们介绍音乐推荐系统领域常用的一些推荐算法、物品相似度的常用计算方法以及一些常用的算法评估标准，然后我们介绍文本建模、时间序列分析以及实时流处理框架的相关工作，这些方法和技术将在本文后续工作中得到应用。
 
-请阅读文献《\href{ftp://ftp.tex.ac.uk/tex-archive/info/epslatex.pdf}{Using Imported Graphics in \LaTeX{} and pdf\LaTeX{}}》
-~\cite{Reckdahl2006}，或者其有点儿老的中文翻译版《\href{http://www.ctex.org/documents/latex/graphics/}{\LaTeXe{} 插图指南}》
-~\cite{Wang1997}。
+\section{音乐推荐算法}
 
-\section{数学公式}
+目前，音乐推荐系统领域的研究工作已经取得了长足的进步，出现了很多类型的音乐推荐算法。要想为用户推荐合适的歌曲，很多音乐推荐方法都要对用户的听歌行为进行分析。按照算法参照用户行为序列长度的长短，我们将这些音乐推荐算法分为基于用户即时行为的音乐推荐、基于用户长期行为的音乐推荐和基于用户中期行为的音乐推荐三类。本节将对这些推荐算法进行简单的介绍。
 
-请阅读文献《The LaTeX Companion》第~8~章``\href{http://media.cism.it/attachments/ch8.pdf}{Higher Mathematics}''\cite{Goossens1997}。
+\subsection{基于用户及时行为的推荐}
 
+基于用户即时行为的音乐推荐是最为朴素的一种音乐推荐方法，此类音乐推荐算法认为用户的状态在短期内保持稳定，而用户可能收听的下一首歌曲与用户当前收听的歌曲具有类似的特征。假如用户正在收听老狼的《同桌的你》，此类算法首先通过一定的方式抽取歌曲对应的特征即构建歌曲特征向量，并在此基础上将与《同桌的你》具有相似特征的歌曲推荐给用户，比如老狼的另一首经典校园民谣《睡在我上铺的兄弟》，豆瓣电台的“听相似歌曲”实现的正是这样一个功能。因此，以何种方式抽取歌曲特征就成了此类音乐推荐算法工作的关键。音乐作品作为人类情感表达的强有力工具除了具有基本的声学特征之外，还具有流派、心情、场合等特征以及歌曲对应的文本特征，而从不同的角度刻画往往可以得到不同的结果。比如，按照流派划分歌曲可以有流行歌曲、经典歌曲；按照心情划分可以有寂寞、开心、欢快；按照场合划分可以有学习、休息；按照年代划分可以有70后、80后等。文献~\cite{downie2003music}充分利用歌曲的编辑属性，将与当前歌曲具有相同或相似曲作者、歌曲名称以及歌词的歌曲推荐给用户。文献~\cite{bogdanov2011unifying}~\cite{cano2005content}~\cite{mak2010similarity}使用歌曲的声学特征为用户做出推荐，将与当前歌曲具有相似节奏、韵律、音色的歌曲推荐给用户。文献~\cite{kim2010music}使用心情特征对歌曲进行刻画并将与当前歌曲具有近似心情属性的歌曲推荐给用户。上述工作都是从单一方面对歌曲进行刻画并进而为用户做出推荐，但这种推荐往往是片面的，比如文献~\cite{bogdanov2011unifying}~\cite{cano2005content}对于对声学特征不敏感但对于情感特征敏感的用户就不适用。文献~\cite{hyung2012music}对歌曲对应的文本文档进行分析，使用语义特征对歌曲进行刻画，取得了不错的效果。
 
-\section{参考文献}
+基于用户即时行为的音乐推荐是一类比较朴素的推荐算法，其研究核心在于从何角度对歌曲进行刻画和描述并在抽取歌曲特征的基础上为用户推荐相似的歌曲。此类算法尽管也能够取得不错的推荐效果，但其问题也是显而易见的，即对用户行为特征的刻画过于简单，仅仅考察了用户当前行为而忽视了之前的行为。
 
-本节主要介绍参考文献的格式，在~NJUthesis~中控制参考文献的主要有两个
-地方：
+\subsection{基于用户长期行为的推荐}
 
-\begin{verbatim}
-\RequirePackage[sort&compress, numbers]{natbib}
-\end{verbatim}
+与基于用户即时行为的音乐推荐不同的是，基于用户长期行为的音乐推荐对用户所收听的所有歌曲都进行了考察和分析，常见的基于协同过滤的音乐推荐和基于全局特征的推荐都属于此类。
 
-\noindent 和
+协同过滤推荐(Collabrative Filtering, CF)是当前最为流行的一类推荐算法，其挖掘用户所处的社会化环境，利用群体智能为用户做出推荐。协同过滤推荐基于这样一个假设，即如果两个用户在过去有相同的行为，那么系统认为他们在未来也会有类似的行为~\cite{sarwar2001item}~\cite{linden2003amazon}~\cite{resnick1994grouplens}。当需要预测一个用户是否喜欢一个物品时，协同过滤推荐算法首先找到与当前用户喜好类似的用户，进而综合这些相似用户的喜好为用户推荐新的物品。假如用户A收听了《同桌的你》、《睡在我上铺的兄弟》、《朋友》，用户B收听了《同桌的你》、《朋友》、《白桦林》，用户C收听了《一无所有》、《北京北京》、《太阳》，那么此类算法认为用户A和用户B属于相似用户，进而可以将用户B收听但用户A收听的歌曲《白桦林》推荐给A。
 
-\begin{verbatim}
-\bibliographystyle{NJUthesis}
-\end{verbatim}
+基于全局特征的音乐推荐是基于用户长期行为推荐算法中比较朴素的一类推荐方法，此类算法认为用户的长期行为能够反映用户对音乐的偏好。因此，在抽取歌曲特征的基础上，此类算法将用户所收听的所有歌曲的平均特征作为用户的特征并推荐与此平均特征类似的歌曲给用户。文献~\cite{chordia2008extending}使用声学特征对歌曲进行刻画，然后计算用户所收听的所有歌曲的平均特征并以此作为用户特征。
 
-\noindent 第一个条目是~\texttt{natbib}~宏包，其规定了参考文献的排序和展示等
-格式，第二个条目是~\texttt{NJUthesis.bst}~文件，规定了参考文献条目的展示格式
-。期望使用下面的参考文献格式时，必须使用~\texttt{BibTeX}~来处理参考文献。
+由于基于用户长期行为的音乐推荐对用户的分析比较全面，因此此类算法往往能够得到相较于基于用户即时行为的音乐推荐能够得到比较不错的推荐效果。但是，此类算法对用户所处上下文的考虑不足，无法满足用户的即时需求。
 
-在~numeric mode~下（正如本文所用，将~\texttt{numbers}~作为~\texttt{natbib}~
- 参数），参考文献的标准引用方式是使用方括号加文献序号的方式，例如~
-\cite{Al-Osh1987}，这时候使用默认的~
+\subsection{基于用户中期行为的推荐}
 
-\begin{verbatim}
-\cite{key}
-\end{verbatim}
+基于用户中期行为的音乐推荐是这样一类推荐算法，它们认为用户在当前会话期内所收听的歌曲序列能够在一定程度上反映用户所处的上下文环境。因此，它们通过对用户在当前会话期内所收听的歌曲序列进行分析来完成对用户特征的抽取和歌曲的推荐。文献~\cite{park2011session}中给出了“当前会话期”的定义，即指用户正在收听歌曲的这一段连续时间。文献~\cite{park2011session}使用最近收听的几首歌曲去匹配用户的收听历史从而找到类似的收听行为并依据类似行为作出推荐。尽管能够取得一定的效果，但用户所收听的历史不一，对于历史行为少的用户，文献~\cite{park2011session}便无能为力。此外，文献~\cite{park2011session}没有对歌曲空间进行降维，而是直接使用歌曲本身去匹配，这更降低了算法的可行性。文献~\cite{hariri2012context}~\cite{mcfee2011natural}是基于用户中期行为的两类典型代表，这两类算法首先使用文本分析的方法将歌曲表示成由若干隐含主题构成的概率分布并使用若干显著主题表征歌曲。这样，它们便将用户在当前会话期内的收听行为建模为主题序列，通过对该主题序列的分析即可预测目标歌曲可能隶属的主题，进一步地可以讲目标主题中的显著歌曲推荐给用户。其中，文献~\cite{hariri2012context}使用以PrefixSpan为代表的模式挖掘算法对主题序列进行挖掘，而文献是使用~\cite{mcfee2011natural}是使用马尔可夫模型的方法对主题序列进行分析。文献~\cite{hariri2012context}~\cite{mcfee2011natural}能够取得一定地推荐效果，但是他们只是定性地预测目标歌曲可能隶属于哪个隐含主题，无法定量的给出具体的隶属度。此外，它们只是考察若干显著主题的作用和贡献而忽视了其他隐含主题的影响。再者，它们需要依赖其他用户的行为当前用户做出推荐。正是由于存在这些问题，使得文献~\cite{hariri2012context}~\cite{mcfee2011natural}的推荐效果收到很大的限制。
 
-\noindent 命令即可。但也可以使用~author year~的方式引用，例如~
-\citet{Al-Osh1987}，这时候使用
+由于基于用户行为的音乐推荐考察了用户所处的上下文环境，因此目前越来越多的工作开始关注此类工作。为了解决文献~\cite{hariri2012context}~\cite{mcfee2011natural}中存在的问题，本文给出一种基于多维时间序列分析的音乐推荐方法，使用主题模型将歌曲表示成一个由若干隐含主题构成的概率分布，并在此基础上将用户在当前会话期的行为表示成一个多维时间序列。通过对该多维时间序列的分析，预测得出用户可能收听的下一首歌曲的特征并从曲库中选择类似的歌曲推荐给用户。
 
-\begin{verbatim}
-\citet{key}
-\end{verbatim}
+用户的未来行为除了受到用户中期行为的作用之外还受到用户即时行为和长期行为的影响，但目前没有看到比较直观地工作将这三者进行综合考虑。为此，本文在给出一种基于多维时间序列分析的音乐推荐方法的基础上，进一步给出一种基于用户三期行为的综合推荐方法，综合考虑用户三期行为的贡献和作用。
 
-\noindent 命令。
+\section{相似度度量}
 
-但是，如果您希望在~numeric mode~下使用~authoryear mode~（将
- ~\texttt{authoryear}~作为~\texttt{natbib}~参数）的标签样式，例如~
-\citenju{Al-Osh1987}，可以使用我们自定义的
+由前文的介绍可知，几乎所有的音乐推荐方法都会涉及到用户之间相似度的计算或者歌曲之间相似度的计算，而本文工作主要涉及歌曲之间相似度的计算，因此本节将简单介绍几种歌曲相似度的计算方法。
 
-\begin{verbatim}
-\citenju{key}
-\end{verbatim}
+\subsection{余弦相似度}
 
-\noindent 命令，下面是一个例子：
+余弦相似度是推荐系统中计算用户与用户或者物品与物品之间相似度的一种常用方法，其通过测量两个向量内积空间的夹角的余弦值来度量它们之间的相似性。0度角对应的余弦值是1，而其他任何角度对应的余弦值都不大于1，并且其最小值是-1。如果两个向量的指向越接近，那么它们内积空间夹角的余弦值越接近于1，即二者越相似。相反，如果两个向量的指向越相离，那么它们内积空间夹角的余弦值越接近于-1，即二者越不相似。设向量\(\vec {X}_{a}\)和向量\(\vec {X}_{b}\)分别表示用户\emph{a}和用户\emph{b}的偏好向量，其中\(\vec {X}_{a}(i)\)表示用户\emph{a}对编号为\emph{i}的物品的偏好值或评分，\(\vec {X}_{b}(i)\)表示用户\emph{b}对编号为\emph{i}的物品的偏好值或评分。那么，用户\emph{a}和用户\emph{b}的相似度可以按照公式2.1进行计算，其中\emph{K}表示物品集合中物品的数目。
 
-\begin{verbatim}
-\Citenju{Al-Osh1987}~引入了~XXX，
-\citenju{Duffie2001}~介绍了~XXX。
-XXX~可见~\citenjup{Freeland1998}，
-XX~可见~(\citenjupr{Xu2007}; \citenjupr{Wang1999})。
-\end{verbatim}
+\(sim(\emph{a},\emph{b})=cos(\vec {X}_{a},\vec {X}_{b})=\frac{\sum_{i=1}^{K}{\vec {X}_{a}(i)\vec {X}_{b}(i)}}{\sqrt{\sum_{i=1}^{K}{\vec {X}_{b}(i)}^{2}}\sqrt{\sum_{i=1}^{K}{\vec {X}_{a}(i)}^{2}}}\)
 
-\Citenju{Al-Osh1987}~引入了~XXX，\citenju{Duffie2001}~介绍了~XXX。 XXX~可见~
-\citenjup{Freeland1998}，XX~可见~(\citenjupr{Xu2007}; \citenjupr{Wang1999})
-。
+\subsection{KL距离}
 
-\section{其它问题}
+KL距离也称相对熵或KL散度，是两个概率分布\emph{P}和\emph{Q}差别的非对称性的度量，用来度量使用基于\emph{Q}的编码来编码来自\emph{P}的样本平均所需的额外的比特个数~\cite{kullback1951information}。如果能够把物品表示称一个概率分布，那么显然可以用KL距离来衡量两个物品之间的相似度。设\(P=({p}_{1},...,{p}_{i},...,{p}_{K})\) 表示物品\emph{p}对应的概率分布，物品\emph{p}对应的概率分布用\(Q=({q}_{1},...,{q}_{i},...,{q}_{K})\)表示，其中\emph{K}表示随机变量的取值数目。那么，物品\emph{p}和\emph{q}之间的KL距离可以按照公式2.2进行计算，其取值非负。KL散度仅当概率\emph{P} 和\emph{Q} 各自总和均为1，且对于任何\emph{i}皆满足\(\emph{p}_{i}>0\) 及\(\emph{q}_{i}>0\)时才有定义，若式中出现的情况，其值按0处理。
 
-请到南京大学小百合论坛科技文献排版讨论区
-（网址：\url{http://bbs.nju.edu.cn/bbsdoc?board=Tex}），
-或者水木清华论坛~\LaTeX{}~讨论区
-（网址：\url{http://www.newsmth.net/bbsdoc.php?board=TeX}）
-提问。
+\({dis}_{KL}(p,q)=\sum_{i=1}^{K}ln\frac{{p}_{i}}{{q}_{i}}\)
 
-\chapter{常见问题}
-\label{C:FAQ}
+由于KL距离是非对称的，即
 
+\({dis}_{KL}(p,q)\neq{dis}_{KL}(q,p)\)
 
-\newtheoremstyle{question}% name
-  {}%      Space above, empty = `usual value'
-  {}%      Space below
-  {\tt}% Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries}% Thm head font
-  {.}%        Punctuation after thm head
-  {10pt}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
+而物品之间的相似度应该满足对称性，即
 
-\newtheoremstyle{answer}% name
-  {}%      Space above, empty = `usual value'
-  {}%      Space below
-  {\rm}% Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries}% Thm head font
-  {.}%        Punctuation after thm head
-  {10pt}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
+\(sim(p,q)=sim(q,p)\)
 
-\theoremstyle{question}
- \newtheorem{FAQ}{问题~}
-\theoremstyle{answer}
- \newtheorem{ANS}{回答~}
+因此，不能直接使用KL距离来计算物品之间的相似度，但可以使用\emph{p}到\emph{q}的KL距离与q到p的KL距离的平均值来作为二者的最终距离，这样就可以满足对称性的要求，如公式2.5 所示。进一步地，可以使用如公式2.6所示的方法计算二者之间的相似度。
 
-\section{表格}
+\({dis}_{avgKL}(p,q)=\frac{{{dis}_{KL}(p,q)}+{{dis}_{KL}(q,p)}}{2}\)
 
-\begin{FAQ}
-页眉里论文题目和各章标题中的字母均为大写，不能实现大小写的区别，
-而我写的论文需要在页眉中出现的标题中区分英文字母的大小写比如：
-YBaCuO而不是YBACUO。
-\end{FAQ}
+\({sim}_{KL}(p,q)=\frac{1}{1+{dis}_{avgKL}(p,q)}\)
 
-\begin{ANS}
-在~\texttt{NJUthesis.cfg}~文件中加上
-\begin{verbatim}
-\renewcommand\title[2][\NJUT@value@title]{%
-  \def\NJUT@value@title{#2}
-  \def\NJUT@value@titlemark{#1}}
-\def\chaptermark#1{\markboth {{\ifnum \c@secnumdepth>\m@ne
-  \if@mainmatter\CTEXthechapter \quad\fi
-  \fi #1}}{}}%
-\def\sectionmark#1{\markright{{\ifnum \c@secnumdepth >\z@
-  \CTEXthesection \quad \fi #1}}}
-\end{verbatim}
-\end{ANS}
+\subsection{Hellinger距离}
 
+Hellinger距离也是是一种度量两个概率分布之间相似度的方法。与KL距离不同的是，其天然满足对称性，因此可以直接用来计算物品之间的相似度~\cite{oosterhoff2012note}。物品p和物品q之间的Hellinger 距离可以按照公式2.7计算，进而按公式2.8可以计算二者之间的相似度。
 
-\section{脚注}
+\({dis}_{hellinger}(p,q)=\frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^{K}{\sqrt{{p}_{i}}-\sqrt{{q}_{i}}}^{2}}\)
 
-\begin{FAQ}
-如果在章节标题中加入注脚，则不仅会出现在本章首页的页脚，
-也会出现在目录的页脚，不知是否能够让其不要出现在目录的页脚中。
-\end{FAQ}
+\({sim}_{hellinger}(p,q)=\frac{1}{1+{dis}_{hellinger}(p,q)}\)
 
-\begin{ANS}
-可以使用如下的命令来定义章节的标题
+本文所提的基于多维时间序列分析的音乐推荐方法及在此基础上给出的基于用户三期行为的综合推荐方法将使用主题模型建模的方法将每一首歌曲表征为由若干隐含主题构成的概率分布。因此，KL 距离和Hellinger 距离将被应用于本文计算两首歌曲之间的相似度的工作中。
 
-\begin{verbatim}
+\section{评测指标}
 
-\chapter[出现在目录和页眉的标题]{出现在正文的标题\footnote{这个不会出现在目录中。}}
+推荐系统所研究的问题主要包括评分预测问题、Top-N推荐问题、冷启动问题、可解释性问题以及用户交互问题等~\cite{adomavicius2005toward}。其中，评分预测问题和Top-N推荐问题是得到最广泛研究且最为重要的内容。所谓评分预测问题即根据用户已经产生的评分记录来预测其对尚未评分物品的可能打分，而Top-N推荐是指为用户生成一个包含N个符合其偏好的物品列表。 围绕着这两类问题，研究人员给出了众多推荐算法，本文将简单介绍评测推荐算法优劣的一些指标。
 
-\end{verbatim}
-section、~subsection 等命令也有类似的用法。
-\end{ANS}
+\subsection{用户满意度}
+
+用户作为推荐系统的重要参与者也是推荐系统最终的服务对象，其满意度是评测一个推荐系统优劣的最重要指标。一般来说，用户满意度可以通过对一些用户行为的统计得到。比如，在电子商务网站中可以通过用户的实际购买情况来评判，或者通过设置“满意”/“不满意”按钮进行显示的统计。更一般的情况是，可以使用点击率、用户停留时间和转化率等指标度量用户的满意度。对于本文所研究的音乐推荐系统，可以统计用户在系统上的“喜欢”/“不喜欢”或者“收听”/“放弃”等行为来评估不同算法的推荐效果。显然，用户满意度作为真实场景中的评测指标往往只能通过用户调查或者在线实验的方法获得而无法实现离线计算，这增加了研究人员评估算法优劣的难度。因此，在实际的研究工作中很少通过这个指标来评估不同的推荐算法。
+
+\subsection{预测准确度}
+
+预测准确度是度量一个推荐系统或者推荐算法预测用户行为能力的重要指标。从推荐系统诞生的那一天起，几乎99\%与推荐系统相关的论文都在讨论这个指标，这主要是因为该项指标可以通过离线实验计算，方便了很多学术界的研究人员研究推荐算法。
+对于评分预测问题，一般使用均方根误差(Root Mean Square Error, RMSE)和平均绝对误差(Mean Absolute Error, MAE)来表征算法的预测准确度~\cite{herlocker2004evaluating}。RMSE可由公式2.9计算得到。
+
+\(RMSE=\sqrt{\frac{\sum_{u,i\in{T}}{({r}_{ui}-\hat{{r}_{ui}})}^{2}}{|T|}}\)
+
+其中，\emph{T}代表测试集，\emph{u}和\emph{i}表示测试集中的用户和物品，是用户\emph{u}对物品\emph{i}的实际评分，而是推荐算法给出的预测评分。
+
+MAE采用绝对值计算预测误差，如公式2.10 所示。
+
+\(MAE=\frac{\sum_{u,i\in{T}}|{r}_{ui}-\hat{{r}_{ui}}|}{|T|}\)
+
+显然，预测误差越小，那么预测准确度越高，那么推荐算法的效果越好。也就是说，一个优秀的推荐算法在RMSE和MAE这两项指标上的取值往往比较低。
+
+Top-N推荐一般通过准确率(precision)和召回率(recall)来度量算法的优劣。设R(u)是根据用户在训练集上的行为给用户作出的推荐列表，而T(u)是用户在测试集上的行为列表~\cite{powers2011evaluation}。 那么，推荐结果的准确度和召回率如公式2.11和2.12所示.
+
+\(Precision=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|R(u)|}\)
+
+\(Recall=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|T(u)|}\)
+
+\subsection{其他评测指标}
+
+除了预测准确度这一重要指标之外，推荐系统的评测还有诸如覆盖率、多样性等指标，这些指标从不同的角度看待推荐的有效性。其中，覆盖率(Coverage)描述一个推荐系统对物品长尾的发掘能力，可以简单地定义为推荐系统能够推荐出来的物品占总物品集合的比例。覆盖率越大，说明系统所能推荐的物品越广泛，也说明系统挖掘物品长尾的能力越大。多样性(Diversity)用来描述推荐列表中物品两两之间的不相似性，列表中物品两两之间的相似性越小表示推荐的多样性越大。
+
+考虑到用户满意度无法进行离线实验以及覆盖率、多样性的对推荐算法的表征能力不佳，本文后面主要使用预测准确度来评估本文所提的推荐方法及框架，即评估本文所提推荐方法和框架是否能够得到比其他算法更高的准确度和召回率以及更低的预测误差。
+
+\section{分布式实时计算系统}
+
+尽管目前单机的处理能力已经得到极大的提升，但其在应对大数据时代产生的海量数据时仍然非常吃力。为了解决大数据时代海量数据的处理和分析的问题，Google提出了一种分布式的计算模型，即MapReduce，该模型使得由一般能力机器组成的集群可以完成大规模或者超大规模的计算工作。在Google工作的启发下，Apache于2005年开发了目前得到广泛应用的分布式应计算框架Hadoop。Hadoop~\cite{Hadoop}对于批处理的工作以及离线的海量数据分析比较有优势，但其对一些在实时性方面要求比较高的计算任务的处理能力有所欠缺。为了弥补Hadoop 的这一缺憾，以Storm~\cite{Storm}为代表的一些分布式实时计算系统被开发了出来，这些系统及框架在实时数据流分析方面能够取得比Hadoop更好的效率和效果。这里，Storm 是由Twitter 开发的一款开源的分布式实时计算框架，其主要适用于流数据处理和分布式远程过程调用两种场景。对于流数据处理场景，Storm可以用来处理源源不断流进来的消息，处理之后将结果写入到某个存储中去。此外，Storm的处理组件是分布式的且处理延迟极低，使得其在分布式远程过程调用的场景中也能够得到比较充分的应用。本文所要解决的问题恰恰是一个实时数据流的分析问题，因此本文后面将会选用Storm进行数据的分析和处理，本节将对其基本组成及其在分布式远程过程调用中的应用进行介绍。
+
+\subsection{基本组成}
+
+一个传统的Storm集群往往是由一个主控节点(Master Node)和多个工作节点(Work Nodes)组成。其中，主控节点上运行着一个名为“Nimbus”的守护进程，用于分配代码、布置任务及故障检测，而每个工作节点都运行一个名为“Supervisor”的守护进程，用于监听工作、开始及终止工作进程。Nimbus和Supervisor都能快速失败，而且是无状态的，这样一来它们就变得十分健壮，而两者的协调工作是由Apache ZooKeeper来完成的。
+
+在Storm中，一个实时应用的计算任务被打包成一个Topology任务发布，且Topology任务一旦提交后永远不会结束，除非用户显式地去停止任务。这里，计算任务Topology是由多个Spout和Bolt计算组件构成，而这些计算组件之间是通过数据流连接起来的。其中，Spout是Storm中的消息源，用于为Topology生产消息（数据），一般是从外部数据源（如Message Queue、RDBMS、NoSQL、Realtime Log）不间断地读取数据并发送给Topology；Bolt是Storm中的消息处理者，用于为Topology进行消息的处理，Bolt可以执行过滤，聚合，查询数据库等操作且可以一级一级的进行处理。Topology中每一个计算组件（Spout和Bolt）都有一个并行执行度，在创建Topology时可以进行指定，Storm会在集群内分配对应并行度个数的线程来同时执行这一组件。图2.5是Twitter Storm官方给出的一个典型的Topology示意图，其中水龙头表示用以生产数据的Spout组件，闪电表示用户处理数据Bolt组件，消息或数据由Spout组件产生后便在不同的Bolt组件中进行流动并被处理。
+
+除此之外，Storm还有Stream、Stream Grouping、Task、Worker等关键概念。其中，Stream表示被处理的数据；Stream Grouping表示Bolt接收什么样的数据作为输入数据，即上游组件以何种方式将消息或数据分组并传给下游组件，一般有广播(All Grouping)、随机分组(Shuffle Grouping)、按字段分组(Field Grouping)、直接分组(Direct Grouping)以及不分组(No Grouping)等分组方式；Task表示运行于Spout和Bolt中的线程，而Worker表示运行这些线程的进程。在具体实现时，用户只需要在Spout组件中实现数据读取及分割的逻辑，在Bolt组件中实现数据的处理逻辑，同时在各组件中指定数据流动的分组方式即可轻松地完成并发布一个实时计算的任务。
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics [width=0.6\textwidth]{figures/storm.eps}
+\caption{典型Twitter Storm示意图}
+\label{fig_storm}
+\end{center}
+\end{figure}
+
+\subsection{分布式过程调用}
+
+分布式远程过程调用（Distributed Remote Procedure Call，DRPC）是联系客户端与Storm集群的一种机制，Storm中引入这一机制的主要目的是利用Storm的实时计算能力来并行化CPU 密集型计算。Storm集群上运行的拓扑接收调用函数的参数信息作为输入流，并将计算结果作为输出流发射出去。其中，DRPC通过是DRPC Server实现的，其整体工作过程如下：
+
+\begin{enumerate}
+\item 接收到一个RPC调用请求；
+
+\item 发送请求到Storm上的拓扑；
+
+\item 从Storm上接收计算结果；
+
+\item 将计算结果返回给客户端。
+\end{enumerate}
+　　　
+图2.6更为细致地描述了DRPC的工作流程，大致可以分为如下五个步骤：
+
+\begin{enumerate}
+\item Client向DRPC Server发送被调用执行的DRPC函数名称及参数；
+
+\item Storm上的Topology通过DRPCSpout实现这一函数，从DPRC Server接收到函数调用流；
+
+\item DRPC Server会为每次函数调用生成唯一的id；
+
+\item Storm上运行的Topology开始计算结果，最后通过一个ReturnResults的Bolt连接到DRPC Server，发送指定id的计算结果；
+
+\item DRPC Server通过使用之前为每个函数调用生成的id，将结果关联到对应的发起调用的Client，将计算结果返回给Client。
+\end{enumerate}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics [width=0.6\textwidth]{figures/drpc.eps}
+\caption{DRPC工作流程示意图}
+\label{fig_drpc}
+\end{center}
+\end{figure}
+
+\section{文本建模}
+
+为了对歌曲进行全面且完整的描述和刻画，本文将使用文本分析的方法对表征歌曲的文本信息进行分析，本节简单介绍一些基本的文本建模方法。
+
+\subsection{向量空间模型}
+
+计算机不具备人脑的结构，无法理解自然语言，所以需要首先将无结构的自然语言文本转化为计算机可计算的特征文本。为此，Salton等人在20世纪70年代提出了向量空间模型(Vector Space Model, VSM)~\cite{salton1975vector}。向量空间模型首先将每一个文档看做一个词袋(Bag of Words)，即认为一篇文档是由一组词构成的一个集合且词与词之间没有顺序以及先后的关系。其次，向量空间模型将文档表示成一个向量，向量的每一维表示一个词项，而向量每一维的取值表示该词项在文档中的权重。对于文档集合\emph{D}中编号为\emph{j}的文档\({d}_{j}\)，可以将之表示成一个\emph{t}维的向量\(\vec {{d}_{j}}=({\omega}_{1,j},...,{\omega}_{t,j})\)，其中\emph{t}表示词项的数目，\({\omega}_{i,j}(1\leq{i}\leq{t})\) 表示第\emph{i}个词项在文档\({d}_{j}\)中的权重。在对文本进行建模的过程中，词的选取及权重的计算有以下几种典型方式：
+
+\begin{enumerate}
+\item 布尔模型。这是最为简单直观的一种计算词项权重的方法，即将词项在文档中是否出现作为其权重，如果词项在文档中出现那么将其权重记为1，否则记为0。虽然这种方法比较简单，但是它没有体现词语在文档中出现的频率。一般来讲，词语在文档中出现的越多，说明它对该篇文档的重要性越大（“的”、“得”、“地”、“是”等停用词除外）。
+
+\item 词频模型。与布尔模型不同的是，词频(Term Frequency, TF)模型统计词项在文当中出现的次数，然后得到词项的频率，并将之作为词项的权重。词项\({t}_{i}\)相对于文档\({d}_{j}\)的词频表示成:
+    
+    \({tf}_{i,j}=\frac{{n}_{i,j}}{\sum_{k}{n}_{k,j}}\)
+    
+    这里,\({n}_{i,j}\)表示该词项在该文档中出现的次数。这突出了词频对词项重要性的影响，能够取得比布尔模型较好的效果。但是，词语的重要性不仅随着它在文档中出现的次数成正比增加，而且可能会随着它在语料库中出现的频率成反比下降。也就是说，一个词语在整个语料库中出现得越频繁，则它对于文档的重要性越低，对文档的区分度量越差。
+    
+\item 词频-逆向文本频率模型。词频-逆向文本频率(Term Frequency - Inverse Document Frequency，TF-IDF)是对上述TF模型的补充，词项的重要性随着其在特定文档中出现次数的增加而增强，但同时随着其在全体文本中出现次数的增加而减弱，即该模型认为对区别文档最有意义的词语应该是那些在文档中出现频率高、而在整个语料库中的其他文档中出现频率少的词语。词项\({t}_{i}\)相对于文档\({d}_{j}\)的TF-IDF取值表示为:
+    
+    \({tfidf}_{i,j}={tf}_{i,j}\times{{idf}_{i}}\)
+    
+    这里，\({idf}_{i}\)为逆向文本频率，定义为：
+    
+    \({idf}_{i}=log\frac{|D|}{|\{j:{t}_{i}\in{{d}_{j}}\}|}\)
+    
+    其中，\(|D|\)表示文档集合中的文件总数，\(|\{j:{t}_{i}\in{{d}_{j}}\}|\)表示文档集合中包含词项\({t}_{i}\)的文件数目。TF-IDF结构简单，容易理解，被广泛应用。但是，其无法准确捕捉文档内部与文档间的统计特征，也不能解决同义词和多义词的问题，因此精确度不是很高
+\end{enumerate}
+
+\subsection{隐含狄利克雷模型}
+
+为了解决同义词和多义词的问题，Blei等人于2003年提出了隐含狄利克雷分配模型(Latent Dirichlet Allocation，LDA)~\cite{blei2003latent}~\cite{hoffman2010online}。LDA也是一种典型的词袋模型，其认为一篇文档由多个主题构成，而文档中每一个词都是由对应的主题生成而来。进一步地，LDA被看做是一种主题模型，它将文档看做是一组隐含主题的概率分布。其中，主题表示一个概念、一个方面，表现为一系列相关的单词，是这些单词的条件概率。形象来说，主题就是一个桶，里面装了出现概率较高的单词而这些单词与这个主题有很强的相关性。这样，LDA模型便通过隐含主题将文本与词项联系起来，从而达到降维的目的。LDA是一种生成模型，一篇文档按照如下所示的规则生成：
+
+\begin{enumerate}
+\item 假设有两种类型的桶，一种是文档-主题桶，桶里的每一个球代表一个主题；另一种桶是主题-词汇桶，桶中的每一个球代表一个词汇。
+
+\item 文档的生成过程就是不断从桶中取球的过程，每一次先从文档-主题桶中取出球，得到该球代表的主题编号\emph{z}。
+
+\item 从编号为\emph{z}的主题-词汇桶中取球，得到一个词汇。
+
+\item 不断重复2,3两步，即可生成一篇文档。
+\end{enumerate}
+
+在LDA模型中，记文档-主题的概率分布为多项式分布\(\vec{\theta}\)，主题-词汇的概率分布为多项式分布\(\vec{\varphi}\)。LDA模型认为\(\vec{\theta}\)和\(\vec{\varphi}\)是模型中的参数，而考虑到和都是多项式分布，模型选择狄利克雷(Dirichlet)分布作为其先验分布。在确定了这些分布之后，LDA下面需要做的就是估计这些分布的参数，如下所示的吉布斯取样（Gibbs Sampling）是目前比较流行的采样方法：
+
+\begin{algorithm}
+\caption{LDA模型的Gibbs采样算法}
+\label{alg:gibbssampling}
+\begin{algorithmic}[1]
+\STATE 首先对所有文档中的所有词遍历一遍，为其都随机分配一个主题，即\({z}_{m,n}=k\sim{Mult(1/K)}\) ，其中\emph{m}表示第\emph{m}篇文档，\emph{n}表示文档中的第\emph{n} 个词，\emph{k}表示主题，\emph{K}表示主题的总数，之后将\({{n}^{k}}_{m}\)、\({n}_{m}\)、\({{n}^{t}}_{k}\)、\({n}_{k}\)都加1, 它们分别表示在第\emph{m}篇文档中主题\emph{k}出现的次数、第\emph{m}篇文档中主题数量的和、主题\emph{k}对应的词\emph{t}的次数，\emph{k}主题对应的总词数。
+
+\STATE 对第1篇文档中的所有词进行遍历，假如当前文档中的词\emph{t}对应主题为\emph{k}，则将\({{n}^{k}}_{m}\)、\({n}_{m}\)、\({{n}^{t}}_{k}\)、\({n}_{k}\)都减1, 即先拿出当前词，之后根据LDA中Topic Sample的概率分布取样出新的主题，再将\({{n}^{k}}_{m}\)、\({n}_{m}\)、\({{n}^{t}}_{k}\)、\({n}_{k}\)都加1。其中，\(\alpha\)和\(\beta\)为对应的Dirichlet分布的参数，\emph{V}为词汇总数。
+
+\(p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m,-i}+{\alpha}_{k})}{\sum_{t=1}^{V}({{n}^{t}}_{k,-i}+{\beta}_{t})}}\)
+
+\STATE 重复步骤2直至遍历所有文档。
+
+\STATE 输出LDA模型中的参数\(\vec{\theta}\)和\(\vec{\varphi}\)。
+
+\({\theta}_{m,k}=\frac{{{n}^{k}}_{m}+{\alpha}_{k}}{{n}_{m}+{\alpha}_{k}}\)
+
+\({\varphi}_{k,t}=\frac{{{n}^{t}}_{k}+{\beta}_{t}}{{n}_{k}+{\beta}_{t}}\)
+
+\end{algorithmic}
+\end{algorithm}
+
+在本文后续实验中，我们将分别以TF-IDF为代表的向量空间模型和以LDA为代表的主题模型对歌曲对应的文档进行建模，发现LDA能够获得较高的推荐准确率，因此我们将采用LDA作为我们主要的文本建模方法。
+
+\section{时间序列预测}
+
+歌曲时间短、消费代价低的特点决定了其能够较容易的形成序列，且是这种序列有严格的时间顺序，本文工作将通过对用户在会话期内所收听歌曲形成的时间序列的分析来预测用户的接下来的行为。因此，本节将简单介绍一些常用的时间序列预测模型。
+
+\subsection{简单平均法}
+
+简单平均法是以观察期内时间序列的各期数据（观察变量）的平均数作为下期预测值，按照采用的平均方法又可以分为算术平均法、加权平均法和几何平均法三类。其中，算术平均法以观察变量的算术平均数作为下期预测值，加权平均法以观察变量的加权算术平均数作为下期的预测值，而几何平均法是以观察变量的几何平均数作为下期的预测值。简单平均法比较简单、直观，但其预测误差一般偏高。
+
+\subsection{指数平滑法}
+
+指数平滑法是由移动平均法改进而来的，是一种特殊的加权移动平均法。这种方法既有移动平均法的长处，又可以减少历史数据的数量。首先，它把过去的数据全部加以利用。其次，它利用平滑系数加以区分 ，使得近期数据比远期数据对预测值影响更大。它特别适合用于观察值有有长期趋势和季节变动，必须经常预测的情况。按照平滑的次数可以可分为一次指数平滑法和多次指数平滑法。其中，一次平滑法是计算时间序列的一次指数平滑值，以当前观察期的一次指数平滑值为基础，确定下期预测值。与二次移动平均法类似，二次指数平滑法就是对时间序列的一次指数平滑值再次进行指数平滑。
+
+\subsection{差分整合移动平均自回归模型}
+
+差分整合移动平均自回归模型(Autoregressive Integrated Moving Average model,ARIMA)又称为Box-Jenkins方法，是一种由Box和Jenkins于1970年提出的一种时间序列预测方法，目前已经得到广泛的应用~\cite{makridakis1997arma}。在模型ARIMA(p,d,q)中，“AR”表示自回归模型，p为自回归阶数，“MA”表示滑动平均模型，q表示滑动平均的阶数，d表示将时间序列转化为平稳时间序列所作的差分次数，即差分阶数。显然，ARIMA首先需要进行d次差分从而将非平稳序列转化为平稳序列，然后利用自回归模型和滑动平均模型对转换后的平稳序列进行预测。进一步的，模型ARIMA(p,d,q)可以表示成如下三个式子。
+
+\(\Phi(B){(1-B)}^{d}{y}_{t}=\delta+\Theta(B){\varepsilon}_{t}\)
+
+\(\Phi(B)=1-\sum_{i=1}^{p}{\varphi}_{i}{B}^{i}\)
+
+\(\Theta(B)=1+\sum_{i=1}^{q}{\theta}_{i}{B}^{i}\)
+
+其中,为时间序列Y的第t个取值,B是滞后算子，和为模型参数,它们可以通过最小二乘等方法获得。
+
+ARIMA的执行流程主要分为模型识别(Model Identification)、参数估计(Parameter Estimation)和诊断检测(Diagnostic Checking)三个阶段。其中,模型识别阶段主要完成检测序列是否平稳的工作。如果序列不平稳，那么则通过差分的方法将序列转化为平稳序列并给出差分阶数d。在此基础上，识别序列适用的可能模型，如自回归模型或滑动平均模型或者二者的混合。而参数估计阶段主要完成模型参数的估计工作，即通过最小二乘法估计参数和。诊断检测阶段用以检测所给出的模型及参数是否符合条件，如果符合则选用此模型进行预测，否则重新识别模型。
+
+ARIMA模型将应用在本文后续的工作中，已完成对用户行为序列的分析和预测。后续实验结果显示，使用ARIMA模型进行时间序列预测，能够得到较好的效果。
+
+\chapter{一种基于多维时间序列分析的音乐推荐方法}
+\label{C:mtsa}
+
+\section{问题描述}
+
+\section{方法框架}
+
+\section{主题模型建模}
+
+\section{多维时间序列构造与预测}
+
+\section{相似度计算}
+
+\section{推荐列表生成}
+
+\section{实验设计和结果}
+
+\subsection{数据收集}
+
+\subsection{评测标准}
+
+\subsection{实验设置}
+
+\subsection{结果分析}
+
+\chapter{一种基于用户三期行为的综合音乐推荐方法}
+\label{C:intergrated}
+
+\section{问题分析}
+
+\section{常用综合策略}
+
+\subsection{整体式综合}
+
+\subsection{并行式综合}
+
+\subsection{流水线式综合}
+
+\section{方法详述}
+
+\subsection{方法框架}
+
+\subsection{方法选取}
+
+\subsection{方法综合}
+
+\section{实验结果}
+
+\section{分析讨论}
+
+\chapter{系统实现}
+\label{C:system}
+
+\section{系统架构}
+
+\section{离线处理模块}
+
+\subsection{爬虫系统}
+
+\subsection{结巴分词}
+
+\subsection{Gensim软件包}
+
+\section{在线处理模块}
+
+\subsection{序列生成}
+
+\subsection{推荐引擎}
+
+\section{系统效果}
 
 \chapter{总结与展望}
-\label{C:CONC}
+\label{C:conclusion}
+
+\section{工作总结}
+
+\section{工作展望}
 
   % 附录
 \appendix
 
-\chapter{博士(硕士)学位论文编写格式规定(试行)}
+\chapter{数据集使用说明}
+\label{C:dataset}
 
-\section{适用范围}
+\section{权利声明}
 
-本规定适用于博士学位论文编写，硕士学位论文编写应参照执行。
+本数据集抓取自Lastfm，所有数据归Lastfm所有，禁止商业用途。
+如果您想使用该数据集进行科研活动，请务必给出对Last.fm及本文的引用信息。
 
-\section{引用标准}
-
-GB7713科学技术报告、学位论文和学术论文的编写格式。
-
-GB7714文后参考文献著录规则。
-
-\section{印制要求}
-
-论文必须用白色纸印刷，并用A4(210mm×297mm)标准大小的白纸。纸的四周应留足空白
-边缘，上方和左侧应空边25mm以上，下方和右侧应空边20mm以上。除前置部分外，其它
-部分双面印刷。
-
-论文装订不要用铁钉，以便长期存档和收藏。
-
-论文封面与封底之间的中缝（书脊）必须有论文题目、作者和学校名。
-
-\section{编写格式}
-
-论文由前置部分、主体部分、附录部分(必要时)、结尾部分(必要时)组成。
-
-前置部分包括封面，题名页，声明及说明，前言，摘要(中、英文)，关键词，目次页，
-插图和附表清单(必要时)，符号、标志、缩略词、首字母缩写、单位、术语、名词解释
-表(必要时)。
-
-主体部分包括绪论(作为正文第一章)、正文、结论、致谢、参考文献表。
-
-附录部分包括必要的各种附录。
-
-结尾部分包括索引和封底。
-
-\section{前置部分}
-
-
-\subsection{封面（博士论文国图版用）}
+\section{数据特点}
 
 \begin{enumerate}
-\item 封面是论文的外表面，提供应有的信息，并起保护作用。
+\item 包含完整的用户、歌曲、曲作者的基本信息。
 
-\item 封面上应包括下列内容：
+\item 包含丰富的用户行为记录，可用于构造用户行为序列。
+
+\item 包含歌曲、曲作者的显著标签信息，可用于从文本的角度描述歌曲和作者。
+
+\item 提供了标签的基本信息。
+
+\item 数据被随机分组，可直接用来实验。
+\end{enumerate}
+
+\section{组织形式}
+
+本数据集使用Mysql进行管理，对应的数据库名为lastfm，您可以非常容易地将其导入并使用。数据集包含有5个基本的数据表：
 
 \begin{enumerate}
+\item 记录表record用于记录用户的收听行为，如某用户在某时间段收听了某歌曲。record由记录标识符(rid:int)、用户标识符(uid:varchar)、歌曲mbid(mbid:varchar)、记录发生的unix时间戳(uts:varchar)、记录发生的日期时间(datetime:varchar)、记录所属分组(scale:int)等字段构成。
 
-\item 分类号  在左上角注明分类号，便于信息交换和处理。一般应注明《中国图书资
-料分类法》的类号，同时应注明《国际十进分类法UDC》的类号；
+\item 用户表user用于记录用户的基本信息，其由用户标识符(uid:varchar)、用户名(username:varchar)、用户国籍(country:varchar)、用户年龄(age:varchar)、用户性别(gender:varchar)、用户注册时的unix时间戳(registeredTime:varchar)、用户注册日期时间(registeredText:varchar)、播放序列(playlist:text)、用户所属分组(scale:int)等字段构成。
 
-\item 密级  在右上角注明密级；
+\item 歌曲表song用于记录歌曲的基本信息，其由歌曲标识符(sid:varchar)、歌曲对应mbid（mbid:varchar）、歌曲名称(name:text)、歌曲时长(duration:varchar)、曲作者标识符(aid:varchar)、曲作者名称(aname:varchar)、专辑名(album:text)、听众数目(listeners:varchar)、播放次数(playcount:varchar)、描述歌曲的显著标签(toptag:text)等字段构成。
 
-\item “博士学位论文”用大号字标明；
+\item 曲作者表artist用于记录曲作者的基本信息，其由曲作者标识符(mbid:varchar)、曲作者名称(name:text)、曲作者图片的链接(img:text)和描述曲作者的显著标签(toptag:text) 构成。
 
-\item 题名和副题名   用大号字标明；
-
-\item 作者姓名；
-
-\item 学科专业名称；
-
-\item 研究方向；
-\item 导师姓名，职称；
-\item 日期包括论文提交日期和答辩日期；
-\item 学位授予单位。
-\end{enumerate}
+\item 标签表tag用于记录标签的基本信息，其由标签标识符(id:varchar)、标签名称（name:text）、标签被创建的次数(reach:varchar)、标签被使用的次数(taggings:text)等字段构成。
 \end{enumerate}
 
-\subsection{题名}
+\section{字段解析}
+
+
+\subsection{scale}
+
+记录表record和用户user中的scale字段用以表征记录和用户所处的分组编号。为了方便，本数据集将用户记录和用户分为Unused、Small、Whole和Session四类。
+
+其中，Small、Whole和Session被scale字段分割成40组，其中第0组到第9组属于Small数据集，第0组到第29组属于Whole数据集，第30组到第39组属于Session数据集。Unused数据的scale设为-1。显然，Small数据集是Whole数据集的一部分，它们的特点是每一个用户所收听的歌曲都在一个会话期内，即不存在长时中断。从Whole数据集中划分出Small数据集的主要目的是方便机器性能不佳的用户使用，对于Small数据集，用户可以使用10组中的9组作训练集而余下的一组作测试集。Session数据集与Whole数据集的主要区别是每一个用户所收听的歌曲至少在两个会话期内。类似的，用户可以用其中9组作训练集而余下的一组作测试集。下表给出了Small、Whole和Session三类数据集的基本统计信息。
+\begin{table}[!hbp]
+\caption{数据集的统计信息}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & Small & Whole & Session \\
+\hline
+ 用户数 & 1530 & 4590 & 1690 \\
+\hline
+ 歌曲数 & 24992 & 62422 & 32218 \\
+\hline
+ 稀疏度 & 99.92 & 99.97 & 99.92 \\
+\hline
+ 最大长度 & 30 & 30 & 66 \\
+\hline
+ 最短长度 & 10 & 10 & 20 \\
+\hline
+ 中位长度 & 24 & 24 & 30 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{playlist}
+
+数据表user中的playlist字段用以表征用户按序收听的歌曲构成的序列，数据如“sid1:ratio1==>sid2:ratio2==>...==>sidn:ration”所示。其中，sid表示被听歌曲的标识符(注:非mbid)。ratio表示两首歌之间的时间间隔与前一首歌曲时长的比例，用以表征用户收听该首歌曲的时长比例。显然，ratio 过小表示用户刚开始收听遍跳过，ratio过大表明歌曲被完整收听而且还可能有暂停发生。
+
+\subsection{toptag}
+
+数据表song和artist中的字段toptag表示Lastfm网站中的用户给歌曲或曲作者所打的显著标签，数据如“{tag1:count1,tag2:count2,...,tagn:countn}”所示。其中，tag表示被打标签名称，count表示标签被标记次数。需要注意的是，在Lastfm中，count并非标签被应用于歌曲或曲作者的绝对次数，而是标签相对于被使用最多次的标签的相对次数。例如在描述歌曲“Collapse of History”的标签中，“industrial”被使用最多次且次数为200，而标签“Stars”被使用100次。那么，在歌曲记录对应的字段toptag中，“industrial”对应的count为100，“Stars”对应的count为50，即{“industrial”:100,”starts”:50}，以此类推。
+
+\subsection{其他字段}
+
+数据表中的其他字段都比较简单直观，这里就不再一一介绍。
+
+\section{应用场景}
 
 \begin{enumerate}
-
-\item 题名是以最恰当、最简明的词语反映论文中最重要的特定内容的逻辑组合。
-
-题名所用每一词语必须考虑到有助于选定关键词和编写题录、索引等二次文献可以提供
-检索的特定实用信息。
-
-题名应避免使用不常见的缩略词、首字母缩写字、字符、代号和公式等。
-
-题名一般不宜超过20字。
-
-论文应有外文题名，外文题名一般不宜超过10个实词。
-
-\item 可以有副题名。
-\item 题名在整本论文中不同地方出现时，应完全相同。
+\item 使用文本分析的方法描述歌曲或者曲作者特征。
+\item 分析用户所收听歌曲的序列，包括跨会话分析和会话内分析。
+\item 预测用户下一首可能收听的歌曲或者曲作者。
+\item 生成用户可能喜欢的播放列表。
+\item 标签预测问题。
+\item 其他适合的应用场景。
 \end{enumerate}
-
-\subsection{前言}
-
-前言是作者对本论文基本特征的简介，如论文背景、主旨、目的、意义等并简述本论文
-的创新性成果。
-
-\subsection{摘要}
-
-\begin{enumerate}
-
-\item 摘要是论文内容不加注释和评论的简单陈述。
-
-\item 论文应有中、英文摘要，中、英文摘要内容应相同。
-
-\item 摘要应具有独立性和自含性，即不阅读论文的全文，便能获得必要的信息，摘要
-中有数据、有结论，是一篇完整的短文，可以独立使用，可以引用，可以用于推广。摘
-要的内容应包括与论文同等量的主要信息，供读者确定有无必要阅读全文，也供文摘等
-二次文献引用。摘要的重点是成果和结论。
-
-\item 中文摘要一般在1500字，英文摘要不宜超过1500实词。
-
-\item 摘要中不用图、表、化学结构式、非公知公用的符号和术语。
-
-\end{enumerate}
-
-\subsection{关键词}
-
-关键词是为了文献标引工作从论文中选取出来用于表示全文主题内容信息款目的单词或
-术语。
-
-每篇论文选取3－8个词作为关键词，以显著的字符另起一行，排在摘要的左下方。在英
-文摘要的左下方应标注与中文对应的英文关键词。
-
-\subsection{目次页}
-
-目次页由论文的章、节、附录等的序号、名称和页码组成，另页排在摘要的后面。
-
-\subsection{插图和附表清单}
-
-论文中如图表较多，可以分别列出清单并置于目次页之后。
-
-
-图的清单应有序号、图题和页码。表的清单应有序号、表题和页码。
-
-\subsection{符号、标志、缩略词、首字母缩写、计量单位、名词、术语等的注释表符
-号、标志、缩略词、首字母缩写、计量单位、名词、术语等的注释说明汇集表，应置于
-图表清单之后。}
-
-\section{主体部分}
-
-\subsection{格式}
-
-主体部分由绪论开始，以结论结束。主体部分必须由另页右页开始。每一章必须另页开
-始。全部论文章、节、目的格式和版面安排要划一，层次清楚。
-
-\subsection{序号}
-
-\begin{enumerate}
-
-\item 论文的章可以写成：第一章。节及节以下均用阿拉伯数字编排序号，如
-1.1，1.1.1等。
-
-\item 论文中的图、表、附注、参考文献、公式、算式等一律用阿拉伯数字分别分章依
-序连续编排序号。其标注形式应便于互相区别，一般用下例：图1.2；表2.3；附注1）
-；文献[4]；式(6.3)等。
-
-\item 论文一律用阿拉伯数字连续编页码。页码由首页开始，作为第1页，并为右页另
-页。封页、封二、封三和封底不编入页码，应为题名页、前言、目次页等前置部分单独
-编排页码。页码必须标注在每页的相同位置，便于识别。
-
-\item 附录依序用大写正体A、B、C ┅ 编序号，如：附录A。附录中的图、表、式、参
-考文献等另行编序号，与正文分开，也一律用阿拉伯数字编码，但在数码前题以附条序
-码，如图A.1；表B.2；式(B.3)；文献[A.5]等。
-
-\end{enumerate}
-
-\subsection{绪论}
-
-绪论（综述）：简要说明研究工作的目的、范围、相关领域的前人工作和知识空白、理
-论基础和分析，研究设想、研究方法和实验设计、预期结果和意义等。一般在教科书中
-有的知识，在绪论中不必赘述。
-
-绪论的内容应包括论文研究方向相关领域的最新进展、对有关进展和问题的评价、本论
-文研究的命题和技术路线等；绪论应表明博士生对研究方向相关的学科领域有系统深入
-的了解，论文具有先进性和前沿性；
-
-为了反映出作者确已掌握了坚实的基础理论和系统的专门知识，具有开阔的科学视野，
-对研究方案作了充分论证，绪论应单独成章，列为第一章，绪论的篇幅应达1～2万字，
-不得少于1万字；绪论引用的文献应在100篇以上，其中外文文献不少于60%；引用文献
-应按正文中引用的先后排列。
-
-\subsection{正文}
-
-论文的正文是核心部分，占主要篇幅。正文必须实事求是，客观真切，准确完备，合乎
-逻辑，层次分明，简便可读。
-
-正文的每一章(除绪论外)应有小结，在小结中应明确阐明作者在本章中所做的工作，特
-别是创新性成果。凡本论文要用的基础性内容或他人的成果不应单独成章，也不应作过
-多的阐述，一般只引结论、使用条件等，不作推导；
-
-\subsubsection{图}
-
-图包括曲线图、构造图、示意图、图解、框图、流程图、记录图、布置图、地图、照片
-、图版等。
-
-图应具有“自明性”，即只看图、图题和图例，不阅读正文，就可以理解图意。
-
-图应编排序号。每一图应有简短确切的图题，连同图号置于图下。必要时，应将图上的
-符号、标记、代码，以及实验条件等，用最简练的文字，横排于图题下方，作为图例说
-明。
-
-曲线图的纵、横坐标必须标注“量、标准规定符号、单位”。此三者只有在不必要标明
-(如无量纲等)的情况下方可省略。坐标上标注的量的符号和缩略词必须与正文一致。
-
-照片图要求主题和主要显示部分的轮廓鲜明，便于制版。如用放大缩小的复制品，必须
-清晰，反差适中。照片上应该有表示目的物尺寸的标度。
-
-\subsubsection{表}
-
-表的编排，一般是内容和测试项目由左至右横读，数据依序竖排。表应有自明性。
-
-表应编排序号。
-
-每一表应有简短确切的表题，连同标号置于表上。必要时，应将表中的符号、标记、代
-码，以及需要说明事项，以最简练的文字，横排于表题下，作为表注，也可以附注于表
-下。表内附注的序号宜用小号阿拉伯数字并加圆括号置于被标注对象的右上角，如：x
- x x1) ，不宜用“*”，以免与数学上共轭和物质转移的符号相混。
-
-表的各栏均应标明“量或测试项目、标准规定符号、单位”。只有在无必要标注的情况下
-方可省略。表中的缩略词和符号，必须与正文中一致。
-
-表内同一栏的数字必须上下对齐。表内不宜用“同上”，“同左”和类似词，一律填入具体
-数字或文字。表内“空白”代表未测或无此项，“－”或“┅”(因“－”可能与代表阴性反应相
-混)代表未发现，“0”代表实测结果确为零。
-
-如数据已绘成曲线图，可不再列表。
-
-\subsubsection{数学、物理和化学式}
-
-正文中的公式、算式或方程式等应编排序号，序号标注于该式所在行(当有续行时，应
-标注于最后一行)的最右边。
-
-较长的式，另行居中横排。如式必须转行时，只能在?，?，?，?，<，>处转行。上下式
-尽可能在等号“＝”处对齐。
-
-小数点用“.”表示。大于999的整数和多于三位数的小数，一律用半个阿拉伯数字符的小
-间隔分开，不用千位撇。对于纯小数应将0列于小数点之前。
-
-示例：应该写成94 652.023 567；  0.314 325,  不应写成94, 652.023, 567；
-   .314, 325
-
-应注意区别各种字符，如：拉丁文、希腊文、俄文、德文花体、草体；罗马数字和阿拉
-伯数字；字符的正斜体、黑白体、大小写、上下脚标(特别是多层次，如“三踏步”)、上
-下偏差等。
-
-\subsubsection{计量单位}
-
-报告、论文必须采用国务院发布的《中华人民共和国法定计量单位》，并遵照《中华人
-民共和国法定计量单位使用方法》执行。使用各种量、单位和符号，必须遵循附录B所
-列国家标准的规定执行。单位名称和符号的书写方式一律采用国际通用符号。
-
-\subsubsection{符号和缩略词}
-
-符号和缩略词应遵照国家标准的有关规定执行。如无标准可循，可采纳本学科或本专业
-的权威性机构或学术团体所公布的规定；也可以采用全国自然科学名词审定委员会编印
-的各学科词汇的用词。如不得不引用某些不是公知公用的、且又不易为同行读者所理解
-的、或系作者自定的符号、记号、缩略词、首字母缩写字等时，均应在第一次出现时一
-一加以说明，给以明确的定义。
-
-\subsection{结论}
-
-报告、论文的结论是最终的、总体的结论，不是正文中各段的小结的简单重复。结论应
-该准确、完整、明确、精炼。在结论中要清楚地阐明论文中有那些自己完成的成果，特
-别是创新性成果；
-
-如果不可能导出应有的结论，也可以没有结论而进行必要的讨论。可以在结论或讨论中
-提出建议、研究设想、仪器设备改进意见、尚待解决的问题等。
-
-\subsection{致谢}
-
-可以在正文后对下列方面致谢：
-
-国家科学基金、资助研究工作的奖学金基金、合作单位、资助或支持的企业、组织或个
-人；
-
-协助完成研究工作和提供便利条件的组织或个人；
-
-在研究工作中提出建议和提供帮助的人；
-
-给予转载和引用权的资料、图片、文献、研究思想和设想的所有者；
-
-其他应感谢的组织或个人。
-
-\subsection{参考文献表}
-
-\subsubsection{专著著录格式}
-
-主要责任者，其他责任者，书名，版本，出版地：出版者，出版年
-
-例：1. 刘少奇，论共产党员的修养，修订2版，北京：人民出版社，1962
-
-\subsubsection{连续出版物中析出的文献著录格式}
-
-析出文献责任者，析出文献其他责任者，析出题名，原文献题名，版本：文献中的位置。
-
-例：2. 李四光，地壳构造与地壳运动，中国科学，1973 (4)：400－429
-
-\subsubsection{参考文献采用顺序编码制，按论文正文所引用文献出现的先后顺序连
-续编码。}
-
-\section{附录}
-
-附录是作为报告、论文主体的补充项目，并不是必需的。
-
-\begin{enumerate}
-\item 下列内容可以作为附录编于报告、论文后，也可以另编成册；
-
-\begin{enumerate}
-
-\item 为了整篇论文材料的完整，但编入正文又有损于编排的条理和逻辑性，这一材料
-包括比正文更为详尽的信息、研究方法和技术更深入的叙述，建议可以阅读的参考文献
-题录，对了解正文内容有用的补充信息等；
-
-\item 由于篇幅过大或取材于复制品而不便于编入正文的材料；
-
-\item 不便于编入正文的罕见珍贵资料；
-
-\item 对一般读者并非必要阅读，但对本专业同行有参考价值的资料；
-
-\item 某些重要的原始数据、数学推导、计算程序、框图、结构图、注释、统计表、计
-算机打印输出件等。
-
-\end{enumerate}
-
-\item 附录与正文连续编页码。
-
-\item 每一附录均另页起。
-
-\end{enumerate}
-
-\section{结尾部分 (必要时)}
-
-为了将论文迅速存储入电子计算机，可以提供有关的输入数据。可以编排分类索引、著
-者索引、关键词索引等。
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 附件部分
@@ -920,16 +678,16 @@ GB7714文后参考文献著录规则。
 \noindent {\heiti 基本情况}
 \vspace{1ex}
 
-\noindent 杨文博，男，汉族，1986~年~11~月出生，河南省民权县人。
+\noindent 王守涛，男，汉族，1987~年~12~月出生，安徽省阜阳市人。
 
 \vspace{2ex}
 \noindent {\heiti 教育背景}
 
 \begin{description}[labelindent=0em, leftmargin=8em, style=sameline]
 
-\item[2007.9～2010.6] 中国科学院研究生院信息安全国家重点实验室 \hfill 硕士
+\item[2011.9～2014.6] 南京大学计算机科学与技术系 \hfill 硕士
 
-\item[2003.9～2007.6] 南京大学数学系 \hfill 本科
+\item[2007.9～2011.6] 合肥工业大学计算机信息学院 \hfill 本科
 
 \end{description}
 
@@ -937,35 +695,23 @@ GB7714文后参考文献著录规则。
 \vspace{5ex}
 \begin{Publications}{2}
 
-\item Wenbo Yang and Wen Tao Zhu, ``Voting-on-Grid Clustering for Secure
-  Localization in Wireless Sensor Networks,'' in \emph{Proc. IEEE
-  International Conference on Communications (ICC) 2010}, May. 2010.
-
-\item Wenbo Yang and Wen Tao Zhu, ``Protecting Source Location Privacy in
-Wireless Sensor Networks with Data Aggregation,'' in \emph{Proc. 7th
-International Conference on Ubiquitous Intelligence and Computing (UIC) 2010},
-Oct. 2010.
+\item 吕建,徐锋,王守涛. 一种基于多维时间序列分析的个性化音乐推荐系统及其实现方法:中国. 201410077177.1[P]. 2014-03-04.
 
 \end{Publications}
-
-\vspace{4ex}
-\noindent {\heiti 攻读硕士学位期间参与的科研课题}
-
-\begin{enumerate}[label=\arabic*., labelindent=0em, leftmargin=*]
-
-\item 国家自然科学基金面上项目``无线传感器网络在知识获取过程中的若干安全问题研究''
-（课题年限~2010.1～2012.12），负责位置相关安全问题的研究。
-
-\item 中国科学院知识创新工程重要方向项目下属课题``下一代移动通信安全机制研究''
-（课题年限~2010.1～2010.12），负责~LTE/SAE~认证相关的安全问题研究。
-
-\end{enumerate}
 
   % 致谢
 \begin{thanks}
 \vskip 18pt
 
-首先感谢XXX
+日光荏苒，在南京大学计算机与技术系软件所攻读硕士的三年行将结束，在此对在我成长道路上谆谆教导的师长以及在我生活中给予关心和帮助的同学表达由衷的谢意。
+
+首先，感谢我的导师徐锋教授，从起始移动互联网领域的编程实践到后来推荐系统相关知识的学习与研究，徐老师都耐心地进行指导。在我工作遇到困难的时候，徐老师总是能够给出一些非常有建设性并且有远见的建议，他总是能够从比较高的层次指出工作中存在的不足，这对于我从宏观上去把握所研究的工作内容有非常大的裨益。另外，徐老师非常健康的生活方式也值得我在以后的工作和生活中认真学习。
+
+感谢计算机系软件所的吕建教授，陶先平教授，马晓星教授，胡昊教授，黄宇副教授，许畅副教授，曹春副教授，余萍，马俊和张建莹老师等，他们在我学习和工作中给予了许多帮助。感谢和我一起努力的同学，姚远博士，张栋栋，王瑶菁，袁明珠，周昊一，陈晓宇等，在论文和项目中的鼓励和协作。感谢徐经纬博士，朱晓瑞博士在相关工作中给出的启发性见解和指导。感谢室友王海涛，王逸恺等，让我对其他研究方向有所认知，他们科研的态度也给了我很大启发，而平时和谐愉悦的宿舍生活使得我在平时的科研和学习中充满活力，这定将成为我学生生活中最美好的记忆之一。
+
+感谢父母一直以来对我的支持和鼓励，他们为了给我创造良好的成长环境和学习环境付出了很大的心血，他们是我坚实的后盾和持续奋斗的动力，我定不辜负他们对我的期望，在以后的工作中继续努力，成就自己的一番事业。
+
+最后，感谢我的女朋友侯小丽的坚守和付出，无论我遇到何种挫折和坎坷，她都出现在我的身边并给予我最大的支持和鼓励，我一定会持续积极上进，为以后的更加美好的生活创造条件。
 
 \end{thanks}
 
