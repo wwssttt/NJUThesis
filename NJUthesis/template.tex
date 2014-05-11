@@ -422,21 +422,21 @@ Recall=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|T(u)|}
     \begin{equation}
     {tf}_{i,j}=\frac{{n}_{i,j}}{\sum_{k}{n}_{k,j}}
     \end{equation}
-    
+
     这里,\({n}_{i,j}\)表示该词项在该文档中出现的次数。这突出了词频对词项重要性的影响，能够取得比布尔模型较好的效果。但是，词语的重要性不仅随着它在文档中出现的次数成正比增加，而且可能会随着它在语料库中出现的频率成反比下降。也就是说，一个词语在整个语料库中出现得越频繁，则它对于文档的重要性越低，对文档的区分度量越差。
 
 \item 词频-逆向文本频率模型。词频-逆向文本频率(Term Frequency - Inverse Document Frequency，TF-IDF)是对上述TF模型的补充，词项的重要性随着其在特定文档中出现次数的增加而增强，但同时随着其在全体文本中出现次数的增加而减弱，即该模型认为对区别文档最有意义的词语应该是那些在文档中出现频率高、而在整个语料库中的其他文档中出现频率少的词语。词项\({t}_{i}\)相对于文档\({d}_{j}\)的TF-IDF取值表示为:
 
     \begin{equation}
     {tfidf}_{i,j}={tf}_{i,j}\times{{idf}_{i}}
-    \end{equation}   
-   
+    \end{equation}
+
     这里，\({idf}_{i}\)为逆向文本频率，定义为：
-    
+
     \begin{equation}
     {idf}_{i}=log\frac{|D|}{|\{j:{t}_{i}\in{{d}_{j}}\}|}
     \end{equation}
-    
+
     其中，\(|D|\)表示文档集合中的文件总数，\(|\{j:{t}_{i}\in{{d}_{j}}\}|\)表示文档集合中包含词项\({t}_{i}\)的文件数目。TF-IDF 结构简单，容易理解，被广泛应用。但是，其无法准确捕捉文档内部与文档间的统计特征，也不能解决同义词和多义词的问题，因此精确度不是很高
 \end{enumerate}
 
@@ -681,14 +681,16 @@ N(u)={\arg\min}_{s\in{S}}u(u,s)
 进一步地，将上式在K维主题向量上展开，得到如下所示的更为直观的多维时间序列。
 
 \begin{equation}
-TS(u)=<, \\
-{({\omega}_{1}(\pi+1),{\omega}_{2}(\pi+1),...,{\omega}_{i}(\pi+1),...,{\omega}_{K}(\pi+1))}^\top, \\
-{({\omega}_{1}(\pi+2),{\omega}_{2}(\pi+2),...,{\omega}_{i}(\pi+2),...,{\omega}_{K}(\pi+2))}^\top, \\
-..., \\
-{({\omega}_{1}(\pi+j),{\omega}_{2}(\pi+j),...,{\omega}_{i}(\pi+j),...,{\omega}_{K}(\pi+j))}^\top, \\
-..., \\
-{({\omega}_{1}(\pi+n),{\omega}_{2}(\pi+n),...,{\omega}_{i}(\pi+n),...,{\omega}_{K}(\pi+n))}^\top, \\
->
+\begin{split}
+TS(u)=< \\
+&{({\omega}_{1}(\pi+1),{\omega}_{2}(\pi+1),...,{\omega}_{i}(\pi+1),...,{\omega}_{K}(\pi+1))}^\top, \\
+&{({\omega}_{1}(\pi+2),{\omega}_{2}(\pi+2),...,{\omega}_{i}(\pi+2),...,{\omega}_{K}(\pi+2))}^\top, \\
+&..., \\
+&{({\omega}_{1}(\pi+j),{\omega}_{2}(\pi+j),...,{\omega}_{i}(\pi+j),...,{\omega}_{K}(\pi+j))}^\top, \\
+&..., \\
+&{({\omega}_{1}(\pi+n),{\omega}_{2}(\pi+n),...,{\omega}_{i}(\pi+n),...,{\omega}_{K}(\pi+n))}^\top, \\
+&>
+\end{split}
 \end{equation}
 
 其中,\(i(1\le{i}\le{K})\)表示隐含主题的编号，\(j(1\le{j}\le{n})\)表示用户在当前会话期内所收听第j首歌曲的索引。显然，该多维时间序列中任意一个时间点都对应着一个K 维主题向量且对于K 维主题向量中的每一维来说又对应着一个单变量的时间序列，如下式所示。

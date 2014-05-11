@@ -29,13 +29,13 @@
 \contentsline {section}{\numberline {3.2}方法框架}{22}{section.3.2}
 \contentsline {section}{\numberline {3.3}主题模型建模}{24}{section.3.3}
 \contentsline {section}{\numberline {3.4}多维时间序列构造与预测}{26}{section.3.4}
-\contentsline {section}{\numberline {3.5}相似度计算}{27}{section.3.5}
+\contentsline {section}{\numberline {3.5}相似度计算}{28}{section.3.5}
 \contentsline {section}{\numberline {3.6}推荐列表生成}{28}{section.3.6}
 \contentsline {section}{\numberline {3.7}实验设计和结果}{28}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}数据收集}{28}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.1}数据收集}{29}{subsection.3.7.1}
 \contentsline {subsection}{\numberline {3.7.2}评测标准}{29}{subsection.3.7.2}
-\contentsline {subsection}{\numberline {3.7.3}实验设置}{31}{subsection.3.7.3}
-\contentsline {subsection}{\numberline {3.7.4}结果分析}{31}{subsection.3.7.4}
+\contentsline {subsection}{\numberline {3.7.3}实验设置}{32}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}结果分析}{32}{subsection.3.7.4}
 \contentsline {chapter}{\numberline {第四章\hspace {0.3em}}一种基于用户三期行为的综合音乐推荐方法}{36}{chapter.4}
 \contentsline {section}{\numberline {4.1}综合音乐推荐}{36}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}整体式综合}{37}{subsection.4.1.1}
