@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{45}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -49,6 +49,12 @@ BeautifulSoup, .
   measures}.
 \newblock \bibinfo{journal}{Multimedia, IEEE Transactions on}
   \bibinfo{volume}{13}, \bibinfo{pages}{687--701}.
+%Type = Article
+\bibitem[{Burke(2002)}]{burke2002hybrid}
+\bibinfo{author}{Burke, R.}, \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Hybrid recommender systems: Survey and experiments}.
+\newblock \bibinfo{journal}{User modeling and user-adapted interaction}
+  \bibinfo{volume}{12}, \bibinfo{pages}{331--370}.
 %Type = Inproceedings
 \bibitem[{Cano µÈ(2005)Cano, Koppenberger ºÍ~ Wack}]{cano2005content}
 \bibinfo{author}{Cano, P.}, \bibinfo{author}{Koppenberger, M.},

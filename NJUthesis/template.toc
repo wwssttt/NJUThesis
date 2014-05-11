@@ -37,40 +37,38 @@
 \contentsline {subsection}{\numberline {3.7.3}实验设置}{29}{subsection.3.7.3}
 \contentsline {subsection}{\numberline {3.7.4}结果分析}{30}{subsection.3.7.4}
 \contentsline {chapter}{\numberline {第四章\hspace {0.3em}}一种基于用户三期行为的综合音乐推荐方法}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}问题分析}{34}{section.4.1}
-\contentsline {section}{\numberline {4.2}常用综合策略}{34}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}整体式综合}{34}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}并行式综合}{34}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}流水线式综合}{34}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}方法详述}{34}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}方法框架}{34}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}方法选取}{34}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}方法综合}{34}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}实验结果}{34}{section.4.4}
-\contentsline {section}{\numberline {4.5}分析讨论}{34}{section.4.5}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}系统实现}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}系统架构}{35}{section.5.1}
-\contentsline {section}{\numberline {5.2}离线处理模块}{38}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}爬虫系统}{38}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}结巴分词}{40}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{41}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}在线处理模块}{42}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}序列生成}{42}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}推荐引擎}{43}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}系统效果}{46}{section.5.4}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{47}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{47}{section.6.1}
-\contentsline {section}{\numberline {6.2}工作展望}{47}{section.6.2}
-\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{48}{appendix.A}
-\contentsline {section}{\numberline {A.1}权利声明}{48}{section.A.1}
-\contentsline {section}{\numberline {A.2}数据特点}{48}{section.A.2}
-\contentsline {section}{\numberline {A.3}组织形式}{48}{section.A.3}
-\contentsline {section}{\numberline {A.4}字段解析}{49}{section.A.4}
-\contentsline {subsection}{\numberline {A.4.1}scale}{49}{subsection.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}playlist}{49}{subsection.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}toptag}{50}{subsection.A.4.3}
-\contentsline {subsection}{\numberline {A.4.4}其他字段}{50}{subsection.A.4.4}
-\contentsline {section}{\numberline {A.5}应用场景}{50}{section.A.5}
-\contentsline {chapter}{参考文献}{51}{appendix*.4}
-\contentsline {chapter}{简历与科研成果}{55}{appendix*.5}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{56}{appendix*.6}
+\contentsline {section}{\numberline {4.1}综合音乐推荐}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}整体式综合}{35}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}并行式综合}{35}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}流水线式综合}{35}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}综合推荐框架}{36}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}实验结果}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}分析讨论}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}最长可分析序列}{39}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}不同文本分析方法比较}{40}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}系统实现}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}系统架构}{42}{section.5.1}
+\contentsline {section}{\numberline {5.2}离线处理模块}{45}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}爬虫系统}{45}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}结巴分词}{47}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{48}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}在线处理模块}{49}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}序列生成}{49}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}推荐引擎}{50}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}系统效果}{53}{section.5.4}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{54}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{54}{section.6.1}
+\contentsline {section}{\numberline {6.2}工作展望}{54}{section.6.2}
+\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{55}{appendix.A}
+\contentsline {section}{\numberline {A.1}权利声明}{55}{section.A.1}
+\contentsline {section}{\numberline {A.2}数据特点}{55}{section.A.2}
+\contentsline {section}{\numberline {A.3}组织形式}{55}{section.A.3}
+\contentsline {section}{\numberline {A.4}字段解析}{56}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}scale}{56}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}playlist}{56}{subsection.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}toptag}{57}{subsection.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}其他字段}{57}{subsection.A.4.4}
+\contentsline {section}{\numberline {A.5}应用场景}{57}{section.A.5}
+\contentsline {chapter}{参考文献}{58}{appendix*.4}
+\contentsline {chapter}{简历与科研成果}{62}{appendix*.5}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{63}{appendix*.6}
