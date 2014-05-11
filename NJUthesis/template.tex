@@ -27,8 +27,8 @@
 % ÉèÖÃÁ´½ÓÑÕÉ«
 \hypersetup{
 % pdf ÊôÐÔ
-             pdftitle={LaTeX Thesis Template of Nanjing University}, %
-            pdfauthor={Wenbo Yang}
+             pdftitle={Ò»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öÏµÍ³ÑÐ¾¿ÓëÊµÏÖ}, %
+            pdfauthor={ÍõÊØÌÎ}
 }
 
 % ±í¸ñ
@@ -259,35 +259,51 @@
 
 ÓàÏÒÏàËÆ¶ÈÊÇÍÆ¼öÏµÍ³ÖÐ¼ÆËãÓÃ»§ÓëÓÃ»§»òÕßÎïÆ·ÓëÎïÆ·Ö®¼äÏàËÆ¶ÈµÄÒ»ÖÖ³£ÓÃ·½·¨£¬ÆäÍ¨¹ý²âÁ¿Á½¸öÏòÁ¿ÄÚ»ý¿Õ¼äµÄ¼Ð½ÇµÄÓàÏÒÖµÀ´¶ÈÁ¿ËüÃÇÖ®¼äµÄÏàËÆÐÔ¡£0¶È½Ç¶ÔÓ¦µÄÓàÏÒÖµÊÇ1£¬¶øÆäËûÈÎºÎ½Ç¶È¶ÔÓ¦µÄÓàÏÒÖµ¶¼²»´óÓÚ1£¬²¢ÇÒÆä×îÐ¡ÖµÊÇ-1¡£Èç¹ûÁ½¸öÏòÁ¿µÄÖ¸ÏòÔ½½Ó½ü£¬ÄÇÃ´ËüÃÇÄÚ»ý¿Õ¼ä¼Ð½ÇµÄÓàÏÒÖµÔ½½Ó½üÓÚ1£¬¼´¶þÕßÔ½ÏàËÆ¡£Ïà·´£¬Èç¹ûÁ½¸öÏòÁ¿µÄÖ¸ÏòÔ½ÏàÀë£¬ÄÇÃ´ËüÃÇÄÚ»ý¿Õ¼ä¼Ð½ÇµÄÓàÏÒÖµÔ½½Ó½üÓÚ-1£¬¼´¶þÕßÔ½²»ÏàËÆ¡£ÉèÏòÁ¿\(\vec {X}_{a}\)ºÍÏòÁ¿\(\vec {X}_{b}\)·Ö±ð±íÊ¾ÓÃ»§\emph{a}ºÍÓÃ»§\emph{b} µÄÆ«ºÃÏòÁ¿£¬ÆäÖÐ\(\vec {X}_{a}(i)\)±íÊ¾ÓÃ»§\emph{a}¶Ô±àºÅÎª\emph{i}µÄÎïÆ·µÄÆ«ºÃÖµ»òÆÀ·Ö£¬\(\vec {X}_{b}(i)\)±íÊ¾ÓÃ»§\emph{b}¶Ô±àºÅÎª\emph{i}µÄÎïÆ·µÄÆ«ºÃÖµ»òÆÀ·Ö¡£ÄÇÃ´£¬ÓÃ»§\emph{a}ºÍÓÃ»§\emph{b}µÄÏàËÆ¶È¿ÉÒÔ°´ÕÕ¹«Ê½2.1 ½øÐÐ¼ÆËã£¬ÆäÖÐ\emph{K}±íÊ¾ÎïÆ·¼¯ºÏÖÐÎïÆ·µÄÊýÄ¿¡£
 
-\(sim(\emph{a},\emph{b})=cos(\vec {X}_{a},\vec {X}_{b})=\frac{\sum_{i=1}^{K}{\vec {X}_{a}(i)\vec {X}_{b}(i)}}{\sqrt{\sum_{i=1}^{K}{\vec {X}_{b}(i)}^{2}}\sqrt{\sum_{i=1}^{K}{\vec {X}_{a}(i)}^{2}}}\)
+\begin{equation}
+sim(\emph{a},\emph{b})=cos(\vec {X}_{a},\vec {X}_{b})=\frac{\sum_{i=1}^{K}{\vec {X}_{a}(i)\vec {X}_{b}(i)}}{\sqrt{\sum_{i=1}^{K}{\vec {X}_{b}(i)}^{2}}\sqrt{\sum_{i=1}^{K}{\vec {X}_{a}(i)}^{2}}}\
+\end{equation}
 
 \subsection{KL¾àÀë}
 
 KL¾àÀëÒ²³ÆÏà¶ÔìØ»òKLÉ¢¶È£¬ÊÇÁ½¸ö¸ÅÂÊ·Ö²¼\emph{P}ºÍ\emph{Q}²î±ðµÄ·Ç¶Ô³ÆÐÔµÄ¶ÈÁ¿£¬ÓÃÀ´¶ÈÁ¿Ê¹ÓÃ»ùÓÚ\emph{Q}µÄ±àÂëÀ´±àÂëÀ´×Ô\emph{P} µÄÑù±¾Æ½¾ùËùÐèµÄ¶îÍâµÄ±ÈÌØ¸öÊý~\cite{kullback1951information}¡£Èç¹ûÄÜ¹»°ÑÎïÆ·±íÊ¾³ÆÒ»¸ö¸ÅÂÊ·Ö²¼£¬ÄÇÃ´ÏÔÈ»¿ÉÒÔÓÃKL¾àÀëÀ´ºâÁ¿Á½¸öÎïÆ·Ö®¼äµÄÏàËÆ¶È¡£Éè\(P=({p}_{1},...,{p}_{i},...,{p}_{K})\) ±íÊ¾ÎïÆ·\emph{p}¶ÔÓ¦µÄ¸ÅÂÊ·Ö²¼£¬ÎïÆ·\emph{p}¶ÔÓ¦µÄ¸ÅÂÊ·Ö²¼ÓÃ\(Q=({q}_{1},...,{q}_{i},...,{q}_{K})\)±íÊ¾£¬ÆäÖÐ\emph{K}±íÊ¾Ëæ»ú±äÁ¿µÄÈ¡ÖµÊýÄ¿¡£ÄÇÃ´£¬ÎïÆ·\emph{p} ºÍ\emph{q}Ö®¼äµÄKL¾àÀë¿ÉÒÔ°´ÕÕ¹«Ê½2.2½øÐÐ¼ÆËã£¬ÆäÈ¡Öµ·Ç¸º¡£KLÉ¢¶È½öµ±¸ÅÂÊ\emph{P} ºÍ\emph{Q} ¸÷×Ô×ÜºÍ¾ùÎª1£¬ÇÒ¶ÔÓÚÈÎºÎ\emph{i}½ÔÂú×ã\(\emph{p}_{i}>0\) ¼°\(\emph{q}_{i}>0\)Ê±²ÅÓÐ¶¨Òå£¬ÈôÊ½ÖÐ³öÏÖµÄÇé¿ö£¬ÆäÖµ°´0´¦Àí¡£
 
-\({dis}_{KL}(p,q)=\sum_{i=1}^{K}ln\frac{{p}_{i}}{{q}_{i}}\)
+\begin{equation}
+{dis}_{KL}(p,q)=\sum_{i=1}^{K}ln\frac{{p}_{i}}{{q}_{i}}
+\end{equation}
 
 ÓÉÓÚKL¾àÀëÊÇ·Ç¶Ô³ÆµÄ£¬¼´
 
-\({dis}_{KL}(p,q)\neq{dis}_{KL}(q,p)\)
+\begin{equation}
+{dis}_{KL}(p,q)\neq{dis}_{KL}(q,p)
+\end{equation}
 
 ¶øÎïÆ·Ö®¼äµÄÏàËÆ¶ÈÓ¦¸ÃÂú×ã¶Ô³ÆÐÔ£¬¼´
 
-\(sim(p,q)=sim(q,p)\)
+\begin{equation}
+sim(p,q)=sim(q,p)
+\end{equation}
 
 Òò´Ë£¬²»ÄÜÖ±½ÓÊ¹ÓÃKL¾àÀëÀ´¼ÆËãÎïÆ·Ö®¼äµÄÏàËÆ¶È£¬µ«¿ÉÒÔÊ¹ÓÃ\emph{p}µ½\emph{q}µÄKL¾àÀëÓëqµ½pµÄKL ¾àÀëµÄÆ½¾ùÖµÀ´×÷Îª¶þÕßµÄ×îÖÕ¾àÀë£¬ÕâÑù¾Í¿ÉÒÔÂú×ã¶Ô³ÆÐÔµÄÒªÇó£¬Èç¹«Ê½2.5 ËùÊ¾¡£½øÒ»²½µØ£¬¿ÉÒÔÊ¹ÓÃÈç¹«Ê½2.6 ËùÊ¾µÄ·½·¨¼ÆËã¶þÕßÖ®¼äµÄÏàËÆ¶È¡£
 
-\({dis}_{avgKL}(p,q)=\frac{{{dis}_{KL}(p,q)}+{{dis}_{KL}(q,p)}}{2}\)
+\begin{equation}
+{dis}_{avgKL}(p,q)=\frac{{{dis}_{KL}(p,q)}+{{dis}_{KL}(q,p)}}{2}
+\end{equation}
 
-\({sim}_{KL}(p,q)=\frac{1}{1+{dis}_{avgKL}(p,q)}\)
+\begin{equation}
+{sim}_{KL}(p,q)=\frac{1}{1+{dis}_{avgKL}(p,q)}
+\end{equation}
 
 \subsection{Hellinger¾àÀë}
 
 Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ»Âú×ã¶Ô³ÆÐÔ£¬Òò´Ë¿ÉÒÔÖ±½ÓÓÃÀ´¼ÆËãÎïÆ·Ö®¼äµÄÏàËÆ¶È~\cite{oosterhoff2012note}¡£ ÎïÆ·pºÍÎïÆ·qÖ®¼äµÄHellinger ¾àÀë¿ÉÒÔ°´ÕÕ¹«Ê½2.7¼ÆËã£¬½ø¶ø°´¹«Ê½2.8¿ÉÒÔ¼ÆËã¶þÕßÖ®¼äµÄÏàËÆ¶È¡£
 
-\({dis}_{hellinger}(p,q)=\frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^{K}({\sqrt{{p}_{i}}-\sqrt{{q}_{i}}})^{2}}\)
+\begin{equation}
+{dis}_{hellinger}(p,q)=\frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^{K}({\sqrt{{p}_{i}}-\sqrt{{q}_{i}}})^{2}}
+\end{equation}
 
-\({sim}_{hellinger}(p,q)=\frac{1}{1+{dis}_{hellinger}(p,q)}\)
+\begin{equation}
+{sim}_{hellinger}(p,q)=\frac{1}{1+{dis}_{hellinger}(p,q)}
+\end{equation}
 
 ±¾ÎÄËùÌáµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨¼°ÔÚ´Ë»ù´¡ÉÏ¸ø³öµÄ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨½«Ê¹ÓÃÖ÷ÌâÄ£ÐÍ½¨Ä£µÄ·½·¨½«Ã¿Ò»Ê×¸èÇú±íÕ÷ÎªÓÉÈô¸ÉÒþº¬Ö÷Ìâ¹¹³ÉµÄ¸ÅÂÊ·Ö²¼¡£Òò´Ë£¬KL ¾àÀëºÍHellinger ¾àÀë½«±»Ó¦ÓÃÓÚ±¾ÎÄ¼ÆËãÁ½Ê×¸èÇúÖ®¼äµÄÏàËÆ¶ÈµÄ¹¤×÷ÖÐ¡£
 
@@ -304,21 +320,29 @@ Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ
 Ô¤²â×¼È·¶ÈÊÇ¶ÈÁ¿Ò»¸öÍÆ¼öÏµÍ³»òÕßÍÆ¼öËã·¨Ô¤²âÓÃ»§ÐÐÎªÄÜÁ¦µÄÖØÒªÖ¸±ê¡£´ÓÍÆ¼öÏµÍ³µ®ÉúµÄÄÇÒ»ÌìÆð£¬¼¸ºõ99\%ÓëÍÆ¼öÏµÍ³Ïà¹ØµÄÂÛÎÄ¶¼ÔÚÌÖÂÛÕâ¸öÖ¸±ê£¬ÕâÖ÷ÒªÊÇÒòÎª¸ÃÏîÖ¸±ê¿ÉÒÔÍ¨¹ýÀëÏßÊµÑé¼ÆËã£¬·½±ãÁËºÜ¶àÑ§Êõ½çµÄÑÐ¾¿ÈËÔ±ÑÐ¾¿ÍÆ¼öËã·¨¡£
 ¶ÔÓÚÆÀ·ÖÔ¤²âÎÊÌâ£¬Ò»°ãÊ¹ÓÃ¾ù·½¸ùÎó²î(Root Mean Square Error, RMSE)ºÍÆ½¾ù¾ø¶ÔÎó²î(Mean Absolute Error, MAE)À´±íÕ÷Ëã·¨µÄÔ¤²â×¼È·¶È~\cite{herlocker2004evaluating}¡£RMSE¿ÉÓÉ¹«Ê½2.9¼ÆËãµÃµ½¡£
 
-\(RMSE=\sqrt{\frac{\sum_{u,i\in{T}}{({r}_{ui}-\hat{{r}_{ui}})}^{2}}{|T|}}\)
+\begin{equation}
+RMSE=\sqrt{\frac{\sum_{u,i\in{T}}{({r}_{ui}-\hat{{r}_{ui}})}^{2}}{|T|}}
+\end{equation}
 
 ÆäÖÐ£¬\emph{T}´ú±í²âÊÔ¼¯£¬\emph{u}ºÍ\emph{i}±íÊ¾²âÊÔ¼¯ÖÐµÄÓÃ»§ºÍÎïÆ·£¬ÊÇÓÃ»§\emph{u}¶ÔÎïÆ·\emph{i}µÄÊµ¼ÊÆÀ·Ö£¬¶øÊÇÍÆ¼öËã·¨¸ø³öµÄÔ¤²âÆÀ·Ö¡£
 
 MAE²ÉÓÃ¾ø¶ÔÖµ¼ÆËãÔ¤²âÎó²î£¬Èç¹«Ê½2.10 ËùÊ¾¡£
 
-\(MAE=\frac{\sum_{u,i\in{T}}|{r}_{ui}-\hat{{r}_{ui}}|}{|T|}\)
+\begin{equation}
+MAE=\frac{\sum_{u,i\in{T}}|{r}_{ui}-\hat{{r}_{ui}}|}{|T|}
+\end{equation}
 
 ÏÔÈ»£¬Ô¤²âÎó²îÔ½Ð¡£¬ÄÇÃ´Ô¤²â×¼È·¶ÈÔ½¸ß£¬ÄÇÃ´ÍÆ¼öËã·¨µÄÐ§¹ûÔ½ºÃ¡£Ò²¾ÍÊÇËµ£¬Ò»¸öÓÅÐãµÄÍÆ¼öËã·¨ÔÚRMSEºÍMAEÕâÁ½ÏîÖ¸±êÉÏµÄÈ¡ÖµÍùÍù±È½ÏµÍ¡£
 
 Top-NÍÆ¼öÒ»°ãÍ¨¹ý×¼È·ÂÊ(precision)ºÍÕÙ»ØÂÊ(recall)À´¶ÈÁ¿Ëã·¨µÄÓÅÁÓ¡£ÉèR(u)ÊÇ¸ù¾ÝÓÃ»§ÔÚÑµÁ·¼¯ÉÏµÄÐÐÎª¸øÓÃ»§×÷³öµÄÍÆ¼öÁÐ±í£¬¶øT(u) ÊÇÓÃ»§ÔÚ²âÊÔ¼¯ÉÏµÄÐÐÎªÁÐ±í~\cite{powers2011evaluation}¡£ ÄÇÃ´£¬ÍÆ¼ö½á¹ûµÄ×¼È·¶ÈºÍÕÙ»ØÂÊÈç¹«Ê½2.11ºÍ2.12ËùÊ¾.
 
-\(Precision=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|R(u)|}\)
+\begin{equation}
+Precision=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|R(u)|}
+\end{equation}
 
-\(Recall=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|T(u)|}\)
+\begin{equation}
+Recall=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|T(u)|}
+\end{equation}
 
 \subsection{ÆäËûÆÀ²âÖ¸±ê}
 
@@ -395,18 +419,24 @@ Top-NÍÆ¼öÒ»°ãÍ¨¹ý×¼È·ÂÊ(precision)ºÍÕÙ»ØÂÊ(recall)À´¶ÈÁ¿Ëã·¨µÄÓÅÁÓ¡£ÉèR(u)ÊÇ¸ù¾Ý
 
 \item ´ÊÆµÄ£ÐÍ¡£Óë²¼¶ûÄ£ÐÍ²»Í¬µÄÊÇ£¬´ÊÆµ(Term Frequency, TF)Ä£ÐÍÍ³¼Æ´ÊÏîÔÚÎÄµ±ÖÐ³öÏÖµÄ´ÎÊý£¬È»ºóµÃµ½´ÊÏîµÄÆµÂÊ£¬²¢½«Ö®×÷Îª´ÊÏîµÄÈ¨ÖØ¡£´ÊÏî\({t}_{i}\)Ïà¶ÔÓÚÎÄµµ\({d}_{j}\)µÄ´ÊÆµ±íÊ¾³É:
 
-    \({tf}_{i,j}=\frac{{n}_{i,j}}{\sum_{k}{n}_{k,j}}\)
-
+    \begin{equation}
+    {tf}_{i,j}=\frac{{n}_{i,j}}{\sum_{k}{n}_{k,j}}
+    \end{equation}
+    
     ÕâÀï,\({n}_{i,j}\)±íÊ¾¸Ã´ÊÏîÔÚ¸ÃÎÄµµÖÐ³öÏÖµÄ´ÎÊý¡£ÕâÍ»³öÁË´ÊÆµ¶Ô´ÊÏîÖØÒªÐÔµÄÓ°Ïì£¬ÄÜ¹»È¡µÃ±È²¼¶ûÄ£ÐÍ½ÏºÃµÄÐ§¹û¡£µ«ÊÇ£¬´ÊÓïµÄÖØÒªÐÔ²»½öËæ×ÅËüÔÚÎÄµµÖÐ³öÏÖµÄ´ÎÊý³ÉÕý±ÈÔö¼Ó£¬¶øÇÒ¿ÉÄÜ»áËæ×ÅËüÔÚÓïÁÏ¿âÖÐ³öÏÖµÄÆµÂÊ³É·´±ÈÏÂ½µ¡£Ò²¾ÍÊÇËµ£¬Ò»¸ö´ÊÓïÔÚÕû¸öÓïÁÏ¿âÖÐ³öÏÖµÃÔ½Æµ·±£¬ÔòËü¶ÔÓÚÎÄµµµÄÖØÒªÐÔÔ½µÍ£¬¶ÔÎÄµµµÄÇø·Ö¶ÈÁ¿Ô½²î¡£
 
 \item ´ÊÆµ-ÄæÏòÎÄ±¾ÆµÂÊÄ£ÐÍ¡£´ÊÆµ-ÄæÏòÎÄ±¾ÆµÂÊ(Term Frequency - Inverse Document Frequency£¬TF-IDF)ÊÇ¶ÔÉÏÊöTFÄ£ÐÍµÄ²¹³ä£¬´ÊÏîµÄÖØÒªÐÔËæ×ÅÆäÔÚÌØ¶¨ÎÄµµÖÐ³öÏÖ´ÎÊýµÄÔö¼Ó¶øÔöÇ¿£¬µ«Í¬Ê±Ëæ×ÅÆäÔÚÈ«ÌåÎÄ±¾ÖÐ³öÏÖ´ÎÊýµÄÔö¼Ó¶ø¼õÈõ£¬¼´¸ÃÄ£ÐÍÈÏÎª¶ÔÇø±ðÎÄµµ×îÓÐÒâÒåµÄ´ÊÓïÓ¦¸ÃÊÇÄÇÐ©ÔÚÎÄµµÖÐ³öÏÖÆµÂÊ¸ß¡¢¶øÔÚÕû¸öÓïÁÏ¿âÖÐµÄÆäËûÎÄµµÖÐ³öÏÖÆµÂÊÉÙµÄ´ÊÓï¡£´ÊÏî\({t}_{i}\)Ïà¶ÔÓÚÎÄµµ\({d}_{j}\)µÄTF-IDFÈ¡Öµ±íÊ¾Îª:
 
-    \({tfidf}_{i,j}={tf}_{i,j}\times{{idf}_{i}}\)
-
+    \begin{equation}
+    {tfidf}_{i,j}={tf}_{i,j}\times{{idf}_{i}}
+    \end{equation}   
+   
     ÕâÀï£¬\({idf}_{i}\)ÎªÄæÏòÎÄ±¾ÆµÂÊ£¬¶¨ÒåÎª£º
-
-    \({idf}_{i}=log\frac{|D|}{|\{j:{t}_{i}\in{{d}_{j}}\}|}\)
-
+    
+    \begin{equation}
+    {idf}_{i}=log\frac{|D|}{|\{j:{t}_{i}\in{{d}_{j}}\}|}
+    \end{equation}
+    
     ÆäÖÐ£¬\(|D|\)±íÊ¾ÎÄµµ¼¯ºÏÖÐµÄÎÄ¼þ×ÜÊý£¬\(|\{j:{t}_{i}\in{{d}_{j}}\}|\)±íÊ¾ÎÄµµ¼¯ºÏÖÐ°üº¬´ÊÏî\({t}_{i}\)µÄÎÄ¼þÊýÄ¿¡£TF-IDF ½á¹¹¼òµ¥£¬ÈÝÒ×Àí½â£¬±»¹ã·ºÓ¦ÓÃ¡£µ«ÊÇ£¬ÆäÎÞ·¨×¼È·²¶×½ÎÄµµÄÚ²¿ÓëÎÄµµ¼äµÄÍ³¼ÆÌØÕ÷£¬Ò²²»ÄÜ½â¾öÍ¬Òå´ÊºÍ¶àÒå´ÊµÄÎÊÌâ£¬Òò´Ë¾«È·¶È²»ÊÇºÜ¸ß
 \end{enumerate}
 
@@ -434,15 +464,21 @@ Top-NÍÆ¼öÒ»°ãÍ¨¹ý×¼È·ÂÊ(precision)ºÍÕÙ»ØÂÊ(recall)À´¶ÈÁ¿Ëã·¨µÄÓÅÁÓ¡£ÉèR(u)ÊÇ¸ù¾Ý
 
 \STATE ¶ÔµÚ1ÆªÎÄµµÖÐµÄËùÓÐ´Ê½øÐÐ±éÀú£¬¼ÙÈçµ±Ç°ÎÄµµÖÐµÄ´Ê\emph{t}¶ÔÓ¦Ö÷ÌâÎª\emph{k}£¬Ôò½«\({{n}^{k}}_{m}\)¡¢\({n}_{m}\)¡¢\({{n}^{t}}_{k}\)¡¢\({n}_{k}\)¶¼¼õ1, ¼´ÏÈÄÃ³öµ±Ç°´Ê£¬Ö®ºó¸ù¾ÝLDAÖÐTopic Sample µÄ¸ÅÂÊ·Ö²¼È¡Ñù³öÐÂµÄÖ÷Ìâ£¬ÔÙ½«\({{n}^{k}}_{m}\)¡¢\({n}_{m}\)¡¢\({{n}^{t}}_{k}\)¡¢\({n}_{k}\)¶¼¼Ó1¡£ÆäÖÐ£¬\(\alpha\) ºÍ\(\beta\)Îª¶ÔÓ¦µÄDirichlet·Ö²¼µÄ²ÎÊý£¬\emph{V}Îª´Ê»ã×ÜÊý¡£
 
-\(p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m,-i}+{\alpha}_{k})}{\sum_{t=1}^{V}({{n}^{t}}_{k,-i}+{\beta}_{t})}}\)
+\begin{equation}
+p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m,-i}+{\alpha}_{k})}{\sum_{t=1}^{V}({{n}^{t}}_{k,-i}+{\beta}_{t})}}
+\end{equation}
 
 \STATE ÖØ¸´²½Öè2Ö±ÖÁ±éÀúËùÓÐÎÄµµ¡£
 
 \STATE Êä³öLDAÄ£ÐÍÖÐµÄ²ÎÊý\(\vec{\theta}\)ºÍ\(\vec{\varphi}\)¡£
 
-\({\theta}_{m,k}=\frac{{{n}^{k}}_{m}+{\alpha}_{k}}{{n}_{m}+{\alpha}_{k}}\)
+\begin{equation}
+{\theta}_{m,k}=\frac{{{n}^{k}}_{m}+{\alpha}_{k}}{{n}_{m}+{\alpha}_{k}}
+\end{equation}
 
-\({\varphi}_{k,t}=\frac{{{n}^{t}}_{k}+{\beta}_{t}}{{n}_{k}+{\beta}_{t}}\)
+\begin{equation}
+{\varphi}_{k,t}=\frac{{{n}^{t}}_{k}+{\beta}_{t}}{{n}_{k}+{\beta}_{t}}
+\end{equation}
 
 \end{algorithmic}
 \end{algorithm}
@@ -465,11 +501,17 @@ Top-NÍÆ¼öÒ»°ãÍ¨¹ý×¼È·ÂÊ(precision)ºÍÕÙ»ØÂÊ(recall)À´¶ÈÁ¿Ëã·¨µÄÓÅÁÓ¡£ÉèR(u)ÊÇ¸ù¾Ý
 
 ²î·ÖÕûºÏÒÆ¶¯Æ½¾ù×Ô»Ø¹éÄ£ÐÍ(Autoregressive Integrated Moving Average model,ARIMA)ÓÖ³ÆÎªBox-Jenkins·½·¨£¬ÊÇÒ»ÖÖÓÉBoxºÍJenkinsÓÚ1970ÄêÌá³öµÄÒ»ÖÖÊ±¼äÐòÁÐÔ¤²â·½·¨£¬Ä¿Ç°ÒÑ¾­µÃµ½¹ã·ºµÄÓ¦ÓÃ~\cite{makridakis1997arma}¡£ÔÚÄ£ÐÍARIMA(p,d,q)ÖÐ£¬¡°AR¡±±íÊ¾×Ô»Ø¹éÄ£ÐÍ£¬p Îª×Ô»Ø¹é½×Êý£¬¡°MA¡± ±íÊ¾»¬¶¯Æ½¾ùÄ£ÐÍ£¬q±íÊ¾»¬¶¯Æ½¾ùµÄ½×Êý£¬d ±íÊ¾½«Ê±¼äÐòÁÐ×ª»¯ÎªÆ½ÎÈÊ±¼äÐòÁÐËù×÷µÄ²î·Ö´ÎÊý£¬¼´²î·Ö½×Êý¡£ÏÔÈ»£¬ARIMAÊ×ÏÈÐèÒª½øÐÐd´Î²î·Ö´Ó¶ø½«·ÇÆ½ÎÈÐòÁÐ×ª»¯ÎªÆ½ÎÈÐòÁÐ£¬È»ºóÀûÓÃ×Ô»Ø¹éÄ£ÐÍºÍ»¬¶¯Æ½¾ùÄ£ÐÍ¶Ô×ª»»ºóµÄÆ½ÎÈÐòÁÐ½øÐÐÔ¤²â¡£½øÒ»²½µÄ£¬Ä£ÐÍARIMA(p,d,q)¿ÉÒÔ±íÊ¾³ÉÈçÏÂÈý¸öÊ½×Ó¡£
 
-\(\Phi(B){(1-B)}^{d}{y}_{t}=\delta+\Theta(B){\varepsilon}_{t}\)
+\begin{equation}
+\Phi(B){(1-B)}^{d}{y}_{t}=\delta+\Theta(B){\varepsilon}_{t}
+\end{equation}
 
-\(\Phi(B)=1-\sum_{i=1}^{p}{\varphi}_{i}{B}^{i}\)
+\begin{equation}
+\Phi(B)=1-\sum_{i=1}^{p}{\varphi}_{i}{B}^{i}
+\end{equation}
 
-\(\Theta(B)=1+\sum_{i=1}^{q}{\theta}_{i}{B}^{i}\)
+\begin{equation}
+\Theta(B)=1+\sum_{i=1}^{q}{\theta}_{i}{B}^{i}
+\end{equation}
 
 ÆäÖÐ,ÎªÊ±¼äÐòÁÐYµÄµÚt¸öÈ¡Öµ,BÊÇÖÍºóËã×Ó£¬ºÍÎªÄ£ÐÍ²ÎÊý,ËüÃÇ¿ÉÒÔÍ¨¹ý×îÐ¡¶þ³ËµÈ·½·¨»ñµÃ¡£
 
@@ -500,11 +542,15 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 ÓÃ»§¼¯U£ºËùÓÐÓÃ»§µÄ¼¯ºÏ£¬ÈçÏÂÊ½ËùÊ¾¡£ÆäÖÐ£¬v±íÊ¾ÓÃ»§µÄÊýÄ¿£¬¼´\(v=|U|\)¡£
 
-\(U=\{{u}_{1},{u}_{2},...,{u}_{v}\}\)
+\begin{equation}
+U=\{{u}_{1},{u}_{2},...,{u}_{v}\}
+\end{equation}
 
 ¸èÇú¼¯S£ºËùÓÐ¿ÉÒÔÍÆ¼ö¸øÓÃ»§µÄÎïÆ·(ÕâÀï¾ÍÊÇ¸èÇú£¬±¾ÎÄ²»¼ÓÇø·ÖµØÊ¹ÓÃ¡°¸èÇú¡±ºÍ¡°ÎïÆ·¡±)µÄ¼¯ºÏ£¬Èç¹«Ê½3.2ËùÊ¾¡£ÆäÖÐ£¬m±íÊ¾Çú¿âÖÐ¸èÇúµÄÊýÄ¿£¬¼´\(m=|S|\)¡£Îª·½±ãÆð¼û£¬ÎÒÃÇÈÏÎªÓÃ»§ÊÕÌýµÄ¸èÇúÒ»¶¨ÔÚ¡°¿ÉÍÆ¼ö¸èÇú¡±ÖÐ¡£
 
-\(S=\{{s}_{1},{s}_{2},...,{s}_{m}\}\)
+\begin{equation}
+S=\{{s}_{1},{s}_{2},...,{s}_{m}\}
+\end{equation}
 
 ¶ÔÓÚÓÃ»§¼¯UÖÐ¸ø¶¨µÄÒ»¸öÓÃ»§u£¬±¾ÎÄËùÒªÑÐ¾¿µÄÒôÀÖÍÆ¼öÏµÍ³µÄÄ¿±ê¾ÍÊÇÎª¸ÃÓÃ»§ÍÆ¼öÆä¿ÉÄÜÏ²»¶µÄÏÂÒ»Ê×¸èÇú¡£ÎªÁËºâÁ¿ÓÃ»§¶Ô¸èÇúµÄÏ²»¶³Ì¶È£¬ÎÒÃÇ¶¨ÒåÈçÏÂËùÊ¾µÄÐ§ÓÃº¯Êý£º
 
@@ -514,19 +560,27 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 Ö÷Ìâ¼¯T: ÓÉËùÓÐÒþº¬Ö÷Ìâ×é³ÉµÄ¼¯ºÏ£¬ÈçÊ½¹«Ê½3.3ËùÊ¾£¬ÆäÖÐKÎªÒþº¬Ö÷ÌâµÄÊýÄ¿¡£
 
-\(T=\{{t}_{1},{t}_{2},...,{t}_{K}\}\)
+\begin{equation}
+T=\{{t}_{1},{t}_{2},...,{t}_{K}\}
+\end{equation}
 
 ÊÂ¼þ\(e(u,\tau,s)\): ±íÊ¾ÓÃ»§uÔÚÊ±¿Ì\(\tau\)ÊÕÌýÁË¸èÇús¡£ÏÔÈ»£¬¸èÇús¿ÉÓÉÓÃ»§uºÍÊ±¿Ì\(\tau\)Î¨Ò»¾ö¶¨£¬Òò´Ë\(e(u,\tau,s)\)¿É¼ò»¯Îª\(e(u,\tau)\)¡£
 
 ÐòÁÐQ(u): ÓÃ»§uÔÚ¸ø¶¨Æ½Ì¨ÏÂµÄËùÓÐÌý¸èÊÂ¼þ°´ÕÕÊ±¼äË³ÐòÅÅÁÐ¿ªÀ´µÃµ½µÄÐòÁÐ£¬¹«Ê½3.4ËùÊ¾¡£
 
-\(Q(u)=<e(u,{\tau}_{1}),e(u,{\tau}_{2}),...,e(u,{\tau}_{\pi}),e(u,{\tau}_{\pi+1}),...,e(u,{\tau}_{\pi+n})>\)
+\begin{equation}
+Q(u)=<e(u,{\tau}_{1}),e(u,{\tau}_{2}),...,e(u,{\tau}_{\pi}),e(u,{\tau}_{\pi+1}),...,e(u,{\tau}_{\pi+n})>
+\end{equation}
 
 ÆäÖÐ£¬\(\pi+n\)ÎªÓÃ»§uËùÊÕÌý»òÏ²»¶µÄ¸èÇúÊýÄ¿£¬\(\tau\)ÎªÊÂ¼þ·¢ÉúµÄÊ±¼ä£¬ÇÒ\({\tau}_{1}<{\tau}_{2}<...<{\tau}_{\pi}<{\tau}_{\pi+1}<...<{\tau}_{\pi+n}\)£¬¼´ÓÃ»§ÊÕÌýÕâ\(\pi+n\)Ê×¸èÇúÊÇ°´ÕÕÒ»¶¨µÄ´ÎÐòÒ»Ê×½ÓÒ»Ê×ÊÕÌýµÄ¡£ÁíÍâ£¬Q(u) ÖÐ×îºón¸öÊÂ¼þÊÇÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚ²úÉúµÄ£¬¼´´ÓÊÂ¼þ\(e(u,{\tau}_{\pi+1})\)µ½\(e(u,{\tau}_{\pi+n})\)¶ÔÓ¦µÄnÊ×¸èÇúÊÇÓÃ»§µ±Ç°Á¬ÐøÊÕÌýµÄ£¬¶øÐòÁÐÖÐµÄ×îºóÒ»¸öÊÂ¼þÊÇÕýÔÚ·¢ÉúµÄ¡£Ò²¾ÍÊÇËµ£¬Õân¸öÌý¸èÊÂ¼þÁ½Á½Ö®¼äÃ»ÓÐÃ÷ÏÔµÄÊ±¼ä¼ä¸ô£¬¶øÊÂ¼þ\(e(u,{\tau}_{\pi+1})\)ºÍÊÂ¼þ\(e(u,{\tau}_{\pi})\)Ö®¼äÊÇÓÉÃ÷ÏÔµÄÊ±¼ä¼ä¸ôµÄ£¬ÈçÏÂËùÊ¾¡£
 
-\(|{\tau}_{\pi+i}-{\tau}_{\pi+i-1}|\le\varepsilon(1<i\le{n})\)
+\begin{equation}
+|{\tau}_{\pi+i}-{\tau}_{\pi+i-1}|\le\varepsilon(1<i\le{n})
+\end{equation}
 
-\(|{\tau}_{\pi+1}-{\tau}_{\pi}|>\varepsilon\)
+\begin{equation}
+|{\tau}_{\pi+1}-{\tau}_{\pi}|>\varepsilon
+\end{equation}
 
 ÆäÖÐ\(\varepsilon\)ÊÇ¸ø¶¨µÄÊ±¼ä¼ä¸ô£¬ÓÃÒÔ·Ö¸î²»Í¬µÄÌý¸è»á»°£¬ÔÚºóÎÄµÄÊµÑéÖÐÎÒÃÇ½«Ö®ÉèÎª8·ÖÖÓ£¬¶øÔÚÏµÍ³ÊµÏÖÖÐ½«Ö®ÉèÎª2Ð¡Ê±¡£ÎªÁË·½±ã£¬ÎÒÃÇÖ»¿¼²ìÔÚ¸ø¶¨Æ½Ì¨ÏÂÈ·ÊµÓÐÌý¸èÐÐÎªµÄÓÃ»§£¬¼´ÓÃ»§ÔÚ¸ø¶¨Æ½Ì¨ÏÂÈ·ÊµÓÐÌý¸èÊÂ¼þÇÒÔÚµ±Ç°ÕýÔÚ¸ÃÆ½Ì¨ÏÂÊÕÌý¸èÇú£¬¼´µ±Ç°»á»°ÆÚÄÚµÄÊÕÌýÊÂ¼þÒ²ÊÇ´æÔÚ¡£¶ø¶ÔÓÚÔÚ¸ø¶¨Æ½Ì¨ÏÂÃ»ÓÐÈÎºÎ½øÐÐÈÎºÎÌý¸èÐÐÎªÒÔ¼°µ±Ç°²»ÔÚ¸ÃÆ½Ì¨ÏÂÌý¸èµÄÓÃ»§£¬ÎªËûÃÇ½øÐÐÍÆ¼ö±È½ÏÀ§ÄÑ£¬ÕâÊÇÕû¸öÍÆ¼öÏµÍ³ÁìÓòÐèÒªÖØµãÑÐ¾¿µÄÀäÆô¶¯ÎÊÌâ£¬±¾ÎÄ¶Ô´Ë²»×öÉî¾¿¡£
 
@@ -534,7 +588,9 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 ÓÉÖ®Ç°µÄ·ÖÎö¿ÉÖª£¬±¾ÎÄËùÌá·½·¨µÄ±¾ÖÊÊäÈëÊÇ¸èÇú¶ÔÓ¦µÄÒþº¬Ö÷ÌâTºÍÓÃ»§uµ±Ç°»á»°ÏÂµÄÊÕÌýÐòÁÐ\(Q(u)[\pi+1:\pi+n]\)£¬¶ø×îÖÕÄ¿±êÊÇÎªÓÃ»§ÍÆ¼öÆä×î¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇú¡£Ò²¾ÍÊÇËµ£¬ÔÚÒÑÖªÖ÷Ìâ¼¯T ºÍÓÃ»§uµ±Ç°»á»°ÆÚÊÕÌýÐòÁÐ\(Q(u)[\pi+1:\pi+n]\)µÄÇé¿öÏÂ´Ó¸èÇú¼¯SÖÐÕÒ³öÄÇÐ©¶ÔÓÃ»§µÄÐ§ÓÃº¯ÊýÈ¡Öµ×î´óµÄÄ¿±ê¸èÇúN(u) ²¢ÍÆ¼ö¸øÓÃ»§£¬Èç¹«Ê½3.6 ËùÊ¾¡£
 
-\(N(u)={\arg\min}_{s\in{S}}u(u,s)\)
+\begin{equation}
+N(u)={\arg\min}_{s\in{S}}u(u,s)
+\end{equation}
 
 ÎªÁË½â¾öÔ¤²âÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúµÄÎÊÌâ£¬ÓÐÁ½¸öÄÑµãÐèÒª½â¾ö£º
 
@@ -574,7 +630,9 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 Ê×ÏÈ£¬ÎÒÃÇ´ÓLastfm(http://last.fm)¡¢¶¹°ê(www.douban.com)µÈÒôÀÖÍøÕ¾ÉÏ×¥È¡ÓÃ»§¶Ô¸èÇúËù±ê×¢µÄ±êÇ©,ÕâÐ©±êÇ©¶Ô¸èÇúÄÚÈÝµÄÃèÊö±È½ÏÈ«Ãæ£¬¼È°üº¬ÁË¸èÇúµÄÃû³Æ¡¢Çú×÷ÕßÐÅÏ¢¡¢×¨¼­ÐÅÏ¢¡¢·¢ÐÐÄê´úµÈ»ù±¾ÐÅÏ¢£¬»¹°üº¬ÁË¸èÇúËù±í´ïÖ÷Ìâ¡¢¸èÇúÀàÐÍ¡¢ÓÃ»§ÐÄÇé¡¢ÊÊºÏ³¡ºÏµÈÀ©Õ¹ÐÅÏ¢¡£ÒÔThe Beta Band µÄSquares ÎªÀý£¬ÓÃ»§ÎªÆä±ê×¢µÄ±êÇ©ÓÐ±íÕ÷Äê´úµÄ¡°2002¡±/¡°2000s¡±¡¢±íÕ÷ÀàÐÍµÄ¡°indie rock¡±/¡°folk pop¡±¡¢±íÕ÷ÓÃ»§¸ÐÊÜµÄ¡°beautiful¡±/¡°want¡± µÈ£¬ÈçÍ¼3ËùÊ¾¡£ÔÚµÃµ½¸èÇú¶ÔÓ¦µÄ±êÇ©ÐÅÏ¢ºó£¬ÎÒÃÇ½«ÕâÐ©±êÇ©°´ÕÕÒ»¶¨µÄ·½Ê½½øÐÐ×éÖ¯£¬´Ó¶øÉú³É¸èÇú¶ÔÓ¦µÄÎÄ±¾ÎÄµµ¡£ÎªÁË¼õÉÙÔëÒô£¬ÎÒÃÇÖ»ÀûÓÃÄÇÐ©±»¶àÊýÈËÊ¹ÓÃµÄ±êÇ©À´Íê³É¸èÇú¶ÔÓ¦ÎÄµµµÄ¹¹Ôì£¬¾ßÌåÀ´ËµÎÒÃÇÖ»¿¼ÂÇ±»±ê¼Ç´ÎÊý´óÓÚ10µÄ±êÇ©¡£ÕâÑù£¬Ã¿Ò»Ê×¸èÇús¶¼½«¶ÔÓ¦Ò»ÆªÎÄµµd£¬¶ø¸èÇú¼¯S½«¶ÔÓ¦µ½Ò»¸öÎÄµµ¼¯D¡£×îºó£¬ÎÒÃÇ¶ÔÎÄµµ¼¯D½øÐÐLDAÖ÷ÌâÄ£ÐÍ½¨Ä££¬´Ó¶øµÃµ½°üº¬K¸öÓÃÀ´È«Ãæ¿Ì»­¸èÇúÌØÕ÷µÄÒþº¬Ö÷Ìâ¼¯ºÏT¡£Í¬Ê±£¬¶ÔÓÚ¸èÇú¼¯S ÖÐµÄÈÎÒâ¸èÇús£¬ÎÒÃÇÄÜ¹»µÃµ½Æä¶ÔÓ¦µÄÒþº¬Ö÷ÌâÈ¨ÖØµÄÏòÁ¿£¬ÈçÊ½¹«Ê½3.7ËùÊ¾¡£
 
-\(\vec{s}=({\omega}_{1},{\omega}_{2},...,{\omega}_{i},...,{\omega}_{K})(1\le{i}\le{K})\)
+\begin{equation}
+\vec{s}=({\omega}_{1},{\omega}_{2},...,{\omega}_{i},...,{\omega}_{K})(1\le{i}\le{K})
+\end{equation}
 
 ÆäÖÐ£¬µ±\({\omega}_{i}=0\)Ê±±íÊ¾¸èÇúÍêÈ«²»ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð£¬¼´¸ÃÒþº¬Ö÷Ìâ¶Ô¸èÇúµÄÄÚÈÝÍêÈ«Ã»ÓÐ¹±Ï×£»µ±\({\omega}_{i}=1\)Ê±±íÊ¾¸èÇúÍêÈ«ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð£»µ±\(0<{\omega}_{i}<1\) Ê±±íÊ¾¸èÇúÔÚÒ»¶¨³Ì¶ÈÉÏÁ¥ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð¡£
 
@@ -608,42 +666,56 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 ¶ÔÓÚÉÏÎÄÖÐ¸ø³öµÄÒ»¹²ÊÕÌýÁËnÊ×¸èÇúÇÒÔÚµ±Ç°»á»°ÆÚÄÚÊÕÌýÁË\(\pi+n\)Ê×¸èÇúµÄÓÃ»§uÀ´Ëµ£¬ÎªÁËÔ¤²âÆä¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇú£¬ÎÒÃÇÐèÒª»ñÈ¡¸Ã¸èÇú¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿£¬ÈçÊ½3.8 ËùÊ¾¡£
 
-\({\vec{s}}_{\pi+n+1}=({\omega}_{1}(\pi+n+1),{\omega}_{2}(\pi+n+1),...,{\omega}_{i}(\pi+n+1),...,{\omega}_{K}(\pi+n+1))\)
+\begin{equation}
+{\vec{s}}_{\pi+n+1}=({\omega}_{1}(\pi+n+1),{\omega}_{2}(\pi+n+1),...,{\omega}_{i}(\pi+n+1),...,{\omega}_{K}(\pi+n+1))
+\end{equation}
 
 ÆäÖÐ£¬\({\omega}_{i}(j)\)±íÊ¾µÚjÊ×¸èÇúÁ¥ÊôÓÚµÚi¸öÒþº¬Ö÷ÌâµÄ¸ÅÂÊ\((1\le{i}\le{K})\)¡£Ö±½ÓµÃµ½ÕâÑùÒ»¸öÖ÷ÌâÏòÁ¿ÍùÍùÊÇ²»Ì«ÈÝÒ×µÄ£¬µ«¹À¼Æ³ö¸ÃÏòÁ¿¶ÔÓ¦µÄÃ¿Ò»Î¬µÄÈ¡ÖµÍùÍùÊÇ¿ÉÐÐµÄ¡£Òò´Ë£¬ÒªµÃµ½ÏÂÒ»Ê×¸èÇú¶ÔÓÚµÄÖ÷ÌâÏòÁ¿£¬ÎÒÃÇÐèÒªÏÈ¹À¼Æ³ö¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿ÖÐÃ¿Ò»Î¬µÄÖµ£¬È»ºó½«ÕâÐ©ÖÐ¼ä¹À¼ÆÖµ×éºÏÆðÀ´¼´¿É¹¹³ÉÍêÕûµØ¹À¼ÆÖ÷ÌâÏòÁ¿£¬´Ó¶øÄÜ¹»ÔÚ¸èÇú¼¯SÖÐÕÒµ½×îÆ¥ÅäµÄ¸èÇúÍÆ¼ö¸øÓÃ»§¡£
 
 ÓÉÇ°ÎÄ¿ÉÖª£¬ÓÃ»§uµÄÌý¸èÐÐÎªÊÇÓÐÊ±¼äË³ÐòµÄ¡£Èç¹ûÎÒÃÇ½«ÓÃ»§ÔÚÄ³Ò»Ê±¼äµãÊÕÌýµÄ¸èÇú¶ÔÓ¦µÄÖ÷ÌâÏòÁ¿¿´×ö±äÁ¿£¬ÄÇÃ´½«´Ë±äÁ¿ÔÚ²»Í¬Ê±¼äµãµÄÈ¡Öµ°´ÕÕÊ±¼äË³ÐòÒÀ´ÎÅÅ¿ª¼´¿ÉµÃµ½ÈçÏÂËùÊ¾µÄ¶àÎ¬Ê±¼äÐòÁÐ~\cite{hamilton1994time}¡£
 
-\(<{{\vec{s}}_{\pi+1}}^\top,{{\vec{s}}_{\pi+2}}^\top,...,{{\vec{s}}_{\pi+n}}^\top>\)
+\begin{equation}
+<{{\vec{s}}_{\pi+1}}^\top,{{\vec{s}}_{\pi+2}}^\top,...,{{\vec{s}}_{\pi+n}}^\top>
+\end{equation}
 
 ½øÒ»²½µØ£¬½«ÉÏÊ½ÔÚKÎ¬Ö÷ÌâÏòÁ¿ÉÏÕ¹¿ª£¬µÃµ½ÈçÏÂËùÊ¾µÄ¸üÎªÖ±¹ÛµÄ¶àÎ¬Ê±¼äÐòÁÐ¡£
 
-\(TS(u)=<, \\
+\begin{equation}
+TS(u)=<, \\
 {({\omega}_{1}(\pi+1),{\omega}_{2}(\pi+1),...,{\omega}_{i}(\pi+1),...,{\omega}_{K}(\pi+1))}^\top, \\
 {({\omega}_{1}(\pi+2),{\omega}_{2}(\pi+2),...,{\omega}_{i}(\pi+2),...,{\omega}_{K}(\pi+2))}^\top, \\
 ..., \\
 {({\omega}_{1}(\pi+j),{\omega}_{2}(\pi+j),...,{\omega}_{i}(\pi+j),...,{\omega}_{K}(\pi+j))}^\top, \\
 ..., \\
 {({\omega}_{1}(\pi+n),{\omega}_{2}(\pi+n),...,{\omega}_{i}(\pi+n),...,{\omega}_{K}(\pi+n))}^\top, \\
->\)
+>
+\end{equation}
 
 ÆäÖÐ,\(i(1\le{i}\le{K})\)±íÊ¾Òþº¬Ö÷ÌâµÄ±àºÅ£¬\(j(1\le{j}\le{n})\)±íÊ¾ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÊÕÌýµÚjÊ×¸èÇúµÄË÷Òý¡£ÏÔÈ»£¬¸Ã¶àÎ¬Ê±¼äÐòÁÐÖÐÈÎÒâÒ»¸öÊ±¼äµã¶¼¶ÔÓ¦×ÅÒ»¸öK Î¬Ö÷ÌâÏòÁ¿ÇÒ¶ÔÓÚK Î¬Ö÷ÌâÏòÁ¿ÖÐµÄÃ¿Ò»Î¬À´ËµÓÖ¶ÔÓ¦×ÅÒ»¸öµ¥±äÁ¿µÄÊ±¼äÐòÁÐ£¬ÈçÏÂÊ½ËùÊ¾¡£
 
-\(TS(u,i)=<{\omega}_{i}(\pi+1),{\omega}_{i}(\pi+2),...,{\omega}_{i}(\pi+j),...,{\omega}_{i}(\pi+n)>\)
+\begin{equation}
+TS(u,i)=<{\omega}_{i}(\pi+1),{\omega}_{i}(\pi+2),...,{\omega}_{i}(\pi+j),...,{\omega}_{i}(\pi+n)>
+\end{equation}
 
 ÆäÖÐ£¬\({\omega}_{i}(\pi+j)\)µÄº¬ÒåÈçÇ°ËùÊö¡£Í¨¹ý¶Ô\(TS(u,i)\)µÄ·ÖÎö¿ÉÒÔµÃµ½ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÊÕÌýµÄ¸èÇúÔÚ±àºÅÎªiµÄÒþº¬Ö÷ÌâÉÏµÄ±ä»¯Çé¿ö£¬½ø¶ø¿ÉÒÔÔ¤²â³öÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚ±àºÅÎªiµÄÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô¶È£¬¼´\({\hat{\omega}}_{i}(\pi+n+1)\)¡£ ½øÒ»²½µØ£¬ÎÒÃÇ¿ÉÒÔ»ñµÃÓÃ»§ÐÐÎªÔÚÆäËûÒþº¬Ö÷ÌâÉÏµÄ±ä»¯Çé¿ö²¢¹À¼Æ³öÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚÆäËûÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô¶È¡£Í¨¹ý¶ÔK ¸ö¹À¼ÆÖµµÄ×éºÏ£¬¿ÉÒÔµÃµ½ÈçÏÂËùÊ¾µÄÄ¿±êÖ÷ÌâÏòÁ¿£¬¼´ÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúµÄ¹À¼ÆÖ÷ÌâÏòÁ¿¡£
 
-\({\hat{\vec{s}}}_{\pi+n+1}=({\hat{\omega}}_{1}(\pi+n+1),{\hat{\omega}}_{2}(\pi+n+1),...,{\hat{\omega}}_{i}(\pi+n+1),...,{\hat{\omega}}_{K}(\pi+n+1))\)
+\begin{equation}
+{\hat{\vec{s}}}_{\pi+n+1}=({\hat{\omega}}_{1}(\pi+n+1),{\hat{\omega}}_{2}(\pi+n+1),...,{\hat{\omega}}_{i}(\pi+n+1),...,{\hat{\omega}}_{K}(\pi+n+1))
+\end{equation}
 
 \section{ÏàËÆ¶È¼ÆËã}
 
 Í¨¹ýÒþº¬µÒÀû¿ËÀ×Ö÷Ìâ½¨Ä£ÎÒÃÇµÃµ½ÁËÈçÊ½3.7ËùÊ¾¸èÇú¼¯SÖÐ¸èÇú¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿£¬¿¼ÂÇµ½ÏòÁ¿ÖÐÃ¿Ò»Î¬¶ÈµÄÖµ±íÕ÷¸èÇúÁ¥ÊôÓÚÄ³Ò»Òþº¬Ö÷ÌâµÄ¸ÅÂÊ£¬ÎÒÃÇ½«ÕâÐ©Ö÷ÌâÈ¨ÖØÏòÁ¿¿´×÷ÊÇÀëÉ¢µÄ¸ÅÂÊ·Ö²¼¡£½øÒ»²½µØ£¬Í¨¹ý¶Ô¶àÎ¬Ê±¼äÐòÁÐµÄ·ÖÎöºÍÔ¤²â£¬ÎÒÃÇµÃµ½ÁËÈçÊ½3.11ËùÊ¾ÓÃ»§c¿ÉÄÜÊÕÌýµÄµÚ(n+1) Ê×¸èÇú¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿µÄ¹À¼ÆÏòÁ¿£¬¼´Ò»¸ö¹À¼Æ¸ÅÂÊ·Ö²¼¡£ÕâÑù£¬ÎÒÃÇ±ã¿ÉÒÔ¼ÆËã¸èÇú¼¯ÖÐµÄ¸èÇú¶ÔÓ¦µÄ¸ÅÂÊ·Ö²¼ÓëÕâ¸ö¹À¼Æ¸ÅÂÊ·Ö²¼µÄ¾àÀë¡£ÏÔÈ»£¬Èç¹ûsÓë¾àÀë×ã¹»Ð¡£¬ÄÇÃ´ÎÒÃÇ¾Í¿ÉÒÔ½«¸èÇús ÍÆ¼ö¸øÓÃ»§c¡£Òò´Ë£¬ÎÒÃÇ¿ÉÒÔÓÃsÓëµÄ¾àÀëµÄµ¹Êý±íÊ¾¸èÇú¼¯ÖÐÈÎÒ»¸èÇús¶ÔÓÃ»§cµÄÍÆ¼ö¶È£¬¼´ÉÏÎÄ¶¨ÒåµÄÐ§ÓÃº¯Êýutility(u,s)£¬ÈçÊ½3.12ËùÊ¾¡£
 
-\(utility(u,s)=\frac{1}{1+dis(s,\hat{s})}\)
+\begin{equation}
+utility(u,s)=\frac{1}{1+dis(s,\hat{s})}
+\end{equation}
 
 ÒòÎªÎÒÃÇÊÇÍ¨¹ýÖ÷ÌâÄ£ÐÍ½¨Ä£½«¸èÇú±íÊ¾³ÉÀëÉ¢µÄ¸ÅÂÊ·Ö²¼£¬ËùÒÔÎÒÃÇ¿ÉÒÔÊ¹ÓÃKL¾àÀë(Kullback-Leibler Divergence)~\cite{kullback1951information}ÒÔ¼°Hellinger¾àÀë~\cite{oosterhoff2012note}µÈÀ´¶ÈÁ¿Á½Ê×¸èÇúÖ®¼äµÄ¾àÀë¡£¿¼ÂÇµ½KL ¾àÀë²»¾ßÓÐ¶Ô³ÆÐÔ£¬±¾ÎÄ²ÉÓÃHellinger¾àÀëÀ´¶ÈÁ¿¸èÇúÖ®¼äµÄ¾àÀë£¬ÈçÊ½3.13ËùÊ¾¡£
 
-\(dis({s}_{i},{s}_{j})=\frac{1}{\sqrt{2}}\sqrt{\sum_{k=1}^{K}({\sqrt{{\omega}_{ik}}-\sqrt{{\omega}_{jk}}})^{2}}\)
+\begin{equation}
+dis({s}_{i},{s}_{j})=\frac{1}{\sqrt{2}}\sqrt{\sum_{k=1}^{K}({\sqrt{{\omega}_{ik}}-\sqrt{{\omega}_{jk}}})^{2}}
+\end{equation}
 
 
 ÆäÖÐ£¬\(dis({s}_{i},{s}_{j})\)Îª±àºÅÎªiºÍjµÄ¸èÇú¶ÔÓ¦µÄÖ÷Ìâ¸ÅÂÊ·Ö²¼Ö®¼äµÄHellinger¾àÀë£¬KÎªÒþº¬Ö÷ÌâÊýÄ¿£¬\({\omega}_{ik}\) Îª±àºÅÎªiµÄ¸èÇúÔÚµÚk¸öÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô³Ì¶È¡£ÏÔÈ»£¬µ±Á½Ê×¸èÇúÔ½ÏàËÆ£¬ÄÇÃ´Æä¶ÔÓ¦µÄ¾àÀëÔ½Ð¡¡£Ïà·´µÄ£¬ÈôÁ½Ê×¸èÇúÔ½²»ÏàËÆ£¬ÆäÖ÷Ìâ¸ÅÂÊ·Ö²¼¶ÔÓ¦µÄ¾àÀëÔ½´ó¡£
@@ -694,44 +766,60 @@ ARIMAÄ£ÐÍ½«Ó¦ÓÃÔÚ±¾ÎÄºóÐøµÄ¹¤×÷ÖÐ£¬ÒÑÍê³É¶ÔÓÃ»§ÐÐÎªÐòÁÐµÄ·ÖÎöºÍÔ¤²â¡£ºóÐøÊµÑé½á¹
 
 ¶ÔÓÚÓÃ»§u£¬ÎÒÃÇÍ¨¹ý¶ÔÆäÊÕÌý¼ÇÂ¼ËùÐÎ³ÉµÄÓÐÐòÁÐ±í½øÐÐ·ÖÎö£¬ÎªÆäÉú³ÉÒ»¸ö°üº¬NÊ×¸èÇúµÄÍÆ¼ö¸èÇúÁÐ±í£¬Èç¹ûÕâNÊ×¸èÇúÖÐ°üº¬ÓÃ»§ÕæÊµÊÕÌýµÄÏÂÒ»Ê×¸èÇú£¬ÄÇÃ´ÎÒÃÇÈÏÎªÕâ¸ö¶ÔÓÚÓÃ»§uµÄÍÆ¼öÊÇÓÐÐ§µÄ¡£ÏÔÈ»£¬ÀàËÆÒôÀÖÍÆ¼öÕâÖÖÎªÓÃ»§ÍÆ¼öÒ»×éÎïÆ·¹©Ñ¡ÔñµÄÎÊÌâÊÇµäÐÍµÄTop-NÍÆ¼öÎÊÌâ(Top-N Recommendation, TNR)¡£ÓÉÎÄÏ×~\cite{adomavicius2005toward}~\cite{powers2011evaluation}¿ÉÖª£¬ÕÙ»ØÂÊ(recall) ºÍ×¼È·ÂÊ(precision)ÊÇºâÁ¿Ò»¸öTop-NÍÆ¼öËã·¨ÓÅÁÓµÄÖØÒª±ê×¼£¬ÎÒÃÇÕâÀïÒ²ÓÃÕâÁ½ÖÖ±ê×¼À´ÆÀ²â±¾ÎÄÌá³öµÄ·½·¨¡£¼ÇR(c)ÊÇ¸ù¾ÝÓÃ»§ÔÚÑµÁ·¼¯ÉÏµÄÐÐÎª¸øÓÃ»§ÍÆ¼öµÄ¸èÇúÁÐ±í£¬¶øT(c)ÊÇÓÃ»§ÔÚ²âÊÔ¼¯ÉÏµÄÐÐÎªÁÐ±í£¬ÄÇÃ´±íÕ÷¡°¼ìË÷³öµÄÏà¹ØÎÄµµÊýºÍÎÄµµ¿âÖÐËùÓÐµÄÏà¹ØÎÄµµÊýµÄ±ÈÂÊ¡±µÄÕÙ»ØÂÊRecall µÄ¶¨ÒåÈçÊ½3.14 ËùÊ¾¡£
 
-\(recall=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|T(u)|}\)
+\begin{equation}
+recall=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|T(u)|}
+\end{equation}
 
 ¿ÉÒÔ¿´³ö£¬ÕÙ»ØÂÊ±íÕ÷ÓÃ»§ÕæÊµÊÕÌýµÄ¸èÇú±»ÍÆ¼öµÄÊýÄ¿ÓëÓÃ»§ÕæÊµÊÕÌý¸èÇú×ÜÊýµÄ±ÈÂÊ¡£ÒòÎªÔÚÒôÀÖÍÆ¼öÏµÍ³ÖÐ£¬ÓÃ»§cÍ¬Ò»Ê±¿ÌÔÚ²âÊÔ¼¯ÉÏÖ»»áÊÕÌýÒ»Ê×¸èÇú£¬¼´|T(u)|=1¡£ Òò´Ë£¬ÎÒÃÇ½«Ê½(18)¼ò»¯ÎªÈçÊ½3.15 ËùÊ¾µÄÃüÖÐÂÊ(hit ratio)¡£
 
-\(hitRatio=\frac{\sum_{u\in{U}}hit(u)}{|U|}\)
+\begin{equation}
+hitRatio=\frac{\sum_{u\in{U}}hit(u)}{|U|}
+\end{equation}
 
 ÆäÖÐ£¬NÎªÍÆ¼öÏµÍ³ÎªÓÃ»§ÍÆ¼öµÄ¸èÇúÊýÄ¿£¬hit±íÊ¾ÓÃ»§Êµ¼ÊÊÕÌýµÄ¸èÇúÊÇ·ñÔÚÍÆ¼öÁÐ±íÖÐ£¬ÈôÔÚÔòÎª1£¬·ñÔòÎª0¡£Èç¹ûhitÎª1£¬ÎÒÃÇ³ÆÖ®Îª¡°ÃüÖÐÒ»´Î¡±¡£¼ÇÓÃ»§u Êµ¼ÊÊÕÌýµÄ¸èÇúÎªs£¬Ôòhit¿É±íÊ¾ÎªÈçÊ½3.16¡£
 
-\(
+\begin{equation}
 hit(u)=\left\{
 \begin{aligned}
 1   ,s\in{R(u)} \\
 0   ,s\notin{R(u)}
 \end{aligned}
 \right.
-\)
+\end{equation}
 
 ×¼È·ÂÊ±íÕ÷ÁË¡°¼ìË÷³öµÄÏà¹ØÎÄµµÊýºÍÏµÍ³ËùÓÐ¼ìË÷µ½µÄÎÄ¼þ×ÜÊýµÄ±ÈÂÊ¡±£¬¼´ÓÃ»§ÕæÊµÊÕÌýµÄ¸èÇú±»ÍÆ¼öµÄÊýÄ¿Óë±»ÍÆ¼öµÄ¸èÇú×ÜÊýµÄ±ÈÂÊ£¬Æä¶¨ÒåÈçÊ½3.17ËùÊ¾£º
 
-\(precision=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|R(u)|}\)
+\begin{equation}
+precision=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|R(u)|}
+\end{equation}
 
 ¿¼ÂÇµ½|T(u)|=1£¬Ê½3.17¿É¼ò»¯ÎªÊ½3.18¡£
 
-\(precision=\frac{\sum_{u\in{U}}hit(u)}{\sum_{u\in{U}}|R(u)|}\)
+\begin{equation}
+precision=\frac{\sum_{u\in{U}}hit(u)}{\sum_{u\in{U}}|R(u)|}
+\end{equation}
 
 ¿¼ÂÇµ½ÕÙ»ØÂÊºÍ¾«È·¶È´ËÏû±Ë³¤µÄ¹ØÏµ£¬ÎÄÏ×[21]ÖÐÊ¹ÓÃF1-Score¶ÔÄ£ÐÍ½øÐÐÆÀ¹À£¬F1-ScoreµÄÈ¡ÖµÔ½´óÄÇÃ´Ä£ÐÍ¶ÔÓ¦µÄ×ÛºÏÐ§¹ûÔ½ºÃ£¬·´Ö®Ô½²î¡£F1-Score¿ÉÒÔÓÃÊ½3.19±íÊ¾£º
 
-\(F1=2*\frac{recall*precision}{recall+precision}\)
+\begin{equation}
+F1=2*\frac{recall*precision}{recall+precision}
+\end{equation}
 
 ÔÚÈçÉÏËùÊöµÄÆÀ²â±ê×¼ÖÐ£¬ÕÙ»ØÂÊºÍ×¼È·ÂÊµÄÔÚºÜ´ó³Ì¶ÈÉÏÈ¡¾öÓÚÈçÊ½(19)ËùÊ¾µÄÃüÖÐÂÊ¡£Èç¹û¸èÇúÎ´±»ÓÃ»§Ï²»¶»òÊÕÌý£¬ÄÇÃ´¾ÍÈÏÎª¸Ã¸èÇúÎ´ÃüÖÐ¡£È»¶ø£¬ÎÄÏ×~\cite{su2013personalized}Ö¸³öÃ»ÓÐÃ÷ÏÔµÄÖ¤¾Ý±íÃ÷Î´±»ÆÀ·ÖµÄÎïÆ·¶ÔÓÃ»§À´ËµÊÇÍêÈ«·ñ¶¨µÄ¡£Ò²¾ÍÊÇËµ£¬¼´Ê¹¸èÇúÎ´ÃüÖÐ£¬Ò²²»´ú±íÓÃ»§²»Ï²»¶¸Ã¸èÇú¡£¼ÙÉèÓÃ»§u ÕæÊµÊÕÌýµÄÏÂÒ»Ê×¸èÇúÎª£¬Èç¹ûÏµÍ³ÎªÆäÍÆ¼öÁËÁÐ±í£¬ÄÇÃ´ÎÒÃÇÈÏÎª¸ÃÍÆ¼öÊÇÓÐÐ§µÄ£¬ÒòÎªÄ¿±ê¸èÇúÔÚÍÆ¼öÁÐ±íÖÐ¡£Ïà·´£¬Èç¹ûÏµÍ³ÎªÆäÍÆ¼öÁÐ±í£¬ÓÉÓÚÆäÖÐÎ´°üº¬£¬ÎÒÃÇÈÏÎª¸ÃÍÆ¼öÊÇÎÞÐ§µÄ¡£È»¶ø£¬Èç¹ûÓëL2ÖÐµÄ¸èÇúÏàËÆ¶ÈºÜ¸ß£¬ÓÃ»§ÏÔÈ»Ò²»áÏ²»¶¸ÃÁÐ±í¡£ÄÇÃ´£¬ÈÏÎªÁÐ±íL2ÎÞÐ§¾Í²»¹»ºÏÀí¡£ÎªÁË½â¾öÕâÖÖÃ¬¶Ü£¬ÎÒÃÇ¿ÉÒÔ¿¼ÂÇÊ¹ÓÃÍÆ¼öÆ«²îµÄ´óÐ¡À´ºâÁ¿Ëã·¨µÄÓÅÁÓ¡£Ò²¾ÍÊÇËµ£¬ÍÆ¼öÆ«²îÔ½Ð¡£¬Ëã·¨Ô½ºÃ£¬·´Ö®Ô½²î¡£ÕâÀïµÄÆ«²î¿ÉÒÔÓÃ¸èÇú¶ÔÓ¦µÄÖ÷Ìâ¸ÅÂÊ·Ö²¼µÄHellinger¾àÀëÀ´±íÊ¾¡£Èç¹ûÒ»¸öÍÆ¼öÁÐ±íÖÐ¸èÇúÓëÄ¿±ê¸èÇúµÄÏàËÆ¶È½Ï¸ß£¬ÄÇÃ´¸ÃÁÐ±íÖÐ¸èÇúÓëÄ¿±ê¸èÇúµÄ¾àÀë¾ÍÓ¦¸Ã½ÏÐ¡£¬¼´ÍÆ¼öÆ«²î½ÏÐ¡£¬ÕâÊ±¼´Ê¹Ä¿±ê¸èÇú²»ÔÚ¸ÃÁÐ±íÖÐ£¬ÎÒÃÇÒ²Ó¦¸ÃÈÏÎª¸ÃÁÐ±íºÏÀí¡£¶øÈç¹ûÒ»¸öÍÆ¼öÁÐ±íÖÐµÄ¸èÇúÓëÄ¿±ê¸èÇúµÄÏàËÆ¶ÈÕûÌåÆ«µÍ£¬µ¼ÖÂÍÆ¼öÆ«²î½Ï´ó£¬¼´Ê¹ÆäÖÐ°üº¬Ä¿±ê¸èÇú£¬ÎÒÃÇÒ²Ó¦¸Ã½µµÍ¸ÃÁÐ±í±»ÈÏ¿ÉµÄÈ¨ÖØ¡£ÍÆ¼öÏµÍ³Ö÷Òª°üº¬ÆÀ·ÖÔ¤²âºÍTop-NÍÆ¼öÁ½ÀàÎÊÌâ£¬ÔÚÆÀ·ÖÔ¤²âÖÐÎÒÃÇ³£³£Ê¹ÓÃ¾ù·½¸ùÎó²î(RMSE)ºÍÆ½¾ù¾ø¶ÔÎó²î(MAE)À´ºâÁ¿Ëã·¨µÄÓÅÁÓ£¬ÕâÀïÎÒÃÇ½«Æä½è¼øµ½ÒôÀÖÍÆ¼öµÄÎÊÌâÖÐ²¢ÓÃÒÔºâÁ¿²»Í¬Ëã·¨µÄÓÅÁÓ£¬Æä¶¨ÒåÈçÊ½3.20ºÍ3.21ËùÊ¾¡£
 
-\(RMSE=\sqrt{\frac{\sum_{u\in{U}}{e(u)}^{2}}{|U|}}\)
+\begin{equation}
+RMSE=\sqrt{\frac{\sum_{u\in{U}}{e(u)}^{2}}{|U|}}
+\end{equation}
 
-\(RMSE=\sqrt{\frac{\sum_{u\in{U}}|e(u)|}{|U|}}\)
+\begin{equation}
+MAE=\sqrt{\frac{\sum_{u\in{U}}|e(u)|}{|U|}}
+\end{equation}
 
 ÆäÖÐ£¬UÎª²âÊÔÓÃ»§¼¯£¬|U|ÎªÓÃ»§Êý£¬e(u)ÎªÏòÓÃ»§ÍÆ¼öµÄ½á¹ûµÄÎó²î¡£¿¼ÂÇµ½ÎÒÃÇÎªÓÃ»§ÍÆ¼öµÄÊÇÒ»¸öÁÐ±í£¬ÎÒÃÇ½«e(u)¿´×öÊÇÁÐ±íÖÐËùÓÐ¸èÇúÓëÄ¿±ê¸èÇúµÄÆ½¾ù¾àÀë¡£ÈçÊ½3.22 ËùÊ¾¡£
 
-\(e(u)=\frac{\sum_{u\in{U}}dis(s,{s}_{\pi+n+1})}{|R(u)|}\)
+\begin{equation}
+e(u)=\frac{\sum_{u\in{U}}dis(s,{s}_{\pi+n+1})}{|R(u)|}
+\end{equation}
 
 \subsection{ÊµÑéÉèÖÃ}
 
@@ -875,23 +963,27 @@ hit(u)=\left\{
 ÕâÀï£¬ÎÒÃÇ·Ö±ð¸ø³öÈýÖÖ²»Í¬µÄ»ìºÏ·½·¨£¬·Ö±ðÊÇ£º»ùÓÚÓÃ»§ÐÐÎª¾Ö²¿ÐÔÌØÕ÷µÄÍÆ¼öÓë»ùÓÚÓÃ»§ÐÐÎªÊ±ÐòÐÔÌØÕ÷µÄÍÆ¼öÏà»ìºÏµÄ»ìºÏÍÆ¼ö·½·¨¡°seq\_local¡±£¬Èç¹«Ê½4.3ËùÊ¾£»»ùÓÚÓÃ»§
 ÐÐÎªÈ«¾ÖÐÔÌØÕ÷µÄÍÆ¼öÓë»ùÓÚÓÃ»§ÐÐÎªÊ±ÐòÐÔÌØÕ÷µÄÍÆ¼öÏà»ìºÏµÄ»ìºÏÍÆ¼ö·½·¨¡°seq\_global¡±£¬Èç¹«Ê½4.4ËùÊ¾£»»ùÓÚÓÃ»§ÐÐÎªÈýÔªÌØÕ÷µÄ»ìºÏÍÆ¼ö·½·¨¡°all¡±£¬Èç¹«Ê½4.5ËùÊ¾¡£
 
-\({\hat{\omega}}_{i}(\pi+n+1)=\alpha{\hat{\omega}}_{i\_mtsa}(\pi+n+1)+(1-\alpha)(\beta{\hat{\omega}}_{i\_local}(\pi+n+1)+(1-\beta){\hat{\omega}}_{i\_global}(\pi+n+1))\)
+\begin{equation}
+{\hat{\omega}}_{i}(\pi+n+1)=\alpha{\hat{\omega}}_{i\_mtsa}(\pi+n+1)+(1-\alpha)(\beta{\hat{\omega}}_{i\_local}(\pi+n+1)+(1-\beta){\hat{\omega}}_{i\_global}(\pi+n+1))
+\end{equation}
 
 ÆäÖÐ,±íÊ¾»ùÓÚÓÃ»§Ê±ÐòÐÔÌØÕ÷µÄÍÆ¼ö·½·¨µÄÈ¨ÖØ£¬±íÊ¾ÔÚÍêÈ«»ìºÏÍÆ¼ö·½·¨ÖÐ»ùÓÚÓÃ»§ÐÐÎª¾Ö²¿ÐÔÌØÕ÷µÄÍÆ¼ö·½·¨µÄÈ¨ÖØ¡£¶ÔÓÚ¹«Ê½4.3ºÍ4.4£¬ÎÒÃÇ°´ÕÕ¹«Ê½4.6¶¨Òå¡£
 
-\(\alpha=\frac{f(n-b)}{n+a}\)
+\begin{equation}
+\alpha=\frac{f(n-b)}{n+a}
+\end{equation}
 
 ÆäÖÐ£¬n±íÊ¾´ý¿¼²ì¸èÇúÐòÁÐµÄ³¤¶È£¬¼´ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÏ²ºÃµÄ¸èÇúÊýÄ¿£»²ÎÊýbÓÃÒÔ±íÕ÷Ê±ÐòÐÔÌØÕ÷Æä×÷ÓÃµÄÆðÊ¼³¤¶È£»²ÎÊýaÓÃÒÔµ÷ÕûÊ±ÐòÐÔÌØÕ÷×÷ÓÃµÄ±ä»¯ËÙÂÊ¡£Ëã×ÓfµÄ
 ¶¨ÒåÈç¹«Ê½4.7ËùÊ¾£º
 
-\(
-f(x)=\left(
+\begin{equation}
+f(x)=\left\{
 \begin{aligned}
-x     ,x>0
+x     ,x>0 \\
 0     ,x\le{0}
 \end{aligned}
 \right.
-\)
+\end{equation}
 
 Í¼4.6¸ø³öÁËµ±a=10ÇÒb=5Ê±£¬µÄÈ¡Öµ±ä»¯Çé¿ö£¬ÆäÖÐºá×ø±ê±íÊ¾ÐòÁÐ³¤¶È£¬×Ý×ø±ê±íÊ¾µÄÈ¡Öµ¡£ÓÉÍ¼¿ÉÒÔ¿´³ö£¬µ±ÐòÁÐ³¤¶ÈÐ¡ÓÚ5Ê±=0ËµÃ÷ÐòÁÐ³¤¶È¹ý¶ÌÊ±²»¿¼ÂÇÊ±ÐòÌØÕ÷£»
 ¶øËæ×ÅÐòÁÐ³¤¶ÈµÄÔö¼Ó£¬µÄÈ¡Öµ²»¶ÏÔö¼Ó£¬¼´Ê±ÐòÐÔÌØÕ÷µÄ×÷ÓÃÔ½À´Ô½´ó¡£
@@ -1147,15 +1239,19 @@ seg_list = jieba.cut("ÄÏ¾©ÊÐ³¤½­ÈýÇÅ")£»
 
 ÓÃ»§ÔÚÊÕÌýÒ»Ê×¸èÇúµÄÊ±ºò£¬¿ÉÄÜ¶ÔÆä²úÉúÁ½ÖÖµäÐÍµÄÐÐÎª£¬¼´»ý¼«ÐÐÎªºÍÏû¼«ÐÐÎª¡£µäÐÍµÄ»ý¼«ÐÐÎª°üÀ¨ÓÃ»§ÊÕ²Øµ±Ç°¸èÇú¡¢·ÖÏíµ±Ç°¸èÇú¡¢ÍêÕûÊÕÌý»òÕßÊÕÌýµ±Ç°¸èÇúµÄ¾ø´ó²¿·ÖµÈ£¬¶øµäÐÍµÄÏû¼«ÐÐÎª°üÀ¨ÓÃ»§½«¸èÇú¶ª½ø¡°À¬»øÍ°¡±¡¢Ñ¡ÔñÌø¹ýµ±Ç°¸èÇú¡¢Ö»ÊÕÌýµ±Ç°¸èÇúµÄÒ»Ð¡²¿·ÖµÈ¡£¶ÔÓÚÊÕ²Ø¡¢·ÖÏí¡¢¶ª½ø¡°À¬»øÍ°¡±¡¢Ìø¹ýÕâÐ©±È½ÏÖ±¹ÛµØÐÐÎªÎÒÃÇ²»ÔÙ×ö½øÒ»²½ÃèÊö£¬¶ø¶ÔÓÚÓÃ»§ÊÕÌý¸èÇú±ÈÀýËù±í´ïµÄÌ¬¶È£¬±¾ÎÄÈÏÎªÈç¹ûÓÃ»§ÊÕÌýµ±Ç°¸èÇúµÄ³¤¶È³¬¹ýÁË¸èÇú×Ü³¤¶ÈµÄ50\%ÄÇÃ´ÓÃ»§Ï²»¶¸Ã¸èÇú£¬·ñÔòÈÏÎªÓÃ»§²»Ï²»¶µ±Ç°¸èÇú£¬¼´Ïû¼«ÐÐÎª£¬ÈçÏÂÊ½ËùÊ¾¡£ÆäÖÐ£¬total\_length±íÊ¾¸èÇúµÄ×Ü³¤¶È£¬past\_length±íÊ¾ÓÃ»§ÊÕÌý¸Ã¸èÇúµÄÊ±¼ä³¤¶È£¬¶øpastRatio±íÊ¾ÓÃ»§ÊÕÌý³¤¶ÈÕ¼¸èÇú×Ü³¤¶ÈµÄ±ÈÀý¡£Attitude±íÊ¾ÓÃ»§¶Ô¸èÇúµÄÌ¬¶È£¬µ±pastRatio²»Ð¡ÓÚ50\%Ê±È¡ÖµÎª1±íÊ¾»ý¼«Ì¬¶È£¬·ñÔò±íÊ¾Ïû¼«Ì¬¶È¡£¼ÙÈç¸èÇú¡°´óº£¡±×Ü³¤¶ÈÎª4·Ö40Ãë£¬¼´280000ºÁÃë£¬ÓÃ»§aÊÕÌýÖÁ1·ÖÖÓ¼´60000ºÁÃëÊ±Ìø¹ý£¬ÄÇÃ´¶ÔÓ¦µÄpastRatio(a£¬¡°´óº£¡±)=21.43\%£¬ÄÇÃ´ÎÒÃÇÈÏÎªÓÃ»§a²»Ì«Ï²»¶¸èÇú¡°´óº£¡±£¬¶øÓÃ»§bÊÕÌýÖÁ4·ÖÖÓ¼´240000ºÁÃëÊ±Ìø¹ý£¬ÄÇÃ´¶ÔÓ¦µÄÓÐpastRatio(b£¬¡°´óº£¡±)=85.71\%£¬ÎÒÃÇÈÏÎªÓÃ»§b±È½ÏÏ²»¶µ±Ç°¸èÇú¡£ÖÁÓÚÓÃ»§ÎªÊ²Ã´Ã»ÓÐÌýÍêÕûÕûÊ×¸èÇú£¬¼´pastRatio(b,¡±´óº£¡±)²»µÈÓÚ1£¬¿ÉÒÔÈÏÎªÓÃ»§ÊÕÌýµÄÊ±¼ä¹ý³¤£¬ÏëÒª»»Ò»Ê×¡£ÐòÁÐÉú³ÉÏµÍ³ÔÚ¸èÇú²¥·ÅÖÁ50\% Ê±±ã¶ÁÈ¡Êý¾Ý¿âÖÐ±£´æµÄÓÃ»§µ±Ç°»á»°ÆÚÄÚµÄ»ý¼«¸èÇúÐòÁÐ£¬²¢½áºÏµ±Ç°¸èÇú×é³ÉÐÂµÄÐòÁÐ´«µÝ¸øÍÆ¼öÒýÇæ¡£
 
-\(pastRatio(user,song)=\frac{past_length}{total_length}\times{100\%}\)
+\begin{equation}
+pastRatio(user,song)=\frac{past_length}{total_length}\times{100\%}
+\end{equation}
 
-\(attitude(user,song)=
+\begin{equation}
+attitude(user,song)=
 \left\{
 \begin{aligned}
 1    ,pastRatio(user,song)\ge{50\%} \\
 0    ,pastRatio(user,song)<50\%
 \end{aligned}
-\right.\)
+\right.
+\end{equation}
 
 \subsection{ÍÆ¼öÒýÇæ}
 

@@ -11,64 +11,64 @@
 \contentsline {subsection}{\numberline {2.2.2}KL距离}{8}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Hellinger距离}{9}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}评测指标}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}用户满意度}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}用户满意度}{10}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}预测准确度}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}其他评测指标}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}其他评测指标}{11}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}分布式实时计算系统}{11}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}基本组成}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}基本组成}{12}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}分布式过程调用}{13}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}文本建模}{13}{section.2.5}
+\contentsline {section}{\numberline {2.5}文本建模}{14}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}向量空间模型}{14}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}隐含狄利克雷模型}{15}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}时间序列预测}{16}{section.2.6}
+\contentsline {subsection}{\numberline {2.5.2}隐含狄利克雷模型}{16}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}时间序列预测}{17}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}简单平均法}{17}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}指数平滑法}{17}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}差分整合移动平均自回归模型}{17}{subsection.2.6.3}
-\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}一种基于多维时间序列分析的音乐推荐方法}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}问题描述}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}方法框架}{21}{section.3.2}
-\contentsline {section}{\numberline {3.3}主题模型建模}{23}{section.3.3}
-\contentsline {section}{\numberline {3.4}多维时间序列构造与预测}{24}{section.3.4}
-\contentsline {section}{\numberline {3.5}相似度计算}{26}{section.3.5}
-\contentsline {section}{\numberline {3.6}推荐列表生成}{27}{section.3.6}
-\contentsline {section}{\numberline {3.7}实验设计和结果}{27}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}数据收集}{27}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}评测标准}{27}{subsection.3.7.2}
-\contentsline {subsection}{\numberline {3.7.3}实验设置}{29}{subsection.3.7.3}
-\contentsline {subsection}{\numberline {3.7.4}结果分析}{30}{subsection.3.7.4}
-\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}一种基于用户三期行为的综合音乐推荐方法}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}综合音乐推荐}{34}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}整体式综合}{35}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}并行式综合}{35}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}流水线式综合}{35}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}综合推荐框架}{36}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}实验结果}{37}{section.4.2}
-\contentsline {section}{\numberline {4.3}分析讨论}{39}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}最长可分析序列}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}不同文本分析方法比较}{40}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}系统实现}{42}{chapter.5}
-\contentsline {section}{\numberline {5.1}系统架构}{42}{section.5.1}
-\contentsline {section}{\numberline {5.2}离线处理模块}{45}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}爬虫系统}{45}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}结巴分词}{47}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{48}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}在线处理模块}{49}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}序列生成}{49}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}推荐引擎}{50}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}系统效果}{53}{section.5.4}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{54}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{54}{section.6.1}
-\contentsline {section}{\numberline {6.2}工作展望}{54}{section.6.2}
-\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{55}{appendix.A}
-\contentsline {section}{\numberline {A.1}权利声明}{55}{section.A.1}
-\contentsline {section}{\numberline {A.2}数据特点}{55}{section.A.2}
-\contentsline {section}{\numberline {A.3}组织形式}{55}{section.A.3}
-\contentsline {section}{\numberline {A.4}字段解析}{56}{section.A.4}
-\contentsline {subsection}{\numberline {A.4.1}scale}{56}{subsection.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}playlist}{56}{subsection.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}toptag}{57}{subsection.A.4.3}
-\contentsline {subsection}{\numberline {A.4.4}其他字段}{57}{subsection.A.4.4}
-\contentsline {section}{\numberline {A.5}应用场景}{57}{section.A.5}
-\contentsline {chapter}{参考文献}{58}{appendix*.4}
-\contentsline {chapter}{简历与科研成果}{62}{appendix*.5}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{63}{appendix*.6}
+\contentsline {subsection}{\numberline {2.6.2}指数平滑法}{18}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}差分整合移动平均自回归模型}{18}{subsection.2.6.3}
+\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}一种基于多维时间序列分析的音乐推荐方法}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}问题描述}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}方法框架}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}主题模型建模}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}多维时间序列构造与预测}{26}{section.3.4}
+\contentsline {section}{\numberline {3.5}相似度计算}{27}{section.3.5}
+\contentsline {section}{\numberline {3.6}推荐列表生成}{28}{section.3.6}
+\contentsline {section}{\numberline {3.7}实验设计和结果}{28}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}数据收集}{28}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}评测标准}{29}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}实验设置}{31}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}结果分析}{31}{subsection.3.7.4}
+\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}一种基于用户三期行为的综合音乐推荐方法}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}综合音乐推荐}{36}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}整体式综合}{37}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}并行式综合}{37}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}流水线式综合}{37}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}综合推荐框架}{38}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}实验结果}{39}{section.4.2}
+\contentsline {section}{\numberline {4.3}分析讨论}{40}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}最长可分析序列}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}不同文本分析方法比较}{42}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}系统实现}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}系统架构}{44}{section.5.1}
+\contentsline {section}{\numberline {5.2}离线处理模块}{47}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}爬虫系统}{47}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}结巴分词}{49}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{50}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}在线处理模块}{51}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}序列生成}{51}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}推荐引擎}{52}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}系统效果}{55}{section.5.4}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}工作展望}{57}{section.6.2}
+\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{58}{appendix.A}
+\contentsline {section}{\numberline {A.1}权利声明}{58}{section.A.1}
+\contentsline {section}{\numberline {A.2}数据特点}{58}{section.A.2}
+\contentsline {section}{\numberline {A.3}组织形式}{58}{section.A.3}
+\contentsline {section}{\numberline {A.4}字段解析}{59}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}scale}{59}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}playlist}{59}{subsection.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}toptag}{60}{subsection.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}其他字段}{60}{subsection.A.4.4}
+\contentsline {section}{\numberline {A.5}应用场景}{60}{section.A.5}
+\contentsline {chapter}{参考文献}{61}{appendix*.4}
+\contentsline {chapter}{简历与科研成果}{65}{appendix*.5}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{66}{appendix*.6}
