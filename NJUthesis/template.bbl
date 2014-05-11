@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{44}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -6,6 +6,10 @@
 \providecommand{\eprint}[2][]{\url{#2}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Book
+\bibitem[{xlv()}]{xlvector2012}
+, .
+\newblock \bibinfo{title}{推荐系统实战}.
 %Type = Article
 \bibitem[{Adomavicius 和~ Tuzhilin(2005)}]{adomavicius2005toward}
 \bibinfo{author}{Adomavicius, G.}, \bibinfo{author}{Tuzhilin, A.},
@@ -14,6 +18,20 @@
   survey of the state-of-the-art and possible extensions}.
 \newblock \bibinfo{journal}{Knowledge and Data Engineering, IEEE Transactions
   on} \bibinfo{volume}{17}, \bibinfo{pages}{734--749}.
+%Type = Misc
+\bibitem[{BeautifulSoup()}]{BeautifulSoup}
+BeautifulSoup, .
+\newblock \bibinfo{title}{{http://www.crummy.com/software/BeautifulSoup/}}.
+%Type = Article
+\bibitem[{Berenzweig 等(2004)Berenzweig, Logan, Ellis 和~
+  Whitman}]{berenzweig2004large}
+\bibinfo{author}{Berenzweig, A.}, \bibinfo{author}{Logan, B.},
+  \bibinfo{author}{Ellis, D.P.}, \bibinfo{author}{Whitman, B.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{A large-scale evaluation of acoustic and subjective
+  music-similarity measures}.
+\newblock \bibinfo{journal}{Computer Music Journal} \bibinfo{volume}{28},
+  \bibinfo{pages}{63--76}.
 %Type = Article
 \bibitem[{Blei 等(2003)Blei, Ng 和~ Jordan}]{blei2003latent}
 \bibinfo{author}{Blei, D.M.}, \bibinfo{author}{Ng, A.Y.},
@@ -57,9 +75,18 @@ DoubanFM, .
 \newblock \bibinfo{journal}{Annual review of information science and
   technology} \bibinfo{volume}{37}, \bibinfo{pages}{295--340}.
 %Type = Misc
+\bibitem[{Gensim()}]{Gensim}
+Gensim, .
+\newblock \bibinfo{title}{{http://radimrehurek.com/gensim/}}.
+%Type = Misc
 \bibitem[{Hadoop()}]{Hadoop}
 Hadoop, .
 \newblock \bibinfo{title}{{http://hadoop.apache.org/}}.
+%Type = Book
+\bibitem[{Hamilton(1994)}]{hamilton1994time}
+\bibinfo{author}{Hamilton, J.D.}, \bibinfo{year}{1994}.
+\newblock \bibinfo{title}{Time series analysis}. volume~\bibinfo{volume}{2}.
+\newblock \bibinfo{publisher}{Princeton university press Princeton}.
 %Type = Inproceedings
 \bibitem[{Hariri 等(2012)Hariri, Mobasher 和~ Burke}]{hariri2012context}
 \bibinfo{author}{Hariri, N.}, \bibinfo{author}{Mobasher, B.},
@@ -92,6 +119,10 @@ Hadoop, .
   \bibinfo{booktitle}{IMMM 2012, The Second International Conference on
   Advances in Information Mining and Management}, pp.
   \bibinfo{pages}{129--134}.
+%Type = Misc
+\bibitem[{Jieba()}]{Jieba}
+Jieba, .
+\newblock \bibinfo{title}{{https://github.com/fxsjy/jieba}}.
 %Type = Inproceedings
 \bibitem[{Kim 等(2010)Kim, Schmidt, Migneco, Morton, Richardson, Scott, Speck
   和~ Turnbull}]{kim2010music}
@@ -122,6 +153,10 @@ Lastfm, .
   collaborative filtering}.
 \newblock \bibinfo{journal}{Internet Computing, IEEE} \bibinfo{volume}{7},
   \bibinfo{pages}{76--80}.
+%Type = Misc
+\bibitem[{LingPipe()}]{LingPipe}
+LingPipe, .
+\newblock \bibinfo{title}{{http://alias-i.com/lingpipe/}}.
 %Type = Inproceedings
 \bibitem[{Mak 等(2010)Mak, Lee, Senapati, Yeung 和~ Lam}]{mak2010similarity}
 \bibinfo{author}{Mak, C.M.}, \bibinfo{author}{Lee, T.},
@@ -137,6 +172,10 @@ Lastfm, .
 \newblock \bibinfo{title}{Arma models and the box--jenkins methodology}.
 \newblock \bibinfo{journal}{Journal of Forecasting} \bibinfo{volume}{16},
   \bibinfo{pages}{147--163}.
+%Type = Misc
+\bibitem[{Mallet()}]{Mallet}
+Mallet, .
+\newblock \bibinfo{title}{{http://mallet.cs.umass.edu/}}.
 %Type = Inproceedings
 \bibitem[{McFee 和~ Lanckriet(2011)}]{mcfee2011natural}
 \bibinfo{author}{McFee, B.}, \bibinfo{author}{Lanckriet, G.R.},
@@ -221,6 +260,10 @@ Pandora, .
   review of choice overload}.
 \newblock \bibinfo{journal}{Journal of Consumer Research} \bibinfo{volume}{37},
   \bibinfo{pages}{409--425}.
+%Type = Misc
+\bibitem[{Scrapy()}]{Scrapy}
+Scrapy, .
+\newblock \bibinfo{title}{{http://scrapy.org/}}.
 %Type = Inproceedings
 \bibitem[{Song 等(2012)Song, Dixon 和~ Pearce}]{song2012survey}
 \bibinfo{author}{Song, Y.}, \bibinfo{author}{Dixon, S.},
@@ -233,6 +276,14 @@ Pandora, .
 \bibitem[{Storm()}]{Storm}
 Storm, .
 \newblock \bibinfo{title}{{http://storm.incubator.apache.org/}}.
+%Type = Article
+\bibitem[{Su 等(2013)Su, Chang 和~ Tseng}]{su2013personalized}
+\bibinfo{author}{Su, J.H.}, \bibinfo{author}{Chang, W.Y.},
+  \bibinfo{author}{Tseng, V.S.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Personalized music recommendation by mining social
+  media tags}.
+\newblock \bibinfo{journal}{Procedia Computer Science} \bibinfo{volume}{22},
+  \bibinfo{pages}{303--312}.
 %Type = Inproceedings
 \bibitem[{Tang 等(2009)Tang, Yao 和~ Chen}]{tang2009multi}
 \bibinfo{author}{Tang, J.}, \bibinfo{author}{Yao, L.}, \bibinfo{author}{Chen,
