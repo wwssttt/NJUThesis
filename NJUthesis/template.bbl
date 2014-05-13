@@ -7,9 +7,10 @@
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Book
-\bibitem[{xlv()}]{xlvector2012}
-, .
+\bibitem[{项亮(2012)}]{xlvector2012}
+\bibinfo{author}{项亮}, \bibinfo{year}{2012}.
 \newblock \bibinfo{title}{推荐系统实战}.
+\newblock \bibinfo{publisher}{人民邮电出版社}, \bibinfo{address}{北京}.
 %Type = Article
 \bibitem[{Adomavicius 和~ Tuzhilin(2005)}]{adomavicius2005toward}
 \bibinfo{author}{Adomavicius, G.}, \bibinfo{author}{Tuzhilin, A.},

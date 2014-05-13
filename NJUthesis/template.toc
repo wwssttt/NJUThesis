@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {5.1}系统架构}{46}{section.5.1}
 \contentsline {section}{\numberline {5.2}离线处理模块}{49}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}爬虫系统}{49}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}结巴分词}{51}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}结巴分词}{50}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{52}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}在线处理模块}{53}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}序列生成}{53}{subsection.5.3.1}
