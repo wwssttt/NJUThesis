@@ -100,24 +100,17 @@
 
 % 中文摘要
 \begin{abstract}
+　　近年来，移动互联网和智能手机的快速发展，使得音乐电台应用大量出现，比如Lastfm、Pandora、豆瓣电台等。然而，此类应用的音乐推荐算法没有充分考虑用户听歌行为与其所处
+上下文环境之间的关系，导致推荐结果不够理想，而少量考虑用户上下文的工作对用户行为的时间相关性处理不够合理，同样难以达到理想的推荐效果。我们认为，用户的未来行为与其
+长期行为、即时行为和中期行为均存在相关性，但目前未见工作全面考虑用户行为的时间相关性。为此，本文提出了一种基于多维时间序列分析的个性化音乐推荐方法，较合理地利用用
+户中期行为提高音乐推荐效果，进而给出了一种综合用户即时、中期和长期行为的音乐推荐方法，通过原型系统的实现，初步验证了上述方法的可行性。本文的主要贡献如下：
 
-    近些年来，互联网相关技术得到了快速发展，而信息过载~\cite{yang2003visualization}和选择悖论~\cite{scheibehenne2010can} 的问题也愈发显著。为了提升信息的利用效率，
-    推荐系统应运而生并已广泛应用在电子商务、音乐电台、个性化阅读等领域。音乐作为一种强大的沟通和自我表达工具已经成为人们日常生活中非常重要的一种消费品,而相关研究
-    也表明人们平时的听歌行为要远远多于读书、看电视、看电影等行为~\cite{rentfrow2003re}。为了解决人们在音乐消费过程中遇到的信息过载和选择悖论问题，一些个性化音乐
-    推荐系统被开发了出来，比如Lastfm~\cite{Lastfm}、Pandora~\cite{Pandora}、豆瓣电台~\cite{DoubanFM} 等。然而，大多数音乐推荐系统没有充分考虑到用户听歌行为与其
-    所处上下文环境之间的密切关系，导致做出的推荐不符合用户的即时需求，而一些考虑用户上下文影响的工作对用户行为历史的分析也不够细致和全面。此外，用户的未来行为
-    受到其长期行为、即时行为和中期行为的共同影响，但目前未见工作将这几方面的影响综合起来加以考察。因此，本文给出了一种基于多维时间序列分析的个性化音乐推荐系统
-    以全面细致地对用户行为进行分析。本文的主要贡献和工作如下所示：
-
-    1. 提出了一种基于多维时间序列分析的音乐推荐方法。该方法首先使用主题模型将歌曲表示成由若干隐含主题构成的概率分布，进而将用户行为建模为多维时间序列并对该序列
-    进行分析和预测，从而实现了对用户行为的定量分析。
-
-    2. 从更细的粒度对用户听歌行为进行分析和预测，认为用户的听歌行为在每个隐含主题上都对应着一个时间序列并通过对这些时间序列的分析全面考察每一个隐含主题的贡献和
-    作用。
-
-    3. 给出了一种基于用户三期行为的综合音乐推荐方法，综合考虑了用户长期行为、中期行为以及即时行为对用户未来行为的影响和作用。
-
-    4. 实现了一个原型系统，验证了本文所述方法的可行性。其中，本文利用分布式实时计算框架Storm 实现了所述方法的并行化，提升了系统的执行效率。
+    1. 提出了一种基于多维时间序列分析的音乐推荐方法。该方法采用主题模型将每首歌曲表示成隶属于若干隐含主题的概率，进而将用户行为建模为多维时间序列并对该序列进行
+    分析，从而较好地预测用户行为偏好，并给出合理的推荐。
+    
+    2. 给出了一种基于用户即时、中期和长期行为的综合音乐推荐框架，考虑了三种行为影响权重的动态调整问题，进一步提高了音乐推荐的效果。
+    
+    3. 基于上述技术实现了一个音乐推荐原型系统，为提高处理效率，系统采用分布式实时计算框架Storm 实现，达到了预期效果。
 
 \keywords{音乐推荐系统; 主题模型; 多维时间序列; 综合推荐}
 
@@ -126,15 +119,32 @@
 % 英文摘要
 \begin{englishabstract}
 
-    In recent years, internet-related technologies have grown rapidly. However, information overload problem and paradox of choice become much more obviously. In order to enhance the utilization of information, recommender systems appear and have been applied to many fields, such as e-commerce, music, and and reading. Being a powerful communication and self-express tool, music has been an important consumer goods in people's daily life and previous research has also indicated that participants listened to music more often than other activities, such as watching television, reading books and watching movies. To alleviating the information overload problem and paradox of choice in music field, some music recommender systems have been developed, such as Lastfm, Douban, Pandora. However, most of recent music recommender systems do not take the close relationship between user's behavior and his/her current context into consideration, leading to bad recommendations that do not match user's current requirement. Although there are some researchers have done some related works, they are not meticulous and comprehensive enough. Besides, user's future behaviors are affected by his/her long-term behaviors, immediately behaviors and middle-term behaviors at the same time and there are few work giving a composite idea on them. In order to get better recommendations, we propose a music recommender system based on multidimensional time series analysis that can analyze the user's behavior more meticulous and comprehensive. Our main contribution and work are as follows:
+    With the rapid growth of mobile-internet and smart-phone in recent years, many music radio applications come to our lives, such as Lastfm,Pandora and DoubanFM.
+    However, the recommender algorithms behind these applications do not take the relationship between user's listening behavior and its context into consideration,
+    leading to unsatisfactory recommendations. 
+    In order to enhance the utilization of information, recommender systems appear and have been applied to many fields, such as e-commerce, music, and and 
+    reading. Being a powerful communication and self-express tool, music has been an important consumer goods in people's daily life and previous research 
+    has also indicated that participants listened to music more often than other activities, such as watching television, reading books and watching movies. 
+    To alleviating the information overload problem and paradox of choice in music field, some music recommender systems have been developed, such as Lastfm, 
+    Douban, Pandora. However, most of recent music recommender systems do not take the close relationship between user's behavior and his/her current context 
+    into consideration, leading to bad recommendations that do not match user's current requirement. Although there are some researchers have done some related
+     works, they are not meticulous and comprehensive enough. Besides, user's future behaviors are affected by his/her long-term behaviors, immediately behaviors 
+     and middle-term behaviors at the same time and there are few work giving a composite idea on them. In order to get better recommendations, we propose a 
+     music recommender system based on multidimensional time series analysis that can analyze the user's behavior more meticulous and comprehensive. 
+     Our main contribution and work are as follows:
 
-    1. A method for music recommendation based on multidimensional time series analysis was proposed. The method firstly using topic models to model a song as a probability distribution that is constituted by some latent topics and then it model the user's behavior as a multidimensional time series. By analyzing the time series, the method can forecast the user's future behavior in a quantitative way.
+    1. A method for music recommendation based on multidimensional time series analysis was proposed. The method firstly using topic models to model a song as 
+    a probability distribution that is constituted by some latent topics and then it model the user's behavior as a multidimensional time series. 
+    By analyzing the time series, the method can forecast the user's future behavior in a quantitative way.
 
-    2. User's behavior was analyzed in finer granularity. With the basic idea of thinking every latent topic corresponds to a time series, we analyze every time series and forecast the future values leading to comprehensive analyzing the influence of all latent topics.
+    2. User's behavior was analyzed in finer granularity. With the basic idea of thinking every latent topic corresponds to a time series, we analyze every time
+     series and forecast the future values leading to comprehensive analyzing the influence of all latent topics.
 
-    3. A composite music recommender method was proposed. The method takes into consideration user's long-term behavior, immediate behavior and middle-term behavior at the same time.
+    3. A composite music recommender method was proposed. The method takes into consideration user's long-term behavior, immediate behavior and middle-term
+     behavior at the same time.
 
-    4. A prototype that is used to verify the feasibility of our recommender methods was implemented. Specially, we paralleled the method with an distributed realtime computation framework-Storm, making the system running faster.
+    4. A prototype that is used to verify the feasibility of our recommender methods was implemented. Specially, we paralleled the method with an distributed 
+    realtime computation framework-Storm, making the system running faster.
 
 \englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series, Composite Recommendation}
 
