@@ -27,7 +27,7 @@
 % ÉèÖÃÁ´½ÓÑÕÉ«
 \hypersetup{
 % pdf ÊôÐÔ
-             pdftitle={Ò»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öÏµÍ³¼°ÆäÊµÏÖ}, %
+             pdftitle={Ò»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öÏµÍ³ÑÐ¾¿ÓëÊµÏÖ}, %
             pdfauthor={ÍõÊØÌÎ}
 }
 
@@ -66,7 +66,7 @@
 \nlcfootdate{2010~Äê~5~ÔÂ~1~ÈÕ}
 
 % ÄÏ´óÖÐÎÄ·âÃæÄÚÈÝ×Ö·û´®
-\title{Ò»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öÏµÍ³¼°ÆäÊµÏÖ}
+\title{Ò»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öÏµÍ³ÑÐ¾¿ÓëÊµÏÖ}
 \author{ÍõÊØÌÎ}
 \studentnum{~MF1133033}
 \grade{2014}
@@ -110,7 +110,7 @@
 
     2. ¸ø³öÁËÒ»ÖÖ»ùÓÚÓÃ»§¼´Ê±¡¢ÖÐÆÚºÍ³¤ÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö¿ò¼Ü£¬¿¼ÂÇÁËÈýÖÖÐÐÎªÓ°ÏìÈ¨ÖØµÄ¶¯Ì¬µ÷ÕûÎÊÌâ£¬½øÒ»²½Ìá¸ßÁËÒôÀÖÍÆ¼öµÄÐ§¹û¡£
 
-    3. »ùÓÚÉÏÊö¼¼ÊõÊµÏÖÁËÒ»¸öÒôÀÖÍÆ¼öÔ­ÐÍÏµÍ³£¬ÎªÌá¸ß´¦ÀíÐ§ÂÊ£¬ÏµÍ³²ÉÓÃ·Ö²¼Ê½ÊµÊ±¼ÆËã¿ò¼ÜStorm ÊµÏÖ£¬´ïµ½ÁËÔ¤ÆÚÐ§¹û¡£
+    3. »ùÓÚÉÏÊö¼¼ÊõÊµÏÖÁËÒ»¸öÒôÀÖÍÆ¼öÔ­ÐÍÏµÍ³£¬ÎªÌá¸ß´¦ÀíÐ§ÂÊ£¬ÏµÍ³²ÉÓÃ·Ö²¼Ê½ÊµÊ±¼ÆËã¿ò¼ÜStormÊµÏÖ£¬´ïµ½ÁËÔ¤ÆÚÐ§¹û¡£
 
 \keywords{ÒôÀÖÍÆ¼öÏµÍ³; Ö÷ÌâÄ£ÐÍ; ¶àÎ¬Ê±¼äÐòÁÐ}
 
@@ -119,34 +119,27 @@
 % Ó¢ÎÄÕªÒª
 \begin{englishabstract}
 
-    With the rapid growth of mobile-internet and smart-phone in recent years, many music radio applications come to our lives, such as Lastfm,Pandora and DoubanFM.
-    However, the recommender algorithms behind these applications do not take the relationship between user's listening behavior and its context into consideration,
-    leading to unsatisfactory recommendations.
-    In order to enhance the utilization of information, recommender systems appear and have been applied to many fields, such as e-commerce, music, and and
-    reading. Being a powerful communication and self-express tool, music has been an important consumer goods in people's daily life and previous research
-    has also indicated that participants listened to music more often than other activities, such as watching television, reading books and watching movies.
-    To alleviating the information overload problem and paradox of choice in music field, some music recommender systems have been developed, such as Lastfm,
-    Douban, Pandora. However, most of recent music recommender systems do not take the close relationship between user's behavior and his/her current context
-    into consideration, leading to bad recommendations that do not match user's current requirement. Although there are some researchers have done some related
-     works, they are not meticulous and comprehensive enough. Besides, user's future behaviors are affected by his/her long-term behaviors, immediately behaviors
-     and middle-term behaviors at the same time and there are few work giving a composite idea on them. In order to get better recommendations, we propose a
-     music recommender system based on multidimensional time series analysis that can analyze the user's behavior more meticulous and comprehensive.
-     Our main contribution and work are as follows:
+    With the rapid growth of mobile-internet and smart-phone in recent years, many music radio applications come to our lives, such as Last.fm,Pandora and
+    douban.fm. However, the recommender algorithms behind most of these applications do not take the relationship between users' listening behaviors
+    and the contexts into consideration leading to unsatisfactory recommendations and a few work that take the relationship into consideration do not
+    get good recommendations as well because of not handling the time-related features of users' behaviors in a reasonable way. We think users' future behaviors
+    are affected by long-term behaviors¡¢mid-term behaviors and immediate behaviors at the same time, but there is few work handling the time-related features
+    of users' behaviors comprehensively. As a result, we propose a music recommender method based on multidimensional time series analysis to enhance recommender
+    effects by handling users' mid-term behaviors in a reasonable way and then we propose a comprehensive music recommender method that takes users' long-term
+    behaviors¡¢mid-term behaviors and immediate behaviors into consideration. What's more, we implement a system prototype to preliminarily verify the feasibility
+    of our methods. Our main contribution and work are as follows:
 
-    1. A method for music recommendation based on multidimensional time series analysis was proposed. The method firstly using topic models to model a song as
-    a probability distribution that is constituted by some latent topics and then it model the user's behavior as a multidimensional time series.
-    By analyzing the time series, the method can forecast the user's future behavior in a quantitative way.
+    1. A music recommender method based on multidimensional time series analysis was proposed. The method firstly uses topic models to model a song as
+    a probability distribution of some latent topics and then models a user's behaviors as a multidimensional time series. By analyzing the time series,
+    the method can forecast the user's future behaviors and get reasonable recommendations.
 
-    2. User's behavior was analyzed in finer granularity. With the basic idea of thinking every latent topic corresponds to a time series, we analyze every time
-     series and forecast the future values leading to comprehensive analyzing the influence of all latent topics.
+    2. A music recommender method based on users' long-term behaviors¡¢mid-term behaviors and immediate behaviors was proposed. The method can adjust the weights
+    of these behaviors dynamically and get better recommendations than the pure music method based on multidimensional time series analysis.
 
-    3. A composite music recommender method was proposed. The method takes into consideration user's long-term behavior, immediate behavior and middle-term
-     behavior at the same time.
+    3. A music recommender system prototype based on above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime
+    computation framework, to implement the system and achieve the desired effects.
 
-    4. A prototype that is used to verify the feasibility of our recommender methods was implemented. Specially, we paralleled the method with an distributed
-    realtime computation framework-Storm, making the system running faster.
-
-\englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series, Composite Recommendation}
+\englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series}
 
 \end{englishabstract}
 
@@ -257,13 +250,13 @@ Lastfm~\cite{Lastfm} ºÍ¶¹°êµçÌ¨~\cite{DoubanFM}ÒÔ¼°¸öÐÔ»¯ÔÄ¶ÁÁìÓòFlipboardºÍÎÞÃÙ
 ¶ÔÓÃ»§ÐÐÎªÏ¸ÖÂ¡¢È«ÃæµØ·ÖÎö¡£Í¬Ê±£¬¸Ã·½·¨×¨×¢ÓÚ¶Ôµ±Ç°ÓÃ»§ÐÐÎªµÄ·ÖÎö¶ø½µµÍÁË¶ÔÆäËûÓÃ»§ÐÐÎªµÄÒÀÀµ¡£
 
 ÓÃ»§µÄÎ´À´ÐÐÎª³ýÁËÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎªµÄÓ°ÏìÖ®Íâ£¬»¹ÊÜµ½ÓÃ»§³¤ÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄ×÷ÓÃ£¬µ«ÊÇÄ¿Ç°Î´¼û¹¤×÷½«ÕâÈý·½ÃæµÄÓ°ÏìºÍ×÷ÓÃ×ÛºÏÆðÀ´½øÐÐ¿¼ÂÇ¡£Òò´Ë£¬±¾ÎÄ½øÒ»²½¸ø³ö
-Ò»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬È«ÃæµØ¿¼²ìÓÃ»§³¤ÆÚÐÐÎª¡¢¼´Ê±ÐÐÎªºÍÖÐÆÚÐÐÎªµÄ¹±Ï×ºÍ×÷ÓÃ¡£ÔÚ¸ø³ö»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏ
+Ò»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬È«ÃæµØ¿¼²ìÓÃ»§³¤ÆÚÐÐÎª¡¢¼´Ê±ÐÐÎªºÍÖÐÆÚÐÐÎªµÄ¹±Ï×ºÍ×÷ÓÃ¡£ÔÚ¸ø³ö»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏ
 ÍÆ¼ö·½·¨Ö®ºó£¬±¾ÎÄÍ¨¹ýÊµÑéÑéÖ¤ÁËËù¸ø·½·¨ÄÜ¹»È¡µÃ±È²Î¿¼·½·¨¸ü¸ßµÄÔ¤²âÃüÖÐÂÊÒÔ¼°¸üµÍµÄÍÆ¼öÎó²î¡£×îºó£¬±¾ÎÄ»ùÓÚÉÏÊö·½·¨ÊµÏÖÁËÒ»¸öÔ­ÐÍÏµÍ³²¢ÇÒÔÚ¸ÃÏµÍ³ÖÐÊµÏÖÁË±¾ÎÄ·½·¨
 µÄ²¢ÐÐ»¯£¬ÑéÖ¤ÁËËù¸ø·½·¨µÄ¿ÉÐÐÐÔ¡£
 
 ±¾ÎÄ½á¹¹°´ÕÕÈçÏÂ·½Ê½½øÐÐ×éÖ¯£ºµÚ2ÕÂ½éÉÜÓë±¾ÎÄ¹¤×÷Ïà¹ØµÄÒ»Ð©¹¤×÷£¬°üÀ¨³£ÓÃµÄÒôÀÖÍÆ¼öËã·¨¡¢³£ÓÃµÄÎïÆ·ÏàËÆ¶È¼ÆËã·½·¨¡¢ÍÆ¼öÏµÍ³µÄÆÀ²âÖ¸±êÒÔ¼°ÎÄ±¾´¦Àí¡¢Ê±¼äÐòÁÐ·ÖÎöµÄ
 Ïà¹ØÀíÂÛµÈ£»µÚ3ÕÂÃèÊöÁË±¾ÎÄËùÌáµÄÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄ¸öÐÔ»¯ÒôÀÖÍÆ¼ö·½·¨£¬°üÀ¨ÎÊÌâµÄ¶¨Òå¡¢·½·¨µÄÖ´ÐÐÁ÷³ÌµÈ£»µÚ4ÕÂÃèÊöÁË±¾ÎÄÔÚ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö
-·½·¨µÄ»ù´¡ÉÏ½øÒ»²½¸ø³öµÄÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨£»µÚ5ÕÂ¸ø³öÁË±¾ÎÄËùÊµÏÖµÄÔ­ÐÍÏµÍ³¼°Ïà¹ØÊµÏÖ¼¼Êõ£»µÚ6ÕÂ¶ÔÈ«ÎÄ½øÐÐ×Ü½á²¢¸ø³ö¶ÔÎ´À´¹¤×÷µÄÕ¹Íû¡£
+·½·¨µÄ»ù´¡ÉÏ½øÒ»²½¸ø³öµÄÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨£»µÚ5ÕÂ¸ø³öÁË±¾ÎÄËùÊµÏÖµÄÔ­ÐÍÏµÍ³¼°Ïà¹ØÊµÏÖ¼¼Êõ£»µÚ6ÕÂ¶ÔÈ«ÎÄ½øÐÐ×Ü½á²¢¸ø³ö¶ÔÎ´À´¹¤×÷µÄÕ¹Íû¡£
 
 \chapter{Ïà¹Ø¹¤×÷}
 \label{C:relatedwork}
@@ -329,7 +322,7 @@ Lastfm~\cite{Lastfm} ºÍ¶¹°êµçÌ¨~\cite{DoubanFM}ÒÔ¼°¸öÐÔ»¯ÔÄ¶ÁÁìÓòFlipboardºÍÎÞÃÙ
 Í¨¹ý¶Ô¸Ã¶àÎ¬Ê±¼äÐòÁÐµÄ·ÖÎöºÍÔ¤²âµÃ³öÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúµÄÌØÕ÷²¢´ÓÇú¿âÖÐÑ¡ÔñÀàËÆµÄ¸èÇúÍÆ¼ö¸øÓÃ»§¡£
 
 ÓÃ»§µÄÎ´À´ÐÐÎª³ýÁËÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎªµÄ×÷ÓÃÖ®Íâ»¹ÊÜµ½ÓÃ»§¼´Ê±ÐÐÎªºÍ³¤ÆÚÐÐÎªµÄÓ°Ïì£¬µ«Ä¿Ç°Ã»ÓÐ¿´µ½±È½ÏÖ±¹ÛµØ¹¤×÷½«ÕâÈýÕß½øÐÐ×ÛºÏ¿¼ÂÇ¡£Îª´Ë£¬±¾ÎÄÔÚ¸ø³öÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼ä
-ÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨µÄ»ù´¡ÉÏ£¬½øÒ»²½¸ø³öÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨£¬×ÛºÏ¿¼ÂÇÓÃ»§ÈýÆÚÐÐÎªµÄ¹±Ï×ºÍ×÷ÓÃ¡£
+ÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨µÄ»ù´¡ÉÏ£¬½øÒ»²½¸ø³öÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨£¬×ÛºÏ¿¼ÂÇÓÃ»§ÈýÆÚÐÐÎªµÄ¹±Ï×ºÍ×÷ÓÃ¡£
 
 \section{ÏàËÆ¶È¶ÈÁ¿}
 
@@ -397,7 +390,7 @@ Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ
 {sim}_{hellinger}(p,q)=\frac{1}{1+{dis}_{hellinger}(p,q)}
 \end{equation}
 
-±¾ÎÄËùÌá³öµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨¼°ÔÚ´Ë»ù´¡ÉÏ¸ø³öµÄ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨½«Ê¹ÓÃÖ÷ÌâÄ£ÐÍ½¨Ä£µÄ·½·¨½«Ã¿Ò»Ê×¸èÇú±íÕ÷ÎªÓÉÈô¸ÉÒþº¬Ö÷Ìâ¹¹³ÉµÄÒ»¸ö¸ÅÂÊ
+±¾ÎÄËùÌá³öµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨¼°ÔÚ´Ë»ù´¡ÉÏ¸ø³öµÄ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨½«Ê¹ÓÃÖ÷ÌâÄ£ÐÍ½¨Ä£µÄ·½·¨½«Ã¿Ò»Ê×¸èÇú±íÕ÷ÎªÓÉÈô¸ÉÒþº¬Ö÷Ìâ¹¹³ÉµÄÒ»¸ö¸ÅÂÊ
 ·Ö²¼£¬Òò´ËKL ¾àÀëºÍHellinger ¾àÀë½«±»Ó¦ÓÃÓÚ±¾ÎÄ¼ÆËãÁ½Ê×¸èÇúÖ®¼äµÄÏàËÆ¶ÈµÄ¹¤×÷ÖÐ¡£
 
 \section{ÆÀ²âÖ¸±ê}
@@ -1124,7 +1117,7 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 ×ÛºÏÒÔÉÏÊµÑé½á¹û¿ÉÒÔ¿´³ö£¬ÎÞÂÛÊÇ´ÓÃüÖÐÂÊ/×¼È·ÂÊµÄ½Ç¶ÈÈ¥¿¼²ìËã·¨µÄÓÅÁÓ£¬»¹ÊÇ´ÓÔ¤²âÎó²îµÄ½Ç¶ÈÈ¥¿¼²ìËã·¨µÄÓÅÁÓ£¬±¾ÎÄËùÊöµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼öËã·¨¶¼ÄÜ¹»
 È¡µÃ±È²Î¿¼Ëã·¨½ÏºÃµÄÐ§¹û¡£ÕâÑéÖ¤ÁË±¾ÎÄËùÌá·½·¨µÄºÏÀíÐÔ£¬ËµÃ÷½«ÓÃ»§ÐÐÎª½¨Ä£ÎªÒ»¸ö¶àÎ¬Ê±¼äÐòÁÐ½øÐÐ·ÖÎöÄÜ¹»È«ÃæÏ¸ÖÂµØÊµÏÖ¶ÔÓÃ»§ÐÐÎªµÄ¿Ì»­½ø¶øÌáÉýÍÆ¼öÐ§¹û¡£
 
-\chapter{»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨}
+\chapter{»ùÓÚÓÃ»§³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨}
 \label{C:intergrated}
 
 ÓÉÇ°ÎÄ¿ÉÖª£¬»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄ¸öÐÔ»¯ÒôÀÖÍÆ¼ö·½·¨ÓëÒ»Ð©²Î¿¼ÍÆ¼ö·½·¨Ïà±ÈÄÜ¹»È¡µÃ±È½ÏºÃµÄÍÆ¼öÐ§¹û£¬Õâ°üÀ¨½Ï¸ßµÄÍÆ¼öÃüÖÐÂÊºÍ½ÏµÍµÄÔ¤²âÎó²îÁ½·½ÃæµÄº¬Òå¡£
@@ -1139,61 +1132,17 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 Ìý¸èÐòÁÐ»¹²»×ãÒÔ±»ÆÓËØµÄ¶àÎ¬Ê±Ðò·½·¨½øÐÐ·ÖÎöºÍÔ¤²â¡£
 \end{enumerate}
 
-ÎªÁË½â¾öÉÏÊöÁ½¸öÎÊÌâ£¬ÎÒÃÇ½«ÔÚ±¾ÕÂÖÐ¸ø³öÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬ÓÃ»§µÄÈýÆÚÐÐÎª¼´ÓÃ»§µÄ³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎª¡£ÔÚ½éÉÜÁËÕâÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎª
+ÎªÁË½â¾öÉÏÊöÁ½¸öÎÊÌâ£¬ÎÒÃÇ½«ÔÚ±¾ÕÂÖÐ¸ø³öÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬ÓÃ»§µÄÈýÆÚÐÐÎª¼´ÓÃ»§µÄ³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎª¡£ÔÚ½éÉÜÁËÕâÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎª
 µÄ×ÛºÏÍÆ¼ö·½·¨ºó£¬±¾ÎÄ½øÒ»²½Í¨¹ýÊµÑéÑéÖ¤×ÛºÏÍÆ¼öµÄÐ§¹û¡£×îºó£¬±¾ÎÄ¶Ô×ÛºÏÒôÀÖÍÆ¼öÖÐµÄÒ»Ð©»ù±¾ÎÊÌâ½øÐÐÌÖÂÛ·ÖÎö£¬±ÈÈç»á»°ÆÚ³¤¶ÈµÄÑ¡ÔñºÍÎÄ±¾·ÖÎö·½·¨µÄÑ¡È¡µÈ¡£
 
 \section{×ÛºÏÒôÀÖÍÆ¼ö}
 
-ÎªÁË×ÛºÏ¿¼ÂÇÓÃ»§ÈýÆÚÐÐÎª¶ÔÓÃ»§Î´À´ÐÐÎªµÄÓ°ÏìºÍ×÷ÓÃ£¬ÎÒÃÇÊ×ÏÈ´Ó»ùÓÚÓÃ»§³¤ÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö¡¢»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªµÄÒôÀÖÍÆ¼öÒÔ¼°»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼öÖÐ¸÷Ñ¡ÔñÒ»ÖÖËã·¨
-½øÐÐ×ÛºÏ¡£ÖÁÓÚÈçºÎ¶Ô²»Í¬µÄËã·¨½øÐÐ×ÛºÏ£¬ÓÐºÜ¶à²ßÂÔ¿ÉÒÔ½øÐÐÑ¡Ôñ¡£BurkeµÄ·ÖÀà·½·¨~\cite{burke2002hybrid}Çø·Ö³öÁËÆßÖÖ²»Í¬µÄ×ÛºÏ²ßÂÔ£¬¶ø´Ó¸ü×ÛºÏµÄ½Ç¶ÈÀ´¿´ÕâÆßÖÖ²ßÂÔ
-¿ÉÒÔ¸ÅÀ¨ÎªÈýÖÖ»ù±¾Éè¼ÆË¼Ïë£ºÕûÌåÊ½×ÛºÏÉè¼Æ¡¢²¢ÐÐÊ½×ÛºÏÉè¼ÆºÍÁ÷Ë®ÏßÊ½×ÛºÏÉè¼Æ£¬±¾½ÚÏÂÃæ½«¶ÔÕâÈýÖÖÉè¼ÆË¼Ïë½øÐÐ¼òµ¥½éÉÜ²¢¸ø³ö±¾ÎÄËùÌá³öµÄ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖ
-ÍÆ¼ö·½·¨Ëù²ÉÓÃµÄÉè¼ÆË¼Ïë¡£
-
-\subsection{ÕûÌåÊ½×ÛºÏ}
-
-ÕûÌåÊ½Éè¼Æ¾ÍÊÇ½«¼¸ÖÖ²»Í¬ÍÆ¼ö²ßÂÔÕûºÏµ½Ò»¸öËã·¨ÖÐÊµÏÖµÄ×ÛºÏÉè¼Æ£¬Êµ¼ÊÉÏÊÇ¶à¸öÍÆ¼ö²ßÂÔ¶¼ÔÚ·¢»Ó×÷ÓÃ£¬ÈçÍ¼4.1ËùÊ¾¡£¾ÙÀýÀ´Ëµ£¬¿ÉÒÔÍ¨¹ý»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÍÆ¼ö
-µÃµ½ÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚ\emph{K}¸öÒþº¬Ö÷ÌâÉÏµÄ¸ÅÂÊ·Ö²¼£¬¶øÍ¬ÑùÒ²¿ÉÒÔÍ¨¹ý»ùÓÚÓÃ»§³¤ÆÚÐÐÎªÍÆ¼öºÍ»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªÍÆ¼öµÃµ½ÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚ\emph{K}¸öÒþº¬Ö÷ÌâÉÏµÄ
-¸ÅÂÊ·Ö²¼¡£ÕûÌåÊ½ÍÆ¼öµÄÒ»¸ö¼òµ¥ÊµÏÖ¾ÍÊÇÔÚµÃµ½Èý¸öÖÐ¼ä¸ÅÂÊ·Ö²¼µÄ»ù´¡ÉÏ£¬×ÛºÏµÃµ½×îÖÕµÄ¸ÅÂÊ·Ö²¼²¢ÒÔ´ËÀ´²úÉúÍÆ¼öÁÐ±í¡£
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics [width=0.75\textwidth]{figures/whole_hybrid.eps}
-\caption{ÕûÌåÊ½×ÛºÏÊ¾ÒâÍ¼}
-\label{fig_whole}
-\end{center}
-\end{figure}
-
-\subsection{²¢ÐÐÊ½×ÛºÏ}
-
-²¢ÐÐÊ½Éè¼Æ¾ÍÊÇ²»Í¬µÄÍÆ¼öËã·¨¸ù¾ÝÊäÈë²¢ÐÐÔËÐÐ·Ö±ð²úÉú¸÷×ÔµÄÍÆ¼öÁÐ±í£¬×îºó½«ÕâÐ©ÍÆ¼öÁÐ±í½øÐÐ»ìºÏÀ´²úÉú×îÖÕÍÆ¼öÁÐ±í³ÊÏÖ¸øÓÃ»§µÄÉè¼ÆË¼Â·£¬ÈçÍ¼4.2ËùÊ¾¡£¾ÙÀýÀ´Ëµ£¬²¢ÐÐÊ½Éè¼ÆÐèÒª
-·Ö±ðÀûÓÃÓÃ»§µÄ³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎª·Ö±ðÎªÓÃ»§Éú³ÉÒ»¸öÍÆ¼öÁÐ±í£¬È»ºó½«ÕâÈý¸öÁÐ±í½øÐÐ»ìºÏÒÔÉú³É×îÖÕµÄÍÆ¼ö½á¹û¡£ÖÁÓÚ×ÛºÏµÄ²ßÂÔ£¬¿ÉÒÔ²ÉÓÃ¼ÓÈ¨¡¢½»²æÒÔ¼°ÇÐ»»µÈ
-½øÐÐ»ìºÏ¡£½»²æÊ½»ìºÏÍÆ¼öÔÚÓÃ»§½»»¥½çÃæ²ãÃæÉÏ½«²»Í¬µÄÍÆ¼ö½á¹û×éºÏµ½Ò»Æð£¬¸÷ÖÖ·½·¨ËùµÃµ½µÄ½á¹ûÒ»Í¬±»³ÊÏÖ¡£¼ÓÈ¨Ê½»ìºÏÍÆ¼ö¹Ø¼ü×ÖÊÇ¼ÓÈ¨£¬Í¨¹ý¼ÆËã¶à¸öÍÆ¼ö½á¹û·ÖÊýµÄ
-¼ÓÈ¨Ö®ºÍ½«Æä×éÖ¯µ½Ò»Æð¡£ÇÐ»»Ê½»ìºÏÐèÒª¸ù¾ÝÓÃ»§¼ÇÂ¼»òÍÆ¼ö½á¹ûµÄÖÊÁ¿À´¾ö¶¨ÄÄÖÖÇé¿öÏÂÓ¦ÓÃÊ²Ã´ÍÆ¼öÏµÍ³¡£
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics [width=0.75\textwidth]{figures/seperate_hybrid.eps}
-\caption{²¢ÐÐÊ½×ÛºÏÊ¾ÒâÍ¼}
-\label{fig_seperate}
-\end{center}
-\end{figure}
-
-\subsection{Á÷Ë®ÏßÊ½×ÛºÏ}
-
-ÈçÍ¼4.3ËùÊ¾£¬Á÷Ë®ÏßÊ½Éè¼Æ½«¶à¸öÍÆ¼ö²ßÂÔ°´ÕÕÁ÷Ë®Ïß¼Ü¹¹Á¬½ÓÆðÀ´£¬Ç°Ò»¸öÍÆ¼öÏµÍ³µÄÊä³ö±ä³ÉºóÒ»¸öÍÆ¼öÏµÍ³µÄÊäÈë²¿·Ö¡£µ±È»£¬ºóÃæµÄÍÆ¼öµ¥ÔªÒ²¿ÉÒÔÑ¡ÔñÊ¹ÓÃ²¿·ÖÔ­Ê¼
-ÊäÈëÊý¾Ý¡£
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics [width=0.75\textwidth]{figures/step_hybrid.eps}
-\caption{Á÷Ë®ÏßÊ½×ÛºÏÊ¾ÒâÍ¼}
-\label{fig_step}
-\end{center}
-\end{figure}
-
 \subsection{×ÛºÏÍÆ¼ö¿ò¼Ü}
 
-ÓÉÉÏÃæµÄ½éÉÜ¿ÉÖª£¬ÕûÌåÊ½»ìºÏÉè¼ÆÊµ¼ÊÉÏÊÇÒ»ÖÖÍÆ¼öËã·¨£¬ÆäÔÚÍÆ¼öÄÚ²¿¶Ô²»Í¬ÍÆ¼ö²ßÂÔ»ñÈ¡µÄÌØÕ÷½øÐÐ»ìºÏ£¬È»ºó»ùÓÚ´Ë×ö³ö×îÖÕÍÆ¼öÁÐ±í£»²¢ÐÐÊ½»ìºÏÉè¼ÆºÍÁ÷Ë®ÏßÊ½
+ÎªÁË×ÛºÏ¿¼ÂÇÓÃ»§ÈýÆÚÐÐÎª¶ÔÓÃ»§Î´À´ÐÐÎªµÄÓ°ÏìºÍ×÷ÓÃ£¬ÎÒÃÇÊ×ÏÈ´Ó»ùÓÚÓÃ»§³¤ÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö¡¢»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªµÄÒôÀÖÍÆ¼öÒÔ¼°»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼öÖÐ¸÷Ñ¡ÔñÒ»ÖÖËã·¨
+½øÐÐ×ÛºÏ¡£ÖÁÓÚÈçºÎ¶Ô²»Í¬µÄËã·¨½øÐÐ×ÛºÏ£¬ÓÐºÜ¶à²ßÂÔ¿ÉÒÔ½øÐÐÑ¡Ôñ¡£BurkeµÄ·ÖÀà·½·¨~\cite{burke2002hybrid}Çø·Ö³öÁËÆßÖÖ²»Í¬µÄ×ÛºÏ²ßÂÔ£¬¶ø´Ó¸ü×ÛºÏµÄ½Ç¶ÈÀ´¿´ÕâÆßÖÖ²ßÂÔ
+¿ÉÒÔ¸ÅÀ¨ÎªÈýÖÖ»ù±¾Éè¼ÆË¼Ïë£ºÕûÌåÊ½×ÛºÏÉè¼Æ¡¢²¢ÐÐÊ½×ÛºÏÉè¼ÆºÍÁ÷Ë®ÏßÊ½×ÛºÏÉè¼Æ£¬±¾½ÚÏÂÃæ½«¶ÔÕâÈýÖÖÉè¼ÆË¼Ïë½øÐÐ¼òµ¥½éÉÜ²¢¸ø³ö±¾ÎÄËùÌá³öµÄ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖ
+ÍÆ¼ö·½·¨Ëù²ÉÓÃµÄÉè¼ÆË¼Ïë¡£ÆäÖÐ£¬ÕûÌåÊ½»ìºÏÉè¼ÆÊµ¼ÊÉÏÊÇÒ»ÖÖÍÆ¼öËã·¨£¬ÆäÔÚÍÆ¼öÄÚ²¿¶Ô²»Í¬ÍÆ¼ö²ßÂÔ»ñÈ¡µÄÌØÕ÷½øÐÐ»ìºÏ£¬È»ºó»ùÓÚ´Ë×ö³ö×îÖÕÍÆ¼öÁÐ±í£»²¢ÐÐÊ½»ìºÏÉè¼ÆºÍÁ÷Ë®ÏßÊ½
 »ìºÏÉè¼Æ¶¼ÐèÒªÖÁÉÙÊµÏÖÁ½¸ö²»Í¬µÄÍÆ¼öËã·¨£¬ÆäÖÐ²¢ÐÐÊ½»ìºÏÉè¼Æ½«²»Í¬ÍÆ¼öËã·¨»ñÈ¡µÄ×îÖÕÍÆ¼ö½á¹û¼ÓÒÔ»ìºÏ£¬¶øÁ÷Ë®ÏßÊ½»ìºÏÔò½«ÍÆ¼ö·ÖÎª²»Í¬µÄ½×¶ÎÈ»ºóÔÚ²»Í¬µÄ½×¶ÎÊ¹ÓÃ
 ²»Í¬µÄÍÆ¼ö²ßÂÔ½øÐÐÍÆ¼ö²¢×îÖÕµÃµ½ÍÆ¼ö½á¹û¡£
 
@@ -1203,14 +1152,14 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 \begin{figure}[!h]
 \begin{center}
 \includegraphics [width=0.75\textwidth]{figures/hybrid.eps}
-\caption{»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨Ê¾ÒâÍ¼}
+\caption{»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨Ê¾ÒâÍ¼}
 \label{fig_hybrid}
 \end{center}
 \end{figure}
 
 ¿¼ÂÇµ½ÓÃ»§µÄÎ´À´ÐÐÎªÊÜµ½ÓÃ»§³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄ¹²Í¬Ó°Ïì£¬ÎÒÃÇ´ÓÕâÈýÀàËã·¨ÖÐ¸÷Ñ¡ÔñÒ»ÖÖÔ¤²â³öÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚ\emph{K}¸öÒþº¬Ö÷ÌâÉÏµÄ¸ÅÂÊ·Ö²¼¡£
 È»ºó£¬ÎÒÃÇÊ¹ÓÃÒ»¶¨µÄ×ÛºÏ²ßÂÔ½«ÕâÈý¸öÖÐ¼ä¸ÅÂÊ·Ö²¼¼ÓÒÔ×ÛºÏÒÔµÃµ½×îÖÕµÄÄ¿±ê¸ÅÂÊ·Ö²¼¡£ÔÚ´Ë»ù´¡ÉÏ£¬ÎÒÃÇ¼ÆËãÇú¿âÖÐËùÓÐ¸èÇú¶ÔÓ¦µÄ¸ÅÂÊ·Ö²¼ÓÚÄ¿±ê¸ÅÂÊ·Ö²¼µÄÏàËÆ¶È²¢½«¸èÇú
-°´ÕÕÏàËÆ¶ÈÓÉ´óµ½Ð¡ÅÅÁÐ¡£×îºó£¬ÎÒÃÇ½«ÅÅÃû¿¿Ç°µÄ\emph{N}Ê×¸èÇúÍÆ¼ö¸øÓÃ»§¡£ÒªÊµÏÖÕâÑùÒ»¸ö»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö£¬ÓÐÁ½¸öÄÑµãÐèÒª½â¾ö£º
+°´ÕÕÏàËÆ¶ÈÓÉ´óµ½Ð¡ÅÅÁÐ¡£×îºó£¬ÎÒÃÇ½«ÅÅÃû¿¿Ç°µÄ\emph{N}Ê×¸èÇúÍÆ¼ö¸øÓÃ»§¡£ÒªÊµÏÖÕâÑùÒ»¸ö»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö£¬ÓÐÁ½¸öÄÑµãÐèÒª½â¾ö£º
 
 \begin{enumerate}
 \item ÈçºÎ´Ó»ùÓÚÓÃ»§³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨ÖÐÑ¡Ôñ´ø¾ßÌåµÄ´ý×ÛºÏËã·¨¡£
@@ -1259,7 +1208,7 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 \subsubsection{×ÛºÏ²ßÂÔ}
 
 ÔÚ¸ø¶¨ÁËÈýÖÖÀàÐÍµÄÒôÀÖÍÆ¼ö·½·¨Ö®ºó£¬ÎÒÃÇ»¹ÐèÒªÑ¡ÔñºÏÀíµÄ×ÛºÏ²ßÂÔ½«ËüÃÇ×ÛºÏÆðÀ´¡£¼ÓÈ¨ÊÇÒ»ÖÖ·Ç³£ÖØÒªµÄ×ÛºÏË¼Ïë£¬ÆäÒ»·½Ãæ¿ÉÒÔ½«²»Í¬µÄÍÆ¼ö²ßÂÔ×ÛºÏÆðÀ´¿¼ÂÇ£¬ÁíÒ»·½Ãæ
-ÄÜ¹»Í¨¹ýÈ¨ÖØµ÷Õû²»Í¬ÍÆ¼ö²ßÂÔµÄÓ°ÏìºÍ¹±Ï×£¬±¾ÎÄËù¸ø³öµÄÕâÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨ÕýÊÇÊ¹ÓÃÕâÖÖË¼ÏëÀ´Íê³É¶ÔÓÃ»§³¤ÆÚÐÐÎªÍÆ¼ö¡¢ÖÐÆÚÐÐÎªÍÆ¼öÒÔ¼°¼´Ê±ÐÐÎªÍÆ¼öµÄ×ÛºÏ
+ÄÜ¹»Í¨¹ýÈ¨ÖØµ÷Õû²»Í¬ÍÆ¼ö²ßÂÔµÄÓ°ÏìºÍ¹±Ï×£¬±¾ÎÄËù¸ø³öµÄÕâÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨ÕýÊÇÊ¹ÓÃÕâÖÖË¼ÏëÀ´Íê³É¶ÔÓÃ»§³¤ÆÚÐÐÎªÍÆ¼ö¡¢ÖÐÆÚÐÐÎªÍÆ¼öÒÔ¼°¼´Ê±ÐÐÎªÍÆ¼öµÄ×ÛºÏ
 ¡£ÔÚÊ¹ÓÃÈýÖÖ²»Í¬µÄÒôÀÖÍÆ¼ö·½·¨Ô¤²âµÃµ½ÈýÖÖ²»Í¬µÄÖÐ¼ä¸ÅÂÊ·Ö²¼¼´\({\vec{s}}_{mtsa}\)¡¢\({\vec{s}}_{global}\) ºÍ\({\vec{s}}_{local}\)Ö®ºó£¬ÎÒÃÇ°´ÕÕÈçÊ½4.6ËùÊ¾µÄ·½·¨¶Ô
 ËüÃÇ½øÐÐ×ÛºÏÒÔµÃµ½×îÖÕµÄÄ¿±ê¸ÅÂÊ·Ö²¼\({\vec{s}}_{all}\)¡£
 
@@ -1308,15 +1257,15 @@ x     ,x>0 \\
 
 \section{ÊµÑé½á¹û}
 
-ÎªÁËÆÀ¹À±¾½ÚËù¸ø³öµÄ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨µÄÐ§¹û£¬ÎÒÃÇ½«Ö®ÓëµÚÈýÕÂÖÐ¸ø³öµÄÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨½øÐÐ±È½Ï¡£ÊµÑéËù²ÉÓÃµÄÊý¾Ý¼¯¡¢ÊµÑéÌõ¼þ
+ÎªÁËÆÀ¹À±¾½ÚËù¸ø³öµÄ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÍÆ¼ö·½·¨µÄÐ§¹û£¬ÎÒÃÇ½«Ö®ÓëµÚÈýÕÂÖÐ¸ø³öµÄÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨½øÐÐ±È½Ï¡£ÊµÑéËù²ÉÓÃµÄÊý¾Ý¼¯¡¢ÊµÑéÌõ¼þ
 ÉèÖÃ¡¢ÊµÑéÆÀ²âÖ¸±êµÈÐÅÏ¢Óë3.7½ÚÖÐËùÊöÒ»ÖÂ¡£
 
-Í¼4.6Õ¹Ê¾ÁË»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼öºÍÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ÔÚÃüÖÐÂÊÖ¸±êÉÏµÄ±íÏÖ¡£ÆäÖÐ£¬ºá×ø±ê±íÊ¾ÍÆ¼öÁÐ±íµÄ³¤¶È£¬×Ý×ø±ê±íÊ¾ÍÆ¼öÃüÖÐÂÊ£¬MTSA
-±íÊ¾ÆÓËØµÄÊ±ÐòÍÆ¼ö·½·¨£¬MTSA\_ALL±íÊ¾×ÛºÏÍÆ¼ö·½·¨¡£ÓÉÍ¼¿ÉÒÔ·Ç³£Ö±¹ÛµØ¿´³ö£¬»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨ÄÜ¹»È¡µÃ±ÈÆÓËØµÄÊ±Ðò·ÖÎö·½·¨¸ü¸ßµÄÃüÖÐÂÊ¡£Í¼4.7Õ¹Ê¾ÁËÕâ
+Í¼4.6Õ¹Ê¾ÁË»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼öºÍÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ÔÚÃüÖÐÂÊÖ¸±êÉÏµÄ±íÏÖ¡£ÆäÖÐ£¬ºá×ø±ê±íÊ¾ÍÆ¼öÁÐ±íµÄ³¤¶È£¬×Ý×ø±ê±íÊ¾ÍÆ¼öÃüÖÐÂÊ£¬MTSA
+±íÊ¾ÆÓËØµÄÊ±ÐòÍÆ¼ö·½·¨£¬MTSA\_ALL±íÊ¾×ÛºÏÍÆ¼ö·½·¨¡£ÓÉÍ¼¿ÉÒÔ·Ç³£Ö±¹ÛµØ¿´³ö£¬»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨ÄÜ¹»È¡µÃ±ÈÆÓËØµÄÊ±Ðò·ÖÎö·½·¨¸ü¸ßµÄÃüÖÐÂÊ¡£Í¼4.7Õ¹Ê¾ÁËÕâ
 Á½ÖÖ·½·¨ÔÚ¾ù·½¸ùÎó²îÕâÒ»ÆÀ²âÖ¸±êÉÏµÄ±íÏÖ¡£ÆäÖÐ£¬×Ý×ø±ê±íÊ¾¾ù·½¸ùÎó²î£¬×Ý×ø±êÈ¡ÖµÔ½Ð¡£¬Îó²îÔ½Ð¡£¬Ëã·¨µÄÍÆ¼öÐ§¹ûÔ½ºÃ¡£ÓÉÍ¼4.7¿ÉÒÔ¿´³ö£¬×ÛºÏµÄÍÆ¼ö·½·¨ÄÜ¹»È¡µÃ±ÈÆÓËØÊ±Ðò
 ·ÖÎö·½·¨¸üµÍµÄÔ¤²âÎó²î¡£ÕâÁ½ÀàËã·¨ÔÚ×¼È·ÂÊ¡¢F1-Score¡¢Æ½¾ù¾ø¶ÔÎó²îµÈÖ¸±êÉÏµÄ±íÏÖÓëÆäÔÚÃüÖÐÂÊºÍ¾ù·½¸ùÎó²îÉÏµÄ±íÏÖÀàËÆ£¬ÕâÀï²»ÔÙ×¸Êö¡£
 
-ÓÉÊµÑé½á¹û¿ÉÒÔ¿´³ö£¬±¾ÎÄËù¸ø³öµÄ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨È·ÊµÄÜ¹»ÌáÉýÆÓËØµÄ¶àÎ¬Ê±Ðò·ÖÎö·½·¨µÄÍÆ¼öÐ§¹û£¬Õâ´Ó²àÃæÒ²ÑéÖ¤ÁËÓÃ»§µÄÎ´À´ÐÐÎªÊÇÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎª¡¢³¤ÆÚÐÐ
+ÓÉÊµÑé½á¹û¿ÉÒÔ¿´³ö£¬±¾ÎÄËù¸ø³öµÄ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨È·ÊµÄÜ¹»ÌáÉýÆÓËØµÄ¶àÎ¬Ê±Ðò·ÖÎö·½·¨µÄÍÆ¼öÐ§¹û£¬Õâ´Ó²àÃæÒ²ÑéÖ¤ÁËÓÃ»§µÄÎ´À´ÐÐÎªÊÇÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎª¡¢³¤ÆÚÐÐ
 ÎªºÍ¼´Ê±ÐÐÎª¹²Í¬×÷ÓÃºÍÓ°ÏìµÄ¡£
 
 \begin{figure}[!h]
@@ -1337,7 +1286,7 @@ x     ,x>0 \\
 
 \section{·ÖÎöÌÖÂÛ}
 
-±¾ÎÄÉÏÃæ·Ö±ð½éÉÜÁË±¾ÎÄËù¸ø³öµÄÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄ¸öÐÔ»¯ÒôÀÖÍÆ¼ö·½·¨ÒÔ¼°ÒÔ´ËÎª»ù´¡¹¹½¨µÄÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬±¾½Ú½«¾ÍÆäÖÐÒ»Ð©Ï¸½ÚÎÊÌâ
+±¾ÎÄÉÏÃæ·Ö±ð½éÉÜÁË±¾ÎÄËù¸ø³öµÄÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄ¸öÐÔ»¯ÒôÀÖÍÆ¼ö·½·¨ÒÔ¼°ÒÔ´ËÎª»ù´¡¹¹½¨µÄÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬±¾½Ú½«¾ÍÆäÖÐÒ»Ð©Ï¸½ÚÎÊÌâ
 ½øÐÐ¼òµ¥µØ·ÖÎöºÍÌÖÂÛ£¬Ö÷Òª°üÀ¨×î´ó·ÖÎö³¤¶ÈµÄÉè¶¨ÒÔ¼°²»Í¬ÎÄ±¾½¨Ä£·½·¨µÄ±È½Ï¡£
 
 \subsection{×î´ó·ÖÎö³¤¶È}
@@ -1363,7 +1312,7 @@ x     ,x>0 \\
 \subsection{²»Í¬ÎÄ±¾·ÖÎö·½·¨±È½Ï}
 
 ÎÒÃÇÔÚµÚ¶þÕÂ½éÉÜÁËÏòÁ¿¿Õ¼äÄ£ÐÍ¡¢´ÊÆµ-ÄæÎÄ±¾ÆµÂÊÄ£ÐÍ¡¢Òþº¬µÒÀû¿ËÀ×·ÖÅäµÈ¼¸ÖÖ²»Í¬µÄÎÄ±¾½¨Ä£·½·¨£¬Í¬Ê±Ìáµ½LDAÄ£ÐÍÓëVSM Ä£ÐÍºÍTF-IDFÄ£ÐÍÏà±È£¬Ò»·½ÃæÄÜ¹»¸üºÃµØÃèÊöÎÄµµµÄ
-ÎÄ±¾ÌØÕ÷£¬ÁíÒ»·½Ãæ¿ÉÒÔ½â¾öÒ»´Ê¶àÒåºÍÒ»Òå¶à´ÊµÄÎÊÌâ£¬Òò´Ë±¾ÎÄËùÊöµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨ÔÚ¶Ô¸èÇú¼¯¶ÔÓ¦µÄÎÄµµ¼¯½øÐÐ½¨
+ÎÄ±¾ÌØÕ÷£¬ÁíÒ»·½Ãæ¿ÉÒÔ½â¾öÒ»´Ê¶àÒåºÍÒ»Òå¶à´ÊµÄÎÊÌâ£¬Òò´Ë±¾ÎÄËùÊöµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨ÔÚ¶Ô¸èÇú¼¯¶ÔÓ¦µÄÎÄµµ¼¯½øÐÐ½¨
 Ä£Ê±¶¼²ÉÓÃÁËLDAÄ£ÐÍ¡£ÎªÁËÖ±¹ÛµØÕ¹ÏÖLDAÄ£ÐÍµÄºÃ´¦£¬±¾½ÚÍ¨¹ýÊµÑéÀ´Õ¹ÏÖÊ¹ÓÃ²»Í¬µÄÎÄ±¾½¨Ä£·½·¨À´Ö´ÐÐ»ùÓÚÓÃ»§¼´Ê±ÐÐÎªÍÆ¼öËù»ñµÃµÄÃüÖÐÂÊ£¬Èç4.9Í¼ËùÊ¾¡£ÆäÖÐ£¬ºá×ø±ê±íÊ¾
 ÍÆ¼öÁÐ±íµÄ³¤¶È£¬×Ý×ø±ê±íÊ¾Ëã·¨»ñµÃµÄÃüÖÐÂÊ¡£×Ý×ø±êÈ¡ÖµÔ½´ó£¬Ëã·¨»ñµÃÃüÖÐÂÊÔ½¸ß£¬Ëã·¨ÍÆ¼öÐ§¹ûÔ½ºÃ¡£ÓÉÍ¼¿ÉÒÔ·Ç³£Ö±¹ÛµØ¿´³ö£¬Ê¹ÓÃÒþº¬µÒÀû¿ËÀ×·ÖÅä¶ÔÎÄµµ¼¯½øÐÐ½¨Ä£È·Êµ
 ÄÜ¹»µÃµ½±È´«Í³µÄÏòÁ¿¿Õ¼äÄ£ÐÍºÍ´ÊÆµ-ÄæÎÄ±¾ÆµÂÊ¸üºÃµÄÍÆ¼öÐ§¹û¡£
@@ -1379,7 +1328,7 @@ x     ,x>0 \\
 \chapter{ÏµÍ³ÊµÏÖ}
 \label{C:system}
 
-Ç°ÊöÕÂ½ÚÎÒÃÇ½éÉÜÁËÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍÔÚ´Ë»ù´¡ÉÏµÄÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨£¬²¢Í¨¹ýÊµÑé´Ó¶à¸ö½Ç¶ÈÑéÖ¤ÁË±¾ÎÄÉÏÊöµÄÓÐÐ§ÐÔ¡£ÎªÁË½øÒ»²½ÑéÖ¤ÉÏÊö·½·¨µÄ¿ÉÐÐÐÔ²¢½â¾öÏµÍ³ÊµÏÖÖÐµÄÒ»Ð©¹Ø¼üÎÊÌâ£¬±¾ÎÄÊµÏÖÁËÒ»¸ö¸öÐÔ»¯ÒôÀÖÍÆ¼öÔ­ÐÍÏµÍ³,¼´Sweetfm¡£±¾ÕÂÎÒÃÇ½«¶Ô¸ÃÔ­ÐÍÏµÍ³½øÐÐÏêÏ¸½éÉÜ²¢¸ø³öÒ»Ð©¾ßÌåµÄ¼¼Êõ·½°¸¡£
+Ç°ÊöÕÂ½ÚÎÒÃÇ½éÉÜÁËÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍÔÚ´Ë»ù´¡ÉÏµÄÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨£¬²¢Í¨¹ýÊµÑé´Ó¶à¸ö½Ç¶ÈÑéÖ¤ÁË±¾ÎÄÉÏÊöµÄÓÐÐ§ÐÔ¡£ÎªÁË½øÒ»²½ÑéÖ¤ÉÏÊö·½·¨µÄ¿ÉÐÐÐÔ²¢½â¾öÏµÍ³ÊµÏÖÖÐµÄÒ»Ð©¹Ø¼üÎÊÌâ£¬±¾ÎÄÊµÏÖÁËÒ»¸ö¸öÐÔ»¯ÒôÀÖÍÆ¼öÔ­ÐÍÏµÍ³,¼´Sweetfm¡£±¾ÕÂÎÒÃÇ½«¶Ô¸ÃÔ­ÐÍÏµÍ³½øÐÐÏêÏ¸½éÉÜ²¢¸ø³öÒ»Ð©¾ßÌåµÄ¼¼Êõ·½°¸¡£
 
 \section{ÏµÍ³¼Ü¹¹}
 
@@ -1597,37 +1546,14 @@ attitude(user,song)=
 ÔÚ¹¹½¨ÁËÉÏÊöÍØÆË½á¹¹²¢ÊµÏÖºó£¬ÏÂÃæÐèÒª×öµÄ¾ÍÊÇ½«Æä²¿Êðµ½·þÎñÆ÷ÉÏ£¬¾ßÌåµÄ²¿Êð¹ý³ÌÈçÏÂËùÊ¾¡£
 
 \begin{enumerate}
-\item Æô¶¯zookeeper¡£Zookeeper ·Ö²¼Ê½·þÎñ¿ò¼ÜÖ÷ÒªÊÇÓÃÀ´½â¾ö·Ö²¼Ê½Ó¦ÓÃÖÐ¾­³£Óöµ½µÄÒ»Ð©Êý¾Ý¹ÜÀíÎÊÌâ£¬ÈçÍ³Ò»ÃüÃû·þÎñ¡¢×´Ì¬Í¬²½·þÎñ¡¢¼¯Èº¹ÜÀí¡¢·Ö²¼Ê½Ó¦ÓÃÅäÖÃÏîµÄ¹ÜÀíµÈ¡£NimbusºÍSupervisor½ÚµãÖ®¼äËùÓÐµÄÐ­µ÷¹¤×÷ÊÇÍ¨¹ýZookeeper ¼¯ÈºÀ´ÊµÏÖµÄ¡£
-
-¡¡¡¡¡¡zkServer.sh start
-
-\item Æô¶¯nimbus¡£Ö÷¿Ø½Úµã£¨Master Node£©ÉÏÔËÐÐÒ»¸ö±»³ÆÎªNimbusµÄºóÌ¨³ÌÐò£¬Ëü¸ºÔðÔÚStorm¼¯ÈºÄÚ·Ö·¢´úÂë£¬·ÖÅäÈÎÎñ¸ø¹¤×÷»úÆ÷£¬²¢ÇÒ¸ºÔð¼à¿Ø¼¯ÈºÔËÐÐ×´Ì¬¡£Nimbus µÄ×÷ÓÃÀàËÆÓÚHadoopÖÐJobTrackerµÄ½ÇÉ«¡£
-
-¡¡¡¡¡¡storm nimbus
-
-\item Æô¶¯supervisor¡£Ã¿¸ö¹¤×÷½Úµã£¨Work Node£©ÉÏÔËÐÐÒ»¸ö±»³ÆÎªSupervisorµÄºóÌ¨³ÌÐò¡£Supervisor¸ºÔð¼àÌý´ÓNimbus·ÖÅä¸øËüÖ´ÐÐµÄÈÎÎñ£¬¾Ý´ËÆô¶¯»òÍ£Ö¹Ö´ÐÐÈÎÎñµÄ¹¤×÷½ø³Ì¡£Ã¿Ò»¸ö¹¤×÷½ø³ÌÖ´ÐÐÒ»¸öTopologyµÄ×Ó¼¯£»Ò»¸öÔËÐÐÖÐµÄTopologyÓÉ·Ö²¼ÔÚ²»Í¬¹¤×÷½ÚµãÉÏµÄ¶à¸ö¹¤×÷½ø³Ì×é³É¡£
-
-¡¡¡¡¡¡storm supervisor
-
-\item Æô¶¯UI¡£storm UIÊÇÒ»¸ö¿ÉÒÔ²é¿´stormÔËÐÐ×´Ì¬µÄµÄÒ»¸öÍøÕ¾£¬¿ÉÒÔ²é¿´TopologyµÄÖ´ÐÐ×´Ì¬¡£
-
-¡¡¡¡¡¡storm ui
-
-\item Æô¶¯drpc¡£Í¨¹ýDRPC£¬ÆäËû»úÆ÷¿ÉÒÔÔ¶³ÌÖ´ÐÐTopology¡£
-
-¡¡¡¡¡¡storm drpc
-
-\item Ìá½»topology¡£½«ÊµÏÖºÃµÄTopologyÌá½»ÖÁStorm¼¯Èº½øÐÐÖ´ÐÐ¡£
-
-¡¡¡¡¡¡storm jar SweetFM.jar com.wst.sweetfm.topology.DRPC\_MTSATopology sweetfm
-
-\item ÏÔÊ¾ËùÓÐtopology
-
-¡¡¡¡¡¡storm list
-
-\item É±ËÀÖ¸¶¨topology
-
-¡¡¡¡¡¡storm kill sweetfm
+\item Æô¶¯zookeeper£ºzkServer.sh start¡£Zookeeper ·Ö²¼Ê½·þÎñ¿ò¼ÜÖ÷ÒªÊÇÓÃÀ´½â¾ö·Ö²¼Ê½Ó¦ÓÃÖÐ¾­³£Óöµ½µÄÒ»Ð©Êý¾Ý¹ÜÀíÎÊÌâ£¬ÈçÍ³Ò»ÃüÃû·þÎñ¡¢×´Ì¬Í¬²½·þÎñ¡¢¼¯Èº¹ÜÀí¡¢·Ö²¼Ê½Ó¦ÓÃÅäÖÃÏîµÄ¹ÜÀíµÈ¡£NimbusºÍSupervisor½ÚµãÖ®¼äËùÓÐµÄÐ­µ÷¹¤×÷ÊÇÍ¨¹ýZookeeper ¼¯ÈºÀ´ÊµÏÖµÄ¡£
+\item Æô¶¯nimbus£ºstorm nimbus¡£Ö÷¿Ø½Úµã£¨Master Node£©ÉÏÔËÐÐÒ»¸ö±»³ÆÎªNimbusµÄºóÌ¨³ÌÐò£¬Ëü¸ºÔðÔÚStorm¼¯ÈºÄÚ·Ö·¢´úÂë£¬·ÖÅäÈÎÎñ¸ø¹¤×÷»úÆ÷£¬²¢ÇÒ¸ºÔð¼à¿Ø¼¯ÈºÔËÐÐ×´Ì¬¡£Nimbus µÄ×÷ÓÃÀàËÆÓÚHadoopÖÐJobTrackerµÄ½ÇÉ«¡£
+\item Æô¶¯supervisor£ºstorm supervisor¡£Ã¿¸ö¹¤×÷½Úµã£¨Work Node£©ÉÏÔËÐÐÒ»¸ö±»³ÆÎªSupervisorµÄºóÌ¨³ÌÐò¡£Supervisor¸ºÔð¼àÌý´ÓNimbus·ÖÅä¸øËüÖ´ÐÐµÄÈÎÎñ£¬¾Ý´ËÆô¶¯»òÍ£Ö¹Ö´ÐÐÈÎÎñµÄ¹¤×÷½ø³Ì¡£Ã¿Ò»¸ö¹¤×÷½ø³ÌÖ´ÐÐÒ»¸öTopologyµÄ×Ó¼¯£»Ò»¸öÔËÐÐÖÐµÄTopologyÓÉ·Ö²¼ÔÚ²»Í¬¹¤×÷½ÚµãÉÏµÄ¶à¸ö¹¤×÷½ø³Ì×é³É¡£
+\item Æô¶¯UI£ºstorm ui¡£storm UIÊÇÒ»¸ö¿ÉÒÔ²é¿´stormÔËÐÐ×´Ì¬µÄµÄÒ»¸öÍøÕ¾£¬¿ÉÒÔ²é¿´TopologyµÄÖ´ÐÐ×´Ì¬¡£
+\item Æô¶¯drpc£ºstorm drpc¡£Í¨¹ýDRPC£¬ÆäËû»úÆ÷¿ÉÒÔÔ¶³ÌÖ´ÐÐTopology¡£
+\item Ìá½»topology£ºstorm jar SweetFM.jar com.wst.sweetfm.topology.DRPC\_MTSATopology sweetfm¡£½«ÊµÏÖºÃµÄTopologyÌá½»ÖÁStorm¼¯Èº½øÐÐÖ´ÐÐ¡£
+\item ÏÔÊ¾ËùÓÐtopology£ºstorm list¡£½«ËùÓÐµÄ¼ÆËãÈÎÎñÒÔÁÐ±íµÄÐÎÊ½Õ¹ÏÖ³öÀ´¡£
+\item É±ËÀÖ¸¶¨topology£ºstorm kill sweetfm¡£
 \end{enumerate}
 
 mithunsatheesh¸ø³öÁËÒ»ÖÖÊ¹ÓÃPHPÔ¶³Ìµ÷ÓÃStorm¼¯ÈºÖÐÔËÐÐµÄTopologyµÄ·½·¨£¬ÈçÏÂ±íËùÊ¾¡£
@@ -1671,9 +1597,9 @@ include "includes/drpc/DRPC.php";
 
 ±¾ÎÄ¸ø³öÁËÒ»ÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄ¸öÐÔ»¯ÒôÀÖÍÆ¼ö·½·¨£¬¸Ã·½·¨ÔÚÊ¹ÓÃÖ÷ÌâÄ£ÐÍ½«¸èÇú±íÊ¾³ÉÓÉÈô¸ÉÒþº¬Ö÷Ìâ¹¹³ÉµÄ¸ÅÂÊ·Ö²¼µÄ»ù´¡ÉÏ½«ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚµÄÐÐÎª½¨Ä£ÎªÒ»¸ö¶àÎ¬Ê±¼äÐòÁÐ¡£Í¨¹ý¶Ô¸Ã¶àÎ¬Ê±¼äÐòÁÐµÄ·ÖÎö£¬¸Ã·½·¨ÄÜ¹»Ô¤²â³öÄ¿±ê¸èÇúÔÚ¸÷¸öÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô¶È£¬½ø¶øÔ¤²âµÃµ½Ä¿±ê¸èÇú¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿¡£ÒÔ´ËÔ¤²âÖ÷ÌâÈ¨ÖØÏòÁ¿ÎªÒÀ¾Ý£¬¸Ã·½·¨´ÓÇú¿âÖÐÑ¡È¡ºÏÊÊµÄ¸èÇúÍÆ¼ö¸øÓÃ»§¡£±¾ÎÄËùÊöµÄÕâÖÖ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨¼È¿¼ÂÇÁË¸èÇú»®·Ö±ê×¼²»Ò»µÄÎÊÌâ£¬Ò²¿¼ÂÇÁËÓÃ»§¶Ô¸èÇúµÄÏû·ÑÓë´ÎÐòµÄÏà¹ØÐÔÒÔ¼°ÓëÓÃ»§Ëù´¦ÉÏÏÂÎÄ»·¾³µÄÃÜÇÐ¹ØÏµ£¬Òò´ËÈ¡µÃÁË±È½ÏÀíÏëµØÍÆ¼öÐ§¹û¡£
 
-½øÒ»²½µØ£¬±¾ÎÄÈÏÎªÓÃ»§µÄÎ´À´ÐÐÎª³ýÁËÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎªµÄÓ°ÏìÍâ»¹ÊÜµ½ÓÃ»§³¤ÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄ¹²Í¬×÷ÓÃ¡£ÔÚ´ËÖ±¾õÏÂ£¬±¾ÎÄ¸ø³öÁËÒ»ÖÖ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬×ÛºÏ¿¼ÂÇÁËÓÃ»§³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªÒÔ¼°¼´Ê±ÐÐÎª¶ÔÓÃ»§Î´À´ÐÐÎªµÄ×÷ÓÃºÍ¹±Ï×¡£
+½øÒ»²½µØ£¬±¾ÎÄÈÏÎªÓÃ»§µÄÎ´À´ÐÐÎª³ýÁËÊÜµ½ÓÃ»§ÖÐÆÚÐÐÎªµÄÓ°ÏìÍâ»¹ÊÜµ½ÓÃ»§³¤ÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄ¹²Í¬×÷ÓÃ¡£ÔÚ´ËÖ±¾õÏÂ£¬±¾ÎÄ¸ø³öÁËÒ»ÖÖ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨£¬×ÛºÏ¿¼ÂÇÁËÓÃ»§³¤ÆÚÐÐÎª¡¢ÖÐÆÚÐÐÎªÒÔ¼°¼´Ê±ÐÐÎª¶ÔÓÃ»§Î´À´ÐÐÎªµÄ×÷ÓÃºÍ¹±Ï×¡£
 
-ÔÚ¸ø³öÁËÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±Ðò·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§ÈýÆÚÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨Ö®ºó£¬±¾ÎÄÉè¼ÆÁËÊµÑé²¢´Ó²»Í¬µÄ½Ç¶ÈÑéÖ¤ÁËËùÊö·½·¨µÄÓÐÐ§ÐÔ£¬ÕâÖ÷ÒªÌåÏÖÔÚ±¾ÎÄËù¸ø·½·¨ÄÜ¹»È¡µÃ±È²Î¿¼·½·¨¸ü¸ßµÄÍÆ¼öÃüÖÐÂÊÒÔ¼°¸üµÍµÄÔ¤²âÎó²î¡£´ËÍâ£¬±¾ÎÄÊµÏÖÁËÒ»¸öÔ­ÐÍÏµÍ³ÒÔÑéÖ¤ËùÊö·½·¨µÄ¿ÉÐÐÐÔ¡£ÔÚÔ­ÐÍÏµÍ³ÖÐ£¬ÎÒÃÇÊµÏÖÁËËùÊöÒôÀÖÍÆ¼ö·½·¨µÄ²¢ÐÐ»¯£¬ÌáÉýÁËÏµÍ³µÄÖ´ÐÐÐ§ÂÊ¡£
+ÔÚ¸ø³öÁËÆÓËØµÄ»ùÓÚ¶àÎ¬Ê±Ðò·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨ºÍ»ùÓÚÓÃ»§³¤ÆÚ¡¢ÖÐÆÚºÍ¼´Ê±ÐÐÎªµÄ×ÛºÏÒôÀÖÍÆ¼ö·½·¨Ö®ºó£¬±¾ÎÄÉè¼ÆÁËÊµÑé²¢´Ó²»Í¬µÄ½Ç¶ÈÑéÖ¤ÁËËùÊö·½·¨µÄÓÐÐ§ÐÔ£¬ÕâÖ÷ÒªÌåÏÖÔÚ±¾ÎÄËù¸ø·½·¨ÄÜ¹»È¡µÃ±È²Î¿¼·½·¨¸ü¸ßµÄÍÆ¼öÃüÖÐÂÊÒÔ¼°¸üµÍµÄÔ¤²âÎó²î¡£´ËÍâ£¬±¾ÎÄÊµÏÖÁËÒ»¸öÔ­ÐÍÏµÍ³ÒÔÑéÖ¤ËùÊö·½·¨µÄ¿ÉÐÐÐÔ¡£ÔÚÔ­ÐÍÏµÍ³ÖÐ£¬ÎÒÃÇÊµÏÖÁËËùÊöÒôÀÖÍÆ¼ö·½·¨µÄ²¢ÐÐ»¯£¬ÌáÉýÁËÏµÍ³µÄÖ´ÐÐÐ§ÂÊ¡£
 
 \section{¹¤×÷Õ¹Íû}
 
