@@ -119,24 +119,23 @@
 % Ó¢ÎÄÕªÒª
 \begin{englishabstract}
 
-    With the rapid growth of mobile-internet and smart-phone in recent years, many music radio applications come to our lives, such as Last.fm,Pandora and
-    douban.fm. However, the recommender algorithms behind most of these applications do not take the relationship between users' listening behaviors
-    and the contexts into consideration leading to unsatisfactory recommendations and a few work that take the relationship into consideration do not
-    get good recommendations as well because of not handling the time-related features of users' behaviors in a reasonable way. We think users' future behaviors
-    are affected by their long-term behaviors¡¢mid-term behaviors and immediate behaviors at the same time, but there is few work handling the time-related features
-    of users' behaviors comprehensively. Therefore, we propose a music recommender method based on multidimensional time series analysis in the thesis to enhance recommender
-    effects by handling users' mid-term behaviors in a reasonable way and then we propose a comprehensive music recommender method that takes users' long-term
-    behaviors¡¢mid-term behaviors and immediate behaviors into consideration. What's more, we implement a system prototype to preliminarily verify the feasibility
-    of our methods. The contributions of the thesis are as follow:
+    With the rapid growth of mobile-Internet and smart-phone in recent years, many music radio applications come to our lives, such as Last.fm, Pandora and 
+    douban.fm. The recommender algorithms behind most of these applications do not take the relationship between users' listening behaviors and the context 
+    information into consideration leading to unsatisfactory recommendations. There exist a few algorithms that take the relationship into consideration; 
+    however, these algorithms do not handle the time-related features of users' behaviors in a reasonable way. We believe that users' future behaviors are 
+    simultaneously affected by their long-term behaviors, mid-term behaviors and immediate behaviors. To make full use of these time-related features, we 
+    propose a music recommender method based on multidimensional time series analysis. Our method first exploits users' mid-term behavior, and then incorporates 
+    users' mid-term behavior with their long-term behavior and immediate behavior. Moreover, we implement a system prototype to preliminarily verify the 
+    feasibility of our method. Our main contributions are summarized as follows:
 
-    1. A music recommender method based on multidimensional time series analysis was proposed. The method firstly uses topic models to model a song as
-    a probability distribution of some latent topics and then models a user's behaviors as a multidimensional time series. By analyzing the time series,
-    the method can forecast the user's future behaviors and get reasonable recommendations.
+    1. A music recommender method based on multidimensional time series analysis was proposed. The method first uses topic models to model a song as a probability 
+    distribution over some latent topics and then models a user's behavior as a multidimensional time series. By analyzing the time series, the method can 
+    forecast the user's future behaviors and get reasonable recommendations.
 
-    2. A music recommender method based on users' long-term behaviors¡¢mid-term behaviors and immediate behaviors was proposed. The method can adjust the weights
-    of these behaviors dynamically and get better recommendations than the pure music method based on multidimensional time series analysis.
+    2. A music recommender method based on users' long-term behaviors, mid-term behaviors and immediate behaviors was proposed. The method can dynamically adjust 
+    the weights of these behaviors and get better recommendations than the method purely based on multidimensional time series analysis.
 
-    3. A music recommender system prototype based on above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime
+    3. A music recommender system prototype based on the above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime 
     computation framework, to implement the system and achieve the desired effects.
 
 \englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series}
