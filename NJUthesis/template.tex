@@ -119,23 +119,23 @@
 % 英文摘要
 \begin{englishabstract}
 
-    With the rapid growth of mobile-Internet and smart-phone in recent years, many music radio applications come to our lives, such as Last.fm, Pandora and 
-    douban.fm. The recommender algorithms behind most of these applications do not take the relationship between users' listening behaviors and the context 
-    information into consideration leading to unsatisfactory recommendations. There exist a few algorithms that take the relationship into consideration; 
-    however, these algorithms do not handle the time-related features of users' behaviors in a reasonable way. We believe that users' future behaviors are 
-    simultaneously affected by their long-term behaviors, mid-term behaviors and immediate behaviors. To make full use of these time-related features, we 
-    propose a music recommender method based on multidimensional time series analysis. Our method first exploits users' mid-term behavior, and then incorporates 
-    users' mid-term behavior with their long-term behavior and immediate behavior. Moreover, we implement a system prototype to preliminarily verify the 
+    With the rapid growth of mobile-Internet and smart-phone in recent years, many music radio applications come to our lives, such as Last.fm, Pandora and
+    douban.fm. The recommender algorithms behind most of these applications do not take the relationship between users' listening behaviors and the context
+    information into consideration leading to unsatisfactory recommendations. There exist a few algorithms that take the relationship into consideration;
+    however, these algorithms do not handle the time-related features of users' behaviors in a reasonable way. We believe that users' future behaviors are
+    simultaneously affected by their long-term behaviors, mid-term behaviors and immediate behaviors. To make full use of these time-related features, we
+    propose a music recommender method based on multidimensional time series analysis. Our method first exploits users' mid-term behavior, and then incorporates
+    users' mid-term behavior with their long-term behavior and immediate behavior. Moreover, we implement a system prototype to preliminarily verify the
     feasibility of our method. Our main contributions are summarized as follows:
 
-    1. A music recommender method based on multidimensional time series analysis was proposed. The method first uses topic models to model a song as a probability 
-    distribution over some latent topics and then models a user's behavior as a multidimensional time series. By analyzing the time series, the method can 
+    1. A music recommender method based on multidimensional time series analysis was proposed. The method first uses topic models to model a song as a probability
+    distribution over some latent topics and then models a user's behavior as a multidimensional time series. By analyzing the time series, the method can
     forecast the user's future behaviors and get reasonable recommendations.
 
-    2. A music recommender method based on users' long-term behaviors, mid-term behaviors and immediate behaviors was proposed. The method can dynamically adjust 
+    2. A music recommender method based on users' long-term behaviors, mid-term behaviors and immediate behaviors was proposed. The method can dynamically adjust
     the weights of these behaviors and get better recommendations than the method purely based on multidimensional time series analysis.
 
-    3. A music recommender system prototype based on the above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime 
+    3. A music recommender system prototype based on the above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime
     computation framework, to implement the system and achieve the desired effects.
 
 \englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series}
@@ -750,7 +750,7 @@ N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics [width=0.75\textwidth]{figures/framework.eps}
+\includegraphics [width=0.9\textwidth]{figures/framework.eps}
 \caption{基于多维时序分析的音乐推荐方法的工作流程示意图}
 \label{fig_framework}
 \end{center}
@@ -761,7 +761,7 @@ N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 
 在离线模块中，我们首先定期从音乐网站上抓取以用户标签为主的歌曲文本信息，然后将这些标签信息按照一定的方式组合成文档，那么这些文档构成的文档集合将和歌曲集\emph{S}一
 一对应。关于文档的构造方式，本文采用的方法是将被标记到给定歌曲的标签按照其被标记的次数在给定歌曲对应的文档中重复若干次。假设给定歌曲\emph{s}所具有的标签信息可以表示为一
-个标签集合，比如\(TagSet(s)\)=\{<“rock”,5>,<”pop“,3>,<“male”,2>\}，那么其对应的文档可以表示为\(Doc(s)\)=“rock rock rock rock rock pop pop pop male male”。其中，
+个标签集合，比如\(TagSet(s)\)=\{\(\textless\)“rock”，5\(\textgreater\)，\(\textless\)“pop”，3\(\textgreater\)，\(\textless\)“male”，2\(\textgreater\)\}，那么其对应的文档可以表示为\(Doc(s)\)=“rock rock rock rock rock pop pop pop male male”。其中，
 标签“rock” 在\(Doc(s)\)中出现5 次，标签“pop” 在\(Doc(s)\)中出现3次,标签“male”在文档\(Doc(s)\)中出现2次。由于主题模型将文档看做一个词袋模型，因此“rock”、“pop”、
 “male”在文档中出现的顺序不影响建模结果。在获得歌曲集对于的文档集之后，我们对该文档集进行主题模型建模，从而抽取出歌曲中包含的隐含主题。这样，每一首歌曲可以用
 一个主题权重向量表示，向量中的每一维取值表征对应主题对歌曲内容的贡献程度。
@@ -1134,7 +1134,7 @@ Based on Multidimensional Time Series Analysis, MTSA)。 其中，横坐标表示被推荐歌
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics [width=0.75\textwidth]{figures/hybrid.eps}
+\includegraphics [width=0.9\textwidth]{figures/hybrid.eps}
 \caption{基于用户长期、中期和即时行为的综合音乐推荐方法示意图}
 \label{fig_hybrid}
 \end{center}
@@ -1327,7 +1327,7 @@ x     ,x>0 \\
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics [width=0.75\textwidth]{figures/system.eps}
+\includegraphics [width=0.9\textwidth]{figures/system.eps}
 \caption{原型系统框架}
 \label{fig_system}
 \end{center}
@@ -1387,7 +1387,7 @@ x     ,x>0 \\
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics [width=0.4\textwidth]{figures/crawlSpider.eps}
+\includegraphics [width=0.3\textwidth]{figures/crawlSpider.eps}
 \caption{爬虫系统工作流程图}
 \label{fig_spider}
 \end{center}
