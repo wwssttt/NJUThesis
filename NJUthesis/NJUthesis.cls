@@ -247,7 +247,7 @@
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
     \begin{tabular}{lc}
-      \NJUT@label@title & \NJUTunderline[310pt]{\normalsize \NJUT@value@title}\\
+      \NJUT@label@title & \NJUTunderline[310pt]{\scalebox{0.785}[1.0]{\NJUT@value@title}}\\
       \NJUT@label@author & \NJUTunderline[310pt]{\NJUT@value@author}\\
       \NJUT@label@major  & \NJUTunderline[310pt]{\NJUT@value@major}\\
       \NJUT@label@advisor & \NJUTunderline[310pt]{\NJUT@value@advisor}\\
