@@ -69,13 +69,13 @@
 \title{一种基于多维时间序列分析的音乐推荐系统研究与实现}
 \author{王守涛}
 \studentnum{~MF1133033}
-\grade{2014}
+\grade{2011}
 \advisor{徐锋~~教授}
 \major{计算机技术}
 \researchfield{可信计算}
 \footdate{2014~年~5~月}
-\submitdate{2014~年~5~月~10~日}
-\defenddate{2014~年~6~月~1~日}
+\submitdate{2014~年~5~月~18~日}
+\defenddate{2014~年~5~月~25~日}
 
 % 英文封面内容字符串
 \englishtitle{Research and Implementation of A Music Recommender System Based on Multidimensional Time Series Analysis}
@@ -104,15 +104,15 @@
 上下文环境之间的关系，导致推荐结果不够理想，而少量考虑用户上下文的工作对用户行为的时间相关性处理不够合理，同样难以达到理想的推荐效果。我们认为，用户的未来行为与其
 长期行为、即时行为和中期行为均存在相关性，但目前未见工作全面考虑用户行为的时间相关性。为此，本文提出了一种基于多维时间序列分析的个性化音乐推荐方法，较合理地利用用
 户中期行为提高音乐推荐效果，进而给出了一种综合用户长期、中期和即时行为的音乐推荐方法，通过原型系统的实现，初步验证了上述方法的可行性。本文的主要贡献如下：
-
-    1. 提出了一种基于多维时间序列分析的音乐推荐方法。该方法采用主题模型将每首歌曲表示成隶属于若干隐含主题的概率，进而将用户行为建模为多维时间序列并对该序列进行
+    \begin{enumerate}
+    \item 提出了一种基于多维时间序列分析的音乐推荐方法。该方法采用主题模型将每首歌曲表示成隶属于若干隐含主题的概率，进而将用户行为建模为多维时间序列并对该序列进行
     分析，从而较好地预测用户行为偏好，并给出合理的推荐。
 
-    2. 给出了一种基于用户长期、中期和即时行为的综合音乐推荐框架，考虑了三种行为影响权重的动态调整问题，进一步提高了音乐推荐的效果。
+    \item 给出了一种基于用户长期、中期和即时行为的综合音乐推荐框架，考虑了三种行为影响权重的动态调整问题，进一步提高了音乐推荐的效果。
 
-    3. 基于上述技术实现了一个音乐推荐原型系统，为提高处理效率，系统采用分布式实时计算框架Storm实现，达到了预期效果。
-
-\keywords{音乐推荐系统; 主题模型; 多维时间序列}
+    \item 基于上述技术实现了一个音乐推荐原型系统，为提高处理效率，系统采用分布式实时计算框架Storm实现，达到了预期效果。
+    \end{enumerate}
+\keywords{音乐推荐系统， 主题模型， 多维时间序列}
 
 \end{abstract}
 
@@ -127,17 +127,17 @@
     propose a music recommender method based on multidimensional time series analysis. Our method first exploits users' mid-term behavior, and then incorporates
     users' mid-term behavior with their long-term behavior and immediate behavior. Moreover, we implement a system prototype to preliminarily verify the
     feasibility of our method. Our main contributions are summarized as follows:
-
-    1. A music recommender method based on multidimensional time series analysis was proposed. The method first uses topic models to model a song as a probability
+    \begin{enumerate}
+    \item A music recommender method based on multidimensional time series analysis was proposed. The method first uses topic models to model a song as a probability
     distribution over some latent topics and then models a user's behavior as a multidimensional time series. By analyzing the time series, the method can
     forecast the user's future behaviors and get reasonable recommendations.
 
-    2. A music recommender method based on users' long-term behaviors, mid-term behaviors and immediate behaviors was proposed. The method can dynamically adjust
+    \item A music recommender method based on users' long-term behaviors, mid-term behaviors and immediate behaviors was proposed. The method can dynamically adjust
     the weights of these behaviors and get better recommendations than the method purely based on multidimensional time series analysis.
 
-    3. A music recommender system prototype based on the above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime
+    \item A music recommender system prototype based on the above methods was implemented. In order to improve the efficiency, we use Storm, a distributed realtime
     computation framework, to implement the system and achieve the desired effects.
-
+    \end{enumerate}
 \englishkeywords{Music Recommender System, Topic Model, Multidimensional Time Series}
 
 \end{englishabstract}
@@ -930,7 +930,7 @@ dis({s}_{i},{s}_{j})=\frac{1}{\sqrt{2}}\sqrt{\sum_{k=1}^{K}({\sqrt{{\omega}_{ik}
 在http://lastfmseq.sinaapp.com/上，而其具体的使用说明如附录A所示。
 
 \begin{table}[!hbp]
-\caption{数据集的统计信息}
+\caption{所用数据集信息}
 \centering
 \begin{tabular}{|c|c|}
 \hline
@@ -1649,7 +1649,7 @@ include "includes/drpc/DRPC.php";
 
 其中，Small、Whole和Session被scale字段分割成40组，其中第0组到第9组属于Small数据集，第0组到第29 组属于Whole数据集，第30组到第39组属于Session数据集。Unused数据的scale设为-1。显然，Small数据集是Whole数据集的一部分，它们的特点是每一个用户所收听的歌曲都在一个会话期内，即不存在长时中断。从Whole数据集中划分出Small数据集的主要目的是方便机器性能不佳的用户使用，对于Small数据集，用户可以使用10组中的9组作训练集而余下的一组作测试集。Session 数据集与Whole数据集的主要区别是每一个用户所收听的歌曲至少在两个会话期内。类似的，用户可以用其中9组作训练集而余下的一组作测试集。下表给出了Small、Whole和Session三类数据集的基本统计信息。
 \begin{table}[!hbp]
-\caption{数据集的统计信息}
+\caption{数据集LastfmSeq的统计信息}
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
