@@ -338,14 +338,17 @@ KL¾àÀëÒ²±»³ÆÎªÏà¶ÔìØ»òKLÉ¢¶È£¬ÊÇÁ½¸ö¸ÅÂÊ·Ö²¼\emph{P}ºÍ\emph{Q}²î±ðµÄ·Ç¶Ô³ÆÐÔµÄ¶È
 \begin{equation}
 {dis}_{KL}(p,q)=\sum_{i=1}^{K}{p}_{i}ln\frac{{p}_{i}}{{q}_{i}}
 \end{equation}
+
 ÓÉÓÚKL¾àÀëÊÇ·Ç¶Ô³ÆµÄ£¬¼´
 \begin{equation}
 {dis}_{KL}(p,q)\neq{dis}_{KL}(q,p)
 \end{equation}
+
 ¶øÎïÆ·Ö®¼äµÄÏàËÆ¶ÈÓ¦¸ÃÂú×ã¶Ô³ÆÐÔ£¬¼´
 \begin{equation}
 sim(p,q)=sim(q,p)
 \end{equation}
+
 Òò´Ë£¬²»ÄÜÖ±½ÓÊ¹ÓÃKL¾àÀëÀ´¼ÆËãÎïÆ·Ö®¼äµÄÏàËÆ¶È£¬µ«¿ÉÒÔÊ¹ÓÃ\emph{p}µ½\emph{q}µÄKL¾àÀëÓëqµ½pµÄKL ¾àÀëµÄÆ½¾ùÖµÀ´×÷Îª¶þÕßµÄ×îÖÕ¾àÀë£¬ÕâÑù¾Í¿ÉÒÔÂú×ã¶Ô³ÆÐÔµÄÒªÇó£¬
 Èç¹«Ê½2.5ËùÊ¾¡£½øÒ»²½µØ£¬¿ÉÒÔÊ¹ÓÃÈç¹«Ê½2.6ËùÊ¾µÄ·½·¨¼ÆËã¶þÕßÖ®¼äµÄÏàËÆ¶È¡£
 \begin{equation}
@@ -354,6 +357,7 @@ sim(p,q)=sim(q,p)
 \begin{equation}
 {sim}_{KL}(p,q)=\frac{1}{1+{dis}_{avgKL}(p,q)}
 \end{equation}
+
 \subsection{Hellinger¾àÀë}
 
 Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ»Âú×ã¶Ô³ÆÐÔ£¬Òò´Ë¿ÉÒÔÖ±½ÓÓÃÀ´¼ÆËãÎïÆ·Ö®¼äµÄÏàËÆ¶È~\cite{oosterhoff2012note}¡£
@@ -364,6 +368,7 @@ Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ
 \begin{equation}
 {sim}_{hellinger}(p,q)=\frac{1}{1+{dis}_{hellinger}(p,q)}
 \end{equation}
+
 ±¾ÎÄËùÊöÒôÀÖÍÆ¼ö·½·¨½«Ê¹ÓÃÖ÷ÌâÄ£ÐÍ½¨Ä£µÄ·½·¨½«Ã¿Ò»Ê×¸èÇú±íÕ÷ÎªÓÉÈô¸ÉÒþº¬Ö÷Ìâ¹¹³ÉµÄÒ»¸ö¸ÅÂÊ·Ö²¼£¬Òò´ËKL¾àÀëºÍHellinger¾àÀë½«±»±¾ÎÄÓÃÀ´¼ÆËãÁ½Ê×¸èÇúµÄÏàËÆ¶È¡£
 
 \section{ÆÀ²âÖ¸±ê}
@@ -388,12 +393,14 @@ Hellinger¾àÀëÒ²ÊÇÊÇÒ»ÖÖ¶ÈÁ¿Á½¸ö¸ÅÂÊ·Ö²¼Ö®¼äÏàËÆ¶ÈµÄ·½·¨¡£ÓëKL¾àÀë²»Í¬µÄÊÇ£¬ÆäÌìÈ
 \begin{equation}
 RMSE=\sqrt{\frac{\sum_{u,i\in{T}}{({r}_{ui}-{\hat{r}}_{ui})}^{2}}{|T|}}
 \end{equation}
+
 ÆäÖÐ£¬\emph{T}´ú±í²âÊÔ¼¯£¬\emph{u}ºÍ\emph{i}±íÊ¾²âÊÔ¼¯ÖÐµÄÓÃ»§ºÍÎïÆ·£¬\({r}_{ui}\)ÊÇÓÃ»§\emph{u}¶ÔÎïÆ·\emph{i}µÄÊµ¼ÊÆÀ·Ö£¬¶ø\({\hat{r}}_{ui}\)ÊÇÍÆ¼öËã·¨¸ø³öµÄÔ¤²âÆÀ·Ö¡£
 
 MAE²ÉÓÃ¾ø¶ÔÖµ¼ÆËãÔ¤²âÎó²î£¬Èç¹«Ê½2.10 ËùÊ¾¡£
 \begin{equation}
 MAE=\frac{\sum_{u,i\in{T}}|{r}_{ui}-\hat{{r}_{ui}}|}{|T|}
 \end{equation}
+
 Ô¤²âÎó²îÔ½Ð¡£¬Ô¤²â×¼È·¶ÈÔ½¸ß£¬ÍÆ¼öËã·¨µÄÐ§¹ûÔ½ºÃ¡£
 
 Top-NÍÆ¼öÒ»°ãÍ¨¹ý×¼È·ÂÊ(precision)ºÍÕÙ»ØÂÊ(recall)À´¶ÈÁ¿Ëã·¨µÄÓÅÁÓ¡£Éè\(R(u)\)ÊÇ¸ù¾ÝÓÃ»§ÔÚÑµÁ·¼¯ÉÏµÄÐÐÎª¸øÓÃ»§×÷³öµÄÍÆ¼öÁÐ±í£¬¶ø\(T(u)\)ÊÇÓÃ»§ÔÚ²âÊÔ¼¯ÉÏµÄÐÐÎªÁÐ
@@ -404,6 +411,7 @@ Precision=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|R(u)|}
 \begin{equation}
 Recall=\frac{\sum_{u\in{U}|R(u)\cap{T(u)}|}}{\sum_{u\in{U}}|T(u)|}
 \end{equation}
+
 \subsection{ÆäËûÆÀ²âÖ¸±ê}
 
 ³ýÁËÔ¤²â×¼È·¶ÈÕâÒ»ÖØÒªÖ¸±êÖ®Íâ£¬ÍÆ¼öÏµÍ³µÄÆÀ²â»¹ÓÐÖîÈç¸²¸ÇÂÊ¡¢¶àÑùÐÔµÈÖ¸±ê£¬ÕâÐ©Ö¸±ê´Ó²»Í¬µÄ½Ç¶È¿´´ýÍÆ¼öµÄÓÐÐ§ÐÔ¡£ÆäÖÐ£¬¸²¸ÇÂÊ(Coverage)ÃèÊöµÄÊÇÒ»¸öÍÆ¼öÏµÍ³¶ÔÎïÆ·
@@ -502,6 +510,7 @@ CPU ÃÜ¼¯ÐÍ¼ÆËã¡£Storm¼¯ÈºÉÏÔËÐÐµÄÍØÆË½ÓÊÕµ÷ÓÃº¯ÊýµÄ²ÎÊýÐÅÏ¢×÷ÎªÊäÈëÁ÷£¬²¢½«¼ÆËã½
     \begin{equation}
     {tf}_{i,j}=\frac{{n}_{i,j}}{\sum_{k}{n}_{k,j}}
     \end{equation}
+
     ÕâÀï,\({n}_{i,j}\)±íÊ¾¸Ã´ÊÏîÔÚ¸ÃÎÄµµÖÐ³öÏÖµÄ´ÎÊý¡£´ÊÆµÄ£ÐÍÍ»³öÁË´ÊÆµ¶Ô´ÊÏîÖØÒªÐÔµÄÓ°Ïì£¬ÄÜ¹»È¡µÃ±È²¼¶ûÄ£ÐÍ½ÏºÃµÄÐ§¹û¡£µ«ÊÇ£¬´ÊÓïµÄÖØÒªÐÔ²»½öËæ×ÅËüÔÚÎÄµµÖÐ
     ³öÏÖµÄ´ÎÊý³ÉÕý±ÈÔö¼Ó£¬¶øÇÒ¿ÉÄÜ»áËæ×ÅËüÔÚÓïÁÏ¿âÖÐ³öÏÖµÄÆµÂÊ³É·´±ÈÏÂ½µ¡£
 
@@ -511,10 +520,12 @@ CPU ÃÜ¼¯ÐÍ¼ÆËã¡£Storm¼¯ÈºÉÏÔËÐÐµÄÍØÆË½ÓÊÕµ÷ÓÃº¯ÊýµÄ²ÎÊýÐÅÏ¢×÷ÎªÊäÈëÁ÷£¬²¢½«¼ÆËã½
     \begin{equation}
     {tfidf}_{i,j}={tf}_{i,j}\times{{idf}_{i}}
     \end{equation}
+
     \({idf}_{i}\)ÎªÄæÏòÎÄ±¾ÆµÂÊ£¬¶¨ÒåÈçÊ½2.15ËùÊ¾¡£
     \begin{equation}
     {idf}_{i}=log\frac{|D|}{|\{j:{t}_{i}\in{{d}_{j}}\}|}
     \end{equation}
+
     ÆäÖÐ£¬\(|D|\)±íÊ¾ÎÄµµ¼¯ºÏÖÐµÄÎÄµµ×ÜÊý£¬\(|\{j:{t}_{i}\in{{d}_{j}}\}|\)±íÊ¾ÎÄµµ¼¯ºÏÖÐ°üº¬´ÊÏî\({t}_{i}\)µÄÎÄµµÊýÄ¿¡£TF-IDF ½á¹¹¼òµ¥£¬ÈÝÒ×Àí½â£¬±»¹ã·ºÓ¦ÓÃ¡£
     µ«ÊÇ£¬ÆäÎÞ·¨×¼È·²¶×½ÎÄµµÄÚ²¿ÓëÎÄµµ¼äµÄÍ³¼ÆÌØÕ÷£¬Ò²²»ÄÜ½â¾öÍ¬Òå´ÊºÍ¶àÒå´ÊµÄÎÊÌâ£¬Òò´Ë¾«È·¶È²»ÊÇºÜ¸ß¡£
 \end{enumerate}
@@ -554,6 +565,7 @@ LDAÒ²ÊÇÒ»ÖÖµäÐÍµÄ´Ê´üÄ£ÐÍ£¬ÆäÈÏÎªÒ»ÆªÎÄµµÓÉ¶à¸öÖ÷Ìâ¹¹³É£¬¶øÎÄµµÖÐÃ¿Ò»¸ö´Ê¶¼ÊÇÓÉ¶
 \begin{equation}
 p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m,-i}+{\alpha}_{k})}{\sum_{t=1}^{V}({{n}^{t}}_{k,-i}+{\beta}_{t})}}
 \end{equation}
+
 \STATE ÖØ¸´²½Öè2Ö±ÖÁ±éÀúËùÓÐÎÄµµ¡£
 
 \STATE Êä³öLDAÄ£ÐÍÖÐµÄ²ÎÊý\(\vec{\theta}\)ºÍ\(\vec{\varphi}\)¡£
@@ -563,6 +575,7 @@ p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m
 \begin{equation}
 {\varphi}_{k,t}=\frac{{{n}^{t}}_{k}+{\beta}_{t}}{{n}_{k}+{\beta}_{t}}
 \end{equation}
+
 \end{algorithmic}
 \end{algorithm}
 
@@ -604,6 +617,7 @@ p({z}_{i}=k|{z}_{-i},w)\propto{\frac{({{n}^{t}}_{k,-i}+{\beta}_{t})({{n}^{k}}_{m
 \begin{equation}
 \Theta(B)=1+\sum_{i=1}^{q}{\theta}_{i}{B}^{i}
 \end{equation}
+
 ÆäÖÐ,\({y}_{t}\)ÎªÊ±¼äÐòÁÐYµÄµÚt¸öÈ¡Öµ£¬BÊÇÖÍºóËã×Ó£¬\(\theta\)ºÍ\(\varphi\)ÎªÄ£ÐÍ²ÎÊý¡£
 
 ARIMAµÄÖ´ÐÐÁ÷³ÌÖ÷Òª·ÖÎªÄ£ÐÍÊ¶±ð(Model Identification)¡¢²ÎÊý¹À¼Æ(Parameter Estimation)ºÍÕï¶Ï¼ì²â(Diagnostic Checking)Èý¸ö½×¶Î¡£ÆäÖÐ£¬Ä£ÐÍÊ¶±ð½×¶ÎÖ÷ÒªÍê³É¼ì²âÐòÁÐ
@@ -642,11 +656,13 @@ ARIMAÄ£ÐÍÒÑ¾­ÔÚ¼ÆÁ¿¾­¼ÃÑ§ÖÐµÃµ½ÁË·Ç³£¹ã·ºµØÓ¦ÓÃ¶øÇÒÒ²È¡µÃÁË±È½ÏÀíÏëµÄÔ¤²âÐ§¹û£¬Ò
 \begin{equation}
 U=\{{u}_{1},{u}_{2},...,{u}_{v}\}
 \end{equation}
+
 \textbf{¸èÇú¼¯\emph{S}}£ºËùÓÐ¿ÉÒÔÍÆ¼ö¸øÓÃ»§µÄÎïÆ·(ÕâÀï¾ÍÊÇ¸èÇú£¬±¾ÎÄ²»¼ÓÇø·ÖµØÊ¹ÓÃ¡°¸èÇú¡±ºÍ¡°ÎïÆ·¡±)µÄ¼¯ºÏ£¬ÈçÊ½3.2ËùÊ¾¡£ÆäÖÐ£¬\emph{m}±íÊ¾Çú¿âÖÐ¸èÇúµÄÊýÄ¿£¬
 ¼´\(m=|S|\)¡£Îª·½±ãÆð¼û£¬ÎÒÃÇÈÏÎªÓÃ»§ÊÕÌýµÄ¸èÇúÒ»¶¨ÔÚ¸èÇú¼¯ºÏÖÐ¡£
 \begin{equation}
 S=\{{s}_{1},{s}_{2},...,{s}_{m}\}
 \end{equation}
+
 ¶ÔÓÚÓÃ»§¼¯\emph{U}ÖÐ¸ø¶¨µÄÒ»¸öÓÃ»§\emph{u}£¬±¾ÎÄËùÒªÑÐ¾¿µÄÒôÀÖÍÆ¼öÏµÍ³µÄÄ¿±ê¾ÍÊÇÎª¸ÃÓÃ»§ÍÆ¼öÆä¿ÉÄÜÏ²»¶µÄÏÂÒ»Ê×¸èÇú¡£ÎªÁËºâÁ¿ÓÃ»§¶Ô¸èÇúµÄÏ²»¶³Ì¶È£¬ÎÒÃÇ¶¨ÒåÈçÏÂ
 ËùÊ¾µÄÐ§ÓÃº¯Êý£º
 
@@ -659,6 +675,7 @@ S=\{{s}_{1},{s}_{2},...,{s}_{m}\}
 \begin{equation}
 T=\{{t}_{1},{t}_{2},...,{t}_{K}\}
 \end{equation}
+
 \textbf{ÊÂ¼þ\(e(u,\tau,s)\)}: ±íÊ¾ÓÃ»§\emph{u}ÔÚÊ±¿Ì\(\tau\)ÊÕÌýÁË¸èÇú\emph{s}¡£ÏÔÈ»£¬¸èÇú\emph{s}¿ÉÓÉÓÃ»§\emph{u} ºÍÊ±¿Ì\(\tau\)Î¨Ò»¾ö¶¨£¬Òò´Ë\(e(u,\tau,s)\)¿É
 ¼ò»¯Îª\(e(u,\tau)\)¡£
 
@@ -666,6 +683,7 @@ T=\{{t}_{1},{t}_{2},...,{t}_{K}\}
 \begin{equation}
 Q(u)=<e(u,{\tau}_{1}),e(u,{\tau}_{2}),...,e(u,{\tau}_{\pi}),e(u,{\tau}_{\pi+1}),...,e(u,{\tau}_{\pi+n})>
 \end{equation}
+
 ÆäÖÐ£¬\(\pi+n\)ÎªÓÃ»§\emph{u}ËùÊÕÌý»òÏ²»¶µÄ¸èÇúÊýÄ¿£¬\(\tau\)ÎªÊÂ¼þ·¢ÉúµÄÊ±¼ä£¬ÇÒ\({\tau}_{1}<{\tau}_{2}<...<{\tau}_{\pi}<{\tau}_{\pi+1}<...<{\tau}_{\pi+n}\)£¬
 ¼´ÓÃ»§ÊÕÌýÕâ\(\pi+n\)Ê×¸èÇúÊÇ°´ÕÕÒ»¶¨µÄ´ÎÐòÒ»Ê×½ÓÒ»Ê×ÊÕÌýµÄ¡£ÁíÍâ£¬\emph{Q(u)}ÖÐ×îºó\emph{n}¸öÊÂ¼þÊÇÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚ²úÉúµÄ£¬¼´´ÓÊÂ¼þ\(e(u,{\tau}_{\pi+1})\)µ½
 ÊÂ¼þ\(e(u,{\tau}_{\pi+n})\)Ö®¼ä¶ÔÓ¦µÄ\emph{n}Ê×¸èÇúÊÇÓÃ»§µ±Ç°Á¬ÐøÊÕÌýµÄ£¬¶øÐòÁÐÖÐµÄ×îºóÒ»¸öÊÂ¼þ\(e(u,{\tau}_{\pi+n})\)ÊÇÕýÔÚ·¢ÉúµÄ¡£Ò²¾ÍÊÇËµ£¬Õâ\emph{n}¸öÌý¸èÊÂ
@@ -676,6 +694,7 @@ Q(u)=<e(u,{\tau}_{1}),e(u,{\tau}_{2}),...,e(u,{\tau}_{\pi}),e(u,{\tau}_{\pi+1}),
 \begin{equation}
 |{\tau}_{\pi+1}-{\tau}_{\pi}|>\varepsilon
 \end{equation}
+
 ÆäÖÐ£¬\(\varepsilon\)ÊÇ¸ø¶¨µÄÊ±¼ä¼ä¸ô£¬ÓÃÒÔ·Ö¸î²»Í¬µÄÌý¸è»á»°£¬ÔÚºóÎÄµÄÊµÑéÖÐÎÒÃÇ½«Ö®ÉèÎª8·ÖÖÓ£¬¶øÔÚÏµÍ³ÊµÏÖÖÐ½«Ö®ÉèÎª2Ð¡Ê±¡£ÎªÁË·½±ã£¬ÎÒÃÇÖ»¿¼²ìÔÚ¸ø¶¨Æ½Ì¨ÏÂÈ·Êµ
 ÓÐÌý¸èÐÐÎªµÄÓÃ»§£¬¼´ÓÃ»§ÔÚ¸ø¶¨Æ½Ì¨ÏÂÈ·ÊµÓÐÌý¸èÊÂ¼þÇÒÆäµ±Ç°ÕýÔÚ¸ÃÆ½Ì¨ÏÂÊÕÌý¸èÇú¡£¶ø¶ÔÓÚÔÚ¸ø¶¨Æ½Ì¨ÏÂÃ»ÓÐÈÎºÎÌý¸èÐÐÎªÒÔ¼°µ±Ç°²»ÔÚ¸ÃÆ½Ì¨ÏÂÌý¸èµÄÓÃ»§£¬ÎªËûÃÇ½øÐÐÍÆ¼ö
 ±È½ÏÀ§ÄÑ£¬ÕâÊÇÕû¸öÍÆ¼öÏµÍ³ÁìÓòÖØµãÑÐ¾¿µÄÀäÆô¶¯ÎÊÌâ£¬±¾ÎÄ¶Ô´Ë²»×öÉî¾¿¡£
@@ -688,6 +707,7 @@ Q(u)=<e(u,{\tau}_{1}),e(u,{\tau}_{2}),...,e(u,{\tau}_{\pi}),e(u,{\tau}_{\pi+1}),
 \begin{equation}
 N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 \end{equation}
+
 ÎªÁË½â¾öÔ¤²âÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúµÄÎÊÌâ£¬ÓÐÁ½¸öÄÑµãÐèÒª½â¾ö£º
 
 \begin{enumerate}
@@ -746,6 +766,7 @@ N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 \begin{equation}
 \vec{s}=({\omega}_{1},{\omega}_{2},...,{\omega}_{i},...,{\omega}_{K})(1\le{i}\le{K})
 \end{equation}
+
 ÆäÖÐ£¬\({\omega}_{i}=0\)±íÊ¾¸èÇúÍêÈ«²»ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð£¬¼´¸ÃÒþº¬Ö÷Ìâ¶Ô¸èÇúµÄÄÚÈÝÍêÈ«Ã»ÓÐ¹±Ï×£»\({\omega}_{i}=1\)±íÊ¾¸èÇúÍêÈ«ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð£»
 \(0<{\omega}_{i}<1\)±íÊ¾¸èÇúÔÚÒ»¶¨³Ì¶ÈÉÏÁ¥ÊôÓÚ¸ÃÒþº¬Ö÷Ìâ´ú±íµÄÀà±ð¡£
 
@@ -787,6 +808,7 @@ N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 \begin{equation}
 {\vec{s}}_{\pi+n+1}=({\omega}_{1}(\pi+n+1),{\omega}_{2}(\pi+n+1),...,{\omega}_{i}(\pi+n+1),...,{\omega}_{K}(\pi+n+1))
 \end{equation}
+
 ÆäÖÐ£¬\({\omega}_{i}(j)\)±íÊ¾µÚ\emph{j}Ê×¸èÇúÁ¥ÊôÓÚµÚ\emph{i}¸öÒþº¬Ö÷ÌâµÄ¸ÅÂÊ\((1\le{i}\le{K})\)¡£Ö±½ÓµÃµ½ÕâÑùÒ»¸öÖ÷ÌâÏòÁ¿ÍùÍùÊÇ²»Ì«ÈÝÒ×µÄ£¬µ«¹À¼Æ³ö¸ÃÏòÁ¿¶ÔÓ¦µÄ
 Ã¿Ò»Î¬µÄÈ¡ÖµÊÇ¿ÉÐÐµÄ¡£Òò´Ë£¬ÒªµÃµ½ÏÂÒ»Ê×¸èÇú¶ÔÓ¦µÄÖ÷ÌâÏòÁ¿£¬ÎÒÃÇÐèÒªÏÈ¹À¼Æ³ö¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿ÖÐÃ¿Ò»Î¬µÄÖµ£¬È»ºó½«ÕâÐ©ÖÐ¼ä¹À¼ÆÖµ×éºÏÆðÀ´¼´¿É¹¹³ÉÍêÕûµÄ¹À¼ÆÖ÷
 ÌâÏòÁ¿£¬´Ó¶øÄÜ¹»ÔÚ¸èÇú¼¯\emph{S}ÖÐÕÒµ½×îÆ¥ÅäµÄ¸èÇúÍÆ¼ö¸øÓÃ»§¡£
@@ -796,6 +818,7 @@ N(u)={\arg\max}_{s\in{S}}\emph{utility(u,s)}
 \begin{equation}
 <{{\vec{s}}_{\pi+1}}^\top,{{\vec{s}}_{\pi+2}}^\top,...,{{\vec{s}}_{\pi+n}}^\top>
 \end{equation}
+
 ½øÒ»²½µØ£¬½«ÉÏÊ½ÔÚ\emph{K}Î¬Òþº¬Ö÷ÌâÏòÁ¿ÉÏÕ¹¿ª£¬µÃµ½ÈçÊ½3.11ËùÊ¾µÄ¸üÎªÖ±¹ÛµÄ¶àÎ¬Ê±¼äÐòÁÐ¡£
 \begin{equation}
 \begin{split}
@@ -809,17 +832,20 @@ TS(u)=< \\
 &>
 \end{split}
 \end{equation}
+
 ÆäÖÐ,\(i(1\le{i}\le{K})\)±íÊ¾Òþº¬Ö÷ÌâµÄ±àºÅ£¬\(j(1\le{j}\le{n})\)±íÊ¾ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÊÕÌýµÚ\emph{j}Ê×¸èÇúµÄË÷Òý¡£ÏÔÈ»£¬¸Ã¶àÎ¬Ê±¼äÐòÁÐÖÐÈÎÒâÒ»¸öÊ±¼äµã¶¼¶ÔÓ¦
 ×ÅÒ»¸ö\emph{K}Î¬Ö÷ÌâÏòÁ¿ÇÒ¶ÔÓÚ\emph{K}Î¬Ö÷ÌâÏòÁ¿ÖÐµÄÃ¿Ò»Î¬À´ËµÓÖ¶ÔÓ¦×ÅÒ»¸öµ¥±äÁ¿µÄÊ±¼äÐòÁÐ£¬ÈçÊ½3.12ËùÊ¾¡£
 \begin{equation}
 TS(u,i)=<{\omega}_{i}(\pi+1),{\omega}_{i}(\pi+2),...,{\omega}_{i}(\pi+j),...,{\omega}_{i}(\pi+n)>
 \end{equation}
+
 ÆäÖÐ£¬\({\omega}_{i}(\pi+j)\)µÄº¬ÒåÈçÇ°ËùÊö¡£Í¨¹ý¶Ô\(TS(u,i)\)µÄ·ÖÎö¿ÉÒÔµÃµ½ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÊÕÌýµÄ¸èÇúÔÚ±àºÅÎª\emph{i}µÄÒþº¬Ö÷ÌâÉÏµÄ±ä»¯Çé¿ö£¬½ø¶ø¿ÉÒÔÔ¤²â³öÓÃ»§¿ÉÄÜ
 ÊÕÌýµÄÏÂÒ»Ê×¸èÇúÔÚ±àºÅÎª\emph{i}µÄÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô¶È£¬¼´\({\hat{\omega}}_{i}(\pi+n+1)\)¡£ ½øÒ»²½µØ£¬ÎÒÃÇ¿ÉÒÔ»ñµÃÓÃ»§ÐÐÎªÔÚÆäËûÒþº¬Ö÷ÌâÉÏµÄ±ä»¯Çé¿ö²¢¹À¼Æ³öÓÃ»§¿ÉÄÜÊÕÌýµÄ
 ÏÂÒ»Ê×¸èÇúÔÚÆäËûÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô¶È¡£Í¨¹ý¶Ô\emph{K}¸ö¹À¼ÆÖµµÄ×éºÏ£¬¿ÉÒÔµÃµ½ÈçÊ½3.13ËùÊ¾µÄÄ¿±êÖ÷ÌâÏòÁ¿£¬¼´ÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúµÄ¹À¼ÆÖ÷ÌâÏòÁ¿¡£
 \begin{equation}
 {\hat{\vec{s}}}_{\pi+n+1}=({\hat{\omega}}_{1}(\pi+n+1),{\hat{\omega}}_{2}(\pi+n+1),...,{\hat{\omega}}_{i}(\pi+n+1),...,{\hat{\omega}}_{K}(\pi+n+1))
 \end{equation}
+
 \section{ÏàËÆ¶È¼ÆËã}
 
 Í¨¹ýÒþº¬µÒÀû¿ËÀ×Ö÷Ìâ½¨Ä£ÎÒÃÇµÃµ½ÁËÈçÊ½3.8ËùÊ¾¸èÇú¼¯\emph{S}ÖÐ¸èÇú¶ÔÓ¦µÄÖ÷ÌâÈ¨ÖØÏòÁ¿£¬¿¼ÂÇµ½ÏòÁ¿ÖÐÃ¿Ò»Î¬µÄÖµ±íÕ÷¸èÇúÁ¥ÊôÓÚÄ³Ò»Òþº¬Ö÷ÌâµÄ¸ÅÂÊ£¬ÎÒÃÇ½«ÕâÐ©Ö÷ÌâÈ¨ÖØÏòÁ¿¿´×÷
@@ -830,11 +856,13 @@ TS(u,i)=<{\omega}_{i}(\pi+1),{\omega}_{i}(\pi+2),...,{\omega}_{i}(\pi+j),...,{\o
 \begin{equation}
 utility(u,s)=\frac{1}{1+dis(s,\hat{s})}
 \end{equation}
+
 ÒòÎªÎÒÃÇÊÇÍ¨¹ýÖ÷ÌâÄ£ÐÍ½¨Ä£½«¸èÇú±íÊ¾³ÉÀëÉ¢µÄ¸ÅÂÊ·Ö²¼£¬ËùÒÔÎÒÃÇ¿ÉÒÔÊ¹ÓÃKL¾àÀë(Kullback-Leibler Divergence)~\cite{kullback1951information}~ÒÔ¼°Hellinger¾à
 Àë~\cite{oosterhoff2012note}~µÈÀ´¶ÈÁ¿Á½Ê×¸èÇúÖ®¼äµÄ¾àÀë¡£¿¼ÂÇµ½KL ¾àÀë²»¾ßÓÐ¶Ô³ÆÐÔ£¬±¾ÎÄ²ÉÓÃHellinger¾àÀëÀ´¶ÈÁ¿¸èÇúÖ®¼äµÄ¾àÀë£¬ÈçÊ½3.15ËùÊ¾¡£
 \begin{equation}
 dis({s}_{i},{s}_{j})=\frac{1}{\sqrt{2}}\sqrt{\sum_{k=1}^{K}({\sqrt{{\omega}_{ik}}-\sqrt{{\omega}_{jk}}})^{2}}
 \end{equation}
+
 ÆäÖÐ£¬\(dis({s}_{i},{s}_{j})\)Îª±àºÅÎª\emph{i}ºÍ\emph{j}µÄ¸èÇú¶ÔÓ¦µÄÖ÷Ìâ¸ÅÂÊ·Ö²¼Ö®¼äµÄHellinger¾àÀë£¬\emph{K}ÎªÒþº¬Ö÷ÌâÊýÄ¿£¬\({\omega}_{ik}\)Îª±àºÅÎª\emph{i}µÄ¸è
 ÇúÔÚµÚ\emph{k}¸öÒþº¬Ö÷ÌâÉÏµÄÁ¥Êô³Ì¶È¡£ÏÔÈ»£¬µ±Á½Ê×¸èÇúÔ½ÏàËÆ£¬ÄÇÃ´Æä¶ÔÓ¦µÄ¾àÀëÔ½Ð¡¡£Ïà·´µÄ£¬ÈôÁ½Ê×¸èÇúÔ½²»ÏàËÆ£¬ÆäÖ÷Ìâ¸ÅÂÊ·Ö²¼¶ÔÓ¦µÄ¾àÀëÔ½´ó¡£
 
@@ -894,11 +922,13 @@ dis({s}_{i},{s}_{j})=\frac{1}{\sqrt{2}}\sqrt{\sum_{k=1}^{K}({\sqrt{{\omega}_{ik}
 \begin{equation}
 recall=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|T(u)|}
 \end{equation}
+
 ¿ÉÒÔ¿´³ö£¬ÕÙ»ØÂÊ±íÕ÷ÓÃ»§ÕæÊµÊÕÌýµÄ¸èÇú±»ÍÆ¼öµÄÊýÄ¿ÓëÓÃ»§ÕæÊµÊÕÌý¸èÇú×ÜÊýµÄ±ÈÂÊ¡£ÒòÎªÔÚÒôÀÖÍÆ¼öÏµÍ³ÖÐ£¬ÓÃ»§\emph{u} Í¬Ò»Ê±¿ÌÔÚ²âÊÔ¼¯ÉÏÖ»»áÊÕÌýÒ»Ê×¸èÇú£¬¼´\(|T(u)|=1\)¡£
 Òò´Ë£¬ÎÒÃÇ½«Ê½3.16¼ò»¯ÎªÈçÊ½3.17ËùÊ¾µÄÃüÖÐÂÊ(hit ratio)¡£
 \begin{equation}
 hitRatio=\frac{\sum_{u\in{U}}hit(u)}{|U|}
 \end{equation}
+
 ÆäÖÐ£¬\emph{N}ÎªÍÆ¼öÏµÍ³ÎªÓÃ»§ÍÆ¼öµÄ¸èÇúÊýÄ¿£¬\emph{hit}±íÊ¾ÓÃ»§Êµ¼ÊÊÕÌýµÄ¸èÇúÊÇ·ñÔÚÍÆ¼öÁÐ±íÖÐ£¬ÈôÔÚÔòÎª1£¬·ñÔòÎª0¡£Èç¹û\emph{hit}Îª1£¬ÎÒÃÇ³ÆÖ®Îª¡°ÃüÖÐÒ»´Î¡±¡£
 ¼ÇÓÃ»§\emph{u}Êµ¼ÊÊÕÌýµÄ¸èÇúÎª\emph{s}£¬Ôò\emph{hit}¿É±íÊ¾ÎªÈçÊ½3.18¡£
 \begin{equation}
@@ -909,18 +939,22 @@ hit(u)=\left\{
 \end{aligned}
 \right.
 \end{equation}
+
 ×¼È·ÂÊ\(precision\)±íÕ÷ÁË¡°¼ìË÷³öµÄÏà¹ØÎÄµµÊýºÍÏµÍ³ËùÓÐ¼ìË÷µ½µÄÎÄ¼þ×ÜÊýµÄ±ÈÂÊ¡±£¬¼´ÓÃ»§ÕæÊµÊÕÌýµÄ¸èÇú±»ÍÆ¼öµÄÊýÄ¿Óë±»ÍÆ¼öµÄ¸èÇú×ÜÊýµÄ±ÈÂÊ£¬Æä¶¨ÒåÈçÊ½3.19ËùÊ¾£º
 \begin{equation}
 precision=\frac{\sum_{u\in{U}}|R(u)\cap{T(u)}|}{\sum_{u\in{U}}|R(u)|}
 \end{equation}
+
 ¿¼ÂÇµ½\(|T(u)|=1\)£¬Ê½3.19¿É¼ò»¯ÎªÊ½3.20¡£
 \begin{equation}
 precision=\frac{\sum_{u\in{U}}hit(u)}{\sum_{u\in{U}}|R(u)|}
 \end{equation}
+
 ¿¼ÂÇµ½ÕÙ»ØÂÊºÍ×¼È·ÂÊ´ËÏû±Ë³¤µÄ¹ØÏµ£¬ÎÄÏ×[21]ÖÐÊ¹ÓÃF1-Score¶ÔÄ£ÐÍ½øÐÐÆÀ¹À£¬F1-ScoreµÄÈ¡ÖµÔ½´óÄÇÃ´Ä£ÐÍ¶ÔÓ¦µÄ×ÛºÏÐ§¹ûÔ½ºÃ£¬·´Ö®Ô½²î¡£F1-Score¿ÉÒÔÓÃÊ½3.21±íÊ¾£º
 \begin{equation}
 F1=2*\frac{recall*precision}{recall+precision}
 \end{equation}
+
 ÔÚÈçÉÏËùÊöµÄÆÀ²â±ê×¼ÖÐ£¬ÕÙ»ØÂÊºÍ×¼È·ÂÊµÄÔÚºÜ´ó³Ì¶ÈÉÏÈ¡¾öÓÚÈçÊ½3.17ËùÊ¾µÄÃüÖÐÂÊ¡£Èç¹û¸èÇúÎ´±»ÓÃ»§Ï²»¶»òÊÕÌý£¬ÄÇÃ´¾ÍÈÏÎª¸Ã¸èÇúÎ´ÃüÖÐ¡£È»¶ø£¬
 ÎÄÏ×~\cite{su2013personalized}~Ö¸³öÃ»ÓÐÃ÷ÏÔµÄÖ¤¾Ý±íÃ÷Î´±»ÆÀ·ÖµÄÎïÆ·¶ÔÓÃ»§À´ËµÊÇÍêÈ«·ñ¶¨µÄ¡£Ò²¾ÍÊÇËµ£¬¼´Ê¹¸èÇúÎ´ÃüÖÐ£¬Ò²²»´ú±íÓÃ»§²»Ï²»¶¸Ã¸èÇú¡£¼ÙÉèÓÃ»§\emph{u}ÕæÊµ
 ÊÕÌýµÄÏÂÒ»Ê×¸èÇúÎª¡°Í¬×ÀµÄÄã¡±£¬Èç¹ûÏµÍ³ÎªÆäÍÆ¼öÁËÁÐ±í(¡°±±¾©±±¾©¡±£¬¡°´æÔÚ¡±£¬¡°Í¬×ÀµÄÄã¡±)£¬ÄÇÃ´ÎÒÃÇÈÏÎª¸ÃÍÆ¼öÊÇÓÐÐ§µÄ£¬ÒòÎªÄ¿±ê¸èÇú¡°Í¬×ÀµÄÄã¡±ÔÚÍÆ¼öÁÐ±íÖÐ¡£
@@ -939,11 +973,13 @@ RMSE=\sqrt{\frac{\sum_{u\in{U}}{e(u)}^{2}}{|U|}}
 \begin{equation}
 MAE=\sqrt{\frac{\sum_{u\in{U}}|e(u)|}{|U|}}
 \end{equation}
+
 ÆäÖÐ£¬\emph{U}Îª²âÊÔÓÃ»§¼¯£¬\(|U|\)ÎªÓÃ»§Êý£¬\(e(u)\)ÎªÏòÓÃ»§ÍÆ¼öµÄ½á¹ûµÄÎó²î¡£¿¼ÂÇµ½ÎÒÃÇÎªÓÃ»§ÍÆ¼öµÄÊÇÒ»¸öÁÐ±í£¬ÎÒÃÇ½«\(e(u)\)¿´×öÊÇÁÐ±íÖÐËùÓÐ¸èÇúÓëÄ¿±ê¸èÇúµÄÆ½
 ¾ù¾àÀë¡£ÈçÊ½3.24ËùÊ¾¡£
 \begin{equation}
 e(u)=\frac{\sum_{s\in{R(u)}}dis(s,{s}_{\pi+n+1})}{|R(u)|}
 \end{equation}
+
 \subsection{ÊµÑéÉèÖÃ}
 
 ÎªÁË¿Í¹ÛµØºâÁ¿±¾ÎÄËùÊö·½·¨µÄÐ§¹û£¬ÎÒÃÇÊ×ÏÈ½«ËùÓÐÊý¾ÝËæ»úµØ·ÖÎª10·Ý²¢½«ÆäÖÐµÄ9·Ý×÷ÎªÑµÁ·¼¯£¬Ê£ÓàµÄ1·ÝÎª²âÊÔ¼¯£¬È»ºó½øÐÐ10ÂÖ½»²æÊµÑé¡£×îºó£¬ÎÒÃÇ½«10ÂÖÊµÑéµÄ½á¹û½øÐÐ
@@ -1073,6 +1109,7 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 \begin{equation}
 {\hat{\vec{s}}}_{mtsa}=({\hat{\omega}}_{1\_mtsa},...,{\hat{\omega}}_{i\_mtsa},...,{\hat{\omega}}_{K\_mtsa})(1\le{i}\le{K})
 \end{equation}
+
 ÖÁÓÚ»ùÓÚÓÃ»§³¤ÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨µÄÑ¡È¡£¬ÎÒÃÇÑ¡ÔñÆÓËØµÄÈ«¾ÖÌØÕ÷ÍÆ¼ö¡£Óë»ùÓÚÐ­Í¬¹ýÂËµÄÍÆ¼öÏà±È£¬»ùÓÚÈ«¾ÖÌØÕ÷µÄÒôÀÖÍÆ¼öÊµÏÖÆðÀ´±È½Ï¼òµ¥£¬¶øÇÒÄÜ¹»Ô¤²âµÃµ½ÓÃ»§µÄÕûÌå
 Æ«ºÃ£¬ÆäµÃµ½µÄ½á¹ûÓë±¾ÎÄËù¸øµÄ»ùÓÚ¶àÎ¬Ê±¼äÐòÁÐ·ÖÎöµÄÒôÀÖÍÆ¼ö·½·¨Ò»ÖÂ£¬·½±ãºóÐø×ÛºÏ¡£»ùÓÚÈ«¾ÖÌØÕ÷µÄÍÆ¼öÈÏÎªÓÃ»§³¤Ê±¼äµÄÌý¸èÐÐÎªÔÚÒ»¶¨³Ì¶ÈÉÏÄÜ¹»±È½ÏÓÃ»§ÄÚÔÚµÄÒôÀÖÆ«ºÃ£¬
 ½øÒ»²½µØ´ËÀàËã·¨ÈÏÎªÓÃ»§ÏÂÃæ¿ÉÄÜÊÕÌý¸èÇúµÄÌØÕ÷½üËÆÓÚÓÃ»§ËùÊÕÌýµÄÈ«²¿¸èÇúµÄÆ½¾ùÌØÕ÷¡£¶ÔÓÚÓÃ»§¼¯ÖÐÊÕÌýÁË\(\pi+n\)Ê×¸èÇúµÄÓÃ»§\emph{u}À´Ëµ£¬ÎÒÃÇÉèÊ¹ÓÃ»ùÓÚÈ«¾ÖÌØÕ÷ÍÆ¼öµÃµ½
@@ -1080,20 +1117,24 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 \begin{equation}
 {\hat{\vec{s}}}_{global}=({\hat{\omega}}_{1\_global},...,{\hat{\omega}}_{i\_global},...,{\hat{\omega}}_{K\_global})(1\le{i}\le{K})
 \end{equation}
+
 ÆäÖÐ£¬Ä¿±ê¸èÇúÔÚµÚ\emph{i}¸öÒþº¬Ö÷ÌâÉÏµÄ¸ÅÂÊÈ¡ÖµÈçÊ½4.3ËùÊ¾£¬\emph{j}±íÊ¾ÓÃ»§ÊÕÌýµÄµÚ\emph{j}Ê×¸èÇúµÄË÷Òý¡£
 \begin{equation}
 {\hat{\omega}}_{i\_global}=\frac{\sum_{j=1}^{\pi+n}{\vec{s}}_{j}(i)}{\pi+n}
 \end{equation}
+
 ÔÚÑ¡¶¨ÁË»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªºÍ³¤ÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨Ö®ºó£¬ÎÒÃÇÐèÒª½øÒ»²½Ñ¡È¡»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨¡£»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼öË¼Ïë±È½Ï¼òµ¥£¬¼´ÈÏÎªÓÃ»§µÄ×´Ì¬ÊÇ
 ÎÈ¶¨µÄ£¬½øÒ»²½µØÈÏÎªÓÃ»§¿ÉÄÜÊÕÌýµÄÏÂÒ»Ê×¸èÇúÓëÓÃ»§µ±Ç°ÊÕÌýµÄ¸èÇú¾ßÓÐÀàËÆµÄÌØÕ÷¡£¶ÔÓÚÓÃ»§¼¯ÖÐÊÕÌýÁË\(\pi+n\) Ê×¸èÇúµÄÓÃ»§\emph{u}À´Ëµ£¬ÎÒÃÇÉèÊ¹ÓÃ»ùÓÚ¼´Ê±ÌØÕ÷ÍÆ¼öµÃµ½
 µÄÄ¿±ê¸ÅÂÊ·Ö²¼Îª\({\hat{\vec{s}}}_{local}\)£¬ÈçÊ½4.4ËùÊ¾¡£
 \begin{equation}
 {\hat{\vec{s}}}_{local}=({\hat{\omega}}_{1\_local},...,{\hat{\omega}}_{i\_local},...,{\hat{\omega}}_{K\_local})(1\le{i}\le{K})
 \end{equation}
+
 ÆäÖÐ£¬Ä¿±ê¸èÇúÔÚµÚ\emph{i}¸öÒþº¬Ö÷ÌâÉÏµÄ¸ÅÂÊÈ¡ÖµÈçÊ½4.5ËùÊ¾£¬\emph{j}±íÊ¾ÓÃ»§ÊÕÌýµÄµÚ\emph{j}Ê×¸èÇúµÄË÷Òý¡£
 \begin{equation}
 {\hat{\omega}}_{i\_local}={\vec{s}}_{\pi+n}(i)
 \end{equation}
+
 \subsection{×ÛºÏ²ßÂÔ}
 
 ÔÚ¸ø¶¨ÁËÈýÖÖÀàÐÍµÄÒôÀÖÍÆ¼ö·½·¨Ö®ºó£¬ÎÒÃÇ»¹ÐèÒªÑ¡ÔñºÏÀíµÄ×ÛºÏ²ßÂÔ½«ËüÃÇ×ÛºÏÆðÀ´¡£¼ÓÈ¨ÊÇÒ»ÖÖ·Ç³£ÖØÒªµÄ×ÛºÏË¼Ïë£¬ÆäÒ»·½Ãæ¿ÉÒÔ½«²»Í¬µÄÍÆ¼ö²ßÂÔ×ÛºÏÆðÀ´¿¼ÂÇ£¬ÁíÒ»·½Ãæ
@@ -1103,16 +1144,19 @@ Based on Multidimensional Time Series Analysis, MTSA)¡£ ÆäÖÐ£¬ºá×ø±ê±íÊ¾±»ÍÆ¼ö¸è
 \begin{equation}
 {\hat{\vec{s}}}_{all} = \alpha{\hat{\vec{s}}}_{mtsa}+(1-\alpha)(\beta{\hat{\vec{s}}}_{global}+(1-\beta){\hat{\vec{s}}}_{local})
 \end{equation}
+
 Ä¿±ê¸ÅÂÊ·Ö²¼ÖÐÃ¿Ò»Î¬µÄÈ¡Öµ¿ÉÒÔ°´ÕÕÊ½4.7»ñµÃ¡£
 \begin{equation}
 {\hat{\omega}}_{i\_all}(\pi+n+1)=\alpha{\hat{\omega}}_{i\_mtsa}(\pi+n+1)+(1-\alpha)(\beta{\hat{\omega}}_{i\_local}(\pi+n+1)+(1-\beta){\hat{\omega}}_{i\_global}(\pi+n+1))
 \end{equation}
+
 ÆäÖÐ,\(\alpha\)±íÊ¾»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö·½·¨¶ÔÓ¦µÄÈ¨ÖØ£¬\(\beta\)ÊÇÓÃÒÔµ÷Õû»ùÓÚÓÃ»§³¤ÆÚÐÐÎªºÍ»ùÓÚÓÃ»§¼´Ê±ÐÐÎªÍÆ¼ö·½·¨¹±Ï×µÄ²ÎÊý¡£¶ÔÓÚ¹«Ê½4.6ºÍ4.7£¬ÎÒÃÇ°´ÕÕ
 Ê½4.7¶¨Òå²ÎÊý\(alpha\)¡£ÓÉÓÚÎÒÃÇ²»ÊÇÖ÷ÒªÑÐ¾¿»ùÓÚÓÃ»§³¤ÆÚÐÐÎªºÍ¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö£¬Òò´ËÎÒÃÇ²»¹ý·Ö¹Ø×¢²ÎÊý\(\beta\)µÄ±ä»¯¡£Îª·½±ãÆð¼û£¬ÎÒÃÇ¸ø¶¨\(\beta=0.5\)£¬¼´»ùÓÚ
 ÓÃ»§³¤ÆÚÐÐÎªµÄÍÆ¼öºÍ»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼ö¾ß±¸ÏàÍ¬µÄÈ¨ÖØ¡£
 \begin{equation}
 \alpha=\frac{f(n-b)}{n+a}
 \end{equation}
+
 Ê½4.7ÖÐ£¬\emph{n}±íÊ¾ÓÃ»§ÔÚµ±Ç°»á»°ÆÚÄÚËùÊÕÌýµÄ¸èÇúµÄÊýÄ¿£¬¼´ÓÃ»§µ±Ç°»á»°ÐòÁÐµÄ³¤¶È£»\emph{a}ºÍ\emph{b}ÊÇÓÃÒÔµ÷Õû\(\alpha\)±ä»¯µÄ²ÎÊý£¬ËüÃÇ¹²Í¬È·¶¨ÁË»ùÓÚÓÃ»§ÖÐÆÚÐÐÎª
 µÄÍÆ¼öºÎÊ±Æð×÷ÓÃÒÔ¼°±ä»¯Ç÷ÊÆ£»Ëã×ÓfµÄ¶¨ÒåÊ½4.8ËùÊ¾¡£
 \begin{equation}
@@ -1123,6 +1167,7 @@ x     ,x>0 \\
 \end{aligned}
 \right.
 \end{equation}
+
 Í¼4.2¸ø³öÁËµ±a=10ÇÒb=5Ê±£¬\(\alpha\)µÄÈ¡Öµ±ä»¯Çé¿ö£¬ÆäÖÐºá×ø±ê±íÊ¾ÓÃ»§µ±Ç°»á»°ÐòÁÐµÄ³¤¶È£¬×Ý×ø±ê±íÊ¾\(\alpha\)µÄÈ¡Öµ¡£ÓÉÍ¼¿ÉÒÔ¿´³ö£¬µ±ÐòÁÐ³¤¶ÈÐ¡ÓÚ5Ê±\(\alpha=0\)
 £¬Õâ±³ºóÌåÏÖµÄË¼ÏëÊÇ£ºÐòÁÐ³¤¶È¹ý¶ÌÊ±»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªµÄÒôÀÖÍÆ¼ö²»Æð×÷ÓÃ£¬´ËÊ±Ö÷ÒªÊ¹ÓÃ»ùÓÚÓÃ»§³¤ÆÚÐÐÎªµÄÒôÀÖÍÆ¼öºÍ»ùÓÚÓÃ»§¼´Ê±ÐÐÎªµÄÒôÀÖÍÆ¼öÎªÓÃ»§×÷³öÍÆ¼ö£¬ÕâÔÚÒ»¶¨
 ³Ì¶ÈÉÏ½â¾öÁËÀäÆô¶¯ÎÊÌâ£»Ëæ×Å×Ý×ø±êµÄÔö¼Ó£¬ÓÃ»§µ±Ç°»á»°ÐòÁÐ²»¶ÏÔö³¤£¬\(\alpha\)µÄÈ¡Öµ²»¶ÏÔö¼Ó£¬Õâ±³ºóµÄº¬ÒåÊÇ£º»ùÓÚÓÃ»§ÖÐÆÚÐÐÎªµÄÍÆ¼öÔÚÓÃ»§×´Ì¬ÎÈ¶¨Ê±±È½ÏÓÐÐ§ÇÒËæ×Å
@@ -1433,6 +1478,7 @@ attitude(user,song)=
 \end{aligned}
 \right.
 \end{equation}
+
 \subsection{ÍÆ¼öÒýÇæ}
 
 ÔÚÓÉÐòÁÐÉú³ÉÏµÍ³µÃµ½ÓÃ»§µ±Ç°»á»°ÆÚµÄÊÕÌýÁÐ±íºó£¬Í¼5.2ËùÊöµÄÏµÍ³¿ò¼ÜÔò¼¤»î»ùÓÚStorm¿ò¼ÜµÄ¶àÎ¬Ê±ÐòÍÆ¼öÒýÇæÈ¥¶ÁÈ¡ÁÐ±í½øÐÐ´¦Àí²¢Éú³É×îÖÕµÄÍÆ¼öÁÐ±í¡£Ö®ËùÒÔÊ¹
