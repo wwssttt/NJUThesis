@@ -250,8 +250,8 @@
       \NJUT@label@title & \NJUTunderline[310pt]{\scalebox{0.785}[1.0]{\NJUT@value@title}}\\
       \NJUT@label@author & \NJUTunderline[310pt]{\NJUT@value@author}\\
       \NJUT@label@major  & \NJUTunderline[310pt]{\NJUT@value@major}\\
-      \NJUT@label@advisor & \NJUTunderline[310pt]{\NJUT@value@advisor}\\
       \NJUT@label@researchfield & \NJUTunderline[310pt]{\NJUT@value@researchfield}\\
+      \NJUT@label@advisor & \NJUTunderline[310pt]{\NJUT@value@advisor}\\
     \end{tabular}\\
   \vskip \stretch{1}
   {\bf\kaishu\zihao{4} \NJUT@value@footdate}
@@ -353,7 +353,7 @@
     \else
       \@restonecolfalse
     \fi
-    \Nchapter{\contentsname}%
+    \chapter*{\contentsname}%
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
