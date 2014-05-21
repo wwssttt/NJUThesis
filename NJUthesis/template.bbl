@@ -1,4 +1,4 @@
-\begin{thebibliography}{45}
+\begin{thebibliography}{54}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -19,6 +19,13 @@
   survey of the state-of-the-art and possible extensions}.
 \newblock \bibinfo{journal}{Knowledge and Data Engineering, IEEE Transactions
   on} \bibinfo{volume}{17}, \bibinfo{pages}{734--749}.
+%Type = Article
+\bibitem[{Balabanovi{\'c} 和~ Shoham(1997)}]{balabanovic1997fab}
+\bibinfo{author}{Balabanovi{\'c}, M.}, \bibinfo{author}{Shoham, Y.},
+  \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{Fab: content-based, collaborative recommendation}.
+\newblock \bibinfo{journal}{Communications of the ACM} \bibinfo{volume}{40},
+  \bibinfo{pages}{66--72}.
 %Type = Misc
 \bibitem[{BeautifulSoup()}]{BeautifulSoup}
 BeautifulSoup, .
@@ -71,6 +78,23 @@ BeautifulSoup, .
 \newblock \bibinfo{title}{Extending content-based recommendation: The case of
   indian classical music.}, in: \bibinfo{booktitle}{ISMIR},
   \bibinfo{organization}{Citeseer}. pp. \bibinfo{pages}{571--576}.
+%Type = Inproceedings
+\bibitem[{Claypool 等(1999)Claypool, Gokhale, Miranda, Murnikov, Netes 和~
+  Sartin}]{claypool1999combining}
+\bibinfo{author}{Claypool, M.}, \bibinfo{author}{Gokhale, A.},
+  \bibinfo{author}{Miranda, T.}, \bibinfo{author}{Murnikov, P.},
+  \bibinfo{author}{Netes, D.}, \bibinfo{author}{Sartin, M.},
+  \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{Combining content-based and collaborative filters in
+  an online newspaper}, in: \bibinfo{booktitle}{Proceedings of ACM SIGIR
+  workshop on recommender systems}, \bibinfo{organization}{Citeseer}.
+%Type = Inproceedings
+\bibitem[{Delgado 和~ Ishii(1999)}]{delgado1999memory}
+\bibinfo{author}{Delgado, J.}, \bibinfo{author}{Ishii, N.},
+  \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{Memory-based weighted majority prediction}, in:
+  \bibinfo{booktitle}{SIGIR Workshop Recomm. Syst. Citeseer},
+  \bibinfo{organization}{Citeseer}.
 %Type = Misc
 \bibitem[{DoubanFM()}]{DoubanFM}
 DoubanFM, .
@@ -113,6 +137,16 @@ Hadoop, .
 \newblock \bibinfo{journal}{ACM Transactions on Information Systems (TOIS)}
   \bibinfo{volume}{22}, \bibinfo{pages}{5--53}.
 %Type = Inproceedings
+\bibitem[{Hill 等(1995)Hill, Stead, Rosenstein 和~
+  Furnas}]{hill1995recommending}
+\bibinfo{author}{Hill, W.}, \bibinfo{author}{Stead, L.},
+  \bibinfo{author}{Rosenstein, M.}, \bibinfo{author}{Furnas, G.},
+  \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{Recommending and evaluating choices in a virtual
+  community of use}, in: \bibinfo{booktitle}{Proceedings of the SIGCHI
+  conference on Human factors in computing systems}, \bibinfo{organization}{ACM
+  Press/Addison-Wesley Publishing Co.}. pp. \bibinfo{pages}{194--201}.
+%Type = Inproceedings
 \bibitem[{Hoffman 等(2010)Hoffman, Blei 和~ Bach}]{hoffman2010online}
 \bibinfo{author}{Hoffman, M.D.}, \bibinfo{author}{Blei, D.M.},
   \bibinfo{author}{Bach, F.R.}, \bibinfo{year}{2010}.
@@ -148,6 +182,12 @@ Jieba, .
 \newblock \bibinfo{title}{On information and sufficiency}.
 \newblock \bibinfo{journal}{The Annals of Mathematical Statistics} ,
   \bibinfo{pages}{79--86}.
+%Type = Inproceedings
+\bibitem[{Lang(1995)}]{lang1995newsweeder}
+\bibinfo{author}{Lang, K.}, \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{Newsweeder: Learning to filter netnews}, in:
+  \bibinfo{booktitle}{In Proceedings of the Twelfth International Conference on
+  Machine Learning}, \bibinfo{organization}{Citeseer}.
 %Type = Misc
 \bibitem[{Lastfm()}]{Lastfm}
 Lastfm, .
@@ -189,6 +229,22 @@ Mallet, .
   \bibinfo{year}{2011}.
 \newblock \bibinfo{title}{The natural language of playlists.}, in:
   \bibinfo{booktitle}{ISMIR}, pp. \bibinfo{pages}{537--542}.
+%Type = Inproceedings
+\bibitem[{Melville 等(2002)Melville, Mooney 和~
+  Nagarajan}]{melville2002content}
+\bibinfo{author}{Melville, P.}, \bibinfo{author}{Mooney, R.J.},
+  \bibinfo{author}{Nagarajan, R.}, \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Content-boosted collaborative filtering for improved
+  recommendations}, in: \bibinfo{booktitle}{AAAI/IAAI}, pp.
+  \bibinfo{pages}{187--192}.
+%Type = Inproceedings
+\bibitem[{Mooney 和~ Roy(2000)}]{mooney2000content}
+\bibinfo{author}{Mooney, R.J.}, \bibinfo{author}{Roy, L.},
+  \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Content-based book recommending using learning for
+  text categorization}, in: \bibinfo{booktitle}{Proceedings of the fifth ACM
+  conference on Digital libraries}, \bibinfo{organization}{ACM}. pp.
+  \bibinfo{pages}{195--204}.
 %Type = Book
 \bibitem[{Oosterhoff 和~ van Zwet(2012)}]{oosterhoff2012note}
 \bibinfo{author}{Oosterhoff, J.}, \bibinfo{author}{van Zwet, W.R.},
@@ -207,6 +263,13 @@ Pandora, .
   the next song}, in: \bibinfo{booktitle}{Computers, Networks, Systems and
   Industrial Engineering (CNSI), 2011 First ACIS/JNU International Conference
   on}, \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{353--358}.
+%Type = Article
+\bibitem[{Pazzani(1999)}]{pazzani1999framework}
+\bibinfo{author}{Pazzani, M.J.}, \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{A framework for collaborative, content-based and
+  demographic filtering}.
+\newblock \bibinfo{journal}{Artificial Intelligence Review}
+  \bibinfo{volume}{13}, \bibinfo{pages}{393--408}.
 %Type = Article
 \bibitem[{Powers(2011)}]{powers2011evaluation}
 \bibinfo{author}{Powers, D.M.}, \bibinfo{year}{2011}.
@@ -232,6 +295,12 @@ Pandora, .
   filtering of netnews}, in: \bibinfo{booktitle}{Proceedings of the 1994 ACM
   conference on Computer supported cooperative work},
   \bibinfo{organization}{ACM}. pp. \bibinfo{pages}{175--186}.
+%Type = Article
+\bibitem[{Rich(1979)}]{rich1979user}
+\bibinfo{author}{Rich, E.}, \bibinfo{year}{1979}.
+\newblock \bibinfo{title}{User modeling via stereotypes*}.
+\newblock \bibinfo{journal}{Cognitive science} \bibinfo{volume}{3},
+  \bibinfo{pages}{329--354}.
 %Type = Inproceedings
 \bibitem[{Rosen-Zvi 等(2004)Rosen-Zvi, Griffiths, Steyvers 和~
   Smyth}]{rosen2004author}
