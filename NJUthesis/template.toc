@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {2.4.2}分布式过程调用}{13}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}文本建模}{14}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}向量空间模型}{14}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}隐含狄利克雷模型}{16}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}隐含狄利克雷分配模型}{16}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}时间序列预测}{16}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}简单平均法}{17}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}指数平滑法}{17}{subsection.2.6.2}
