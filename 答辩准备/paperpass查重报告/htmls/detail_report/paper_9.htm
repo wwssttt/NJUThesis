@@ -1,0 +1,628 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_8.htm">上一页</a>
+<a class="pagelink" href="paper_10.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：9/12页
+]
+</div>
+
+<br><div style="margin-left:25px">
+
+<img src="../../images/guanwang.gif"></div><br><br>
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">267</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3分析讨论</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">268</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>本文上面分别介绍了本文所给出的一种基于多维时间序列分析的个性化音乐推荐方法以及以此为基础构建的一种基于用户长期、中期和即时行为的综合音乐推荐方法，</span><span class='green'>本节将就其中一些细节问题进行简单地分析和讨论，主要包括最大分析长度的设定以及不同文本建模方法的比较。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">269</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3.1最大分析长度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">270</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>本文所述的基于多维时间序列分析的个性化音乐推荐方法及综合音乐推荐方法主要关注地是用户在当前会话期内所收听(喜欢)歌曲构成的序列，</span><span class='green'>那么如果用户在当前会话期内收听了很多首歌曲(假如是1000首)，我们是不是要对所有这些歌曲构成的序列进行分析呢？</span><span class='green'>显然，这么做既不划算也不合理，因为用户所处的上下文环境是时刻改变的，很久之前的行为对当前环境状态的表征作用很有限甚至会形成干扰。</span><span class='green'>为此，我们设置一个“最大分析长度”，这样我们只需要对一定范围内的序列进行分析即可，既减轻了计算的负担同时也排除了老旧数据的干扰。</span><span class='green'>顾名思义，“最大分析长度”就是从当前时刻算起，算法所考察的用户行为序列的最大长度。</span><span class='green'>假如设置最大分析长度为4，对于依次收听了歌曲 s1、 s2、 s3、 s4、 s5、 s6、 s7的用户来说，</span><span class='green'>算法只分析由 s4、 s5、 s6、 s7构成的序列而忽略 s1、 s2、 s3。</span><a href='../sentence_detail/766.htm' target='right' class='orange' >如果调整最大序列长度为3，那么歌曲s4也将被忽略，算法只考察由s5、s6、s7构成的序列。</a><span class='green'>图4.5展示了随着最大可分析长度的增加，本文给出的多维时序推荐方法在命中率指标上的表现(推荐列表长度设为100)。</span><a href='../sentence_detail/768.htm' target='right' class='red' >图中横坐标表示最大可分析长度，纵坐标表示算法的命中率。</a><span class='green'>由图可以看出，对当前数据集来说，当最大分析长度为15时，算法的命中率基本就保持稳定了，这说明更早之前的数据对提升命中率意义不大。</span><span class='green'>因此，可以取最大分析长度为15。</span><span class='green'>当然，不同的数据集最大分析长度取值不一样，但差别不大，一般取15 30为宜。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">271</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3.2不同文本分析方法比较</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">272</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>我们在第二章介绍了向量空间模型、词频-逆文本频率模型、隐含狄利克雷分配等几种不同的文本建模方法，</span><span class='green'>同时提到 LDA模型与 VSM模型和 TF- IDF模型相比，一方面能够更好地描述文档的文本特征，另一方面可以解决一词多义和一义多词的问题，</span><span class='green'>因此本文所述的基于多维时间序列分析的音乐推荐方法和基于用户长期、中期和即时行为的音乐推荐方法在对歌曲集对应的文档集进行建模时都采用了 LDA模型。</span><span class='green'>为了直观地展现LDA模型的好处，本节通过实验来展现使用不同的文本建模方法来执行基于用户即时行为推荐所获得的命中率， 如4.6图所示。</span><a href='../sentence_detail/777.htm' target='right' class='red' >其中，横坐标表示推荐列表的长度，纵坐标表示算法获得的命中率。</a><a href='../sentence_detail/778.htm' target='right' class='orange' >纵坐标取值越大，算法获得命中率越高，算法推荐效果越好。</a><span class='green'>由图可以非常直观地看出，使用隐含狄利克雷分配对文档集进行建模确实能够得到比传统的向量空间模型和词频-逆文本频率更好的推荐效果。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">273</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 4.5:</span><a href='../sentence_detail/781.htm' target='right' class='orange' >不同最大分析长度对应的命中率变化情况</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">274</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 4.6:</span><a href='../sentence_detail/783.htm' target='right' class='orange' >不同文本建模方法的效果比较</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">275</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>第五章 系统实现</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">276</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>前述章节我们介绍了一种基于多维时间序列分析的音乐推荐方法和在此基础上的一种基于用户长期、中期和即时行为的音乐推荐方法，并通过实验从多个角度验证了本文上述的有效性。</span><span class='green'>为了进一步验证上述方法的可行性并解决系统实现中的一些关键问题，本文实现了一个个性化音乐推荐原型系统，即Sweetfm。</span><span class='green'>本章我们将对该原型系统进行详细介绍并给出一些具体的技术方案。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">277</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.1系统架构</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">278</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 5.1:</span><a href='../sentence_detail/790.htm' target='right' class='orange' >推荐系统和网站其他系统之间的关系</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">279</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>尽管优秀的推荐算法能够为用户推荐合理的结果，但只靠推荐很难构成一个完整的可用系统。</span><span class='green'>要构建一个可用的推荐系统，比如一个音乐推荐网站，就需要考虑推荐与系统其他组件的关系，只有这样才能最终实现推荐的价值。</span><span class='green'>项亮在文献 [1]中给出了如5.1所示的一般意义上推荐系统和网站其他系统之间的关系。</span><span class='green'>首先，基本上所有的网站都配有一个用户界面，即UI系统，该系统主要用来向用户展示页面效果以及与用户进行交互。</span><span class='green'>其次，网站往往还会配置日志系统，该系统主要用来将用户在用户界面上的各种有效行为记录下来并保存到对应的日志存储系统中。</span><span class='green'>需要注意的是，这里的日志存储系统既可以是数据库，也可以是缓存，还可以是文件系统。</span><span class='green'>推荐系统作为一个推荐网站的核心，其主要作用是分析存储在日志存储系统中的用户行为历史，</span><span class='green'>在此基础上生成该用户对应的推荐列表并将结果直接展示到用户界面上以供用户体验。</span><span class='green'>由图5.1可知，推荐系统要想将强大的作用发挥出来，需要依赖于用户的历史行为信息和用户界面等组件。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">280</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 5.2:</span><span class='green'>原型系统框架</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">281</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.1图虽然给出了一般意义上的推荐系统的架构，给本文所实现的原型系统带来了很大启发，但这种架构过于简单，不能直接用于本文的原型系统。</span><span class='green'>在认真分析本文所提推荐方法框架的基础上，本文按照图 5.2对原型系统进行设计。</span><a href='../sentence_detail/804.htm' target='right' class='orange' >本文所实现的原型系统主要包括客户端、用户服务接口、处理层和数据层构成。</a><span class='green'>客户端对应于图 5.1中的 UI系统，旨在为用户提供一个可以收听推荐歌曲并产生交互的窗口，具体到实现上既可以使用 Web，也可以是 Mobile还可以是普通的窗口客户端。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">282</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/806.htm' target='right' class='orange' >用户服务接口用于将用户在客户端上的行为传递给后续模块进行处理以及将推荐的结果返回给客户端。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">283</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/807.htm' target='right' class='orange' >处理层主要用于完成相关数据处理，其包括在线处理模块和离线处理模块。</a><span class='green'>其中，离线处理模块主要包括从百度音乐、豆瓣音乐、虾米音乐、 Lastfm等数据源爬取歌曲基本属性数据和标签数据的</span><span class='green'>爬虫系统以及对歌曲对应的文档集合进行语义分析以获取每一首歌曲对应的隐含主题分布的语义分析模块。</span><span class='green'>需要强调的是，这里离线的含义是指该模块的工作与用户行为无关，在具体实现上可以设定一定的时间间隔或周期重复执行。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">284</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>在线处理模块主要用于实时记录和处理用户的行为并为之生成最终推荐结果，其主要包括日志系统、序列生成系统、标签系统以及 Storm推荐引擎几个部分组成。</span><span class='green'>日志系统对应于文献 [1]中的日志系统，用于将用户的行为记录到数据存储系统中以待后续分析。</span><span class='green'>标签系统主要用于记录用户对当前所听歌曲所标注的标签，其与离线模块中的爬虫系统一起生成最终的歌曲标签信息，一定周期后可供语义分析模块处理。</span><span class='green'>序列生成系统用于根据用户在当前会话期内的行为生成对应的歌曲序列。</span><span class='green'>Storm推荐引擎模块的主要作用是使用 Storm框架对用户当前会话期的歌曲序列进行实时分析并产生最终的推荐结果。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">285</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>数据层主要完成用户属性、歌曲属性以及用户行为的存储功能，其包括数据库接口 DAO以及具体数据库两部分。</span><span class='green'>其中，数据库接口提供供其他层次模块调用的方法以避免直接操作数据库，增强了独立性。</span><span class='green'>具体数据库即真实的数据存储引擎，既可以是 Mysql，也可以是 Oracle，当然也可以是 SQLServer。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">286</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>用户产生一个积极行为到系统为其推荐歌曲的过程如下所示：</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">287</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>1.用户在客户端产生</span><span class='green'>“即将收听完当前歌曲”</span><span class='green'>的行为。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">288</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.用户服务接口接收用户的当前行为状态并将该状态传递给在线处理模块中的日志系统和序列生成系统。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">289</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/824.htm' target='right' class='orange' >3.日志系统将用户当前行为状态通过数据库接口DAO记录到数据库中。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">290</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.序列生成系统通过数据库接口 DAO读取日志数据库中的用户行为，构建其在当前会话期的收听序列并将该序列传递给Storm推荐引擎。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">291</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.推荐引擎对用户当前会话期的收听序列进行分析和处理，生成推荐列表并通过数据库接口保存到数据库。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">292</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/827.htm' target='right' class='orange' >6.用户服务接口通过数据库接口从数据库中读取推荐列表。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">293</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/828.htm' target='right' class='orange' >7.用户服务接口将推荐列表展示给用户。</a><a href='../sentence_detail/829.htm' target='right' class='orange' >用户对歌曲打标签的执行过程如下所示：</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">294</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/830.htm' target='right' class='orange' >1.用户在客户端选定一首歌曲。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">295</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.用户为选定歌曲打标签。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">296</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.用户服务接口接收用户的打标签行为以及打标签的对象和标签内容并将它们传递给在线处理模块中的标签系统。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">297</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/833.htm' target='right' class='orange' >4.标签系统对标签进行分析和处理。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">298</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/834.htm' target='right' class='orange' >5.标签系统将处理过的内容通过数据库接口DAO保存到数据库中。</a><span class='green'>类似地，可以给出用户其他行为的处理过程。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">299</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.2离线处理模块</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">300</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>如上所述，离线处理模块所做的工作主要包括爬虫系统和语义分析系统两部分组成，这些工作都是独立于用户进行的，所以称之为离线。</span><span class='green'>本节将详细介绍上述框架中的离线处理模块中设计的一些技术和工具，而作为算法核心的语义分析模块将是介绍的重点内容。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">301</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.2.1爬虫系统</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">302</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 5.3:</span><span class='green'>爬虫系统工作流程图</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">303</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>网络爬虫是一种能够按照一定地规则自动地抓取互联网上的网页并对网页内容进行解析的网络机器人，又称之为网络蜘蛛。</span><span class='green'>本文所实现的音乐网络爬虫首先从豆瓣、虾米、百度等音乐网站上抓取相关歌曲网页，然后对网页的 HTML进行分析和解析，</span><span class='green'>进而得到歌曲的名称、创作者、发行时间、歌词等基本属性以及用户对歌曲所打的标签内容，</span><a href='../sentence_detail/845.htm' target='right' class='orange' >最后将这些内容进行整理并保存到数据库中。</a><a href='../sentence_detail/846.htm' target='right' class='orange' >对于一个待抓取的歌曲页面 URL，本文按照流程图 5.3进行工作。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">304</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>网络爬虫目前已经广泛应用在数据挖掘、搜索引擎、信息检索、推荐系统等领域，同时也出现了很多网络爬虫框架以简化爬虫的实现。</span><a href='../sentence_detail/848.htm' target='right' class='orange' >其中， Scrapy[48]是一种纯 python实现且构建于异步框架 twisted之上爬虫框架，其用户只需要定制开发几个模块就可以轻松地实现一个爬虫，</a><a href='../sentence_detail/849.htm' target='right' class='red' >用来抓取网页内容以及各种图片，非常之方便。</a><span class='green'>要想创建一个网络爬虫，用户只需要执行命令 scrapy startproject projectname就可以得到如图5.4所示的项目目录，</span><a href='../sentence_detail/851.htm' target='right' class='orange' >生成的目录中包含若干文件，代表 Scrapy框架中的多个模块。</a><a href='../sentence_detail/852.htm' target='right' class='orange' >用户只需要在对应的文件中实现相应模块即可。</a><span class='green'>其中， items.py文件对应于 Scrapy中的项模块，用于定义抓取结果中单个项所需要包含的所有内容，如歌曲的名称、创作者、发行时间等；</span><span class='green'>piplines.py对应于Scrapy中的管道模块，定义如何对抓取到的内容进行再处理，例如输出文件、写入数据库等；</span><a href='../sentence_detail/855.htm' target='right' class='red' >spider目录下存放写好的爬虫实际抓取逻辑。</a>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_8.htm">上一页</a>
+<a class="pagelink" href="paper_10.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：9/12页
+]
+</div>
+
+</div>
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2013 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>

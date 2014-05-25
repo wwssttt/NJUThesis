@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_5.htm">上一页</a>
+<a class="pagelink" href="paper_7.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：6/12页
+]
+</div>
+
+<br><div style="margin-left:25px">
+
+<img src="../../images/guanwang.gif"></div><br><br>
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">178</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>首先，我们从Lastfm(http:</span><span class='green'>// last. fm)、豆瓣( www. douban. com)等音乐网站上抓取用户对歌曲所标注的标签，</span><span class='green'>这些标签对歌曲内容的描述比较全面，既包含了歌曲的名称、曲作者信息、专辑信息、发行年代等基本信息，</span><span class='green'>还包含了歌曲所表达主题、歌曲类型、用户心情、适合场合等扩展信息。</span><span class='green'>以The Beta Band的Squares为例，用户为其标注的标签有表征年代的“2002”/“2000s”、表征类型的“indie rock”/“folk pop”、表征用户感受的“beautiful”/“want”等，如图3.3所示。</span><span class='green'>在得到歌曲对应的标签信息后，我们将这些标签按照一定的方式进行组织，从而生成歌曲对应的文本文档。</span><span class='green'>为了减少噪音，我们只利用那些被多数人使用的标签来完成歌曲对应文本文档的构造，具体来说我们只考虑被标记次数大于10的标签。</span><span class='green'>这样，一首歌曲s都将对应一篇文档d，而歌曲集S将对应到一个文档集D。</span><a href='../sentence_detail/480.htm' target='right' class='orange' >最后，我们对文档集D进行LDA主题模型建模，从而得到包含K个用来全面刻画歌曲特征的隐含主题集合T。</a><span class='green'>同时，对于歌曲集S中的任意 歌曲s，我们能够得到其对应的隐含主题权重向量，如式3.8所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">179</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>其中，ωi =0表示歌曲完全不属于该隐含主题代表的类别，即该隐含主题对歌曲的内容完全没有贡献；</span><span class='green'>ωi =1表示歌曲完全属于该隐含主题代表的类别；</span><span class='green'>0 (ωi ( 1表示歌曲在一定程度上隶属于该隐含主题代表的类别。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">180</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>表3.1展现了歌曲Squares的若干显着主题及其隶属于这些主题的概率。</span><span class='green'>由表3.1可以看出，歌曲Squares隶属于主题508的概率为0.215，这说明主题508对该歌曲贡献度为0.215。</span><span class='green'>类似的，主题313对歌曲的贡献度为0.186，主题231对该歌曲的贡献度为0.072。</span><span class='green'>由于主题508对文档的贡献度大于其他隐含主题，因此我们认为歌曲能够以更大的概率划分到主题508中。</span><span class='green'>如前所述，我们不去也无法准确地描述这些主题具体是什么含义，而我们正是利用这一点来回避确定性分类带来的弊端。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">181</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>表 3.1:</span><span class='green'>歌曲Squares的显着主题及隶属度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">182</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>主题id 508 313 296 106 231</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">183</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>隶属度 0.215 0.186 0.134 0.084 0.072</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">184</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>更形象地，我们使用雷达图来表示歌曲在各个隐含主题上的隶属程度。</span><span class='green'>假设隐含主题的数目为4且编号依次为#1、#2、#3、#4，</span><span class='green'>那么主题向量. s=(0.15，0.25，0.15，0.45)代表的歌曲的雷达图如图3.4所示。</span><span class='green'>其中，雷达图的每个顶点代表一个隐含主题，中心点到各个顶点的距离表示歌曲在该顶点对应隐含主题上的隶属度。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">185</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 3.4:</span><span class='green'>歌曲的雷达图表示</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">186</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4多维时间序列构造和预测</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">187</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>传统的基于“最相似”假设的推荐方法只考虑用户当前的收听习惯，较少考虑用户行为的序列性趋势，而本文所提出的基于多维时间序列分析的音乐推荐方法则对此进行了考虑。</span><span class='green'>在通过 LDA主题模型对歌曲进行建模而得到歌曲对应的主题权重向量后，</span><span class='green'>我们需要做的就是获取用户在当前会话期内收听的歌曲构成的序列并构造其对应的多维时间序列，</span><a href='../sentence_detail/504.htm' target='right' class='orange' >然后使用相应的时间序列分析方法进行预测。</a><span class='green'>对于上文中给出的一共收听了π+ n首歌曲且在当前会话期内收听了 n首歌曲的用户 u来说，</span><span class='green'>为了预测其可能收听的下一首歌曲，我们需要获取该歌曲对应的主题权重向量，如式3.9所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">188</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/507.htm' target='right' class='orange' >其中， ωi(j)表示第 j首歌曲隶属于第 i个隐含主题的概率 (1 ≤ i ≤ K)。</a><span class='green'>直接</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">189</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>得到这样一个主题向量往往是不太容易的，但估计出该向量对应的每一维的取值是可行的。</span><span class='green'>因此，要得到下一首歌曲对应的主题向量，我们需要先估计出对应的主题权重向量中每一维的值，</span><span class='green'>然后将这些中间估计值组合起来即可构成完整的估计主题向量，从而能够在歌曲集 S中找到最匹配的歌曲推荐给用户。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">190</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/512.htm' target='right' class='orange' >由前文可知，用户 u的听歌行为是有时间顺序的。</a><span class='green'>如果我们将用户在某一时间点所听歌曲对应的主题向量看做变量，那么将此变量在不同时间点的</span><span class='green'>取值按照时间顺序依次排开即可得到如式3.10所示的多维时间序列[17]。</span><span class='green'>进一步地，将上式在 K维隐含主题向量上展开，得到如式 3.11所示的更为直观的多维时间序列。</span><span class='green'>其中，i(1 ≤ i ≤ K)表示隐含主题的编号，j(1 ≤ j ≤ n)表示用户在当前会话期内所收听第j首歌曲的索引。</span><span class='green'>显然，该多维时间序列中任意一个时间点都对应着一个 K维主题向量且对于 K维主题向量中的每一维来说又对应着一个单变量的时间序列，</span><span class='green'>如式3.12所示。</span><span class='green'>其中，ωi(π + j)的含义如前所述。</span><span class='green'>通过对 TS( u， i)的分析可以得到用户在当前会话期内所收听的歌曲在编号为 i的隐含主题上的变化情况，</span><span class='green'>进而可以预测出用户可能收听的下一首歌曲在编号为 i的隐含主题上的隶属度，</span><span class='green'>即ω^ i(π+ n+1)。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">191</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>进一步地，我们可以获得用户行为在其他隐含主题上的变化情况并估计出用户可能收听的下一首歌曲在其他隐含主题上的隶属度。</span><span class='green'>通过对K个估计值的组合，可以得到如式3.13所示的目标主题向量，即用户可能收听的下一首歌曲的估计主题向量。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">192</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.5相似度计算</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">193</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>通过隐含狄利克雷主题建模我们得到了如式3.8所示歌曲集 S中歌曲对应的主题权重向量，</span><a href='../sentence_detail/527.htm' target='right' class='orange' >考虑到向量中每一维的值表征歌曲隶属于某一隐含主题的概率，</a><a href='../sentence_detail/528.htm' target='right' class='orange' >我们将这些主题权重向量看作是离散的概率分布。</a><span class='green'>进一步地，通过对多维时间序列的分析和预测，我们得到了如式3.13所示用户 u可能收听的下一首歌曲对应的主题权重向量的估计值，</span><span class='green'>即一个估计概率分布。</span><span class='green'>这样，我们便可以计算歌曲集中的歌曲s对应的概率分布与这个估计概率分布的距离。</span><span class='green'>显然，如果s与 目标歌曲s^距离足够小，那么我们就可以将歌曲s推荐给用户u。</span><span class='green'>因此，我们可以用s与目标歌曲s^的距离的倒数表示歌曲集中任一歌曲s对用户u的推荐度，即上文定义的效用函数utility(u，s)，如式3.14所示。</span><span class='green'>因为我们是通过主题模型建模将歌曲表示成离散的概率分布，所以我们可以使用KL距离(Kullback-Leibler Divergence)[25]以及Hellinger距离 [36]等来度量两首歌曲之间的距离。</span><a href='../sentence_detail/535.htm' target='right' class='orange' >考虑到KL距离不具有对称性，本文采用Hellinger距离来度量歌曲之间的距离，如式3.15所示。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">194</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>其中，dis(si，sj)为编号为i和j的歌曲对应的主题概率分布之间的Hellinger距离，K为隐含主题数目，ωik为编号为i的歌曲在第k个隐含主题上的隶属程度。</span><a href='../sentence_detail/537.htm' target='right' class='orange' >显然，当两首歌曲越相似，那么其对应的距离越小。</a><a href='../sentence_detail/538.htm' target='right' class='orange' >相反的，若两首歌曲越不相似，其主题概率分布对应的距离越大。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">195</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.6推荐列表生成</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">196</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>最后，我们根据效用函数计算歌曲集 S中所有歌曲的效用值，然后根据效用值对歌曲排序，并将排名最高的 N首推荐给用户，</span><a href='../sentence_detail/541.htm' target='right' class='orange' >这样我们就为用户 u推荐了一个长度为 N的歌曲列表供用户选择。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">197</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.7实验设计和结果</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">198</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>本节我们将通过实验来验证本文所给的基于多维时间序列分析的音乐推荐方法的有效性，包括实验的设计思路、实验结果以及结果分析等内容。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">199</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.7.1数据集收集</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">200</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>通过对基于多维时间序列分析的音乐推荐方法的分析，可以看出我们需要的数据集主要包括包含标签文本信息的</span><span class='green'>歌曲数据集以及用户在一定会话周期内所收听歌曲的数据集。</span><span class='green'>虽然Berenzweig等人于2003年从Art of the Mix(http:</span><span class='green'>//www.artofthemix.org/)上抓取了播放列表据集 [5]，但是其存在如下三个问题：</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">201</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/549.htm' target='right' class='orange' >1.缺少歌曲对应的标签等文本信息。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">202</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.歌曲名称经过处理，无法与Lastfm对应，导致可用数据较少。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">203</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.给出的播放列表意义不清，没有时间信息，无法确定是用户在一个会话周期内的行为，可能跨越多个会话周期。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">204</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/552.htm' target='right' class='orange' >为此，我们从Last.fm上重新爬取了一个数据集。</a><span class='green'>该数据集既包含歌曲的基本信息(包括标签等文本信息)也包含用户的基本信息(包括用户在一定会话周期内所收听的歌曲)。</span><span class='green'>为了减少噪音，我们只选用包含歌曲数目多于10首的列表，出现频次大于10的标签以及可用标签大于4的歌曲。</span><span class='green'>该数据集的统计信息如表3.2所示，目前该数据集已经发布在http:</span><span class='green'>//lastfmseq.sinaapp.com/上，而其具体的使用说明如附录A所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">205</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>表 3.2:</span><span class='green'>所用数据集信息</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">206</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>听歌事件 34930</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">207</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>歌曲总数 24992</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">208</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>用户总数 1530</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">209</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>歌手总数 5479</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">210</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>最大长度 10</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">211</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>最小长度 30</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">212</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>平均长度 22.83</span>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_5.htm">上一页</a>
+<a class="pagelink" href="paper_7.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：6/12页
+]
+</div>
+
+</div>
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2013 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>

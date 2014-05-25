@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_3.htm">上一页</a>
+<a class="pagelink" href="paper_5.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：4/12页
+]
+</div>
+
+<br><div style="margin-left:25px">
+
+<img src="../../images/guanwang.gif"></div><br><br>
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">103</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>档dj中的权重。</span><span class='green'>在对文本进行建模的过程中，词的选取及权重的计算有以下几种典型方式：</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">104</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>1.布尔模型。</span><a href='../sentence_detail/286.htm' target='right' class='orange' >这是最为简单直观的一种计算词项权重的方法，其将词项在文档中是否出现作为其权重，如果词项在文档中出现那么将其权重记为 1，否则记为 0。</a><a href='../sentence_detail/287.htm' target='right' class='orange' >虽然这种方法比较简单，但是它没有体现词语在文档中出现的频率。</a><span class='green'>一般来讲，词语在文档中出现的越多，说明它对该篇文档的重要性越大（“的”、“得”、“地”、“是”等停用词除外）。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">105</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.词频模型。</span><a href='../sentence_detail/290.htm' target='right' class='orange' >与布尔模型不同的是，词频 (Term Frequency， TF)模型统计词项在文档中出现的次数，然后得到词项的频率，并将之作为词项的权重。</a><a href='../sentence_detail/291.htm' target='right' class='orange' >词项ti相对于文档dj的词频如式2.13所示。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">106</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>这里 ，ni;</span><a href='../sentence_detail/293.htm' target='right' class='red' >j表示该词项在该文档中出现的次数。</a><span class='green'>词频模型突出了词频对词项重要性的影响，能够取得比布尔模型较好的效果。</span><a href='../sentence_detail/295.htm' target='right' class='red' >但是，词语的重要性不仅随着它在文档中出现的次数成正比增加，而且可能会随着它在语料库中出现的频率成反比下降。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">107</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>词频-逆文本频率模型。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">108</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>词频-逆文本频率( Term Frequency- Inverse Document Frequency， TF- IDF)是对 TF模型的补充，</span><a href='../sentence_detail/298.htm' target='right' class='orange' >其认为词项的重要性随着其在特定文档中出现次数的增加而增强，但同时随着其在全体文本中出现次数的增加而减弱，</a><a href='../sentence_detail/299.htm' target='right' class='red' >即该模型认为对区别文档最有意义的词语应该是那些在文档中出现频率高、而在整个语料库中的其他文档中出现频率少的词语。</a><a href='../sentence_detail/300.htm' target='right' class='orange' >词项ti相对于文档dj的TF-IDF取值如式2.14所示。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">109</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/301.htm' target='right' class='orange' >idfi为逆向文本频率，定义如式 2.15所示。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">110</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/302.htm' target='right' class='orange' >其中， |D|表示文档集合中的文档总数， |{j :</a><a href='../sentence_detail/303.htm' target='right' class='orange' > ti ∈ dj}|表示文档集合中包含词项 ti的文档数目。</a><span class='green'>TF-IDF结构简单，容易理解，被广泛应用。</span><span class='green'>但是，其 无法准确捕捉文档内部与文档间的统计特征，也不能解决同义词和多义词的问题，因此精确度不是很高。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">111</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/306.htm' target='right' class='red' >2.5.2隐含狄利克雷分配模型</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">112</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/307.htm' target='right' class='orange' >为了解决同义词和多义词的问题，Blei等人于2003年提出了隐含狄利克雷分配模型(Latent Dirichlet Allocation，LDA)[6][21]。</a><span class='green'>LDA也是一种典型的词袋模型，其认为一篇文档由多个主题构成，而文档中每一个词都是由对应的主题生成而来。</span><a href='../sentence_detail/309.htm' target='right' class='red' >其中，主题表示一个概念、一个方面，表现为一系列相关的单词，是这些单词的条件概率。</a><a href='../sentence_detail/310.htm' target='right' class='red' >形象来说，主题就是一个桶，里面装了出现概率较高的单词而这些单词与这个主题有很强的相关性。</a><a href='../sentence_detail/311.htm' target='right' class='orange' >这样，LDA模型便通过隐含主题将文本与词项联系起来，从而达到降维的目的。</a><a href='../sentence_detail/312.htm' target='right' class='orange' >LDA是一种生成模型，一篇文档按照如下所示的规则生成：</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">113</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>1.假设有两种类型的桶，一种是文档-主题桶，桶里的每一个球代表一个主题；</span><span class='green'>另一种桶是主题-词汇桶，桶中的每一个球代表一个词汇。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">114</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.文档的生成过程就是不断从桶中取球的过程，每一次先从文档-主题桶中取出球，得到该球代表的主题编号z。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">115</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.从编号为z的主题-词汇桶中取球，得到一个词汇。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">116</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.不断重复2，3两步，即可生成一篇文档。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">117</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/318.htm' target='right' class='orange' >在LDA模型中，记文档-主题的概率分布为多项式分布.θ，主题-词汇的概率分布为多项式分布φ.。</a><span class='green'>LDA模型认为.θ和φ.是模型中的参数，而考虑到参数都是多项式分布，模型选择狄利克雷分布作为其先验分布。</span><span class='green'>在确定了这些分布之后， LDA下面需要做的就是估计这些分布的参数，如算法1所示的吉布斯采样(Gibbs Sampling)是目前比较流行的估计参数的方法。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">118</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>在本文后续实验中，我们将分别以 TF- IDF为代表的向量空间模型和以 LDA为代表的主题模型对歌曲对应的文档进行建模，</span><span class='green'>发现 LDA能够获得较高的推荐准确率，因此我们将 LDA作为我们主要的文本建模方法。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">119</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.6时间序列预测</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">120</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>歌曲时间短、消费代价低的特点决定了其能够较容易地形成序列，且这种序列是有严格的时间顺序的。</span><span class='green'>本文将通过对用户在当前会话期内所听歌曲形成的时间序列的分析来预测用户接下来的行为。</span><a href='../sentence_detail/326.htm' target='right' class='orange' >本节将简单介绍一些常用的时间序列预测方法。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">121</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>Algorithm 1</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">122</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>LDA模型的Gibbs采样算法</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">123</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>1:</span><a href='../sentence_detail/330.htm' target='right' class='orange' > 首先对所有文档中的所有词遍历一遍，为其都随机分配一个主题，即zm;</a><a href='../sentence_detail/331.htm' target='right' class='red' > n= k～ Mult(1/ K)，其中 m表示第 m篇文档， n表示文档中的第 n个词，</a><span class='green'>k表示主题， K表示主题的总数，之后将 nkm、 nm、 ntk、 nk都加1，</span><a href='../sentence_detail/333.htm' target='right' class='orange' >它们分别表示在第 m篇文档中主题 k出现的次数、第 m篇文档中主题数量的和、主题 k对应的词 t的次数，</a><span class='green'>k主题对应的总词数。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">124</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2:</span><a href='../sentence_detail/336.htm' target='right' class='red' >对第1篇文档中的所有词进行遍历，假如当前文档中的词 t对应主题为 k，</a><span class='green'>则将 nkm、 nm、 ntk、 nk都减1，即先拿出当前词，之后根据式2.16取样出新的主题，</span><span class='green'>再将 nkm、 nm、 ntk、 nk都加1。</span><span class='green'>其中，α和β为对应的Dirichlet分布的参数，V为词汇总数。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">125</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3:</span><span class='green'>重复步骤2直至遍历所有文档。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">126</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4:</span><span class='green'>输出LDA模型中的参数.θ和φ.。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">127</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.6.1简单平均法</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">128</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/345.htm' target='right' class='red' >简单平均法是以观察期内时间序列的各期数据（观察变量）的平均数作为下期预测值，</a><a href='../sentence_detail/346.htm' target='right' class='orange' >按照采用的平均方法又可以分为算术平均法、加权平均法和几何平均法三类。</a><a href='../sentence_detail/347.htm' target='right' class='orange' >其中，算术平均法以观察变量的算术平均数作为下期预测值，加权平均法以观察变量的加权算术平均数作为下期的预测值，</a><a href='../sentence_detail/348.htm' target='right' class='orange' >而几何平均法是以观察变量的几何平均数作为下期的预测值。</a><a href='../sentence_detail/349.htm' target='right' class='orange' >简单平均法比较简单、直观，但其预测误差一般偏高。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">129</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.6.2指数平滑法</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">130</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/351.htm' target='right' class='red' >指数平滑法是由移动平均法改进而来的，是一种特殊的加权移动平均法。</a><a href='../sentence_detail/352.htm' target='right' class='red' >这种方法既有移动平均法的长处，又可以减少历史数据的数量。</a><span class='green'>一方面，它把过去的数据全部加以利用。</span><a href='../sentence_detail/354.htm' target='right' class='red' >另一方面，它利用平滑系数加以区分，使得近期数据比远期数据对预测值影响更大。</a><a href='../sentence_detail/355.htm' target='right' class='red' >它特别适合用于观察值有有长期趋势和季节变动，必须经常预测的情况。</a><a href='../sentence_detail/356.htm' target='right' class='red' >按照平滑的次数可以可分为一次指数平滑法和多次指数平滑法。</a><a href='../sentence_detail/357.htm' target='right' class='red' >其中，一次平滑法是计算时间序列的一次指数平滑值，以当前观察期的一次指数平滑值为基础，确定下期预测值。</a><a href='../sentence_detail/358.htm' target='right' class='orange' >与二次移动平均法类似，二次指数平滑法就是对时间序列的一次指数平滑值再次进行指数平滑。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">131</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/359.htm' target='right' class='orange' >2.6.3差分整合移动平均自回归模型</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">132</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>差分整合移动平均自回归模型( Autoregressive Integrated Moving Average model， ARIMA)又称为 Box- Jenkins方法，是由 Box和 Jenkins于1970年提出的一种时间序列预测方法，</span><span class='green'>目前已经得到广泛的应用[31]。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">133</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/362.htm' target='right' class='red' >在模型ARIMA(p，d，q)中，“AR”表示自回归模型，p为自回归阶数；</a><a href='../sentence_detail/363.htm' target='right' class='orange' >“MA”表示滑动平均模型，q表示滑动平均的阶数；</a><a href='../sentence_detail/364.htm' target='right' class='orange' >d表示将时间序列转化为平稳时间序列所作的差分次数，即差分阶数。</a><a href='../sentence_detail/365.htm' target='right' class='orange' >ARIMA首先需要进行d次差分从而将非平稳序列转化为平稳序列，然后利用自回归模型和滑动平均模型对转换后的平稳序列进行预测。</a><a href='../sentence_detail/366.htm' target='right' class='orange' >进一步地，模型ARIMA(p，d，q)可以表示成如下三个式子。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">134</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/367.htm' target='right' class='orange' >其中，yt为时间序列Y的第t个取值，B是滞后算子，θ和φ为模型参数。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">135</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ARIMA的执行流程主要分为模型识别(Model Identification)、参数估计(Parameter Estimation)和诊断检测(Diagnostic Checking)三个阶段。</span><a href='../sentence_detail/369.htm' target='right' class='orange' >其中，模型识别阶段主要完成检测序列是否平稳的工作。</a><a href='../sentence_detail/370.htm' target='right' class='orange' >如果序列不平稳，那么需要通过差分的方法将序列转化为平稳序列并给出差分阶数d。</a><a href='../sentence_detail/371.htm' target='right' class='orange' >在此基础上，识别出序列适用的可能模型，如自回归模型或滑动平均模型或者二者的混合。</a><a href='../sentence_detail/372.htm' target='right' class='orange' >而参数估计阶段主要完成模型参数的估计工作，即通过最小二乘法估计参数θ和φ。</a><span class='green'>诊断检测阶段用以检测所给出的模型及参数是否符合条件，如果符合则选用此模型进行预测，否则重新识别模型。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">136</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ARIMA模型已经在计量经济学中得到了非常广泛地应用而且也取得了比较理想的预测效果，</span><span class='green'>因此本文后续的工作中将使用该模型完成对用户行为序列的分析和预测工作。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">137</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/376.htm' target='right' class='orange' >第三章 基于多维时间序列分析的音乐推荐方法</a>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_3.htm">上一页</a>
+<a class="pagelink" href="paper_5.htm">下一页</a>
+<a class="pagelink" href="paper_12.htm">尾页</a>
+页码：4/12页
+]
+</div>
+
+</div>
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2013 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>
