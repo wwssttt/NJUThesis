@@ -8,21 +8,20 @@
 \contentsline {section}{\numberline {2.2}相似度度量}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}余弦相似度}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}KL距离}{9}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Hellinger距离}{10}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Hellinger距离}{9}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}评测指标}{10}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}用户满意度}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}预测准确度}{11}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}预测准确度}{10}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}其他评测指标}{11}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}分布式实时计算系统}{12}{section.2.4}
+\contentsline {section}{\numberline {2.4}分布式实时计算系统}{11}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}基本组成}{12}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}分布式过程调用}{13}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}文本建模}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.4.2}分布式过程调用}{12}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}文本建模}{13}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}向量空间模型}{14}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}隐含狄利克雷分配模型}{16}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}LDA模型}{15}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}时间序列预测}{16}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}简单平均法}{17}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}指数平滑法}{17}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}差分整合移动平均自回归模型}{18}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.2}差分整合移动平均自回归模型}{17}{subsection.2.6.2}
 \contentsline {chapter}{\numberline {第三章\hspace {0.3em}}基于多维时间序列分析的音乐推荐方法}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}问题描述}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}方法框架}{21}{section.3.2}
@@ -48,24 +47,24 @@
 \contentsline {section}{\numberline {5.2}离线处理模块}{46}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}爬虫系统}{46}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}结巴分词}{48}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{49}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Gensim软件包}{48}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}在线处理模块}{50}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}序列生成}{50}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}推荐引擎}{51}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}系统效果}{54}{section.5.4}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{56}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{56}{section.6.1}
-\contentsline {section}{\numberline {6.2}工作展望}{56}{section.6.2}
-\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{57}{appendix.A}
-\contentsline {section}{\numberline {A.1}权利声明}{57}{section.A.1}
-\contentsline {section}{\numberline {A.2}数据特点}{57}{section.A.2}
-\contentsline {section}{\numberline {A.3}组织形式}{57}{section.A.3}
-\contentsline {section}{\numberline {A.4}字段解析}{58}{section.A.4}
-\contentsline {subsection}{\numberline {A.4.1}scale}{58}{subsection.A.4.1}
-\contentsline {subsection}{\numberline {A.4.2}playlist}{58}{subsection.A.4.2}
-\contentsline {subsection}{\numberline {A.4.3}toptag}{59}{subsection.A.4.3}
-\contentsline {subsection}{\numberline {A.4.4}其他字段}{59}{subsection.A.4.4}
-\contentsline {section}{\numberline {A.5}应用场景}{59}{section.A.5}
-\contentsline {chapter}{参考文献}{60}{appendix*.4}
-\contentsline {chapter}{简历与科研成果}{65}{appendix*.5}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{66}{appendix*.6}
+\contentsline {section}{\numberline {5.4}系统效果}{53}{section.5.4}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}工作展望}{55}{section.6.2}
+\contentsline {chapter}{\numberline {附录\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces A\hspace {0.3em}}数据集使用说明}{56}{appendix.A}
+\contentsline {section}{\numberline {A.1}权利声明}{56}{section.A.1}
+\contentsline {section}{\numberline {A.2}数据特点}{56}{section.A.2}
+\contentsline {section}{\numberline {A.3}组织形式}{56}{section.A.3}
+\contentsline {section}{\numberline {A.4}字段解析}{57}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}scale}{57}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}playlist}{57}{subsection.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}toptag}{58}{subsection.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}其他字段}{58}{subsection.A.4.4}
+\contentsline {section}{\numberline {A.5}应用场景}{58}{section.A.5}
+\contentsline {chapter}{参考文献}{59}{appendix*.4}
+\contentsline {chapter}{简历与科研成果}{64}{appendix*.5}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{65}{appendix*.6}

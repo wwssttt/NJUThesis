@@ -99,8 +99,8 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_7.htm">上一页</a>
 <a class="pagelink" href="paper_9.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：8/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：8/11页
 ]
 </div>
 
@@ -111,254 +111,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">236</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>第四章 基于用户长期行为、中期行为和即时行为的综合音乐推荐方法</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">237</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/661.htm' target='right' class='orange' >由前文可知，基于多维时间序列分析的个性化音乐推荐方法与一些参考推荐方法相比能够取得比较好的推荐效果，</a><span class='green'>这包括较高的推荐命中率和较低的预测误差两方面的含义。</span><span class='green'>但是，朴素的多维时间序列分析音乐推荐方法还存在以下问题：</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">238</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>1.考察片面。</span><span class='green'>该方法主要是通过对用户当前会话期内的行为序列进行分析来预测用户接下来的行为，</span><span class='green'>显然其只考虑了用户中期行为对用户未来行为的作用却忽视了用户长期行为以及用户即时行为的影响，</span><span class='green'>这与用户的未来行为受到其长期行为、中期行为和即时行为共同作用的直觉不相符。</span><span class='green'>2.冷启动问题。</span><span class='green'>该方法顺利工作的前提是用户已经产生了一些行为，即用户</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">239</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>已经在当前会话期内收听了一定数量的歌曲。</span><span class='green'>也就是说，朴素的基于多维时间序列分析的音乐推荐方法适合在用户状态稳定时为用户做出合理的推荐。</span><span class='green'>但是，对于刚进入给定平台的用户，朴素方法的推荐效果就要大打折扣，这是因为用户刚进入给定平台时所产生的行为很少，</span><span class='green'>而对应的听歌序列还不足以被朴素的多维时序方法进行分析和预测。</span><span class='green'>为了解决上述两个问题，我们将在本章中给出一种基于用户长期、中期和即时行为的综合音乐推荐方法并通过实验验证综合推荐的效果。</span><span class='green'>最后，本文对综合音乐推荐中的一些基本问题进行讨论分析，比如会话期长度的选择和文本分析方法的选取等。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">240</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>4.1 综合音乐推荐</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">241</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/677.htm' target='right' class='orange' >为了综合考虑用户长期、中期和即时行为对用户未来行为的影响和作用，</a><span class='green'>本文从基于用户长期行为的音乐推荐、基于用户中期行为的音乐推荐以及基于用户即时行为的音乐推荐中各选择一种算法进行综合，</span><a href='../sentence_detail/679.htm' target='right' class='orange' >试图通过这种综合全面考察用户行为的时间相关性。</a><span class='green'>至于如何对不同的算法进行综合，有很多策略可以进行选择。</span><span class='green'>Burke的分类方法 [8]区分出了七种不同的综合策略，而从更综合的角度来看这七种策略可以概括为三种基本设计思想：</span><a href='../sentence_detail/682.htm' target='right' class='orange' >整体式综合设计、并行式综合设计和流水线式综合设计。</a><span class='green'>其中，整体式综合设计实际上是一种推荐算法，其在推荐内部对不同推荐策略获取的特征进行综合，然后基于此生成最终的推荐列表；</span><span class='green'>并行式综合设计和流水线式综合设计都需要至少实现两个不同的推荐算法，其中并行式综合设计将不同推荐算法获取的最终推荐结果加以综合，</span><span class='green'>而流水线式综合则将推荐分为不同的阶段然后在不同的阶段使用不同的推荐策略进行推荐并最终得到推荐结果。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">242</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>显然，本文所述的音乐推荐不具有明确的阶段划分，因此使用流水线式的综合设计不太合适，</span><span class='green'>而整体式综合设计和并行式综合设计均可应用，只是二者综合的阶段不一致。</span><span class='green'>由于整体式的综合设计思路是从内部对不同推荐策略的结果进行综合，我们认为这样的早期综合能够得到比较符合用户偏好的特征，</span><a href='../sentence_detail/689.htm' target='right' class='orange' >因此我们主要考察这种综合设计方法，如图4.1所示。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">243</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>图 4.1:</span><span class='green'>基于用户长期、中期和即时行为的综合音乐推荐方法框架</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">244</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>考虑到用户的未来行为受到用户长期行为、中期行为和即时行为的共同影响，我们从这三类算法中各</span><span class='green'>选择一种预测出用户可能收听的下一首歌曲在 K个隐含主题上的概率分布。</span><span class='green'>然后，我们使用一定的综合策略将这三个中间概率分布加以综合以得到最终的目标概率分布。</span><span class='green'>在此基础上，我们计算曲库中所有歌曲对应的概率分布于目标概率分布的相似度并将歌曲按照相似度由大到小排列。</span><a href='../sentence_detail/696.htm' target='right' class='orange' >最后，我们将排名靠前的 N首歌曲推荐给用户。</a><span class='green'>要实现这样一个基于用户长期、中期和即时行为的综合音乐推荐，有两个难点需要解决：</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">245</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>1.如何从基于用户长期行为、中期行为和即时行为的音乐推荐方法中选择带 具体的待综合算法。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">246</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/699.htm' target='right' class='orange' >2.采用何种综合策略对给定的三种音乐推荐方法进行综合。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">247</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>4.1.1方法选取</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">248</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>在需要选择的三种音乐推荐方法中，最容易选择的自然是基于用户中期行为的音乐推荐方法，</span><span class='green'>本文给出的基于多维时间序列分析的音乐推荐方法就是一种基于用户中期行为的音乐推荐，</span><a href='../sentence_detail/703.htm' target='right' class='orange' >而且该方法能够取得比较理想的推荐效果。</a><span class='green'>假设使用基于多维时间序列分析的音乐推荐方法预测得到的用户可能收听的下一首歌曲对应的概率分布为.s^mtsa，如式4.1所示。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">249</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>至于基于用户长期行为的音乐推荐方法的选取，我们选择朴素的全局特征推荐。</span><span class='green'>与基于协同过滤的推荐相比，基于全局特征的音乐推荐实现起来比较简单，而且能够预测得到用户的整体偏好，</span><span class='green'>其得到的结果与本文所给的基于多维时间序列分析的音乐推荐方法一致，方便后续综合。</span><span class='green'>基于全局特征的推荐认为用户长时间的听歌行为在一定程度上能够比较用户内在的音乐偏好，</span><span class='green'>进一步地此类算法认为用户下面可能收听歌曲的特征近似于用户所收听的全部歌曲的平均特征。</span><span class='green'>对于用户集中收听了π + n首歌曲的用户u来说，我们设使用基于全局特征推荐得到的目标概率分布为.s^global，如式4.2所示。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">250</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>其中，目标歌曲在第i个隐含主题上的概率取值如式4.3所示，j表示用户收听的第j首歌曲的索引。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
 <td align="left" width="50"><div class="shubu">251</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>在选定了基于用户中期行为和长期行为的音乐推荐方法之后，我们需要进一步选取基于用户即时行为的音乐推荐方法。</span><span class='green'>基于用户即时行为的音乐推荐思想比较简单，即认为用户的状态是稳定的，进一步地认为用户可能收听的下一首歌曲与用户当前收听的歌曲具有类似的特征。</span><span class='green'>对于用户集中收听了π + n首歌曲的用户u来说，我们设使用基于即时特征推荐得到的目标概率分布为.s^local，如式4.4所示。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">252</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>其中，目标歌曲在第i个隐含主题上的概率取值如式4.5所示，j表示用户收听的第j首歌曲的索引。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">253</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>4.1.2综合策略</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">254</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>在给定了三种类型的音乐推荐方法之后，我们还需要选择合理的综合策略将它们综合起来。</span><span class='green'>加权是一种非常重要的综合思想，其一方面可以将不同的推荐策略综合起来考虑，另一方面能够通过权重调整不同推荐策略的影响和贡献，</span><span class='green'>本文所给出的这种基于用户长期、中期和即时行为的音乐推荐方法正是使用这种思想来完成对用户长期行为推荐、中期行为推荐以及即时行为推荐的综合。</span><span class='green'>在使用三种不同的音乐推荐方法预测得到三种不同的中间概率分布即.s^mtsa、 .</span><span class='green'>s^global和.s^local之后，我们按照如式4.6所示的方法对它们进行综合以得到最终的目标概率分布.s^all。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">255</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -371,7 +124,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">256</div></td>
+<td align="left" width="50"><div class="shubu">252</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -384,12 +137,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">257</div></td>
+<td align="left" width="50"><div class="shubu">253</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/727.htm' target='right' class='orange' >式4.7中，n表示用户在当前会话期内所收听的歌曲的数目，即用户当前会话序列的长度；</a><span class='green'>a和b是用以调整α变化的参数，它们共同确定了基于用户中期行为的推荐何时起作用以及变化趋势；</span><span class='green'>算子f的定义式4.8所示。</span>
+<span style="margin-left:25px"></span><a href='../sentence_detail/697.htm' target='right' class='orange' >式4.7中，n表示用户在当前会话期内所收听的歌曲的数目，即用户当前会话序列的长度；</a><span class='green'>a和b是用以调整α变化的参数，它们共同确定了基于用户中期行为的推荐何时起作用以及变化趋势；</span><span class='green'>算子f的定义式4.8所示。</span>
 </p>
 </div>
 
@@ -397,12 +150,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">258</div></td>
+<td align="left" width="50"><div class="shubu">254</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>图4.2给出了当a=10且b=5时，α的取值变化情况，其中横坐标表示用户当前会话序列的长度，纵坐标表示α的取值。</span><span class='green'>由图可以看出，当序列长度小 第四章基于用户长期行为、中期行为和即时行为的综合音乐推荐方法于5时α=0，这背后体现的思想是：</span><span class='green'>序列长度过短时基于用户中期行为的音乐推荐不起作用，此时主要使用基于用户长期行为的音乐推荐和基于用户即时行为的音乐推荐为用户作出推荐，</span><a href='../sentence_detail/733.htm' target='right' class='red' >这在一定程度上解决了冷启动问题；</a><span class='green'>随着纵坐</span>
+<span style="margin-left:25px"></span><span class='green'>图4.2给出了当a=10且b=5时，α的取值变化情况，其中横坐标表示用户当前会话序列的长度，纵坐标表示α的取值。</span><span class='green'>由图可以看出，当序列长度小 第四章基于用户长期行为、中期行为和即时行为的综合音乐推荐方法于5时α=0，这背后体现的思想是：</span><span class='green'>序列长度过短时基于用户中期行为的音乐推荐不起作用，此时主要使用基于用户长期行为的音乐推荐和基于用户即时行为的音乐推荐为用户作出推荐，</span><a href='../sentence_detail/703.htm' target='right' class='red' >这在一定程度上解决了冷启动问题；</a><span class='green'>随着纵坐</span>
 </p>
 </div>
 
@@ -410,7 +163,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">259</div></td>
+<td align="left" width="50"><div class="shubu">255</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -423,7 +176,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">260</div></td>
+<td align="left" width="50"><div class="shubu">256</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -436,7 +189,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">261</div></td>
+<td align="left" width="50"><div class="shubu">257</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -449,7 +202,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">262</div></td>
+<td align="left" width="50"><div class="shubu">258</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -462,12 +215,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">263</div></td>
+<td align="left" width="50"><div class="shubu">259</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>图4.3展示了基于用户长期、中期和即时行为的综合音乐推荐和朴素的基于多维时间序列分析的音乐推荐方法在命中率指标上的表现。</span><a href='../sentence_detail/743.htm' target='right' class='orange' >其中，横坐标表示推荐列表的长度，纵坐标表示推荐命中率，MTSA表示朴素的时序推荐方法， MTSA ALL表示综合推荐方法。</a><span class='green'>由图可以非常直观地看出，基于用户长期、中期和即时行为的综合音乐推荐方法能够取得比朴素的时序分析方法更高的命中率。</span><span class='green'>图4.4展示了这两种方法在均方根误差这一评测指标上的表现。</span><span class='green'>其中，纵坐标表示均方根误差，纵坐标取值越小，误差越小，算法的推荐效果越好。</span><span class='green'>由图4.4可以看出，综合的推荐方法能够取得比朴素时序分析方法更低的预测误 差。</span><span class='green'>这两类算法在准确率、 F1-Score、平均绝对误差等指标上的表现与其在命中率和均方根误差上的表现类似，这里不再赘述。</span>
+<span style="margin-left:25px"></span><span class='green'>图4.3展示了基于用户长期、中期和即时行为的综合音乐推荐和朴素的基于多维时间序列分析的音乐推荐方法在命中率指标上的表现。</span><a href='../sentence_detail/713.htm' target='right' class='orange' >其中，横坐标表示推荐列表的长度，纵坐标表示推荐命中率，MTSA表示朴素的时序推荐方法， MTSA ALL表示综合推荐方法。</a><span class='green'>由图可以非常直观地看出，基于用户长期、中期和即时行为的综合音乐推荐方法能够取得比朴素的时序分析方法更高的命中率。</span><span class='green'>图4.4展示了这两种方法在均方根误差这一评测指标上的表现。</span><span class='green'>其中，纵坐标表示均方根误差，纵坐标取值越小，误差越小，算法的推荐效果越好。</span><span class='green'>由图4.4可以看出，综合的推荐方法能够取得比朴素时序分析方法更低的预测误 差。</span><span class='green'>这两类算法在准确率、 F1-Score、平均绝对误差等指标上的表现与其在命中率和均方根误差上的表现类似，这里不再赘述。</span>
 </p>
 </div>
 
@@ -475,7 +228,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">264</div></td>
+<td align="left" width="50"><div class="shubu">260</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -488,7 +241,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">265</div></td>
+<td align="left" width="50"><div class="shubu">261</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -501,12 +254,272 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
+<td align="left" width="50"><div class="shubu">262</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 4.4:</span><a href='../sentence_detail/724.htm' target='right' class='orange' >综合方法和基本方法在预测误差指标上的比较</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">263</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3分析讨论</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">264</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>本文上面分别介绍了本文所给出的一种基于多维时间序列分析的个性化音乐推荐方法以及以此为基础构建的一种基于用户长期、中期和即时行为的综合音乐推荐方法，</span><span class='green'>本节将就其中一些细节问题进行简单地分析和讨论，主要包括最大分析长度的设定以及不同文本建模方法的比较。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">265</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3.1最大分析长度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
 <td align="left" width="50"><div class="shubu">266</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>图 4.4:</span><a href='../sentence_detail/754.htm' target='right' class='orange' >综合方法和基本方法在预测误差指标上的比较</a>
+<span style="margin-left:25px"></span><span class='green'>本文所述的基于多维时间序列分析的个性化音乐推荐方法及综合音乐推荐方法主要关注地是用户在当前会话期内所收听(喜欢)歌曲构成的序列，</span><span class='green'>那么如果用户在当前会话期内收听了很多首歌曲(假如是1000首)，我们是不是要对所有这些歌曲构成的序列进行分析呢？</span><span class='green'>显然，这么做既不划算也不合理，因为用户所处的上下文环境是时刻改变的，很久之前的行为对当前环境状态的表征作用很有限甚至会形成干扰。</span><span class='green'>为此，我们设置一个“最大分析长度”，这样我们只需要对一定范围内的序列进行分析即可，既减轻了计算的负担同时也排除了老旧数据的干扰。</span><span class='green'>顾名思义，“最大分析长度”就是从当前时刻算起，算法所考察的用户行为序列的最大长度。</span><span class='green'>假如设置最大分析长度为4，对于依次收听了歌曲 s1、 s2、 s3、 s4、 s5、 s6、 s7的用户来说，</span><span class='green'>算法只分析由 s4、 s5、 s6、 s7构成的序列而忽略 s1、 s2、 s3。</span><a href='../sentence_detail/736.htm' target='right' class='orange' >如果调整最大序列长度为3，那么歌曲s4也将被忽略，算法只考察由s5、s6、s7构成的序列。</a><span class='green'>图4.5展示了随着最大可分析长度的增加，本文给出的多维时序推荐方法在命中率指标上的表现(推荐列表长度设为100)。</span><a href='../sentence_detail/738.htm' target='right' class='red' >图中横坐标表示最大可分析长度，纵坐标表示算法的命中率。</a><span class='green'>由图可以看出，对当前数据集来说，当最大分析长度为15时，算法的命中率基本就保持稳定了，这说明更早之前的数据对提升命中率意义不大。</span><span class='green'>因此，可以取最大分析长度为15。</span><span class='green'>当然，不同的数据集最大分析长度取值不一样，但差别不大，一般取15 30为宜。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">267</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3.2不同文本分析方法比较</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">268</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>我们在第二章介绍了向量空间模型、词频-逆文本频率模型、隐含狄利克雷分配等几种不同的文本建模方法，</span><span class='green'>同时提到 LDA模型与 VSM模型和 TF- IDF模型相比，一方面能够更好地描述文档的文本特征，另一方面可以解决一词多义和一义多词的问题，</span><span class='green'>因此本文所述的基于多维时间序列分析的音乐推荐方法和基于用户长期、中期和即时行为的音乐推荐方法在对歌曲集对应的文档集进行建模时都采用了 LDA模型。</span><span class='green'>为了直观地展现LDA模型的好处，本节通过实验来展现使用不同的文本建模方法来执行基于用户即时行为推荐所获得的命中率， 如4.6图所示。</span><a href='../sentence_detail/747.htm' target='right' class='red' >其中，横坐标表示推荐列表的长度，纵坐标表示算法获得的命中率。</a><a href='../sentence_detail/748.htm' target='right' class='orange' >纵坐标取值越大，算法获得命中率越高，算法推荐效果越好。</a><span class='green'>由图可以非常直观地看出，使用隐含狄利克雷分配对文档集进行建模确实能够得到比传统的向量空间模型和词频-逆文本频率更好的推荐效果。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">269</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 4.5:</span><a href='../sentence_detail/751.htm' target='right' class='orange' >不同最大分析长度对应的命中率变化情况</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">270</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 4.6:</span><a href='../sentence_detail/753.htm' target='right' class='orange' >不同文本建模方法的效果比较</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">271</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>第五章 系统实现</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">272</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>前述章节我们介绍了一种基于多维时间序列分析的音乐推荐方法和在此基础上的一种基于用户长期、中期和即时行为的音乐推荐方法，并通过实验从多个角度验证了本文上述的有效性。</span><span class='green'>为了进一步验证上述方法的可行性并解决系统实现中的一些关键问题，本文实现了一个个性化音乐推荐原型系统，即Sweetfm。</span><span class='green'>本章我们将对该原型系统进行详细介绍并给出一些具体的技术方案。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">273</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.1系统架构</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">274</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 5.1:</span><a href='../sentence_detail/760.htm' target='right' class='orange' >推荐系统和网站其他系统之间的关系</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">275</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>尽管优秀的推荐算法能够为用户推荐合理的结果，但只靠推荐很难构成一个完整的可用系统。</span><span class='green'>要构建一个可用的推荐系统，比如一个音乐推荐网站，就需要考虑推荐与系统其他组件的关系，只有这样才能最终实现推荐的价值。</span><span class='green'>项亮在文献 [1]中给出了如5.1所示的一般意义上推荐系统和网站其他系统之间的关系。</span><span class='green'>首先，基本上所有的网站都配有一个用户界面，即UI系统，该系统主要用来向用户展示页面效果以及与用户进行交互。</span><span class='green'>其次，网站往往还会配置日志系统，该系统主要用来将用户在用户界面上的各种有效行为记录下来并保存到对应的日志存储系统中。</span><span class='green'>需要注意的是，这里的日志存储系统既可以是数据库，也可以是缓存，还可以是文件系统。</span><span class='green'>推荐系统作为一个推荐网站的核心，其主要作用是分析存储在日志存储系统中的用户行为历史，</span><span class='green'>在此基础上生成该用户对应的推荐列表并将结果直接展示到用户界面上以供用户体验。</span><span class='green'>由图5.1可知，推荐系统要想将强大的作用发挥出来，需要依赖于用户的历史行为信息和用户界面等组件。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">276</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 5.2:</span><span class='green'>原型系统框架</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">277</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>5.1图虽然给出了一般意义上的推荐系统的架构，给本文所实现的原型系统带来了很大启发，但这种架构过于简单，不能直接用于本文的原型系统。</span><span class='green'>在认真分析本文所提推荐方法框架的基础上，本文按照图 5.2对原型系统进行设计。</span><a href='../sentence_detail/774.htm' target='right' class='orange' >本文所实现的原型系统主要包括客户端、用户服务接口、处理层和数据层构成。</a><span class='green'>客户端对应于图 5.1中的 UI系统，旨在为用户提供一个可以收听推荐歌曲并产生交互的窗口，具体到实现上既可以使用 Web，也可以是 Mobile还可以是普通的窗口客户端。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">278</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/776.htm' target='right' class='orange' >用户服务接口用于将用户在客户端上的行为传递给后续模块进行处理以及将推荐的结果返回给客户端。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">279</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/777.htm' target='right' class='orange' >处理层主要用于完成相关数据处理，其包括在线处理模块和离线处理模块。</a><span class='green'>其中，离线处理模块主要包括从百度音乐、豆瓣音乐、虾米音乐、 Lastfm等数据源爬取歌曲基本属性数据和标签数据的</span><span class='green'>爬虫系统以及对歌曲对应的文档集合进行语义分析以获取每一首歌曲对应的隐含主题分布的语义分析模块。</span><span class='green'>需要强调的是，这里离线的含义是指该模块的工作与用户行为无关，在具体实现上可以设定一定的时间间隔或周期重复执行。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">280</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>在线处理模块主要用于实时记录和处理用户的行为并为之生成最终推荐结果，其主要包括日志系统、序列生成系统、标签系统以及 Storm推荐引擎几个部分组成。</span><span class='green'>日志系统对应于文献 [1]中的日志系统，用于将用户的行为记录到数据存储系统中以待后续分析。</span><span class='green'>标签系统主要用于记录用户对当前所听歌曲所标注的标签，其与离线模块中的爬虫系统一起生成最终的歌曲标签信息，一定周期后可供语义分析模块处理。</span><span class='green'>序列生成系统用于根据用户在当前会话期内的行为生成对应的歌曲序列。</span><span class='green'>Storm推荐引擎模块的主要作用是使用 Storm框架对用户当前会话期的歌曲序列进行实时分析并产生最终的推荐结果。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">281</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>数据层主要完成用户属性、歌曲属性以及用户行为的存储功能，其包括数据库接口 DAO以及具体数据库两部分。</span><span class='green'>其中，数据库接口提供供其他层次模块调用的方法以避免直接操作数据库，增强了独立性。</span><span class='green'>具体数据库即真实的数据存储引擎，既可以是 Mysql，也可以是 Oracle，当然也可以是 SQLServer。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">282</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>用户产生一个积极行为到系统为其推荐歌曲的过程如下所示：</span>
 </p>
 </div>
 
@@ -517,8 +530,8 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_7.htm">上一页</a>
 <a class="pagelink" href="paper_9.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：8/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：8/11页
 ]
 </div>
 

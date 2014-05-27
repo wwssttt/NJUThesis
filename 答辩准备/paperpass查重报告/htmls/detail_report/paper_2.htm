@@ -99,27 +99,14 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_1.htm">上一页</a>
 <a class="pagelink" href="paper_3.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：2/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：2/11页
 ]
 </div>
 
 <br><div style="margin-left:25px">
 
 <img src="../../images/guanwang.gif"></div><br><br>
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">35</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>本文结构按照如下方式进行组织：</span><span class='green'>第 2章介绍与本文工作相关的一些工作，包括常用的音乐推荐算法、物品相似度计算方法和算法评测指标以及文本处理、时间序列分析的相关理论等；</span><span class='green'>第 3章描述了本文所提的一种基于多维时间序列分析的个性化音乐推荐方法，包括问题的定义、方法的执行流程等；</span><span class='green'>第 4章描述了本文给出的一种基于用户长期、中期和即时行为的综合音乐推荐方法；</span><a href='../sentence_detail/97.htm' target='right' class='orange' >第5章介绍了本文所实现的原型系统及相关实现技术；</a><a href='../sentence_detail/98.htm' target='right' class='red' >第 6章对本文工作进行总结并给出对未来工作的展望。</a>
-</p>
-</div>
-
 <div>
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
@@ -142,7 +129,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>本章我们介绍与本文相关的一些工作。</span><a href='../sentence_detail/101.htm' target='right' class='orange' >首先，我们介绍一些常用的音乐推荐算法、相似度计算方法以及算法评估标准。</a><span class='green'>然后，我们介绍文本建模、时间序列分析以及实时流处理框架的相关工作，这些方法和技术将在本文后续工作中得到应用。</span>
+<span style="margin-left:25px"></span><span class='green'>本章我们介绍与本文相关的一些工作。</span><span class='green'>首先，我们对一些音乐推荐算法、物品之间相似度的计算以及不同推荐算法的评估标准进行简单介绍。</span><span class='green'>然后，我们介绍文本建模、时间序列分析以及实时流处理框架的相关工作，这些方法和技术将在本文后续工作中得到应用。</span>
 </p>
 </div>
 
@@ -194,7 +181,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>基于用户即时行为的音乐推荐是最为朴素的一种音乐推荐方法，此类音乐推荐算法认为用户的状态在短期内保持稳定，</span><span class='green'>而用户可能收听的下一首歌曲与用户当前收听的歌曲具有类似的特征。</span><span class='green'>假如用户正在收听老狼的《同桌的你》，此类算法首先通过一定的方式抽取歌曲对应的特征，</span><a href='../sentence_detail/112.htm' target='right' class='orange' >并在此基础上将与《同桌的你》具有相似特征的歌曲推荐给用户，比如老狼的另一首经典校园民谣《睡在我上铺的兄弟》，</a><span class='green'>豆瓣电台的“听相似歌曲”实现的正是这样一个功能。</span><span class='green'>因此，以何种方式抽取歌曲特征就成了此类音乐推荐算法工作的关键。</span><span class='green'>文献 [14]充分利用歌曲的编辑属性，将与当前歌曲具有相同或相似曲作者、歌曲名称以及歌词的歌曲推荐给用户。</span><span class='green'>文献 [7][9][30]使用歌曲的声学特征为用户做出推荐，将与当前歌曲具有相似节奏、韵律、音色的歌曲推荐给用户。</span><span class='green'>文献 [24]使用心情特征对歌曲进行刻画并将与当前歌曲具有近似心情属性的歌曲推荐给用户。</span><span class='green'>这些工作都是从单一方面对歌曲进行刻画并进而为用做出推荐，但这种推荐往往是片面的，比如文献 [7][9]对于对声学特征不敏感但对于情感特征敏感的用户就不适用。</span><span class='green'>文献 [22]对歌曲对应的文本文档进行分析，使用语义特征对歌曲进行刻画，取得了不错的效果。</span>
+<span style="margin-left:25px"></span><span class='green'>基于用户即时行为的音乐推荐是最为朴素的一种音乐推荐方法，此类音乐推荐算法认为用户的状态在短期内保持稳定，</span><span class='green'>而用户可能收听的下一首歌曲与用户当前收听的歌曲具有类似的特征。</span><span class='green'>假如用户正在收听老狼的《同桌的你》，此类算法首先通过一定的方式抽取歌曲对应的特征，</span><span class='green'>并在此基础上将与《同桌的你》具有相似特征的歌曲推荐给用户，比如《想把我唱给你听》，</span><span class='green'>豆瓣电台的“听相似歌曲”实现的正是这样一个功能。</span><span class='green'>因此，以何种方式抽取歌曲特征就成了此类音乐推荐算法工作的关键。</span><span class='green'>文献 [14]充分利用歌曲的编辑属性，将与当前歌曲具有相同或相似曲作者、歌曲名称以及歌词的歌曲推荐给用户。</span><span class='green'>文献 [7][9][30]使用歌曲的声学特征为用户做出推荐，将与当前歌曲具有相似节奏、韵律、音色的歌曲推荐给用户。</span><span class='green'>文献 [24]使用心情特征对歌曲进行刻画并将与当前歌曲具有近似心情属性的歌曲推荐给用户。</span><span class='green'>这些工作都是从单一方面对歌曲进行刻画并进而为用做出推荐，但这种推荐往往是片面的，比如文献 [7][9]对于对声学特征不敏感但对于情感特征敏感的用户就不适用。</span><span class='green'>文献 [22]对歌曲对应的文本文档进行分析，使用语义特征对歌曲进行刻画，取得了不错的效果。</span>
 </p>
 </div>
 
@@ -233,7 +220,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>与基于用户即时行为的音乐推荐不同，基于用户长期行为的音乐推荐对用户收听过的所有歌曲都进行了考察和分析，</span><a href='../sentence_detail/123.htm' target='right' class='orange' >常见的基于协同过滤的音乐推荐和基于全局特征的音乐推荐都属于此类。</a>
+<span style="margin-left:25px"></span><span class='green'>与基于用户即时行为的音乐推荐不同，基于用户长期行为的音乐推荐对用户收听过的所有歌曲都进行了考察和分析，常见的基于协同过滤和基于全局特征的音乐推荐都属于此类。</span>
 </p>
 </div>
 
@@ -246,7 +233,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/124.htm' target='right' class='orange' >协同过滤推荐(Collabrative Filtering， CF)是当前最为流行的一类推荐算法，其挖掘用户所处的社会环境，利用群体智能为用户做出推荐。</a><span class='green'>协同过滤推荐基于这样一个假设，即如果两个用户在过去有相同的行为，那么系统认为他们在未来也会有类似的行为 [46][28][42]。</span><span class='green'>当需要预测一个用户是否喜欢一个物品时，协同过滤推荐算法首先找到与当前用户喜好类似的用户，进而综合这些相似用户的喜好为用户推荐新的物品。</span><a href='../sentence_detail/127.htm' target='right' class='red' >假如用户 A收听了《同桌的你》、《睡在我上铺的兄弟》、《朋友》，</a><span class='green'>用户 B收听了《同桌的你》、《朋友》、《白桦林》，用户 C收听了《一无所有》、《北京北京》、《太阳》，</span><span class='green'>那么此类算法认为用户 A和用户 B属于相似用户，进而将用户 B收听但用户 A没有收听的歌曲《白桦林》推荐给 A。</span>
+<span style="margin-left:25px"></span><a href='../sentence_detail/123.htm' target='right' class='orange' >协同过滤推荐(Collabrative Filtering， CF)是当前最为流行的一类推荐算法，其挖掘用户所处的社会环境，利用群体智能为用户做出推荐。</a><span class='green'>协同过滤推荐基于这样一个假设，即如果两个用户在过去有相同的行为，那么系统认为他们在未来也会有类似的行为 [46][28][42]。</span><span class='green'>当需要预测一个用户是否喜欢一个物品时，协同过滤推荐算法首先找到与当前用户喜好类似的用户，进而综合这些相似用户的喜好为用户推荐新的物品。</span><a href='../sentence_detail/126.htm' target='right' class='orange' >假如用户 A收听了《同桌的你》、《想把我唱给你听》、《朋友》，</a><span class='green'>用户 B收听了《同桌的你》、《朋友》、《白桦林》，用户 C收听了《一无所有》、《北京北京》、《太阳》，</span><span class='green'>那么此类算法认为用户 A和用户 B属于相似用户，进而将用户 B收听但用户 A没有收听的歌曲《白桦林》推荐给 A。</span>
 </p>
 </div>
 
@@ -298,7 +285,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>基于用户中期行为的音乐推荐是这样一类推荐算法，它们认为用户在当前会话期内所听歌曲构成的序列能够在一定程度上反映用户所处的上下文环境。</span><span class='green'>因此，它们通过对该歌曲序列的分析来完成对用户行为的预测和歌曲的推荐。</span><span class='green'>文献 [38]给出了“当前会话期”的定义，即指用户正在收听歌曲的这一段连续时间。</span><span class='green'>文献 [38]使用最近收听的几首歌曲去匹配用户收听历史，进而找到类似收听行为并据此为用户作出推荐。</span><span class='green'>尽管能够取得一定的效果，但用户所收听的歌曲数目不一，对于历史行为少的用户，文献 [38]便无能为力。</span><span class='green'>此外，文献 [38]没有对歌曲空间进行降维，而是直接使用歌曲本身去匹配，这降低了算法的可行性。</span><span class='green'>文献[18][33]是基于用户中期行为音乐推荐的两种典型代表方法，这两种方法首先</span><span class='green'>使用文本分析的方法将歌曲表示成由若干隐含主题构成的概率分布并使用若干显着主题表征歌曲。</span><span class='green'>这样，它们便将用户在当前会话期内的收听行为建模为主题序列，通过对该主题序列的分析即可预测下一首歌曲可能隶属的主题，</span><a href='../sentence_detail/145.htm' target='right' class='orange' >进一步地它们将相关主题中的显着歌曲推荐给用户。</a><span class='green'>其中，文献 [18]是使用以PrefixSpan为代表的模式挖掘算法对主题序列进行挖掘的，而文献 [33]使用马尔可夫模型对主题序列进行分析。</span><span class='green'>文献 [18][33]能够取得较 [38]更好的推荐效果，但是他们只是定性地预测下一首歌曲可能隶属的隐含主题，无法定量的给出具体的隶属程度。</span><span class='green'>此外，它们只考察了若干显着主题的作用而忽视了其他隐含主题的影响。</span><a href='../sentence_detail/149.htm' target='right' class='orange' >再者，它们需要依赖其他用户的行为来为当前用户做出推荐。</a>
+<span style="margin-left:25px"></span><span class='green'>基于用户中期行为的音乐推荐是这样一类推荐算法，它们认为用户在当前会话期内所听歌曲构成的序列能够在一定程度上反映用户所处的上下文环境。</span><span class='green'>因此，它们通过对该歌曲序列的分析来完成对用户行为的预测和歌曲的推荐。</span><span class='green'>文献 [38]给出了“当前会话期”的定义，即指用户正在收听歌曲的这一段连续时间。</span><span class='green'>文献 [38]使用最近收听的几首歌曲去匹配用户收听历史，进而找到类似收听行为并据此为用户作出推荐。</span><span class='green'>尽管能够取得一定的效果，但用户所收听的歌曲数目不一，对于历史行为少的用户，文献 [38]便无能为力。</span><span class='green'>此外，文献 [38]没有对歌曲空间进行降维，而是直接使用歌曲本身去匹配，这降低了算法的可行性。</span><span class='green'>文献[18][33]是基于用户中期行为音乐推荐的两种典型代表方法，这两种方法首先</span><span class='green'>使用文本分析的方法将歌曲表示成由若干隐含主题构成的概率分布并使用若干显着主题表征歌曲。</span><span class='green'>这样，它们便将用户在当前会话期内的收听行为建模为主题序列，通过对该主题序列的分析即可预测下一首歌曲可能隶属的主题，</span><a href='../sentence_detail/144.htm' target='right' class='orange' >进一步地它们将相关主题中的显着歌曲推荐给用户。</a><span class='green'>其中，文献 [18]是使用以PrefixSpan为代表的模式挖掘算法对主题序列进行挖掘的，而文献 [33]使用马尔可夫模型对主题序列进行分析。</span><span class='green'>文献 [18][33]能够取得较 [38]更好的推荐效果，但是他们只是定性地预测下一首歌曲可能隶属的隐含主题，无法定量的给出具体的隶属程度。</span><span class='green'>此外，它们只考察了若干显着主题的作用而忽视了其他隐含主题的影响。</span>
 </p>
 </div>
 
@@ -363,7 +350,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/159.htm' target='right' class='orange' >余弦相似度是推荐系统中计算用户与用户或者物品与物品之间相似度的一种常用方法，其通过测量两个向量内积空间夹角的余弦值来度量它们之间的相似性。</a><a href='../sentence_detail/160.htm' target='right' class='red' >0度角对应的余弦值是1，而其他任何角度对应的余弦值都不大于1，并且其最小值是-1。</a><a href='../sentence_detail/161.htm' target='right' class='orange' >如果两个向量的指向越接近，那么它们内积空间夹角的余弦值越接近于1，即二者越相似。</a><a href='../sentence_detail/162.htm' target='right' class='orange' >相反，如果两个向量的指向越相离，那么它们内积空间夹角的余弦值越接近于-1，即二者越不相似。</a><span class='green'>设向量X.a和向量X.</span>
+<span style="margin-left:25px"></span><span class='green'>余弦相似度是推荐系统中计算用户与用户或者物品与物品之间相似度的一种常用方法，如果两个向量的指向越接近，</span><a href='../sentence_detail/158.htm' target='right' class='orange' >那么它们内积空间夹角的余弦值越接近于1，即二者越相似。</a><a href='../sentence_detail/159.htm' target='right' class='orange' >相反，如果两个向量的指向越相离，那么它们内积空间夹角的余弦值越接近于-1，即二者越不相似。</a><span class='green'>设向量X.a和向量X.</span>
 </p>
 </div>
 
@@ -376,7 +363,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/164.htm' target='right' class='orange' > b分别表示用户 a和用户 b的偏好向量，其中 X. a( i)表示用户 a对编号为 i的物品的偏好值或评分，</a><a href='../sentence_detail/165.htm' target='right' class='orange' > X. b( i)表示用户 b对编号为 i的物品的偏好值或评分。</a><a href='../sentence_detail/166.htm' target='right' class='orange' >那么，用户a和用户b的 相似度可以按照公式2.1进行计算，其中K表示物品集合中物品的数目。</a><a href='../sentence_detail/167.htm' target='right' class='orange' >物品之间的余弦相似度可以按照类似的方式进行计算。</a>
+<span style="margin-left:25px"></span><a href='../sentence_detail/161.htm' target='right' class='orange' > b分别表示用户 a和用户 b的偏好向量，其中 X. a( i)表示用户 a对编号为 i的物品的偏好值或评分，</a><a href='../sentence_detail/162.htm' target='right' class='orange' > X. b( i)表示用户 b对编号为 i的物品的偏好值或评分。</a><a href='../sentence_detail/163.htm' target='right' class='orange' >那么，用户a和用户b的 相似度可以按照公式2.1进行计算，其中K表示物品集合中物品的数目。</a><a href='../sentence_detail/164.htm' target='right' class='orange' >物品之间的余弦相似度可以按照类似的方式进行计算。</a>
 </p>
 </div>
 
@@ -402,7 +389,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/169.htm' target='right' class='red' > KL距离也被称为相对熵或 KL散度，是两个概率分布 P和 Q差别的非对称性的度量，</a><span class='green'>用来度量使用基于 Q的编码来编码来自 P的样本平均所需的额外的比特个数[25]。</span><a href='../sentence_detail/171.htm' target='right' class='orange' >如果能够把物品表示成一个概率分布，那么显然可以用KL距离来衡量两个物品之间的相似度。</a><span class='green'>设P</span>
+<span style="margin-left:25px"></span><span class='green'>KL距离是用来度量两个概率分布P和Q之间距离或者相似度的常用方法[25]。</span><a href='../sentence_detail/167.htm' target='right' class='orange' >如果能够把物品表示成一个概率分布，那么显然可以用KL距离来衡量两个物品之间的相似度。</a><span class='green'>设 P=( p1，...， pi，...， pK)(1≤ i≤ K)表示物品 p对应的概率分布，</span><span class='green'>物品 q对应的概率分布用 Q=( q1，...， qi，...，</span><a href='../sentence_detail/170.htm' target='right' class='orange' > qK)表示，其中 K表示随机变量的取值数目。</a><span class='green'>那么，物品p和q之间的KL距离可以按照公式2.2进行计算，其取值非负。</span><span class='green'>需要注意的是，KL散度仅当概率分布P和Q各自总和均为1，且对于任何i皆满足pi ) 0及qi ) 0时才有定义。</span>
 </p>
 </div>
 
@@ -415,7 +402,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>=( p1，...， pi，...， pK)(1≤ i≤ K)表示物品 p对应的概率分布，</span><span class='green'>物品 q对应的概率分布用 Q=( q1，...， qi，...，</span><a href='../sentence_detail/175.htm' target='right' class='orange' > qK)表示，其中 K表示随机变量的取值数目。</a><span class='green'>那么，物品p和q之间的KL距离可以按照公式2.2进行计算，其取值非负。</span><span class='green'>需要注意的是， KL散度仅当概率分布 P和 Q各自总和均为1，且对于任何 i皆满足 pi)0及 qi)0时才有定义，</span><a href='../sentence_detail/178.htm' target='right' class='red' >若式中出现0 ln0的情况，其值按0处理。</a>
+<span style="margin-left:25px"></span><a href='../sentence_detail/173.htm' target='right' class='orange' >而物品之间的相似度应该满足对称性，即</a>
 </p>
 </div>
 
@@ -428,7 +415,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/179.htm' target='right' class='orange' >而物品之间的相似度应该满足对称性，即</a>
+<span style="margin-left:25px"></span><span class='green'>因此，不能直接使用 KL距离来计算物品之间的相似度，但可以使用 p到 q的 KL距离与 q到 p的 KL距离的平均值来作为二者的最终距离，</span><a href='../sentence_detail/175.htm' target='right' class='orange' >这样就可以满足对称性的要求，如公式2.5所示。</a><a href='../sentence_detail/176.htm' target='right' class='orange' >进一步地，可以使用如公式2.6所示的方法计算二者之间的相似度。</a>
 </p>
 </div>
 
@@ -441,7 +428,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>因此，不能直接使用 KL距离来计算物品之间的相似度，但可以使用 p到 q的 KL距离与 q到 p的 KL距离的平均值来作为二者的最终距离，</span><a href='../sentence_detail/181.htm' target='right' class='orange' >这样就可以满足对称性的要求，如公式2.5所示。</a><a href='../sentence_detail/182.htm' target='right' class='orange' >进一步地，可以使用如公式2.6所示的方法计算二者之间的相似度。</a>
+<span style="margin-left:25px"></span><span class='green'>2.2.3 Hellinger距离</span>
 </p>
 </div>
 
@@ -454,7 +441,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>2.2.3 Hellinger距离</span>
+<span style="margin-left:25px"></span><a href='../sentence_detail/178.htm' target='right' class='red' >Hellinger距离也可以用来度量两个概率分布之间的距离。</a><span class='green'>与KL距离不同的是，其然满足对称性，因此可以直接用来计算物品之间的相似度 [36]。</span><span class='green'>物品p和物品q之间的Hellinger距离可以按照公式2.7计算，进而可按公式2.8可以计算二者之间的相似度。</span>
 </p>
 </div>
 
@@ -467,7 +454,85 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/184.htm' target='right' class='red' >Hellinger距离也是是一种度量两个概率分布之间相似度的方法。</a><span class='green'>与KL距离不同的是，其然满足对称性，因此可以直接用来计算物品之间的相似度 [36]。</span><span class='green'>物品p和物品q之间的Hellinger距离可以按照公式2.7计算，进而可按公式2.8可以计算二者之间的相似度。</span>
+<span style="margin-left:25px"></span><span class='green'>本文所述音乐推荐方法将使用主题模型建模的方法将每一首歌曲表征为由若干隐含主题构成的一个概率分布，</span><span class='green'>因此 KL距离和 Hellinger距离将被本文用来计算两首歌曲的相似度。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">63</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.3评测指标</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">64</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/184.htm' target='right' class='orange' >推荐系统所研究的问题主要包括评分预测问题、Top-N推荐问题、冷启动问题、可解释性问题以及用户交互问题等 [2]。</a><a href='../sentence_detail/185.htm' target='right' class='orange' >其中，评分预测问题和Top-N推荐问题是得到最广泛研究且最为重要的内容。</a><span class='green'>所谓评分预测问题就是根据用户已经产生的评分记录来预测其对尚未评分物品的可能打分，而Top-N推荐是指为用户生成一个包含N个符合其偏好的物品列表。</span><span class='green'>围绕着这两类问题，研究人员给出了众多推荐算法，本文将简单介绍评测推荐算法优劣的一些指标。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">65</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.3.1用户满意度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">66</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/189.htm' target='right' class='orange' >作为推荐系统重要参与者和服务对象的用户，其满意度是评测一个推荐系统推荐效果优劣最为重要的标准。</a><a href='../sentence_detail/190.htm' target='right' class='red' >一般来说，用户满意度可以通过对一些用户行为的统计得到。</a><a href='../sentence_detail/191.htm' target='right' class='orange' >比如，在电子商务网站中可以通过用户的实际购买情况来评判，或者通过设置“满意”/“不满意”按钮进行显式地统计。</a><span class='green'>对于本文所研究的音乐推荐系统，可以统计用户在系统上的“喜欢”/“不喜欢”或者“收听”/“放弃”等行为来评估不同音乐推荐算法的推荐效果。</span><a href='../sentence_detail/193.htm' target='right' class='orange' >然而，用户满意度作为真实场景中的评测指标往往只能通过用户调查或者在线实验的方法获得而无法实现离线计算，这增加了研究人员评估算法优劣的难度。</a><span class='green'>因此，在实际的研究工作中很少通过这个指标来评估不同推荐算法的优劣。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">67</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>2.3.2预测准确度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">68</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>目前，度量一个推荐算法能力的重要指标是预测准确度，大多数的推荐方法都在使用这个指标来评估算法优劣。</span><a href='../sentence_detail/197.htm' target='right' class='orange' >对于评分预测问题，一般使用均方根误差(Root Mean Square Error， RMSE)和平均绝对误差(Mean Absolute Error， MAE)来表征算法的预测准确度 [19]。</a><span class='green'>RMSE可由公式2.9计算得到。</span>
 </p>
 </div>
 
@@ -478,8 +543,8 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_1.htm">上一页</a>
 <a class="pagelink" href="paper_3.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：2/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：2/11页
 ]
 </div>
 

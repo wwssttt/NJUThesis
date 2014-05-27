@@ -99,8 +99,8 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_4.htm">上一页</a>
 <a class="pagelink" href="paper_6.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：5/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：5/11页
 ]
 </div>
 
@@ -111,306 +111,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">138</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>本章将给出一种基于多维时间序列分析的音乐推荐方法，该方法实现了对用户听歌行为定量且全面地分析和预测，</span><a href='../sentence_detail/378.htm' target='right' class='orange' >同时减少了对其他用户行为的依赖，使得推荐的结果更加符合用户即时偏好。</a><span class='green'>首先，该方法使用用户给歌曲所打的标签构造歌曲对应的文档，进而通过主题模型的方法对文档集合进行建模并</span><span class='green'>最终把每一首歌曲都表示成由若干隐含主题构成的一个概率分布。</span><span class='green'>在此基础上，该方法将用户在当前会话期内的听歌行为建模为一个多维时间序列，</span><span class='green'>并通过对该多维时间序列的分析来预测用户行为，而这样做的原因是该方法认为用户在当前会话期内所收听的歌曲序列能够在一定程度上表征其所处的上下文环境。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">139</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/383.htm' target='right' class='orange' >我们将在本章中对该方法进行详细地阐述。</a><a href='../sentence_detail/384.htm' target='right' class='orange' >首先，我们将介绍本文工作所研究问题的相关描述和定义。</a><span class='green'>然后，我们给出该方法的工作流程，包括隐含主题的抽取、多维时间序列的构造及分析预测、最终推荐结果的生成等内容。</span><a href='../sentence_detail/386.htm' target='right' class='orange' >最后，我们介绍为验证该方法有效性而设计的实验及实验结果。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">140</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>3.1问题描述</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">141</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>音乐推荐的目的在于通过对音乐本身属性和用户行为习惯的分析，帮助用户过滤掉不必要的信息，并最终为用户推荐符合其喜好的音乐作品。</span><span class='green'>换句话来说，就是解决如何在已知歌曲特征以及用户之前所收听歌曲的情况下准确地预测用户可能收听的下一首歌曲的问题 [38]，如图3.1所示。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">142</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>图 3.1:</span><span class='green'>下一首歌预测问题的说明图</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">143</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>为了更好地描述本文所要研究的问题，我们首先定义用户集和歌曲集，如下所示：</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">144</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>用户集U：</span><span class='green'>所有用户的集合，如式3.1所示。</span><span class='green'>其中， v表示用户的数目，即v = |U|。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">145</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>歌曲集 S：</span><span class='green'>所有可以推荐给用户的物品 (这里就是歌曲，本文不加区分地使用“歌曲”和“物品” )的集合，如式 3.2所示。</span><a href='../sentence_detail/398.htm' target='right' class='orange' >其中， m表示曲库中歌曲的数目，即m = |S|。</a><span class='green'>为方便起见，我们认为用户收听的歌曲一定在歌曲集合中。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">146</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/400.htm' target='right' class='orange' >对于用户集 U中给定的一个用户 u，本文所要研究的音乐推荐系统的目标就是为该用户推荐其可能喜欢的下一首歌曲。</a><span class='green'>为了衡量用户对歌曲的喜欢程度，我们定义如下所示的效用函数：</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">147</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>效用函数utility(u， s):</span><span class='green'>表征歌曲 s对用户 u的推荐度 (如歌曲 s符合用户 u喜好的程度、歌曲 s与系统所预测歌曲的相似度等 )。</span><a href='../sentence_detail/404.htm' target='right' class='orange' >效用函数反映了用户对某首歌曲的喜爱程度，其值越大表明喜欢程度越大。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">148</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>如前所述，本文所给的方法是建立在隐含主题分类和用户在当前会话期内听歌序列的基础上，</span><span class='green'>因此我们进一步地定义歌曲对应的隐含主题集合以及用户所收听歌曲对应的序列。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">149</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>主题集 T:</span><a href='../sentence_detail/408.htm' target='right' class='orange' >由所有隐含主题组成的集合，如式式 3.3所示，其中 K为隐含主题的数目。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">150</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>事件 e(u， τ， s):</span><span class='green'>表示用户 u在时刻 τ收听了歌曲 s。</span><span class='green'>显然，歌曲 s可由用户 u和时刻τ唯一决定，因此 e(u， τ， s)可简化为e(u， τ)。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">151</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>序列 Q(u):</span><span class='green'>用户 u在给定平台下的所有听歌事件按照时间顺序排列开来得到的序列，如式 3.4所示。</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">152</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>其中， π + n为用户 u所收听或喜欢的歌曲数目， τ为事件发生的时间，且τ1 (τ2 (</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">153</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>... ( τ. (τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">154</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+1 ( ... ( τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">155</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+n，即用户收听这 π + n首歌曲是按照一定的次序一首接一首收听的。</span><span class='green'>另外， Q(u)中最后 n个事件是用户在当前会话期内产生的，即从事件 e(u， τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">156</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+1)到事件 e(u， τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
 <td align="left" width="50"><div class="shubu">157</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+n)之间对应的 n首歌曲是用户当前连续收听的，而序列中的最后一个事件 e(u， τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">158</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+n)是正在发生的。</span><span class='green'>也就是说，这 n个听歌事件两两之间没有明显的时间间隔，而事件 e(u， τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">159</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><span class='green'>+1)和事件 e(u， τ</span>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">160</div></td>
-<td>&nbsp;&nbsp;</td>
-</tr>
-</table>
-
-<span style="margin-left:25px"></span><a href='../sentence_detail/424.htm' target='right' class='orange' >)之间有明显的时间间隔，如式 3.5和3.6所示。</a>
-</p>
-</div>
-
-<div>
-<p>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td align="left" width="50"><div class="shubu">161</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -423,12 +124,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">162</div></td>
+<td align="left" width="50"><div class="shubu">158</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>目标歌曲:</span><a href='../sentence_detail/429.htm' target='right' class='orange' >符合用户喜好或者用户接下来可能收听的歌曲。</a>
+<span style="margin-left:25px"></span><span class='green'>目标歌曲:</span><a href='../sentence_detail/399.htm' target='right' class='orange' >符合用户喜好或者用户接下来可能收听的歌曲。</a>
 </p>
 </div>
 
@@ -436,7 +137,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">163</div></td>
+<td align="left" width="50"><div class="shubu">159</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -449,7 +150,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">164</div></td>
+<td align="left" width="50"><div class="shubu">160</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -462,7 +163,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">165</div></td>
+<td align="left" width="50"><div class="shubu">161</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -475,12 +176,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">166</div></td>
+<td align="left" width="50"><div class="shubu">162</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><a href='../sentence_detail/436.htm' target='right' class='orange' >2.如何对用户的行为序列进行分析以预测用户行为。</a>
+<span style="margin-left:25px"></span><a href='../sentence_detail/406.htm' target='right' class='orange' >2.如何对用户的行为序列进行分析以预测用户行为。</a>
 </p>
 </div>
 
@@ -488,7 +189,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">167</div></td>
+<td align="left" width="50"><div class="shubu">163</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -501,7 +202,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">168</div></td>
+<td align="left" width="50"><div class="shubu">164</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -514,12 +215,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">169</div></td>
+<td align="left" width="50"><div class="shubu">165</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>图 3.2:</span><a href='../sentence_detail/442.htm' target='right' class='orange' >基于多维时序分析的音乐推荐方法的工作流程示意图</a>
+<span style="margin-left:25px"></span><span class='green'>图 3.2:</span><a href='../sentence_detail/412.htm' target='right' class='orange' >基于多维时序分析的音乐推荐方法的工作流程示意图</a>
 </p>
 </div>
 
@@ -527,12 +228,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">170</div></td>
+<td align="left" width="50"><div class="shubu">166</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>在离线模块中，我们首先定期从音乐网站上抓取以用户标签为主的歌曲文本信息，然后将这些标签信息按照一定的方式组合成文档，</span><a href='../sentence_detail/444.htm' target='right' class='orange' >那么这些文档构成的文档集合将和歌曲集 S一一对应。</a><span class='green'>关于文档的构造方式，本文采用的方法是将被标记到给定歌曲的标签按照其被标记的次数在给定歌曲对应的文档中重复若干次。</span><span class='green'>假设给定歌曲s所具有的标签信息可以表示为一个标签集合，比如T agSet(s)={(“rock”，5)，(“pop”，3)，(“male”，2)}，那么其对应</span>
+<span style="margin-left:25px"></span><span class='green'>在离线模块中，我们首先定期从音乐网站上抓取以用户标签为主的歌曲文本信息，然后将这些标签信息按照一定的方式组合成文档，</span><a href='../sentence_detail/414.htm' target='right' class='orange' >那么这些文档构成的文档集合将和歌曲集 S一一对应。</a><span class='green'>关于文档的构造方式，本文采用的方法是将被标记到给定歌曲的标签按照其被标记的次数在给定歌曲对应的文档中重复若干次。</span><span class='green'>假设给定歌曲s所具有的标签信息可以表示为一个标签集合，比如T agSet(s)={(“rock”，5)，(“pop”，3)，(“male”，2)}，那么其对应</span>
 </p>
 </div>
 
@@ -540,7 +241,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">171</div></td>
+<td align="left" width="50"><div class="shubu">167</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -553,7 +254,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">172</div></td>
+<td align="left" width="50"><div class="shubu">168</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -566,12 +267,12 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">173</div></td>
+<td align="left" width="50"><div class="shubu">169</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>在在线处理模块中，我们首先获取用户在当前会话期内所听的歌曲，然后将这些歌曲按照时间先后顺序排列开来得到用户的当前会话序列。</span><span class='green'>结合离线模块的处理结果，我们将用户的当前会话序列建模为一个多维时间序列。</span><span class='green'>进一步地，我们使用一些经典有效的时间序列预测方法对该多维时间序列的每一个分量进行分析并预测单变量时间序列的下期取值。</span><span class='green'>然后，我们将这些单变量时间序列的预测值组合起来构成目标歌曲对应的主题权重向量。</span><span class='green'>得到目标概率分布之后，我们计算曲库中所有歌曲与目标歌曲之间的相似度并按照相似度由大到小排列。</span><span class='green'>最后，我们选取排位靠前的 N首歌曲作为推荐列表推荐给用户。</span><a href='../sentence_detail/460.htm' target='right' class='orange' >在下面的章节中，我们将对方法工作流程中的主要步骤进行一一介绍，包括如何进行主题模型建模、</a><span class='green'>为何选择多维时间序列作为用户行为序列的模型以及相似度计算、最终推荐列表生成等。</span>
+<span style="margin-left:25px"></span><span class='green'>在在线处理模块中，我们首先获取用户在当前会话期内所听的歌曲，然后将这些歌曲按照时间先后顺序排列开来得到用户的当前会话序列。</span><span class='green'>结合离线模块的处理结果，我们将用户的当前会话序列建模为一个多维时间序列。</span><span class='green'>进一步地，我们使用一些经典有效的时间序列预测方法对该多维时间序列的每一个分量进行分析并预测单变量时间序列的下期取值。</span><span class='green'>然后，我们将这些单变量时间序列的预测值组合起来构成目标歌曲对应的主题权重向量。</span><span class='green'>得到目标概率分布之后，我们计算曲库中所有歌曲与目标歌曲之间的相似度并按照相似度由大到小排列。</span><span class='green'>最后，我们选取排位靠前的 N首歌曲作为推荐列表推荐给用户。</span><a href='../sentence_detail/430.htm' target='right' class='orange' >在下面的章节中，我们将对方法工作流程中的主要步骤进行一一介绍，包括如何进行主题模型建模、</a><span class='green'>为何选择多维时间序列作为用户行为序列的模型以及相似度计算、最终推荐列表生成等。</span>
 </p>
 </div>
 
@@ -579,7 +280,7 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
-<td align="left" width="50"><div class="shubu">174</div></td>
+<td align="left" width="50"><div class="shubu">170</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
@@ -592,12 +293,64 @@ a{TEXT-DECORATION:none}
 <p>
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
+<td align="left" width="50"><div class="shubu">171</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>如前所述，为了全面地刻画歌曲，本文在将歌曲映射成一个个文档的基础上通过主题模型建模来对歌曲进行描述。</span><a href='../sentence_detail/434.htm' target='right' class='red' >隐含狄利克雷分配( Latent Dirichlet Allocation， LDA)模型[6]是当前最具代表性也是最流行的概率主题模型，</a><span class='green'>已经在文本挖掘、信息处理、多文档摘要等领域得到了广泛的应用[44][52]。</span><span class='green'>LDA模型能够将文档映射到由若干隐含主题构成的概率分布，而这个分布可以用一个主题权重向量表示，向量的每一维表征了对应主题对文档内容的贡献程</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">172</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>度。</span><span class='green'>通过LDA主题模型建模，我们不但可以抽象出文档中包含的隐含主题集合T，而且能够以量化的方式表达不同文档之间的距离和相似度。</span><a href='../sentence_detail/439.htm' target='right' class='orange' >本节详细介绍利用LDA主题模型对歌曲建模的过程。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">173</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 3.3:</span><span class='green'>歌曲Squares在Last.fm上的标签云</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">174</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>首先，我们从Lastfm(http:</span><span class='green'>// last. fm)、豆瓣( www. douban. com)等音乐网站上抓取用户对歌曲所标注的标签，</span><span class='green'>这些标签对歌曲内容的描述比较全面，既包含了歌曲的名称、曲作者信息、专辑信息、发行年代等基本信息，</span><span class='green'>还包含了歌曲所表达主题、歌曲类型、用户心情、适合场合等扩展信息。</span><span class='green'>以The Beta Band的Squares为例，用户为其标注的标签有表征年代的“2002”/“2000s”、表征类型的“indie rock”/“folk pop”、表征用户感受的“beautiful”/“want”等，如图3.3所示。</span><span class='green'>在得到歌曲对应的标签信息后，我们将这些标签按照一定的方式进行组织，从而生成歌曲对应的文本文档。</span><span class='green'>为了减少噪音，我们只利用那些被多数人使用的标签来完成歌曲对应文本文档的构造，具体来说我们只考虑被标记次数大于10的标签。</span><span class='green'>这样，一首歌曲s都将对应一篇文档d，而歌曲集S将对应到一个文档集D。</span><a href='../sentence_detail/450.htm' target='right' class='orange' >最后，我们对文档集D进行LDA主题模型建模，从而得到包含K个用来全面刻画歌曲特征的隐含主题集合T。</a><span class='green'>同时，对于歌曲集S中的任意 歌曲s，我们能够得到其对应的隐含主题权重向量，如式3.8所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
 <td align="left" width="50"><div class="shubu">175</div></td>
 <td>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>如前所述，为了全面地刻画歌曲，本文在将歌曲映射成一个个文档的基础上通过主题模型建模来对歌曲进行描述。</span><a href='../sentence_detail/464.htm' target='right' class='red' >隐含狄利克雷分配( Latent Dirichlet Allocation， LDA)模型[6]是当前最具代表性也是最流行的概率主题模型，</a><a href='../sentence_detail/465.htm' target='right' class='orange' >已经在文本挖掘、信息处理、多文档摘要等领域得到了广泛的应用[44][52]。</a><span class='green'>LDA模型能够将文档映射到由若干隐含主题构成的概率分布，而这个分布可以用一个主题权重向量表示，向量的每一维表征了对应主题对文档内容的贡献程</span>
+<span style="margin-left:25px"></span><span class='green'>其中，ωi =0表示歌曲完全不属于该隐含主题代表的类别，即该隐含主题对歌曲的内容完全没有贡献；</span><span class='green'>ωi =1表示歌曲完全属于该隐含主题代表的类别；</span><span class='green'>0 (ωi ( 1表示歌曲在一定程度上隶属于该隐含主题代表的类别。</span>
 </p>
 </div>
 
@@ -610,7 +363,7 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>度。</span><span class='green'>通过LDA主题模型建模，我们不但可以抽象出文档中包含的隐含主题集合T，而且能够以量化的方式表达不同文档之间的距离和相似度。</span><a href='../sentence_detail/469.htm' target='right' class='orange' >本节详细介绍利用LDA主题模型对歌曲建模的过程。</a>
+<span style="margin-left:25px"></span><span class='green'>表3.1展现了歌曲Squares的若干显着主题及其隶属于这些主题的概率。</span><span class='green'>由表3.1可以看出，歌曲Squares隶属于主题508的概率为0.215，这说明主题508对该歌曲贡献度为0.215。</span><span class='green'>类似的，主题313对歌曲的贡献度为0.186，主题231对该歌曲的贡献度为0.072。</span><span class='green'>由于主题508对文档的贡献度大于其他隐含主题，因此我们认为歌曲能够以更大的概率划分到主题508中。</span><span class='green'>如前所述，我们不去也无法准确地描述这些主题具体是什么含义，而我们正是利用这一点来回避确定性分类带来的弊端。</span>
 </p>
 </div>
 
@@ -623,7 +376,124 @@ a{TEXT-DECORATION:none}
 </tr>
 </table>
 
-<span style="margin-left:25px"></span><span class='green'>图 3.3:</span><span class='green'>歌曲Squares在Last.fm上的标签云</span>
+<span style="margin-left:25px"></span><span class='green'>表 3.1:</span><span class='green'>歌曲Squares的显着主题及隶属度</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">178</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>主题id 508 313 296 106 231</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">179</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>隶属度 0.215 0.186 0.134 0.084 0.072</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">180</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>更形象地，我们使用雷达图来表示歌曲在各个隐含主题上的隶属程度。</span><span class='green'>假设隐含主题的数目为4且编号依次为#1、#2、#3、#4，</span><span class='green'>那么主题向量. s=(0.15，0.25，0.15，0.45)代表的歌曲的雷达图如图3.4所示。</span><span class='green'>其中，雷达图的每个顶点代表一个隐含主题，中心点到各个顶点的距离表示歌曲在该顶点对应隐含主题上的隶属度。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">181</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图 3.4:</span><span class='green'>歌曲的雷达图表示</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">182</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4多维时间序列构造和预测</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">183</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>传统的基于“最相似”假设的推荐方法只考虑用户当前的收听习惯，较少考虑用户行为的序列性趋势，而本文所提出的基于多维时间序列分析的音乐推荐方法则对此进行了考虑。</span><span class='green'>在通过 LDA主题模型对歌曲进行建模而得到歌曲对应的主题权重向量后，</span><span class='green'>我们需要做的就是获取用户在当前会话期内收听的歌曲构成的序列并构造其对应的多维时间序列，</span><a href='../sentence_detail/474.htm' target='right' class='orange' >然后使用相应的时间序列分析方法进行预测。</a><span class='green'>对于上文中给出的一共收听了π+ n首歌曲且在当前会话期内收听了 n首歌曲的用户 u来说，</span><span class='green'>为了预测其可能收听的下一首歌曲，我们需要获取该歌曲对应的主题权重向量，如式3.9所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">184</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/477.htm' target='right' class='orange' >其中， ωi(j)表示第 j首歌曲隶属于第 i个隐含主题的概率 (1 ≤ i ≤ K)。</a><span class='green'>直接</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">185</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>得到这样一个主题向量往往是不太容易的，但估计出该向量对应的每一维的取值是可行的。</span><span class='green'>因此，要得到下一首歌曲对应的主题向量，我们需要先估计出对应的主题权重向量中每一维的值，</span><span class='green'>然后将这些中间估计值组合起来即可构成完整的估计主题向量，从而能够在歌曲集 S中找到最匹配的歌曲推荐给用户。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">186</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/482.htm' target='right' class='orange' >由前文可知，用户 u的听歌行为是有时间顺序的。</a><span class='green'>如果我们将用户在某一时间点所听歌曲对应的主题向量看做变量，那么将此变量在不同时间点的</span><span class='green'>取值按照时间顺序依次排开即可得到如式3.10所示的多维时间序列[17]。</span><span class='green'>进一步地，将上式在 K维隐含主题向量上展开，得到如式 3.11所示的更为直观的多维时间序列。</span><span class='green'>其中，i(1 ≤ i ≤ K)表示隐含主题的编号，j(1 ≤ j ≤ n)表示用户在当前会话期内所收听第j首歌曲的索引。</span><span class='green'>显然，该多维时间序列中任意一个时间点都对应着一个 K维主题向量且对于 K维主题向量中的每一维来说又对应着一个单变量的时间序列，</span><span class='green'>如式3.12所示。</span><span class='green'>其中，ωi(π + j)的含义如前所述。</span><span class='green'>通过对 TS( u， i)的分析可以得到用户在当前会话期内所收听的歌曲在编号为 i的隐含主题上的变化情况，</span><span class='green'>进而可以预测出用户可能收听的下一首歌曲在编号为 i的隐含主题上的隶属度，</span><span class='green'>即ω^ i(π+ n+1)。</span>
 </p>
 </div>
 
@@ -634,8 +504,8 @@ a{TEXT-DECORATION:none}
 <a class="pagelink" href="paper_1.htm">首页</a>
 <a class="pagelink" href="paper_4.htm">上一页</a>
 <a class="pagelink" href="paper_6.htm">下一页</a>
-<a class="pagelink" href="paper_12.htm">尾页</a>
-页码：5/12页
+<a class="pagelink" href="paper_11.htm">尾页</a>
+页码：5/11页
 ]
 </div>
 
